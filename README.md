@@ -14,15 +14,17 @@ import sorceress
 
 # Functions:
 
-1-chromatic 
-2-dotill    
-3-realtimegrid 
-4-addlines    
-5-addlinesAlpha
-6-eyecolour
+1- chromatic 
+2- dotill    
+
+3- realtimegrid 
+4- addlines    
+
+5- addlinesAlpha
+6- eyecolour
 
 
-# sorceress.sorcerer.chromatic
+1- sorceress.sorcerer.chromatic
 
 ```
 sorceress.sorcerer.chromatic("yourimage.jpg","outputname",circle=True,method="CMCCAT2000",gif=False,duration=10000)
@@ -43,7 +45,7 @@ image source:
 https://extension.unh.edu/blog/fall-good-time-plant-trees-and-shrubs
 
 
-# sorceress.sorcerer.dotill()
+2- sorceress.sorcerer.dotill()
 
 lateral inhibition: an old-fashion optical illusion.
 
@@ -61,7 +63,7 @@ sorceress.sorcerer.dotill(600,600,hlinefreq=12,wlinefreq=12)
 ![chro](https://user-images.githubusercontent.com/54986652/117381508-e7394a00-aee4-11eb-803e-4b08f42e721f.png)
 
 
-# sorceress.sorcerer.realtimegrid()
+3- sorceress.sorcerer.realtimegrid()
 
 ```
 sorceress.sorcerer.realtimegrid(realcolours=True)
@@ -73,7 +75,7 @@ perceive black and white real time frame as colorful
 Inspiration: https://www.patreon.com/posts/color-grid-28734535
 
 
-# sorceress.sorcerer.addlines
+4- sorceress.sorcerer.addlines
 inspired from Akiyoshi Kitaoka
 
 ```
@@ -82,7 +84,7 @@ addlines("inputimage.jpg",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolo
 ```
 Add vertical lines to an image 
 
-# sorceress.sorcerer.addlinesAlpha
+5- sorceress.sorcerer.addlinesAlpha
 
 Same with "addlines" but this time; line colors are much more stable against the luminance change in the background image. 
 
@@ -92,7 +94,7 @@ addlinesAlpha("inputimage.jpg",linecolour1=(0,255,0),linecolour2=(0,255,255),lin
 ```
 
 
-# sorceress.sorcerer.eyecolour
+6- sorceress.sorcerer.eyecolour
 
 inspried from: https://michaelbach.de/ot/col-context/index.html
 
