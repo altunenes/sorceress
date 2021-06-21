@@ -100,7 +100,7 @@ addlinesAlpha("inputimage.jpg",linecolour1=(0,255,0),linecolour2=(0,255,255),lin
 inspried from: https://michaelbach.de/ot/col-context/index.html
 
 ```
-sorceress.sorcerer.eyecolour("angeyes.jpg")
+sorceress.sorcerer.eyecolour("yourimage.jpg")
 
 ```
 
