@@ -1,4 +1,4 @@
-# sorcerer1.0
+# sorceress .0
 
 https://pypi.org/project/sorceress/1.0/
 
@@ -11,6 +11,7 @@ pip install sorceress==1.0
 import sorceress
 ```
 
+sorceress is a python package for creating optical illusions in an easy way.
 
 # Functions:
 
