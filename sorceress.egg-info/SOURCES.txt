@@ -1,0 +1,11 @@
+CHANGELOG.txt
+LICENCE.txt
+MANIFEST.in
+README.txt
+setup.py
+sorceress/__init__.py
+sorceress.egg-info/PKG-INFO
+sorceress.egg-info/SOURCES.txt
+sorceress.egg-info/dependency_links.txt
+sorceress.egg-info/requires.txt
+sorceress.egg-info/top_level.txt
