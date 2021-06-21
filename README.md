@@ -14,6 +14,14 @@ import sorceress
 
 # Functions:
 
+1-chromatic 
+2-dotill    
+3-realtimegrid 
+4-addlines    
+5-addlinesAlpha
+6-eyecolour
+
+
 # sorceress.sorcerer.chromatic
 
 ```
