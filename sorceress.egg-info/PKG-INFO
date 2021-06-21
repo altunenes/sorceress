@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: sorceress
+Version: 0.0.1
+Summary: Optical Illusions with Python
+Home-page: https://github.com/emportent/sorceress
+Author: Enes Altun
+Author-email: enesaltun2@gmail.com
+License: MIT
+Description: Python Package For Creating Optical Illusions
+        
+        Change Log
+        ==========
+        
+        0.0.1 (21/6/2021)
+        
+        -First Release
+Keywords: Optical-Illusion,illusions,optical
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
