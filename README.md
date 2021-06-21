@@ -1,7 +1,5 @@
 # sorceress 1.0
-.. |version| image:: https://img.shields.io/pypi/v/sorceress.svg?style=flat-square
-    :target: https://pypi.org/project/sorceress/1.0/
-    :alt: Package Version
+
 https://pypi.org/project/sorceress/1.0/
 
 ```
