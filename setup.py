@@ -18,7 +18,7 @@ setup(
     author_email='enesaltun2@gmail.com',
     license='MIT',
     classifiers=classifiers,
-    python_requires='>=3.9',
+    python_requires='>=3.7',
     keywords='Optical-Illusion,illusions,optical',
     packages=['sorceress'],
     install_requires=['opencv-python',"numpy","colour-science","Pillow",],
