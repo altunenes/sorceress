@@ -22,4 +22,12 @@ setup(
     keywords='Optical-Illusion,illusions,optical',
     packages=['sorceress'],
     install_requires=['opencv-python',"numpy","colour-science","Pillow",]
+    extras_require={
+        'dev': [
+            'Pillow',
+            'pytest',
+            'pytest-cov',
+            'flake8',
+        ]
+    }
 )
