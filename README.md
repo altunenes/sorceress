@@ -61,8 +61,6 @@ dotill(hsize,wsize,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,hori
 ```
 sorceress.sorcerer.dotill(600,600,hlinefreq=12,wlinefreq=12)
 ```
-![chro](https://user-images.githubusercontent.com/54986652/117381508-e7394a00-aee4-11eb-803e-4b08f42e721f.png)
-
 
 ## 3- sorceress.sorcerer.realtimegrid()
 
@@ -78,6 +76,8 @@ Inspiration: https://www.patreon.com/posts/color-grid-28734535
 
 ## 4- sorceress.sorcerer.addlines
 inspired from Akiyoshi Kitaoka
+
+![asdddd](https://user-images.githubusercontent.com/54986652/130432273-c3b11961-484d-44a1-99a9-6821e46f9c10.png)
 
 ```
 addlines("inputimage.jpg",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
