@@ -1,9 +1,10 @@
-# sorceress 1.0
+# sorceress 1.1
 
-https://pypi.org/project/sorceress/1.0/
+https://pypi.org/project/sorceress/1.1/
 
 ```
-pip install sorceress==1.0
+pip install sorceress==1.1
+
 ```
 
 
