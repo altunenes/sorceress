@@ -1,9 +1,10 @@
-# sorceress 1.0
+# sorceress 1.1
 
-https://pypi.org/project/sorceress/1.0/
+https://pypi.org/project/sorceress/1.1/
 
 ```
-pip install sorceress==1.0
+pip install sorceress==1.1
+
 ```
 
 
@@ -32,8 +33,15 @@ sorceress.sorcerer.chromatic("yourimage.jpg","outputname",circle=True,method="CM
 
 ```
 
-if gif= True, it will create a gif with output images
-you may either use Von Kries chromatic adaptation or Fairchild (1990) detalits: ( https://colour.readthedocs.io/en/develop/generated/colour.chromatic_adaptation.html )
+``` "yourimage.jpg" ``` = Source image. 
+
+```"outputname" ```  = Your output name (You don't need to add extention (jpg,png etc.)
+
+``` circle=True ``` = Adds a red dot in the middle of pic. 
+
+if ```gif= True ```, it will create a gif with output images
+
+```method``` you may either use Von Kries chromatic adaptation or Fairchild (1990) 
 
 simple example:
 
@@ -58,6 +66,12 @@ Catch the black dots if you can!
 dotill(hsize,wsize,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
 ```
 
+`hsize` and `wsize` are dimensions of the image. `Hlinefreq` is the frequency of vertical lines and the `wlinefreq` is for the horizontal lines. `dotcolor` is the color of the dots. `dotradius` is the radius of the circles. `horizontalcolor` and `verticalcolor` points the colors of the lines. You may remove those lines with` verticallines=False,horizontallines=False` 
+
+```
+dotill(hsize,wsize,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
+```
+
 ```
 sorceress.sorcerer.dotill(600,600,hlinefreq=12,wlinefreq=12)
 ```
@@ -68,8 +82,10 @@ sorceress.sorcerer.dotill(600,600,hlinefreq=12,wlinefreq=12)
 sorceress.sorcerer.realtimegrid(realcolours=True)
 ```
 
+perceive black and white real time (with webcam) frames as colorful
 
-perceive black and white real time frame as colorful
+with `realcolours=False` code will not calculate the real colors of your frame.
+
 
 Inspiration: https://www.patreon.com/posts/color-grid-28734535
 
@@ -80,18 +96,25 @@ inspired from Akiyoshi Kitaoka
 ![asdddd](https://user-images.githubusercontent.com/54986652/130432273-c3b11961-484d-44a1-99a9-6821e46f9c10.png)
 
 ```
-addlines("inputimage.jpg",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
+sorceress.sorcerer.addlines(img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
 
 ```
 Add vertical lines to an image 
+
+`img` your input image like `"morgo.jpg"`
+`outputname` desired output like `desired`
+`linecolour1` `linecolour2` and `linecolour3` are point the colors of lines.
+example usage:
+`sorceress.sorcerer.addlines("vfor.jpg","mygrids",linecolour1=(150,5,5),linecolour2=(10,155,20),linecolour3=(0,15,15))
+`
+img
 
 ## 5- sorceress.sorcerer.addlinesAlpha
 
 Same with "addlines" but this time; line colors are much more stable against the luminance change in the background image. 
 
 ```
-addlinesAlpha("inputimage.jpg",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
-
+addlinesAlpha(self,img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0)
 ```
 
 
@@ -104,6 +127,9 @@ sorceress.sorcerer.eyecolour("yourimage.jpg")
 
 ```
 
-after determine the roi(region of interest) you could use this optical illusion. 
+with this illusion, you perceive the black and white NumPy array as colorful (probably).  After you run this code, you need to select the iris manually then push the enter. I didn't want to use the iris detector since it slowing down the script. Just select smaller as much as possible.
+
+example:
+
 ![image](https://user-images.githubusercontent.com/54986652/122818547-0566d800-d2e2-11eb-9d67-94b35626b39f.png)
 
