@@ -33,6 +33,9 @@ sorceress.sorcerer.chromatic("yourimage.jpg","outputname",circle=True,method="CM
 
 ```
 
+``` "yourimage.jpg" ``` = Source image. 
+```"outputname" ```  = Your output name (You don't need to add extention (jpg,png etc.)
+circle=True
 if gif= True, it will create a gif with output images
 you may either use Von Kries chromatic adaptation or Fairchild (1990) detalits: ( https://colour.readthedocs.io/en/develop/generated/colour.chromatic_adaptation.html )
 
