@@ -1,13 +1,13 @@
 import cv2
 import numpy as np
 import colour
-from PIL import Image
 import glob
 import os
+import imageio
 class sorcerer(object):
 
     @classmethod
-    def chromatic(self,img,outputname,circle=True,method="CMCCAT2000",gif=False,duration=10000):
+    def chromatic(self,img,outputname,circle=True,method="CMCCAT2000",gif=True,Gifduration=3):
         global chromatic
         img = cv2.imread(img)
         hsize, wsize, _ = img.shape
@@ -37,18 +37,25 @@ class sorcerer(object):
             cv2.imwrite("chromatic/"f'{outputname}.png', test)
             cv2.imwrite("chromatic/"f'{outputname}gry.png',gry)
             frames = []
-            imgs = glob.glob("chromatic/*.png")
+            imgs = glob.glob("chromatic/*.*")
             for i in imgs:
-                new_frame = Image.open(i)
+                new_frame = cv2.imread(i)
                 frames.append(new_frame)
 
-            frames[0].save('chromatic/mygif.gif', format='GIF',
-                           append_images=frames[1:],
-                           save_all=True,
-                           duration=duration, loop=0)
+            with imageio.get_writer(f"chromatic/{outputname}.gif", mode="I", duration=Gifduration) as writer:
+                for idx, frame in enumerate(frames):
+                    print("Adding frame to GIF file: in chromatic folder ", idx + 1)
+                    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                    writer.append_data(rgb_frame)
+                    print("Done")
+                    print("Done ", f'{outputname}.png has been added your working dir.')
+                    print("Your working directory: ", os.getcwd())
+
         elif gif==False:
             cv2.imwrite(f'{outputname}.png', test)
             cv2.imwrite(f'{outputname}gry.png',gry)
+            print("Done ",f'{outputname}.png has been added your working dir.')
+            print("Your working directory: ",os. getcwd())
 
 
     @classmethod
@@ -111,7 +118,8 @@ class sorcerer(object):
         cv2.imwrite("BGRoutput.png", lines)
         cv2.imwrite("CMCCAT2000output.png", test)
         cv2.imwrite("hsvoutput.png", hsv)
-        # print("all done")
+        print("3 images have been saved to your working directory: BGRoutput.png, CMCCAT2000output.png hsvoutput.png ")
+        print("Your working directory: ", os.getcwd())
 
     @classmethod
     def realtimegrid(self,realcolours=False):
@@ -167,10 +175,10 @@ class sorcerer(object):
             height = h / (horizon + 0.0000001)
             if Hthickness == 0:
                 Hthickness = Hthickness + 1
-                # print("You can't select thickness as 0, thickness has been converted to 1")
+                print("You can't select thickness as 0, thickness has been converted to 1")
             if Wthickness == 0:
                 Wthickness = Wthickness + 1
-                # print("You can't select thickness as 0, thickness has been converted to 1")
+                print("You can't select thickness as 0, thickness has been converted to 1")
             for i in range(vertical):
                 for j in range(horizon):
                     first_x, first_y = int(i * width), int(j * height)
@@ -237,7 +245,7 @@ class sorcerer(object):
 
 
     @classmethod
-    def addlines(self,img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0)):
+    def addlines(self,img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0)):
 
         rect = cv2.imread(img)
 
@@ -263,12 +271,12 @@ class sorcerer(object):
 
         blur = cv2.GaussianBlur(result2, (7, 7), 0)
 
+        cv2.imwrite(f'{outputname}blur.png', blur)
+        cv2.imwrite(f'{outputname}ver1.png', result2)
+        cv2.imwrite(f'{outputname}ver2.png', result3)
 
-        cv2.imwrite("MyGrids+GaussianBlur.png", blur)
-        cv2.imwrite("MyGridsssss22.png", result3)
-        cv2.imwrite("MyGridsssss2232.png", result2)
-
-        # print("DONE! grids have been added to image")
+        print("DONE! grids have been added to your image check your working directory:")
+        print("Your working directory: ", os.getcwd())
 
 
 
@@ -276,7 +284,7 @@ class sorcerer(object):
 
 
     @classmethod
-    def addlinesAlpha(self,img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0)):
+    def addlinesAlpha(self,img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0)):
         rect = cv2.imread(img)
         rect = cv2.cvtColor(rect, cv2.COLOR_BGR2BGRA)
         h, w, c = rect.shape
@@ -302,21 +310,25 @@ class sorcerer(object):
 
         blur = cv2.GaussianBlur(result2, (7, 7), 0)
 
-        cv2.imwrite("MyGrids.png", result2)
-        cv2.imwrite("MyGrids+GaussianBlur.png", blur)
-        cv2.imwrite("MyGridsssss.png", outBGRA)
-        cv2.imwrite("MyGridsssss22.png", result3)
 
-        # print("DONE! grids have been added to image")
-        # cv2.imshow("hsv",hsv)
+
+        cv2.imwrite(f'{outputname}ver1.png', result2)
+        cv2.imwrite(f'{outputname}blur.png', blur)
+        cv2.imwrite(f'{outputname}ver2.png', outBGRA)
+        cv2.imwrite(f'{outputname}ver3.png', result3)
+
+
+        print("DONE! grids have been added to your image check your working directory:")
+        print("Your working directory: ", os.getcwd())
+
 
     @classmethod
-    def eyecolour(self,img):
+    def eyecolour(self,img,outputname):
         img = cv2.imread(img)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
         img = cv2.equalizeHist(img)
-        # print("select the iris (select smaller as much as possible for good results; then press to enter ")
+        print("select the iris (select smaller as much as possible for good results); then press to enter ")
         r = cv2.selectROI(img,fromCenter=False)
 
         roi_cropped = img[int((r[1])):int((r[1]) + int(r[3])), int((r[0])):int((r[0])) + int((r[2]))]
@@ -326,7 +338,7 @@ class sorcerer(object):
         redd = 255 * np.ones(roi_cropped.shape, roi_cropped.dtype)
 
         h, w = img.shape
-        centh=int(h/2)
+        # centh=int(h/2)
         centw=int(w/2)
         mask = np.ones((h, w, 3), dtype=np.uint8)
 
@@ -348,7 +360,7 @@ class sorcerer(object):
         mask[:, :, 2] = 200
         mask[:, :, 0] = 200
 
-        mask = cv2.cvtColor(mask, cv2.COLOR_HSV2BGR)
+        # mask = cv2.cvtColor(mask, cv2.COLOR_HSV2BGR)
 
         aplha = 0.8
         beta = 0.3
@@ -357,12 +369,17 @@ class sorcerer(object):
 
         output = cv2.seamlessClone(roi_cropped, result, redd, center, cv2.NORMAL_CLONE)
         blur = cv2.GaussianBlur(result, (5, 5), 0)
-        blur2 = cv2.GaussianBlur(output, (5, 5), 0)
+        # blur2 = cv2.GaussianBlur(output, (5, 5), 0)
 
 
 
         result[int((r[1])):int((r[1]) + int(r[3])), int((r[0])):int((r[0])) + int((r[2]))] = roi_cropped
 
-        cv2.imwrite("eyes.png", output)
-        cv2.imwrite("eyes2.png", blur)
+
+        cv2.imwrite(f'{outputname}.png', output)
+        cv2.imwrite(f'{outputname}blur.png', blur)
+
+
+        print("DONE! images have been added to your image check your working directory:")
+        print("Your working directory: ", os.getcwd())
 
