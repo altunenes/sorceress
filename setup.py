@@ -16,7 +16,7 @@ setup(
     url='https://github.com/emportent/sorceress',
     author='Enes Altun',
     author_email='enesaltun2@gmail.com',
-    python_requires='>=3.9',
+    python_requires='>=3.6',
     license='MIT',
     classifiers=classifiers,
     keywords='Optical-Illusion,illusions,optical',
