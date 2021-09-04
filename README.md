@@ -1,4 +1,5 @@
 # sorceress 1.1
+[![Build Status](https://app.travis-ci.com/emportent/sorceress.svg?branch=main)](https://app.travis-ci.com/emportent/sorceress) [![PyPI version](https://badge.fury.io/py/sorceress.svg)](https://badge.fury.io/py/sorceress)
 
 https://pypi.org/project/sorceress/1.1/
 
