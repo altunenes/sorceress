@@ -318,7 +318,7 @@ class sorcerer(object):
         cv2.imwrite(f'{outputname}ver3.png', result3)
 
 
-        print("DONE! grids have been added to your image check your working directory:")
+        print("DONE! images have been added to your working directory:")
         print("Your working directory: ", os.getcwd())
 
 
@@ -380,6 +380,136 @@ class sorcerer(object):
         cv2.imwrite(f'{outputname}blur.png', blur)
 
 
-        print("DONE! images have been added to your image check your working directory:")
+        print("DONE! images have been added to your working directory:")
         print("Your working directory: ", os.getcwd())
 
+    @classmethod
+    def dakinPex(self,outputname,dimension=800):
+
+
+        img = 128 * np.ones((int(dimension), int(dimension), 3), dtype=np.uint8)
+        h, w, _ = img.shape
+        for i in range(0, h, 160):
+            for j in range(0, w, 160):
+                cv2.rectangle(img, (i, j), (i + 75, j + 75), (0, 0, 0), 5)
+                cv2.rectangle(img, (i + 80, j + 80), (i + 155, j + 155), (0, 0, 0), 5)
+
+        for i in range(0, h, 160):
+            for j in range(0, w, 160):
+                cv2.rectangle(img, (i + 80, j), (i + 155, j + 75), (255, 255, 255), 2)
+                cv2.rectangle(img, (i, j + 80), (i + 75, j + 155), (255, 255, 255), 2)
+
+
+        cv2.imwrite(f'{outputname}.png', img)
+
+
+        print("DONE! images have been added to your working directory:")
+        print("Your working directory: ", os.getcwd())
+
+    @classmethod
+    def bruno(self,outputname,circle=False, polycolor=(0, 255, 255), rectcolor=(255, 255, 0), circColor=(0, 0, 255)):
+        img = 255 * np.ones((600, 600, 3), dtype=np.uint8)
+        h, w, _ = img.shape
+
+        pts = np.array([[60, 60], [120, 30], [180, 100], [120, 180], [60, 150]])  # most left to right
+        pts2 = np.array([[400, 60], [460, 30], [520, 100], [460, 180], [400, 150]])  # most left to right
+
+        pts3 = np.array([[60, 360], [120, 330], [180, 400], [120, 480], [60, 450]])  # most left to right
+        pts4 = np.array([[400, 360], [460, 330], [520, 400], [460, 480], [400, 450]])  # most left to right
+
+        color = (255, 0, 0)
+        cv2.fillPoly(img, pts=[pts], color=polycolor)
+        cv2.fillPoly(img, pts=[pts2], color=polycolor)
+        cv2.fillPoly(img, pts=[pts3], color=polycolor)
+        cv2.fillPoly(img, pts=[pts4], color=polycolor)
+
+        if circle == True:
+
+            cv2.circle(img, (480, 75), 30, circColor, -1)
+
+            cv2.circle(img, (140, 375), 30, (255, 255, 255), -1)
+            cv2.circle(img, (480, 375), 30, circColor, -1)
+        else:
+
+            cv2.rectangle(img, (470, 10), (540, 90), rectcolor, -1)  # top rights
+            cv2.rectangle(img, (470, 310), (540, 390), rectcolor, -1)  # bot right
+            cv2.rectangle(img, (130, 310), (200, 390), (255, 255, 255), -1)  # bot left
+
+        cv2.putText(img, "is the shape on the left the same as the one on the right?", (40, 240),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, 55)
+
+        cv2.line(img, (0, 250), (600, 250), (0, 0, 0), 5)
+
+        cv2.imwrite(f'{outputname}.png', img)
+
+
+        print("DONE! image has been added to your working directory:")
+        print("Your working directory: ", os.getcwd())
+
+
+    @classmethod
+    def dolboeuf(self,outputname,circleColor=(0,0,255),kill=False):
+        img = 255 * np.ones((800, 800, 3), dtype=np.uint8)
+        for i in range(35, 37, 2):
+            cv2.circle(img, (250, 300), 35, circleColor, -1)
+            cv2.circle(img, (250, 300), i + 7, (0, 0, 0), 3)
+
+        cv2.circle(img, (600, 300), 35, circleColor, -1)
+        cv2.circle(img, (600, 300), 100, (0, 0, 0), 3)
+
+        if kill == True:
+            cv2.line(img, (250, 335), (600, 335), (0, 0, 0), 2)
+            cv2.line(img, (250, 265), (600, 265), (0, 0, 0), 2)
+
+        cv2.imwrite(f'{outputname}.png', img)
+
+
+        print("DONE! image has been added to your working directory:")
+        print("Your working directory: ", os.getcwd())
+
+
+
+    @classmethod
+    def kanizsa(self,outputname,dims,circleColor=(0,0,255)):
+        img = 255 * np.ones((dims, dims, 3), dtype=np.uint8)
+
+        h, w, _ = img.shape
+        a = int(h / 7)
+        b = int(h / 3.86)
+        radius = int(h / 11)
+        for i in range(0, w, int(w / 4)):
+            for j in range(0, w, int(w / 4)):
+                cv2.circle(img, (i + a, j + a), radius, circleColor, -1)
+
+        for i in range(0, w, int(w / 2)):
+            for j in range(0, w, int(w / 2)):
+                cv2.rectangle(img, (i + a, j + a), (i + a + b, j + a + b), (255, 255, 255), -1)
+
+        cv2.imwrite(f'{outputname}.png', img)
+
+
+        print("DONE! image has been added to your working directory:")
+        print("Your working directory: ", os.getcwd())
+
+    @classmethod
+    def ponzol(self,outputname,kill=False,line1=(255,0,0),line2=(255,0,0),rectangle1=(0,0,255),rectangle2=(0,0,255)):
+        img = 255 * np.ones((600, 600, 3), dtype=np.uint8)
+        h, w, _ = img.shape
+
+        cv2.line(img, (80, 400), (300, 20), line1, 4)
+        cv2.line(img, (340, 20), (560, 400), line2, 4)
+
+        cv2.rectangle(img, (250, 70), (390, 90), rectangle1, -1)
+        cv2.rectangle(img, (250, 350), (390, 370), rectangle2, -1)
+        #
+        if kill == True:
+            for i in range(70, (340), 30):
+                cv2.rectangle(img, (250, i), (390, i + 20), (0, 0, 255), -1)
+                cv2.line(img, (250, 70), (250, 370), (0, 0, 0), 4)
+                cv2.line(img, (390, 70), (390, 370), (0, 0, 0), 4)
+
+        cv2.imwrite(f'{outputname}.png', img)
+
+
+        print("DONE! image has been added to your working directory:")
+        print("Your working directory: ", os.getcwd())

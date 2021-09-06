@@ -1,4 +1,10 @@
 opencv-python
 numpy
 colour-science
-Pillow
+imageio
+
+[dev]
+imageio
+pytest
+pytest-cov
+flake8

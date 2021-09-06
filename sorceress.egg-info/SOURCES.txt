@@ -3,6 +3,7 @@ LICENCE.txt
 MANIFEST.in
 README.txt
 setup.py
+sorcererf2.py
 sorceress/__init__.py
 sorceress.egg-info/PKG-INFO
 sorceress.egg-info/SOURCES.txt

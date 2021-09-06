@@ -1,10 +1,10 @@
-# sorceress 1.1
+# sorceress 1.2
 [![Build Status](https://app.travis-ci.com/emportent/sorceress.svg?branch=main)](https://app.travis-ci.com/emportent/sorceress) [![PyPI version](https://badge.fury.io/py/sorceress.svg)](https://badge.fury.io/py/sorceress)
 
 https://pypi.org/project/sorceress/1.1/
 
 ```
-pip install sorceress==1.1
+pip install sorceress==1.2
 
 ```
 
@@ -17,15 +17,27 @@ sorceress is a python package for creating optical illusions in an easy way.
 
 ## Functions:
 
-1- chromatic 
-2- dotill    
+1- chromatic() 
 
-3- realtimegrid 
-4- addlines    
+2- dotill()
 
-5- addlinesAlpha
-6- eyecolour
+3- realtimegrid() 
 
+4- addlines()    
+
+5- addlinesAlpha()
+
+6- eyecolour()
+
+7-dakinPex()
+
+8-bruno()
+
+9-dolboeuf()
+
+10-kanizsa()
+
+11-ponzol()
 
 ## 1- sorceress.sorcerer.chromatic
 
