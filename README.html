@@ -1,0 +1,123 @@
+<html><head><meta charset="utf-8" /><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor/dist/index.css"/><script src="https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor/dist/js/i18n/en_US.js"></script><script src="https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor/dist/method.min.js"></script></head><body style="width: 1075px;"><div class="vditor-reset" id="preview"><h1 id="sorceress-1-2">sorceress 1.2<a id="vditorAnchor-sorceress-1-2" class="vditor-anchor" href="#sorceress-1-2"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
+<p><a href="https://app.travis-ci.com/emportent/sorceress"><img src="https://app.travis-ci.com/emportent/sorceress.svg?branch=main" alt="Build Status" /></a> <a href="https://badge.fury.io/py/sorceress"><img src="https://badge.fury.io/py/sorceress.svg" alt="PyPI version" /></a></p>
+<p>Install with pip</p>
+<pre><code>pip install sorceress==1.2
+
+</code></pre>
+<pre><code>#importing
+import sorceress
+</code></pre>
+<p>**sorceress **is a python package for creating optical illusions in an easy way.👀️</p>
+<h2 id="Functions-">Functions:<a id="vditorAnchor-Functions-" class="vditor-anchor" href="#Functions-"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<ol>
+<li>chromatic()</li>
+</ol>
+<p>2- dotill()</p>
+<p>3- realtimegrid()</p>
+<p>4- addlines()</p>
+<p>5- addlinesAlpha()</p>
+<p>6- eyecolour()</p>
+<p>7-dakinPex()</p>
+<p>8-bruno()</p>
+<p>9-dolboeuf()</p>
+<p>10-kanizsa()</p>
+<p>11-ponzol()</p>
+<h2 id="1--sorceress-sorcerer-chromatic">1- sorceress.sorcerer.chromatic<a id="vditorAnchor-1--sorceress-sorcerer-chromatic" class="vditor-anchor" href="#1--sorceress-sorcerer-chromatic"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>Chromatic adaptation probably one of the central concept in color vision. Spatially or temporally related surrounds can have profound effects on the color appearance of illuminated objects.<br />
+According to APA, chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus.</p>
+<p>With this code,you could generate your own illusion either with Von Kries or CMCCAT2000.</p>
+<pre><code>sorceress.sorcerer.chromatic(&quot;yourimage.jpg&quot;,&quot;outputname&quot;,circle=True,method=&quot;CMCCAT2000&quot;,gif=False,duration=10000)
+
+</code></pre>
+<p><code>&quot;yourimage.jpg&quot;</code> = Source image.</p>
+<p><code>&quot;outputname&quot; </code>  = Your output name (You don't need to add extention (jpg,png etc.)</p>
+<p><code>circle=True</code> = Adds a red dot in the middle of pic.</p>
+<p>if <code>gif= True </code>, it will create a gif with output images (recomended)</p>
+<p><code>method</code> you may either use Von Kries chromatic adaptation or Fairchild (1990)</p>
+<p>simple example:</p>
+<p>focus on the red dot (10 second)</p>
+<p><img src="https://user-images.githubusercontent.com/54986652/114435413-ca06a980-9bcc-11eb-831f-37730c77f4a9.gif" alt="png_to_gif" /></p>
+<p><em><a href="https://extension.unh.edu/blog/fall-good-time-plant-trees-and-shrubs">image source</a></em></p>
+<h2 id="2--sorceress-sorcerer-dotill--">2- sorceress.sorcerer.dotill()<a id="vditorAnchor-2--sorceress-sorcerer-dotill--" class="vditor-anchor" href="#2--sorceress-sorcerer-dotill--"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p><img src="./assets/CMCCAT2000output.png" alt="CMCCAT2000output.png" /></p>
+<p>Lateral inhibition is the phenomenon in which a neuron's response to a stimulus is inhibited by the excitation of a neighboring neuron (Bakshi and Ghosh, 2017).Neurons that are firing inhibit the stimulation of surrounding. Accordingly, only the neurons that are most stimulated and least inhibited respond (Cohen, 2011).</p>
+<p>It's an old-fashioned illusion that is probably known the most.</p>
+<pre><code>dotill(hsize,wsize,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
+</code></pre>
+<p><code>hsize</code> and <code>wsize</code> are dimensions of the image. <code>Hlinefreq</code> is the frequency of vertical lines and the <code>wlinefreq</code> is for the horizontal lines. <code>dotcolor</code> is the color of the dots. <code>dotradius</code> is the radius of the circles. <code>horizontalcolor</code> and <code>verticalcolor</code> points the colors of the lines. You may remove those lines with<code> verticallines=False,horizontallines=False</code></p>
+<p>example usage:</p>
+<pre><code>sorceress.sorcerer.dotill(500,500)
+</code></pre>
+<h2 id="3--sorceress-sorcerer-realtimegrid--">3- sorceress.sorcerer.realtimegrid()<a id="vditorAnchor-3--sorceress-sorcerer-realtimegrid--" class="vditor-anchor" href="#3--sorceress-sorcerer-realtimegrid--"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<pre><code>sorceress.sorcerer.realtimegrid(realcolours=True)
+</code></pre>
+<p>perceive black and white real time (with webcam) frames as colorful.</p>
+<p>with <code>realcolours=False</code> code will not calculate the real colors of your frame. I recommend you to use this function with real colors. Illusion is getting powerful if colors of lines separate each other, however,  with <code>realcolours=False</code> means a lot of options are needed in the slide bar and it's not a pleasant view. It is an indicator of how flexible the color perception in the human visual system is.  <a href="https://www.patreon.com/posts/color-grid-28734535">Inspiration</a>:</p>
+<h2 id="4--sorceress-sorcerer-addlines">4- sorceress.sorcerer.addlines<a id="vditorAnchor-4--sorceress-sorcerer-addlines" class="vditor-anchor" href="#4--sorceress-sorcerer-addlines"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>inspired from Akiyoshi Kitaoka.</p>
+<p>Have you seen this illusion before? In bellow, someone is hiding after those grids. <em>Beneath this <em>grids there</em> is <em>more than</em> Grids. Beneath this <em>grids there</em> is an idea. And ideas are bulletproof...</em></p>
+<p><img src="https://user-images.githubusercontent.com/54986652/130432273-c3b11961-484d-44a1-99a9-6821e46f9c10.png" alt="asdddd" /></p>
+<pre><code>sorceress.sorcerer.addlines(img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
+
+</code></pre>
+<p>Add vertical lines to an image</p>
+<p><code>img</code> your input image like <code>&quot;morgo.jpg&quot;</code><br />
+<code>outputname</code> desired output like <code>desired</code><br />
+<code>linecolour1</code> <code>linecolour2</code> and <code>linecolour3</code> are point the colors of lines.<br />
+example usage:<br />
+<code>sorceress.sorcerer.addlines(&quot;vfor.jpg&quot;,&quot;mygrids&quot;,linecolour1=(150,5,5),linecolour2=(10,155,20),linecolour3=(0,15,15)) </code></p>
+<h2 id="5--sorceress-sorcerer-addlinesAlpha">5- sorceress.sorcerer.addlinesAlpha<a id="vditorAnchor-5--sorceress-sorcerer-addlinesAlpha" class="vditor-anchor" href="#5--sorceress-sorcerer-addlinesAlpha"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>Same with &quot;addlines&quot; but this time; line colors are much more stable against the luminance change in the background image. It's because in opencv, when you overlay two images or colors the function called <code>addWeighted</code> mixes the colors in very &quot;small tones&quot; but you probably do not even notice. Still, this function which I called alpha blending, is much more stable to luminance change. Use both, in the same way and see what is differs.</p>
+<pre><code>addlinesAlpha(self,img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0)
+</code></pre>
+<h2 id="6--sorceress-sorcerer-eyecolour">6- sorceress.sorcerer.eyecolour<a id="vditorAnchor-6--sorceress-sorcerer-eyecolour" class="vditor-anchor" href="#6--sorceress-sorcerer-eyecolour"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p><a href="https://michaelbach.de/ot/col-context/index.html">inspried from:</a></p>
+<pre><code>sorceress.sorcerer.eyecolour(&quot;yourimage.jpg&quot;)
+
+</code></pre>
+<p>With this illusion, you perceive the black and white NumPy array as colorful. After you run this code, you need to select the iris manually then push the enter. I didn't want to use the iris detector since it slowing down the script. Just select smaller as much as possible. I've used <code>seamlessClone</code> function from the OpenCV for getting much more realistic results. Your ROI (region of interest that you selected manually) will correspond an eclipse' coordinates which I needed to detect the exact position of the iris.</p>
+<p>example: You probably have seen this lady's left eye as blue, but it's exactly the same color as the right eye.</p>
+<p><img src="./assets/addd.png" alt="addd.png" /></p>
+<h2 id="7--sorceress-sorcerer-dakinPexc">7- sorceress.sorcerer.dakinPexc<a id="vditorAnchor-7--sorceress-sorcerer-dakinPexc" class="vditor-anchor" href="#7--sorceress-sorcerer-dakinPexc"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<pre><code>sorceress.sorcerer.dakinPex(outputname=&quot;myoutput&quot;,dimension=800)
+</code></pre>
+<p><img src="./assets/myoutput.png" alt="myoutput.png" /></p>
+<p>If you see the different tones of gray this illusion is successful. If you perceiving all same, try with the big dimensions.</p>
+<p>I've written this illusion after the read a paper from (Dakin and Bex, 2003).The existence of spatial frequency channels in the visual system is implicated in lightness perception. And I also should note that It has long been known that the brightness of a region of visual space is not related only to that region’s luminance, but depends also upon the luminances of adjacent regions (Von Bekesy, 1968).</p>
+<h2 id="8--sorceress-sorcerer-bruno">8- sorceress.sorcerer.bruno<a id="vditorAnchor-8--sorceress-sorcerer-bruno" class="vditor-anchor" href="#8--sorceress-sorcerer-bruno"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<pre><code>bruno(outputname,circle=False,polycolor=(0, 255, 255), rectcolor=(255, 255, 0), circColor=(0, 0, 255))
+sorceress.sorcerer.bruno(&quot;myimagee&quot;,polycolor=(0,0,255),rectcolor=(34,34,128))
+</code></pre>
+<p><img src="./assets/1631018314614-myimagee.png" alt="myimagee.png" /></p>
+<p>Well in the first time it seems a little bit confusing but in their experiments, Bruno et al. (1997) have shown their participants first the shapes that you've seen on the left then shapes on the right have shown. In this experiment, participants needed to decide quickly as much as possible whether is it the same or not with the previous shape that they had shown. Results have shown that, participants were fast and found it easy to say that the two shapes were the same in the top situation. But they were very slow in the other scenario (It's still same!).</p>
+<h2 id="9--sorceress-sorcerer-dolboeuf">9- sorceress.sorcerer.dolboeuf<a id="vditorAnchor-9--sorceress-sorcerer-dolboeuf" class="vditor-anchor" href="#9--sorceress-sorcerer-dolboeuf"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<pre><code>
+dolboeuf(outputname,circleColor=(0,0,255),kill=False)
+
+sorceress.sorcerer.dolboeuf(&quot;doloeufout&quot;,kill=False)
+</code></pre>
+<p><img src="./assets/1631019152448-doloeufout.png" alt="doloeufout.png" /></p>
+<p>Which red circle is bigger than the other? Probably you know what I'm talking about, two of them in the same radius. This illusion was first created by Belgian psychologist Joseph Remi Leopold Delbœuf in 1865. It's all about the perception of size. Of course, it's not the &quot;all&quot; about the story, the size differences of the inner and outer circle also playing their roles in this illusion... Well, I didn't create a parameter for customizing those circle's (inner and outer) radius but I believe you get the point. If you select the <code>kill=True</code>, the illusion will be destroyed by the two horizontal lines.</p>
+<h2 id="10--sorceress-sorcerer-kanizsa">10- sorceress.sorcerer.kanizsa<a id="vditorAnchor-10--sorceress-sorcerer-kanizsa" class="vditor-anchor" href="#10--sorceress-sorcerer-kanizsa"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<pre><code>kanizsa(outputname,dims,circleColor=(0,0,255))
+
+sorceress.sorcerer.kanizsa(&quot;12outkaniza&quot;,400,circleColor=(34,34,178))
+</code></pre>
+<p><img src="./assets/12outkaniza.png" alt="12outkaniza.png" /></p>
+<p>The Kanizsa illusion is probably one of the most known it was created by an Italian psychologist Gaetano Kanizsa (1913–1993). We can see surfaces, in this example squares (even though there are different kinds of Kanizas), with contours that are not present in the image. It is called illusory contours you can call this illusion also the &quot;subjective contours&quot; (Kanizsa, 1976). The first time I heard the name &quot;Kanizsa&quot; I thought he is Japanese for a long time. Then I learned that Kaniza was actually an Italian! It's because his name is used in many psychology textbooks to describe the Kanizsa triangle and most of those books don't give the full name of Kanizsa.</p>
+<h2 id="11--sorceress-sorcerer-ponzol">11- sorceress.sorcerer.ponzol<a id="vditorAnchor-11--sorceress-sorcerer-ponzol" class="vditor-anchor" href="#11--sorceress-sorcerer-ponzol"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<pre><code>ponzol(outputname,kill=False,line1=(255,0,0),line2=(255,0,0),rectangle1=(0,0,255),rectangle2=(0,0,255))
+
+sorceress.sorcerer.ponzol(&quot;test&quot;,kill=False,line1=(0,0,139),line2=(0,0,139),rectangle1=(0,69,255),rectangle2=(0,80,255))
+</code></pre>
+<p><img src="./assets/test.png" alt="test.png" /></p>
+<p>The Ponzo illusion is old (Ponzo, 1912). But Ponzo actually published his illusion with a scientific paper. Actually, any image with a strong sense of perspective has this. You could see various methods if you search a little bit (especially in railways).</p>
+<h3 id="REFERANCES">REFERANCES<a id="vditorAnchor-REFERANCES" class="vditor-anchor" href="#REFERANCES"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>Bakshi, A., &amp; Ghosh, K. (2017). A Neural Model of Attention and Feedback for Computing Perceived Brightness in Vision. Handbook of Neural Computation, 487–513. doi:10.1016/b978-0-12-811318-9.00026-0</p>
+<p>Bruno N, Bertamini M, Domini F (1997) Amodal completion of partly occluded surfaces: Is there a mosaic stage. J Exp Psychol Hum Percept Perform 23:1412–1426</p>
+<p>Cohen R.A. (2011) Lateral Inhibition. In: Kreutzer J.S., DeLuca J., Caplan B. (eds) Encyclopedia of Clinical Neuropsychology. Springer, New York, NY. <a href="https://doi.org/10.1007/978-0-387-79948-3_1379">https://doi.org/10.1007/978-0-387-79948-3_1379</a></p>
+<p>Dakin S. C. and Bex P. J. 2003 Natural image statistics mediate brightness ‘filling in’**Proc. R. Soc. Lond. B.<strong>270</strong>2341–2348 <a href="http://doi.org/10.1098/rspb.2003.2528">http://doi.org/10.1098/rspb.2003.2528</a></p>
+<p>Kanizsa G (1976) Subjective contours. Sci Am 234:48–52</p>
+<p>Ponzo, M. (1911). &quot;Intorno ad alcune illusioni nel campo delle sensazioni tattili sull'illusione di Aristotele e fenomeni analoghi&quot;.</p>
+<p>Von Bekesy G. (1968) Mach- and Hering-type inhibition invision. Vision Res. 8, 1483-1499.</p>
+</div><script>    const previewElement = document.getElementById('preview');    Vditor.setContentTheme('idea-light', 'https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor/dist/css/content-theme');    Vditor.codeRender(previewElement);    Vditor.highlightRender({"enable":true,"lineNumber":false,"style":"dracula"}, previewElement, 'https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor');    Vditor.mathRender(previewElement, { cdn: 'https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor',math: {"engine":"KaTeX","inlineDigit":true,"macros":{}}});    Vditor.mermaidRender(previewElement, 'https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor', 'light');    Vditor.flowchartRender(previewElement, 'https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor');    Vditor.graphvizRender(previewElement, 'https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor');    Vditor.chartRender(previewElement, 'https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor', 'light');    Vditor.mindmapRender(previewElement, 'https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor', 'light');    Vditor.abcRender(previewElement, 'https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor');    Vditor.mediaRender(previewElement);    Vditor.speechRender(previewElement); </script>  <script src="https://cdn.jsdelivr.net/gh/shuzijun/markdown-editor@1.9/src/main/resources/vditor/dist/js/icons/ant.js"></script></body></html>
