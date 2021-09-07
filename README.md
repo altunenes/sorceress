@@ -13,11 +13,13 @@ pip install sorceress==1.4.1
 import sorceress
 ```
 
-**sorceress **is a python package for creating optical illusions in an easy way.👀️
+**sorceress** is a python package for creating optical illusions in an easy way.
+
+👀️ And It will get update periodically as soon as I create space. 👀️
 
 ## Functions:
 
-1. chromatic()
+1- chromatic()
 
 2- dotill()
 
@@ -215,7 +217,7 @@ The Ponzo illusion is old (Ponzo, 1912). But Ponzo actually published his illusi
 
 
 
-### REFERANCES
+### REFERENCES
 
 Bakshi, A., & Ghosh, K. (2017). A Neural Model of Attention and Feedback for Computing Perceived Brightness in Vision. Handbook of Neural Computation, 487–513. doi:10.1016/b978-0-12-811318-9.00026-0
 
