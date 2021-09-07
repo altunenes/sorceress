@@ -4,6 +4,7 @@ import colour
 import glob
 import os
 import imageio
+import sys
 class sorcerer(object):
 
     @classmethod
@@ -25,10 +26,14 @@ class sorcerer(object):
             test = colour.chromatic_adaptation(XYZ, XYZ_w, XYZ_wr, method="CMCCAT2000", L_A1=L_A, L_A2=L_A)
         elif method=="Von Kries":
             test = colour.chromatic_adaptation(XYZ, XYZ_w, XYZ_wr, method="Von Kries")
+        else:
+            sys.exit("no method selected")
+
         if circle==True:
             cv2.circle(test, (centerx, centery), 4, (0, 0, 255), -1)
         else:
             pass
+
         outputname = str(outputname)
 
         if gif==True:
@@ -46,6 +51,10 @@ class sorcerer(object):
                 for idx, frame in enumerate(frames):
                     print("Adding frame to GIF file: in chromatic folder ", idx + 1)
                     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                    if circle == True:
+                        cv2.circle(rgb_frame, (centerx, centery), 4, (0, 0, 255), -1)
+                    else:
+                        pass
                     writer.append_data(rgb_frame)
                     print("Done")
                     print("Done ", f'{outputname}.png has been added your working dir.')
@@ -135,7 +144,7 @@ class sorcerer(object):
         cv2.createTrackbar('Hthickness', 'tracker', 1, 20, empty)
         cv2.createTrackbar('Wthickness', 'tracker', 1, 20, empty)
 
-        if realcolours==False:
+        if realcolours==True:
             cv2.createTrackbar('Vblue', 'tracker', 1, 255, empty)
             cv2.createTrackbar('Vgreen', 'tracker', 1, 255, empty)
             cv2.createTrackbar('Vred', 'tracker', 1, 255, empty)
