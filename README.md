@@ -72,7 +72,8 @@ _[image source](https://extension.unh.edu/blog/fall-good-time-plant-trees-and-sh
 
 ## 2- sorceress.sorcerer.dotill()
 
-![CMCCAT2000output.png](./assets/CMCCAT2000output.png)
+![CMCCAT2000output](https://user-images.githubusercontent.com/54986652/132358445-bcec9fd6-d3e1-40ba-9f13-e5095f2f573e.png)
+
 
 Lateral inhibition is the phenomenon in which a neuron's response to a stimulus is inhibited by the excitation of a neighboring neuron (Bakshi and Ghosh, 2017).Neurons that are firing inhibit the stimulation of surrounding. Accordingly, only the neurons that are most stimulated and least inhibited respond (Cohen, 2011).
 
@@ -143,7 +144,7 @@ With this illusion, you perceive the black and white NumPy array as colorful. Af
 
 example: You probably have seen this lady's left eye as blue, but it's exactly the same color as the right eye.
 
-![addd.png](./assets/addd.png)
+![addd](https://user-images.githubusercontent.com/54986652/132357900-dc55b47a-b180-4a0d-990b-e8a34b5e1831.png)
 
 
 ## 7- sorceress.sorcerer.dakinPexc
@@ -152,7 +153,8 @@ example: You probably have seen this lady's left eye as blue, but it's exactly t
 sorceress.sorcerer.dakinPex(outputname="myoutput",dimension=800)
 ```
 
-![myoutput.png](./assets/myoutput.png)
+![myoutput](https://user-images.githubusercontent.com/54986652/132358017-3a9b25e7-42e5-42a2-883d-e1627f45b99c.png)
+
 
 If you see the different tones of gray this illusion is successful. If you perceiving all same, try with the big dimensions.
 
@@ -165,7 +167,8 @@ bruno(outputname,circle=False,polycolor=(0, 255, 255), rectcolor=(255, 255, 0), 
 sorceress.sorcerer.bruno("myimagee",polycolor=(0,0,255),rectcolor=(34,34,128))
 ```
 
-![myimagee.png](./assets/1631018314614-myimagee.png)
+![myimagee](https://user-images.githubusercontent.com/54986652/132358073-63dfcdbf-8391-411e-ad9f-2e9a92315a43.png)
+
 
 Well in the first time it seems a little bit confusing but in their experiments, Bruno et al. (1997) have shown their participants first the shapes that you've seen on the left then shapes on the right have shown. In this experiment, participants needed to decide quickly as much as possible whether is it the same or not with the previous shape that they had shown. Results have shown that, participants were fast and found it easy to say that the two shapes were the same in the top situation. But they were very slow in the other scenario (It's still same!).
 
@@ -178,7 +181,8 @@ dolboeuf(outputname,circleColor=(0,0,255),kill=False)
 sorceress.sorcerer.dolboeuf("doloeufout",kill=False)
 ```
 
-![doloeufout.png](./assets/1631019152448-doloeufout.png)
+![doloeufout](https://user-images.githubusercontent.com/54986652/132358117-7378e8c0-5c5b-4699-9f12-8b5bb7cf42f6.png)
+
 
 Which red circle is bigger than the other? Probably you know what I'm talking about, two of them in the same radius. This illusion was first created by Belgian psychologist Joseph Remi Leopold Delbœuf in 1865. It's all about the perception of size. Of course, it's not the "all" about the story, the size differences of the inner and outer circle also playing their roles in this illusion... Well, I didn't create a parameter for customizing those circle's (inner and outer) radius but I believe you get the point. If you select the `kill=True`, the illusion will be destroyed by the two horizontal lines.
 
@@ -190,7 +194,7 @@ kanizsa(outputname,dims,circleColor=(0,0,255))
 sorceress.sorcerer.kanizsa("12outkaniza",400,circleColor=(34,34,178))
 ```
 
-![12outkaniza.png](./assets/12outkaniza.png)
+![12outkaniza](https://user-images.githubusercontent.com/54986652/132358139-6c03c3fc-f26d-44aa-9e61-655e8e1c4810.png)
 
 
 
@@ -204,9 +208,9 @@ ponzol(outputname,kill=False,line1=(255,0,0),line2=(255,0,0),rectangle1=(0,0,255
 sorceress.sorcerer.ponzol("test",kill=False,line1=(0,0,139),line2=(0,0,139),rectangle1=(0,69,255),rectangle2=(0,80,255))
 ```
 
+![test](https://user-images.githubusercontent.com/54986652/132358219-779655d2-36e9-465d-adcd-82c2c2076e35.png)
 
 
-![test.png](./assets/test.png)
 
 The Ponzo illusion is old (Ponzo, 1912). But Ponzo actually published his illusion with a scientific paper. Actually, any image with a strong sense of perspective has this. You could see various methods if you search a little bit (especially in railways).
 
