@@ -72,7 +72,8 @@ _[image source](https://extension.unh.edu/blog/fall-good-time-plant-trees-and-sh
 
 ## 2- sorceress.sorcerer.dotill()
 
-![CMCCAT2000output.png](./assets/CMCCAT2000output.png)
+![CMCCAT2000output](https://user-images.githubusercontent.com/54986652/132358445-bcec9fd6-d3e1-40ba-9f13-e5095f2f573e.png)
+
 
 Lateral inhibition is the phenomenon in which a neuron's response to a stimulus is inhibited by the excitation of a neighboring neuron (Bakshi and Ghosh, 2017).Neurons that are firing inhibit the stimulation of surrounding. Accordingly, only the neurons that are most stimulated and least inhibited respond (Cohen, 2011).
 
