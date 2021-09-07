@@ -30,7 +30,7 @@ class sorcerer(object):
             sys.exit("no method selected")
 
         if circle==True:
-            cv2.circle(test, (centerx, centery), 4, (0, 0, 255), -1)
+            cv2.circle(test, (centerx, centery), 4, (255, 0, 0), -1)
         else:
             pass
 
@@ -51,10 +51,7 @@ class sorcerer(object):
                 for idx, frame in enumerate(frames):
                     print("Adding frame to GIF file: in chromatic folder ", idx + 1)
                     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                    if circle == True:
-                        cv2.circle(rgb_frame, (centerx, centery), 4, (0, 0, 255), -1)
-                    else:
-                        pass
+
                     writer.append_data(rgb_frame)
                     print("Done")
                     print("Done ", f'{outputname}.png has been added your working dir.')
@@ -131,20 +128,22 @@ class sorcerer(object):
         print("Your working directory: ", os.getcwd())
 
     @classmethod
-    def realtimegrid(self,realcolours=False):
+    def realtimegrid(self,realcolours=True):
         def empty(a):  # for our trackbar
             pass
-
         cap = cv2.VideoCapture(0)
         cv2.namedWindow('tracker')
-        cv2.resizeWindow('tracker', 720, 640)  # resize
+        if realcolours == False:
+            cv2.resizeWindow('tracker', 720, 640)  # resize
+        else:
+            cv2.resizeWindow('tracker', 400, 200)
         cv2.createTrackbar('vertical', 'tracker', 1, 300,
                            empty)
         cv2.createTrackbar('horizontal', 'tracker', 1, 300, empty)
         cv2.createTrackbar('Hthickness', 'tracker', 1, 20, empty)
         cv2.createTrackbar('Wthickness', 'tracker', 1, 20, empty)
 
-        if realcolours==True:
+        if realcolours == False:
             cv2.createTrackbar('Vblue', 'tracker', 1, 255, empty)
             cv2.createTrackbar('Vgreen', 'tracker', 1, 255, empty)
             cv2.createTrackbar('Vred', 'tracker', 1, 255, empty)
@@ -169,25 +168,26 @@ class sorcerer(object):
             vertical = cv2.getTrackbarPos('vertical', 'tracker')
             horizon = cv2.getTrackbarPos('horizontal', 'tracker')
             Wthickness = cv2.getTrackbarPos('Wthickness', 'tracker')
-            Hthickness=cv2.getTrackbarPos('Hthickness', 'tracker')
-            bluever=cv2.getTrackbarPos('Vblue', 'tracker')
-            greenver = cv2.getTrackbarPos('Vgreen', 'tracker')
-            redver= cv2.getTrackbarPos('Vred', 'tracker')
-            Hblue=cv2.getTrackbarPos("Hblue",'tracker')
-            Hgreen=cv2.getTrackbarPos('Hgreen', 'tracker')
-            Hred=cv2.getTrackbarPos('Hred', 'tracker')
-            Hblue2=cv2.getTrackbarPos("Hblue2",'tracker')
-            Hgreen2=cv2.getTrackbarPos('Hgreen2', 'tracker')
-            Hred2=cv2.getTrackbarPos('Hred2', 'tracker')
+            Hthickness = cv2.getTrackbarPos('Hthickness', 'tracker')
+            if realcolours == False:
+                bluever = cv2.getTrackbarPos('Vblue', 'tracker')
+                greenver = cv2.getTrackbarPos('Vgreen', 'tracker')
+                redver = cv2.getTrackbarPos('Vred', 'tracker')
+                Hblue = cv2.getTrackbarPos("Hblue", 'tracker')
+                Hgreen = cv2.getTrackbarPos('Hgreen', 'tracker')
+                Hred = cv2.getTrackbarPos('Hred', 'tracker')
+                Hblue2 = cv2.getTrackbarPos("Hblue2", 'tracker')
+                Hgreen2 = cv2.getTrackbarPos('Hgreen2', 'tracker')
+                Hred2 = cv2.getTrackbarPos('Hred2', 'tracker')
 
             width = w / (vertical + 0.0000001)
             height = h / (horizon + 0.0000001)
             if Hthickness == 0:
                 Hthickness = Hthickness + 1
-                print("You can't select thickness as 0, thickness has been converted to 1")
+                # print("You can't select thickness as 0, thickness has been converted to 1")
             if Wthickness == 0:
                 Wthickness = Wthickness + 1
-                print("You can't select thickness as 0, thickness has been converted to 1")
+                # print("You can't select thickness as 0, thickness has been converted to 1")
             for i in range(vertical):
                 for j in range(horizon):
                     first_x, first_y = int(i * width), int(j * height)
@@ -198,9 +198,10 @@ class sorcerer(object):
                                 :]
                     gridcolor = gridcolor.tolist()
                     color = gridcolor
-                    if realcolours==False:
-                        cv2.line(gry2bgr, (first_x, first_y), (last_x, last_y), (bluever,greenver,redver), Wthickness, 1)
-                    elif realcolours==True:
+                    if realcolours == False:
+                        cv2.line(gry2bgr, (first_x, first_y), (last_x, last_y), (bluever, greenver, redver), Wthickness,
+                                 1)
+                    elif realcolours == True:
                         cv2.line(gry2bgr, (first_x, first_y), (last_x, last_y), color, Wthickness, 1)
                     else:
                         raise ValueError(
@@ -216,10 +217,10 @@ class sorcerer(object):
                     gridcolor = img[col_y, col_x, :]
                     gridcolor = gridcolor.tolist()
                     color = gridcolor
-                    if realcolours==False:
-                        cv2.line(gry2bgr, (first_x, first_y), (last_x, last_y), (Hblue,Hgreen,Hred), Hthickness, 1)
+                    if realcolours == False:
+                        cv2.line(gry2bgr, (first_x, first_y), (last_x, last_y), (Hblue, Hgreen, Hred), Hthickness, 1)
 
-                    elif realcolours==True:
+                    elif realcolours == True:
                         cv2.line(gry2bgr, (first_x, first_y), (last_x, last_y), color, Hthickness, 1)
                     else:
                         raise ValueError(
@@ -227,21 +228,14 @@ class sorcerer(object):
             if realcolours == False:
                 for i in range(horizon):
                     for j in range(vertical):
-                        first_x, first_y = int((j+3) * width), int((i+2) * height)
+                        first_x, first_y = int((j + 3) * width), int((i + 2) * height)
                         last_x, last_y = int((j + 1) * width), int(i * height)
 
-
-
                         cv2.line(gry2bgr, (first_x + 1, first_y + 1), (last_x + 1, last_y + 1),
-                                     (Hblue2, Hgreen2, Hred2), Hthickness, 1)
-
-
-
+                                 (Hblue2, Hgreen2, Hred2), Hthickness, 1)
 
             blur = cv2.GaussianBlur(gry2bgr, (7, 7),
                                     0)
-
-
 
             cv2.imshow("cam", gry2bgr)
             cv2.imshow("gausblur", blur)
@@ -250,7 +244,6 @@ class sorcerer(object):
                 break
 
         cv2.destroyAllWindows()
-
 
 
     @classmethod
