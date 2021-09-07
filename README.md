@@ -1,6 +1,6 @@
 # sorceress 1.2
 
-[![Build Status](https://app.travis-ci.com/emportent/sorceress.svg?branch=main)](https://app.travis-ci.com/emportent/sorceress) [![PyPI version](https://badge.fury.io/py/sorceress.svg)](https://badge.fury.io/py/sorceress)
+[![Build Status](https://app.travis-ci.com/emportent/sorceress.svg?branch=main)](https://app.travis-ci.com/emportent/sorceress) [![PyPI version](https://badge.fury.io/py/sorceress.svg)](https://badge.fury.io/py/sorceress) [![Jekyll site CI](https://github.com/emportent/sorceress/actions/workflows/jekyll.yml/badge.svg)](https://github.com/emportent/sorceress/actions/workflows/jekyll.yml)
 
 Install with pip
 
