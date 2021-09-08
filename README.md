@@ -1,12 +1,11 @@
-# sorceress 1.3
+# sorceress 1.4.1
 
 [![Build Status](https://app.travis-ci.com/emportent/sorceress.svg?branch=main)](https://app.travis-ci.com/emportent/sorceress) [![PyPI version](https://badge.fury.io/py/sorceress.svg)](https://badge.fury.io/py/sorceress) [![Jekyll site CI](https://github.com/emportent/sorceress/actions/workflows/jekyll.yml/badge.svg)](https://github.com/emportent/sorceress/actions/workflows/jekyll.yml)
 
 Install with pip
 
 ```
-pip install sorceress==1.3
-
+pip install sorceress==1.4.1
 ```
 
 ```
@@ -14,11 +13,13 @@ pip install sorceress==1.3
 import sorceress
 ```
 
-**sorceress **is a python package for creating optical illusions in an easy way.👀️
+**sorceress** is a python package for creating optical illusions in an easy way.
+
+👀️ And It will get update periodically as soon as I create space. 👀️
 
 ## Functions:
 
-1. chromatic()
+1- chromatic()
 
 2- dotill()
 
@@ -216,7 +217,7 @@ The Ponzo illusion is old (Ponzo, 1912). But Ponzo actually published his illusi
 
 
 
-### REFERANCES
+### REFERENCES
 
 Bakshi, A., & Ghosh, K. (2017). A Neural Model of Attention and Feedback for Computing Perceived Brightness in Vision. Handbook of Neural Computation, 487–513. doi:10.1016/b978-0-12-811318-9.00026-0
 
