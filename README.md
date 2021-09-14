@@ -5,7 +5,7 @@
 Install with pip
 
 ```
-pip install sorceress==1.4.2
+pip install sorceress==1.5
 ```
 
 ```
