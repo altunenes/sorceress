@@ -10,13 +10,13 @@ classifiers = [
 
 setup(
     name='sorceress',
-    version='1.4.2',
+    version='1.4.1',
     description='Optical Illusions with Python',
     long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
     url='https://github.com/emportent/sorceress',
     author='Enes Altun',
     author_email='enesaltun2@gmail.com',
-    python_requires='>=3.6',
+    python_requires='>=3.5',
     license='MIT',
     classifiers=classifiers,
     keywords='Optical-Illusion,illusions,optical',

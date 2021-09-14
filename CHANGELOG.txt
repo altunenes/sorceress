@@ -6,3 +6,13 @@ Change Log
 -First Release
 
 1.2 (7/9/2021)
+--------------
+
+Bug fixes
+
+1.4 (7/9/2021) 
+--------------
+
+New illusions have been added
+
+1.5 (9/14/2021)

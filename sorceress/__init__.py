@@ -4,11 +4,14 @@ import colour
 import glob
 import os
 import imageio
+from matplotlib import pyplot as plt
 import sys
+from PIL import Image
+
 class sorcerer(object):
 
     @classmethod
-    def chromatic(self,img,outputname,circle=True,method="CMCCAT2000",gif=True,Gifduration=3):
+    def chromatic(self,img, outputname, circle=True, method="CMCCAT2000", gif=True, Gifduration=7):
         global chromatic
         img = cv2.imread(img)
         hsize, wsize, _ = img.shape
@@ -21,26 +24,25 @@ class sorcerer(object):
         XYZ_wr = np.array([200, 120, 75])
         L_A = 2000
 
-
-        if method=="CMCCAT2000":
+        if method == "CMCCAT2000":
             test = colour.chromatic_adaptation(XYZ, XYZ_w, XYZ_wr, method="CMCCAT2000", L_A1=L_A, L_A2=L_A)
-        elif method=="Von Kries":
+        elif method == "Von Kries":
             test = colour.chromatic_adaptation(XYZ, XYZ_w, XYZ_wr, method="Von Kries")
         else:
             sys.exit("no method selected")
 
-        if circle==True:
-            cv2.circle(test, (centerx, centery), 4, (255, 0, 0), -1)
+        if circle == True:
+            cv2.circle(test, (centerx, centery), 4, (0, 0, 255), -1)
         else:
             pass
 
         outputname = str(outputname)
 
-        if gif==True:
+        if gif == True:
             os.mkdir('chromatic')
 
             cv2.imwrite("chromatic/"f'{outputname}.png', test)
-            cv2.imwrite("chromatic/"f'{outputname}gry.png',gry)
+            cv2.imwrite("chromatic/"f'{outputname}gry.png', gry)
             frames = []
             imgs = glob.glob("chromatic/*.*")
             for i in imgs:
@@ -57,12 +59,25 @@ class sorcerer(object):
                     print("Done ", f'{outputname}.png has been added your working dir.')
                     print("Your working directory: ", os.getcwd())
 
-        elif gif==False:
-            cv2.imwrite(f'{outputname}.png', test)
-            cv2.imwrite(f'{outputname}gry.png',gry)
-            print("Done ",f'{outputname}.png has been added your working dir.')
-            print("Your working directory: ",os. getcwd())
+            os.mkdir('chromaticPIL')
 
+            cv2.imwrite("chromaticPIL/"f'{outputname}.png', test)
+            cv2.imwrite("chromaticPIL/"f'{outputname}gry.png', gry)
+            frames2 = []
+            imgs2 = glob.glob("chromaticPIL/*.png")
+            for i in imgs2:
+                new_frame2 = Image.open(i)
+                frames2.append(new_frame2)
+
+            frames2[0].save('chromaticPIL/mygifPIL.gif', format='GIF',
+                            append_images=frames2[1:],
+                            save_all=True,
+                            duration=7000, loop=0)
+        elif gif == False:
+            cv2.imwrite(f'{outputname}.png', test)
+            cv2.imwrite(f'{outputname}gry.png', gry)
+            print("Done ", f'{outputname}.png has been added your working dir.')
+            print("Your working directory: ", os.getcwd())
 
     @classmethod
     def dotill(self,hsize,wsize,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
@@ -472,9 +487,9 @@ class sorcerer(object):
 
 
     @classmethod
-    def kanizsa(self,outputname,dims,circleColor=(0,0,255)):
+    def kanizsa(self,outputname, dims=600, circleColor=(0, 0, 255), bgcolor=(255, 255, 255)):
         img = 255 * np.ones((dims, dims, 3), dtype=np.uint8)
-
+        img[:, :, :] = bgcolor
         h, w, _ = img.shape
         a = int(h / 7)
         b = int(h / 3.86)
@@ -485,11 +500,10 @@ class sorcerer(object):
 
         for i in range(0, w, int(w / 2)):
             for j in range(0, w, int(w / 2)):
-                cv2.rectangle(img, (i + a, j + a), (i + a + b, j + a + b), (255, 255, 255), -1)
-
+                cv2.rectangle(img, (i + a, j + a), (i + a + b, j + a + b), bgcolor, -1)
         cv2.imwrite(f'{outputname}.png', img)
-
-
+        cv2.imshow("img", img)
+        cv2.waitKey(0)
         print("DONE! image has been added to your working directory:")
         print("Your working directory: ", os.getcwd())
 
@@ -515,3 +529,188 @@ class sorcerer(object):
 
         print("DONE! image has been added to your working directory:")
         print("Your working directory: ", os.getcwd())
+
+    @classmethod
+    def tAki2001(self,outputname, dimension=700, circlecolour=(0, 255, 255), circleradius=15, bglinecolor=(255, 128, 128),bgcolor=(255, 255, 255)):
+        dimension = int(dimension)
+        img = 255 * np.ones((dimension, dimension, 3), dtype=np.uint8)
+        img[:, :, :] = bgcolor
+        h, w, _ = img.shape
+        for i in range(0, w - 50, 75):
+            for j in range(0, h - 50, 25):
+                cv2.line(img, (30, i), (h - 50, i), bglinecolor, 2)
+                cv2.line(img, (i, 30), (i, h - 50), bglinecolor, 2)
+
+        for i in range(75, h, 150):
+            for j in range(75, h, 150):
+                cv2.circle(img, (j, i), circleradius, circlecolour, -1)
+
+        for i in range(145, h, 150):
+            for j in range(145, h, 150):
+                cv2.circle(img, (j, i), circleradius, circlecolour, -1)
+        for i in range(0, w - 50, 150):
+            cv2.line(img, (5, i + 5), (h - i, h), (0, 0, 0), 7)
+
+        for i in range(150, w - 50, 150):
+            cv2.line(img, (i, 0), (h, h - i), (0, 0, 0), 7)
+        cv2.imwrite(f'{outputname}.png', img)
+
+        print("DONE! image has been added to your working directory:")
+        print("Your working directory: ", os.getcwd())
+        cv2.imshow("img", img)
+        cv2.waitKey(0)
+
+
+    @classmethod
+    def cafeWall(self,outputname, dimension=1200, resize=False, brickcolor=(255, 255, 255), bgcolor=(0, 0, 0)):
+        dimension = int(dimension)
+        img = np.zeros((dimension, dimension, 3), dtype=np.uint8)
+        img[:, :, :] = bgcolor
+        h, w, _ = img.shape
+
+        for i in range(0, h, 200):
+            for j in range(0, w, 160):
+                cv2.rectangle(img, (i + 43, j), (i + 140, j + 77), brickcolor, -1)
+                cv2.rectangle(img, (i + 100, j + 83), (i + 197, j + 157), brickcolor, -1)
+
+        for i in range(0, h, 80):
+            cv2.line(img, (0, i), (w, i), (128, 128, 128), 4)
+
+        cv2.imwrite(f'{outputname}.png', img)
+        if resize == True:
+            resizedimg = cv2.resize(img, (300, 300))
+            cv2.imwrite(f'{outputname}resized.png', resizedimg)
+        else:
+            pass
+
+        print("DONE! image has been added to your working directory:")
+        print("Your working directory: ", os.getcwd())
+        cv2.imshow("img", img)
+        cv2.waitKey(0)
+
+    @classmethod
+    def ccob(self,image, rms=0.5, amplitudespectrum=300, plttitle='output'):
+
+        # loaded the image in grayscale
+        img = cv2.imread(image, 0)
+
+        #  convert image to the -1:+1 range
+        img = (img / 255.0) * 2.0 - 1.0
+
+        # desired RMS (root mean square contrast)
+        rms = rms
+
+        # make the mean to be zero
+        img = img - np.mean(img)
+        # make the standard deviation to be 1
+        img = img / np.std(img)
+        # make the standard deviation to be the desired RMS
+        img = img * rms
+
+        # convert to frequency domain
+        img_freq = np.fft.fft2(img)
+        rows, cols = img.shape
+
+        # calculate amplitude spectrum
+        img_amp = np.fft.fftshift(np.abs(img_freq))
+        amplitudespectrum = int(amplitudespectrum)
+        kerne = np.ones((amplitudespectrum, amplitudespectrum), np.float32) / amplitudespectrum
+
+        lp_filt = cv2.filter2D(img_amp, -1, kerne)
+
+        img_filt = np.fft.fftshift(img_freq) * lp_filt
+
+        # convert back to an image
+        img_new = np.real(np.fft.ifft2(np.fft.ifftshift(img_filt)))
+
+        # convert to mean zero and specified RMS contrast
+        img_new = img_new - np.mean(img_new)
+        img_new = img_new / np.std(img_new)
+        img_new = img_new * rms
+
+        # Apply Lapplacian of Gaussian
+
+        gaus = cv2.GaussianBlur(img_new, (7, 7), 7)
+        laplacian = cv2.Laplacian(gaus, cv2.CV_64F, 3)
+
+        plt.imshow(laplacian, cmap='gray')
+        plt.title(f'{plttitle}')
+        plt.savefig(f'{plttitle}')
+        print(f"DONE! image f'{plttitle} has been added to your working directory:")
+        print("Your working directory: ", os.getcwd())
+
+        plt.show()
+
+    @classmethod
+    def ebbinghaus(self,output, bgcolor=(255, 255, 255), lcradius=22, rcradius=22, lcradius2=25, rcradius2=45):
+        img = 255 * np.ones((400, 800, 3), np.uint8)
+        img[:, :, :] = bgcolor
+        lcradius = int(lcradius)
+        rcradius = int(rcradius)
+        lcradius2 = int(lcradius2)
+        rcradius2 = int(rcradius2)
+
+        cv2.circle(img, (180, 180), lcradius, (0, 0, 0), 3)
+
+        for i in range(0, 8):
+            center = (int(180 + 65 * np.sin(i * np.pi / 4)), int(180 + 65 * np.cos(i * np.pi / 4)))
+            cv2.circle(img, center, lcradius2, (0, 0, 0), 3)
+
+        cv2.circle(img, (620, 180), rcradius, (0, 0, 0), 3)
+
+        for i in range(0, 8):
+            center = (int(620 + 130 * np.sin(i * np.pi / 4)), int(180 + 130 * np.cos(i * np.pi / 4)))
+            cv2.circle(img, center, rcradius2, (0, 0, 0), 3)
+
+        cv2.imshow("img", img)
+        cv2.imwrite(f'{output}.png', img)
+        print(f"DONE! image f'{output} has been added to your working directory:")
+        print("Your working directory: ", os.getcwd())
+        cv2.waitKey(0)
+
+    @classmethod
+    def whiteill(self,dimension=300, version2=False, rect1=(255, 255, 255), rect2=(0, 0, 0), bgrec1=(128, 128, 128),
+                 bgrec2=(128, 128, 128), bg1=(0, 0, 0), bg2=(255, 255, 255), outputname="output"):
+        dimension = int(dimension)
+
+        if version2 == False:
+            img = np.ones((dimension, dimension, 3), dtype=np.uint8)
+            img[:, :, :] = bg1
+            h, w, _ = img.shape
+            cnt1 = int(h / 2)
+            cnt2 = int(w / 2)
+
+            cv2.rectangle(img, (cnt1 - 75, cnt1 - 75), (cnt1 + 60, cnt1 + 70), bgrec1, -1)
+            for i in range(0, h, 75):
+                for j in range(20, h, 75):
+                    cv2.rectangle(img, (i + 5, j), (i + 45, j + 40), rect1, -1)
+
+            img2 = 255 * np.ones((dimension, dimension, 3), dtype=np.uint8)
+            img2[:, :, :] = bg2
+            h, w, _ = img2.shape
+            cnt1 = int(h / 2)
+            cnt2 = int(w / 2)
+            cv2.rectangle(img2, (cnt1 - 75, cnt1 - 75), (cnt1 + 60, cnt1 + 70), bgrec2, -1)
+            for i in range(0, h, 75):
+                for j in range(20, h, 75):
+                    cv2.rectangle(img2, (i + 5, j), (i + 45, j + 40), rect2, -1)
+            cv2.imwrite(f'{outputname}.png', img)
+            cv2.imwrite(f'{outputname}2.png', img2)
+
+            cv2.imshow("img2", img2)
+
+            cv2.imshow("img1", img)
+
+            cv2.waitKey(0)
+        else:
+            img = np.ones((700, 700, 3), dtype=np.uint8)
+            for i in range(0, 700, 40):
+                cv2.line(img, (0, i), (700, i), (255, 255, 255), 15)
+            for i in range(160, int(700 / 2), 40):
+                cv2.line(img, (80, i + 40), (240, i + 40), (128, 128, 128), 15)
+            for i in range(140, int(700 / 2), 40):
+                cv2.line(img, (400, i + 40), (560, i + 40), (128, 128, 128), 15)
+            cv2.imshow("img", img)
+            cv2.imwrite(f'{outputname}vers1.png', img)
+
+            cv2.waitKey(0)
