@@ -46,6 +46,15 @@ rect.style.backgroundColor = 'yellow';
 document.body.appendChild(rect);
 
 
+var rect = document.createElement('div');
+rect.style.position = 'absolute';
+rect.style.left = '205px';
+rect.style.top = '230px';
+rect.style.width = '8';
+rect.style.height = '8px';
+rect.style.backgroundColor = 'red';
+document.body.appendChild(rect);
+
 var rects = document.querySelectorAll('div');
 var direction = 1;
 var speed = 1;
