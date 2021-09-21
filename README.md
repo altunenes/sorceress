@@ -13,6 +13,8 @@ pip install sorceress==1.5
 ```
 #importing
 import sorceress
+#another way to import 
+from sorceress import sorcerer
 ```
 
 **sorceress** is a python package for creating optical illusions in an easy way.
