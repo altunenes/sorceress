@@ -23,7 +23,7 @@ from sorceress import sorcerer
 
 ## Functions:
 
-1- chromatic() 2- dotill() 3- realtimegrid() 4- addlines()
+1- chromatic() 2- dotill() 3- realtimegrid() 4- addlines()  17-footsteps(javascript)
 
 5-addlinesAlpha() 6- eyecolour() 7-dakinPex() 8-bruno()
 
@@ -300,9 +300,22 @@ sorceress.sorcerer.whiteill(version2=True,outputname="whiteillout")
 
 Do I need to say grays are the same? 😄. The scientific explanations are still debated in the literature at first look. A recent study about White's study (Betz et al (2015)) found that the illusion was marginally enhanced by contour adaptation at the test patch edges parallel to the grating. The contrasting behavior seen in the current investigation in response to independent manipulations of collinear or flanking bar luminance is consistent with these findings.
 
+
+## 17-sorceress footsteps
+
+Ok since this is not part of the our python package I have not listed it in the function. First of all, you can access thisi illusion from here and you can access the source codes from this repo.
+[sorceress/footsteps:]( https://altunenes.github.io/sorceress/footsteps)
+
+The footsteps illusion is a motion illusion in which objects appear to move fast or slow even when they move at the same speed. With the link that I share with you above you can the speed and the adjusted colors in the same. In this version, I've added a small red rectangle in the middle. After you adjust colors in the same range (choose colors that have high contrast!) and slow down the animation speed focus to the middle rectangle now it looks like moving back and forth.
+
+The key point of explanation of this illusion is the brightness differences. Between the moving objects and the background is important for the explanation of this illusion (Anstis, 2003).
+
 ### REFERENCES
 
 Aglioti S, DeSouza JFX, Goodale MA (1995) Size-contrast illusions deceive the eye but not the hand. Curr Biol 5:679–685
+
+Anstis S. Moving objects appear to slow down at low contrasts. Neural Netw. 2003 Jun-Jul;16(5-6):933-8. doi: 10.1016/S0893-6080(03)00111-4. PMID: 12850053.
+
 
 Bakshi, A., & Ghosh, K. (2017). A Neural Model of Attention and Feedback for Computing Perceived Brightness in Vision. Handbook of Neural Computation, 487–513. doi:10.1016/b978-0-12-811318-9.00026-0
 
