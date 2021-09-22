@@ -30,7 +30,16 @@ function draw() {
 }
 
 setInterval(draw, 10);
-
+var slider = document.createElement('input');
+slider.type = 'range';
+slider.min = 1;
+slider.max = 100;
+slider.value = lineCount;
+slider.onchange = function() {
+  lineCount = parseInt(this.value);
+  draw();
+};
+document.body.appendChild(slider);
 var colors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black'];
 var colorIndex = 0;
 
