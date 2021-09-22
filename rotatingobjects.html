@@ -1,3 +1,4 @@
+
 <html>
     <head>
         <script>
@@ -14,7 +15,7 @@ var radius = canvas.width / 2;
 var angle = 0;
 var lineWidth = 2;
 var lineColor = 'blue';
-var lineLength = 100;
+var lineLength = 145;
 var lineCount = 45;
 var lineSpacing = lineLength / lineCount;
 var lineAngle = Math.PI * 2 / lineCount;
@@ -32,7 +33,8 @@ function draw() {
   angle += 0.01;
 }
 
-setInterval(draw, 10);
+setInterval(draw, 4);
+
 var slider = document.createElement('input');
 slider.type = 'range';
 slider.min = 1;
@@ -43,15 +45,27 @@ slider.onchange = function() {
   draw();
 };
 document.body.appendChild(slider);
-var colors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black'];
-var colorIndex = 0;
 
-function changeColor() {
+var colors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple', 'black'];
+var colorIndex = 0;
+var colorInterval = setInterval(function() {
   lineColor = colors[colorIndex];
   colorIndex = (colorIndex + 1) % colors.length;
-}
-            
-setInterval(changeColor, 1000);
+}, 1000);
+
+var colorSlider = document.createElement('input');
+colorSlider.type = 'range';
+colorSlider.min = 1;
+colorSlider.max = 100;
+colorSlider.value = 1;
+colorSlider.onchange = function() {
+  clearInterval(colorInterval);
+  colorInterval = setInterval(function() {
+    lineColor = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
+  }, parseInt(this.value));
+};
+document.body.appendChild(colorSlider);
 });
         </script>
     </head>
