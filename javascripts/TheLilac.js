@@ -162,3 +162,25 @@ sentence5.style.top = '10%';
 sentence5.style.right = '55%';
 sentence5.style.transform = 'translate(-50%, -50%)';
 document.body.appendChild(sentence5);
+
+var slider4 = document.createElement('input');
+slider4.type = 'range';
+slider4.min = '0';
+slider4.max = '25';
+slider4.value = '0';
+slider4.style.position = 'absolute';
+slider4.style.top = '25%';
+slider4.style.right = '75%';
+slider4.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(slider4);
+slider4.addEventListener('change', function() {
+  document.body.style.filter = 'blur(' + slider4.value + 'px)';
+});
+
+var sentence6 = document.createElement('div');
+sentence6.innerHTML = 'blur';
+sentence6.style.position = 'absolute';
+sentence6.style.top = '32%';
+sentence6.style.right = '88%';
+sentence6.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(sentence6);
