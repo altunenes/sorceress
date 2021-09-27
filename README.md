@@ -315,7 +315,7 @@ The key point of explanation of this illusion is the brightness differences. Bet
 ## 18-sorceress thelilac
 The Lilac chaser illusion is a visual illusion described by Jeremy L. Hinton in 2005 and was shown by Michael Bach on his website of the same year. For the best results, using a pinkish-violet color is a good choice, but other colors can also be used; in our animation, we'll use two different colors in two concentric rings. I also added a blur section which makes the stronger effect.  You can access this illusion from here [sorceress/footsteps:](https://altunenes.github.io/sorceress/thelilac). I added various methods so you can use different combinations.
 
-![2021-09-28-02-22-54](https://user-images.githubusercontent.com/54986652/134998480-cf2e1fd0-01ff-4625-8ea1-9e33fdaae5ce.gif)
+![ezgf](https://user-images.githubusercontent.com/54986652/134998824-b46dbdf4-a77d-4c94-8f2f-8e95ec30c6f5.gif)
 
 
 
