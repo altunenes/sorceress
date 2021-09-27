@@ -23,9 +23,9 @@ from sorceress import sorcerer
 
 ## Functions:
 
-1- chromatic() 2- dotill() 3- realtimegrid() 4- addlines()  17-footsteps(javascript)
+1- chromatic() 2- dotill() 3- realtimegrid() 4- addlines()  17- footsteps (javascript)
 
-5-addlinesAlpha() 6- eyecolour() 7-dakinPex() 8-bruno()
+5-addlinesAlpha() 6- eyecolour() 7-dakinPex() 8-bruno()    18- thelilac (javascript)
 
 9-dolboeuf() 10-kanizsa() 11-ponzol() 12-tAki2001()
 
@@ -311,6 +311,13 @@ Ok since this is not part of our python package I have not listed it as a functi
 The footsteps illusion is a motion illusion in which objects appear to move fast or slow even when they move at the same speed. With the link that I share with you above you can the speed and the adjusted colors in the same. In this version, I've added a small red rectangle in the middle. After you adjust colors in the same range (choose colors that have high contrast!) and slow down the animation speed focus to the middle rectangle now it looks like moving back and forth.
 
 The key point of explanation of this illusion is the brightness differences. Between the moving objects and the background is important for the explanation of this illusion (Anstis, 2003).
+
+## 18-sorceress thelilac
+The Lilac chaser illusion is a visual illusion described by Jeremy L. Hinton in 2005 and was shown by Michael Bach on his website of the same year. For the best results, using a pinkish-violet color is a good choice, but other colors can also be used; in our animation, we'll use two different colors in two concentric rings. I also added a blur section which makes the stronger effect.  You can access this illusion from here [sorceress/footsteps:](https://altunenes.github.io/sorceress/thelilac). I added various methods so you can use different combinations.
+
+![2021-09-28-02-22-54](https://user-images.githubusercontent.com/54986652/134998480-cf2e1fd0-01ff-4625-8ea1-9e33fdaae5ce.gif)
+
+
 
 ### REFERENCES
 
