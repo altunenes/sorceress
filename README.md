@@ -306,8 +306,7 @@ Do I need to say grays are the same? 😄. The scientific explanations are still
 ![gl](https://user-images.githubusercontent.com/54986652/134406779-173bd034-4f1f-408c-8327-eff8158f1ad7.gif)
 
 
-Ok since this is not part of the our python package I have not listed it in the function. First of all, you can access thisi illusion from here and you can access the source codes from this repo.
-[sorceress/footsteps:]( https://altunenes.github.io/sorceress/footsteps)
+Ok since this is not part of our python package I have not listed it as a function. You can access this illusion from here [sorceress/footsteps:]( https://altunenes.github.io/sorceress/footsteps). I also added source codes of the js, you can find it under the "javascripts" folder.
 
 The footsteps illusion is a motion illusion in which objects appear to move fast or slow even when they move at the same speed. With the link that I share with you above you can the speed and the adjusted colors in the same. In this version, I've added a small red rectangle in the middle. After you adjust colors in the same range (choose colors that have high contrast!) and slow down the animation speed focus to the middle rectangle now it looks like moving back and forth.
 
