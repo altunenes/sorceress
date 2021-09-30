@@ -95,9 +95,11 @@ with `realcolours=False` code will not calculate the real colors of your frame. 
 
 ## 4- sorceress.sorcerer.addlines
 
-inspired from Akiyoshi Kitaoka.
+inspired from prof Akiyoshi Kitaoka.
 
-Have you seen this illusion before? In bellow, someone is hiding after those grids. *Beneath this *grids there* is *more than* Grids. Beneath this *grids there* is an idea. And ideas are bulletproof...*
+Have you seen this illusion before? In bellow, someone is hiding after those grids. *Beneath this *grids there* is *more than* Grids. Beneath this *grids there* is an idea. And ideas are bulletproof...* 
+
+You can see the Vendetta guy if you scroll down and up the page or zoom out the whole image. Or more accurately, apply a Gaussian.
 
 ![asdddd](https://user-images.githubusercontent.com/54986652/130432273-c3b11961-484d-44a1-99a9-6821e46f9c10.png)
 
@@ -106,7 +108,7 @@ sorceress.sorcerer.addlines(img,outputname,linecolour1=(0,255,0),linecolour2=(0,
 
 ```
 
-Add vertical lines to an image
+This function basically adds vertical lines to an image, but it's blending not overlaying! 
 
 `img` your input image like `"morgo.jpg"`
 `outputname` desired output like `desired`
