@@ -27,7 +27,7 @@ from sorceress import sorcerer
 
 5-addlinesAlpha() 6- eyecolour() 7-dakinPex() 8-bruno()    18- thelilac (javascript)
 
-9-dolboeuf() 10-kanizsa() 11-ponzol() 12-tAki2001()
+9-dolboeuf() 10-kanizsa() 11-ponzol() 12-tAki2001()       19- EyeMovements (javascript)
 
 13-cafewall 14-ccob 15-ebbinghaus() 16-whiteill()
 
@@ -319,6 +319,13 @@ The Lilac chaser illusion is a visual illusion described by Jeremy L. Hinton in 
 
 ![ezgf](https://user-images.githubusercontent.com/54986652/134998824-b46dbdf4-a77d-4c94-8f2f-8e95ec30c6f5.gif)
 
+## 19-sorceress EyeMovements
+
+[sorceress/EyeMovements:](https://altunenes.github.io/sorceress/EyeMovements)
+This illusion is quite interesting actually, when I first saw this illusion I immediately thought of the footstep illusion. It works in very similar. You can read the whole Twitter thread for the comments of its original creators.[twitter/Ben Balas:]( https://twitter.com/bjbalas/status/1447927395789516801)
+
+I've customized this illusion with different conditions but I highly recommend the blur section. If you increase the blur of the screen the illusion is much stronger than you've realized.
+![ezgif-2-24a2caac1d7b](https://user-images.githubusercontent.com/54986652/138953801-08b0d2ca-b7a8-4b0a-94a8-e11756b99646.gif)
 
 
 ### REFERENCES
