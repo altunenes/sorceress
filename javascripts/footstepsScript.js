@@ -7,6 +7,10 @@ var canvas = document.createElement('canvas');
    for (var i = 0; i < window.innerWidth; i += 10) {
      ctx.fillRect(i, 0, 5, window.innerHeight);
    }
+
+
+
+
    var rect = document.createElement('div');
    rect.style.position = 'absolute';
    rect.style.left = '150px';
@@ -15,6 +19,8 @@ var canvas = document.createElement('canvas');
    rect.style.height = '65px';
    rect.style.backgroundColor = 'yellow';
    document.body.appendChild(rect);
+
+
    var rect = document.createElement('div');
    rect.style.position = 'absolute';
    rect.style.left = '150px';
@@ -23,6 +29,8 @@ var canvas = document.createElement('canvas');
    rect.style.height = '65px';
    rect.style.backgroundColor = 'blue';
    document.body.appendChild(rect);
+
+
    var rect = document.createElement('div');
    rect.style.position = 'absolute';
    rect.style.left = '250px';
@@ -31,6 +39,8 @@ var canvas = document.createElement('canvas');
    rect.style.height = '65px';
    rect.style.backgroundColor = 'blue';
    document.body.appendChild(rect);
+
+
    var rect = document.createElement('div');
    rect.style.position = 'absolute';
    rect.style.left = '250px';
@@ -39,6 +49,10 @@ var canvas = document.createElement('canvas');
    rect.style.height = '65px';
    rect.style.backgroundColor = 'yellow';
    document.body.appendChild(rect);
+
+
+
+
    var rect = document.createElement('div');
    rect.style.position = 'absolute';
    rect.style.left = '205px';
@@ -47,6 +61,8 @@ var canvas = document.createElement('canvas');
    rect.style.height = '8px';
    rect.style.backgroundColor = 'red';
    document.body.appendChild(rect);
+
+
    var rects = document.querySelectorAll('div');
    var direction = 0.5;
    var speed = 0.5;
@@ -72,6 +88,7 @@ slider.max = 2;
 slider.step = 0.01;
 slider.value = 0.5;
 document.body.appendChild(slider);
+
 function updateSpeed() {
   speed = slider.value;
 }
@@ -81,10 +98,33 @@ var colorPicker = document.createElement('input');
 colorPicker.type = 'color';
 colorPicker.value = '#0000ff';
 document.body.appendChild(colorPicker);
+
 function updateColor() {
   for (var i = 0; i < rects.length; i++) {
     var rect = rects[i];
     rect.style.backgroundColor = colorPicker.value;
   }
 }
+var text = document.createElement('div');
+text.innerHTML = 'Blur';
+text.style.position = 'absolute';
+text.style.fontWeight = 'bold';
+text.style.right = '75%';
+text.style.top = '107%';
+text.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(text);
+
 colorPicker.addEventListener('input', updateColor);
+var slider4 = document.createElement('input');
+slider4.type = 'range';
+slider4.min = '0';
+slider4.max = '25';
+slider4.value = '0';
+slider4.style.position = 'absolute';
+slider4.style.top = '100%';
+slider4.style.right = '65%';
+slider4.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(slider4);
+slider4.addEventListener('change', function() {
+  document.body.style.filter = 'blur(' + slider4.value + 'px)';
+});
