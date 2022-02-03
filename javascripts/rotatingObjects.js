@@ -46,22 +46,19 @@ var canvas = document.createElement('canvas');
 	}
 	setInterval(changeColor, 1000);
 
-var stopButton = document.createElement('button');
-stopButton.innerHTML = 'Stop';
-document.body.appendChild(stopButton);
-stopButton.onclick = function() {
-  clearInterval(draw);
-};
-
 stopButton.onclick = function() {
   while (document.body.firstChild) {
     document.body.removeChild(document.body.firstChild);
   }
   var img = document.createElement('img');
   img.src = 'https://raw.githubusercontent.com/altunenes/sorceress/main/assets/addd.png';
+img.style.position = 'absolute';
+img.style.left = '50%';
+img.style.top = '50%';
+img.style.transform = 'translate(-50%, -50%)';
   document.body.appendChild(img);
 };
-/* change the bg color to black */
+
 document.body.style.backgroundColor = 'White';
 
 var colorPicker = document.createElement('input');
