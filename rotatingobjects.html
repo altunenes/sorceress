@@ -58,6 +58,13 @@ var canvas = document.createElement('canvas');
 
 	setInterval(changeColor, 1000);
 
+var stopButton = document.createElement('button');
+stopButton.innerHTML = 'Stop';
+document.body.appendChild(stopButton);
+stopButton.onclick = function() {
+  clearInterval(draw);
+};
+
 stopButton.onclick = function() {
   while (document.body.firstChild) {
     document.body.removeChild(document.body.firstChild);
