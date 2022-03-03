@@ -376,3 +376,5 @@ Torsten Betz, Robert Shapley, Felix A. Wichmann, Marianne Maertens; Testing the 
 White M (1979) A new effect of pattern on perceived lightness. Perception 8:413–416
 
 Von Bekesy G. (1968) Mach- and Hering-type inhibition invision. Vision Res. 8, 1483-1499.
+
+Zeki S, Watson JD, Frackowiak RS. Going beyond the information given: the relation of illusory visual motion to brain activity. Proc Biol Sci. 1993 Jun 22;252(1335):215-22. doi: 10.1098/rspb.1993.0068. PMID: 8394582.
