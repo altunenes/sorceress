@@ -714,3 +714,41 @@ class sorcerer(object):
             cv2.imwrite(f'{outputname}vers1.png', img)
 
             cv2.waitKey(0)
+    @classmethod
+    def enigma(self,linecolors=(255,255,255), bgcolor=(1, 1, 1),circle1=(76, 0, 153),circle2=(102, 0, 204),
+               centercircle=(0,255,255),
+               outputname="enigma"):
+        x = int(512)
+        y = int(512)
+
+        img = np.ones((x, y, 3), np.uint8)
+        img[:, :, :] = bgcolor
+        h, w, _c = img.shape
+
+        for i in range(0, h, int(h / 43)):
+            # cv2.line(img,(0,i),(512-i,512),(255,255,255),3)
+            cv2.line(img, (i, 0), (h - i, h), linecolors, int(h / 512))
+            cv2.line(img, (0, i), (h, h - i), linecolors, int(h / 512))
+
+        for i in range(0, h, int(h / 43)):
+            # cv2.line(img,(0,i),(512-i,512),(255,255,255),3)
+            cv2.line(img, (i + 1, 0), ((h - 1) - i, h), linecolors, int(h / 512))
+            cv2.line(img, (0, i + 1), (h, (h - 1) - i), linecolors, int(h / 512))
+
+        for i in range(0, h, int(h / 43)):
+            # cv2.line(img,(0,i),(512-i,512),(255,255,255),3)
+            cv2.line(img, (i + 2, 0), ((h - 2) - i, h), linecolors, int(h / 512))
+            cv2.line(img, (0, i + 2), (h, (h - 2) - i), linecolors, int(h / 512))
+
+        for i in range(int(h / 4), int(h / 2), int(h / 8)):
+            cv2.circle(img, (int(h / 2), int(h / 2)), i - 10, circle1, int(h / 26))
+            cv2.circle(img, (int(h / 2), int(h / 2)), i - 12, circle2, int(h / 45))
+
+        cv2.circle(img, (int(h / 2), int(h / 2)), 200, circle1, int(h / 25))
+
+        cv2.circle(img, (int(h / 2), int(h / 2)), 45, centercircle, -1)
+        cv2.circle(img, (int(h / 2), int(h / 2)), 4, (0, 0, 255), -1)
+
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        cv2.imwrite(f'{outputname}gray.png', gray)
+        cv2.imwrite(f'{outputname}.png', img)

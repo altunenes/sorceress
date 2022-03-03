@@ -34,3 +34,5 @@ class Testsorcerer(TestCase):
         return
     def test_whiteill(self):
         return
+    def test_enigma(self):
+        return

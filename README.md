@@ -29,7 +29,7 @@ from sorceress import sorcerer
 
 9-dolboeuf() 10-kanizsa() 11-ponzol() 12-tAki2001()       19- EyeMovements (javascript)
 
-13-cafewall 14-ccob 15-ebbinghaus() 16-whiteill()
+13-cafewall 14-ccob 15-ebbinghaus() 16-whiteill()         20- enigma()
 
 ## 1- sorceress.sorcerer.chromatic
 
@@ -202,7 +202,7 @@ The Ponzo illusion is old (Ponzo, 1912). But Ponzo actually published his illusi
 ## 12- sorceress.sorcerer.tAki2001
 
 ```
-tAki2001(self,outputname, dimension=700, circlecolour=(0, 255, 255), circleradius=15, bglinecolor=(255, 128, 128),bgcolor=(255, 255, 255))
+tAki2001(outputname, dimension=700, circlecolour=(0, 255, 255), circleradius=15, bglinecolor=(255, 128, 128),bgcolor=(255, 255, 255))
 ```
 
 ```
@@ -327,6 +327,18 @@ This illusion is quite interesting actually, when I first saw this illusion I im
 I've customized this illusion with different conditions but I highly recommend the blur section. If you increase the blur of the screen the illusion is much stronger than you've realized.
 ![ezgif-2-24a2caac1d7b](https://user-images.githubusercontent.com/54986652/138953801-08b0d2ca-b7a8-4b0a-94a8-e11756b99646.gif)
 
+
+## 20-sorceress Enigma
+`sorceress.sorcerer.enigma(linecolors=(255,255,255), bgcolor=(1, 1, 1),circle1=(76, 0, 153),circle2=(102, 0, 204),centercircle=(0,255,255), outputname="enigma"):
+`
+
+![enigma.png](./assets/enigma.png)
+
+Fixation of the centre will result in  the perception of rotatory motion in the circles. 
+
+This illusion based on the a paper from the Zeki et al (1993). In their paper, they have shown that human V5 which basically responsible for the perception of motion, even there is no real motion, can be active with such illusions.  So they concluded that activity in a visual area devoted to visual motion might be expected to correlate with the perception of motion, even if there is no real motion.
+When the two colors of circles are equiluminant and the only clues to the existence of moving stripes are color differences, the perception of motion is greatly diminished. These alterations are linked to V5 activity.
+And I also would like to remind you that the illusion may not work for everyone, there are individual differences.
 
 ### REFERENCES
 
