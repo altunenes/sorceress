@@ -7,8 +7,7 @@
 Install with pip
 
 ```
-pip install sorceress==1.5
-```
+pip install sorceress==1.6
 
 ```
 #importing
