@@ -1,4 +1,4 @@
-# sorceress 1.5
+# sorceress 1.6
 
 [![Build Status](https://app.travis-ci.com/altunenes/sorceress.svg?branch=main)](https://app.travis-ci.com/altunenes/sorceress) [![PyPI version](https://badge.fury.io/py/sorceress.svg)](https://badge.fury.io/py/sorceress) [![Jekyll site CI](https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml/badge.svg)](https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml)
 [![Downloads](https://pepy.tech/badge/sorceress)](https://pepy.tech/project/sorceress)
