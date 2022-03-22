@@ -1,5 +1,10 @@
 <html>
     <head>
+	<meta id="viewport"
+      name="viewport"
+      content="width=1366, height=500, initial-scale=0, minimum-scale=0.25" />
+
+	    
         <script>
         document.addEventListener("DOMContentLoaded", function() {
 
@@ -55,16 +60,10 @@ var canvas = document.createElement('canvas');
    rect.style.backgroundColor = 'yellow';
    document.body.appendChild(rect);
 
+   document.getElementById("viewport").setAttribute("content",
+   "initial-scale=0.5; maximum-scale=1.0; user-scalable=0;");
 
-    var metaTag=document.createElement('meta');
-    metaTag.name = "viewport"
-    metaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    document.getElementsByTagName('head')[0].appendChild(metaTag);
-
-    viewport = document.querySelector("meta[name=viewport]");
-    viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
-
-	document.body.style.overflow = 'hidden';
+   document.body.style.overflow = 'hidden';
 
    var rect = document.createElement('div');
    rect.style.position = 'absolute';
