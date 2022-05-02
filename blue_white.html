@@ -1,0 +1,54 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+var neuron = document.createElement('div');
+neuron.style.width = '100px';
+neuron.style.height = '100px';
+neuron.style.backgroundColor = '#00FF00';
+neuron.style.borderRadius = '50%';
+neuron.style.position = 'absolute';
+neuron.style.top = '50%';
+neuron.style.left = '50%';
+neuron.style.marginTop = '-50px';
+neuron.style.marginLeft = '-50px';
+neuron.style.transition = 'all 0.5s';
+document.body.appendChild(neuron);
+
+var neuronSpike = function() {
+  neuron.style.backgroundColor = '#FF0000';
+  neuron.style.width = '150px';
+  neuron.style.height = '150px';
+  neuron.style.marginTop = '-75px';
+  neuron.style.marginLeft = '-75px';
+  setTimeout(function() {
+    neuron.style.backgroundColor = '#00FF00';
+    neuron.style.width = '100px';
+    neuron.style.height = '100px';
+    neuron.style.marginTop = '-50px';
+    neuron.style.marginLeft = '-50px';
+  }, 500);
+};
+
+neuronSpike();
+setInterval(neuronSpike, 1000);
+
+var backgroundColor = '#FFFFFF';
+var changeBackgroundColor = function() {
+  if (backgroundColor === '#FFFFFF') {
+    backgroundColor = '#FF0000';
+  } else {
+    backgroundColor = '#FFFFFF';
+  }
+  document.body.style.backgroundColor = backgroundColor;
+};
+
+changeBackgroundColor();
+setInterval(changeBackgroundColor, 10000);
+});
+        </script>
+    </head>
+
+</html>
