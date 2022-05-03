@@ -70,5 +70,28 @@ var neuronSpike2 = function() {
   }, 500);
 };
 
+var lookHere = document.createElement('div');
+lookHere.innerHTML = 'look here';
+lookHere.style.position = 'absolute';
+lookHere.style.top = '50%';
+lookHere.style.left = '50%';
+lookHere.style.transform = 'translate(-50%, -50%)';
+lookHere.style.fontSize = '100px';
+document.body.appendChild(lookHere);
+var colors = ['yellow', 'green'];
+var colorIndex = 0;
+var size = 100;
+var sizeDirection = -1;
+setInterval(function() {
+  lookHere.style.color = colors[colorIndex];
+  colorIndex = (colorIndex + 1) % colors.length;
+  size += sizeDirection;
+  if (size < 10) {
+    sizeDirection = 1;
+  } else if (size > 100) {
+    sizeDirection = -1;
+  }
+  lookHere.style.fontSize = size + 'px';
+}, 100);
 neuronSpike2();
 setInterval(neuronSpike2, 1000);
