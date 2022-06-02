@@ -59,6 +59,7 @@ for (var i = 0; i < window.innerWidth; i += 24) {
 
 setInterval(moveLines, 10);
 
+document.body.style.backgroundColor = '#00FFFF';
 
 var slider4 = document.createElement('input');
 slider4.type = 'range';
