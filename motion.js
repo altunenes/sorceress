@@ -20,8 +20,8 @@ function moveRectangles() {
 }
 for (var i = 0; i < 10; i++) {
   var redRectangle = document.createElement('div');
-  redRectangle.style.width = '30px';
-  redRectangle.style.height = '30px';
+  redRectangle.style.width = '40px';
+  redRectangle.style.height = '40px';
   redRectangle.style.backgroundColor = 'red';
   redRectangle.style.position = 'absolute';
   redRectangle.style.left = Math.random() * window.innerWidth + 'px';
@@ -47,7 +47,7 @@ function moveLines() {
 
 for (var i = 0; i < window.innerWidth; i += 24) {
   var blackLine = document.createElement('div');
-  blackLine.style.width = '5px';
+  blackLine.style.width = '23px';
   blackLine.style.height = window.innerHeight + 'px';
   blackLine.style.backgroundColor = 'black';
   blackLine.style.position = 'absolute';
@@ -59,7 +59,34 @@ for (var i = 0; i < window.innerWidth; i += 24) {
 
 setInterval(moveLines, 10);
 
-document.body.style.backgroundColor = '#00FFFF';
+
+var reds = [];
+var speed4 = 1;
+
+
+function movereds() {
+  for (var i = 0; i < reds.length; i++) {
+    reds[i].style.left = parseInt(reds[i].style.left) + speed4 + 'px';
+    if (parseInt(reds[i].style.left) > window.innerWidth) {
+      reds[i].style.left = '0px';
+    }
+  }
+}
+
+for (var i = 0; i < 10; i++) {
+  var reds4 = document.createElement('div');
+  reds4.style.width = '10px';
+  reds4.style.height = '10px';
+  reds4.style.backgroundColor = 'black';
+  reds4.style.position = 'absolute';
+  reds4.style.left = i * window.innerWidth + 'px';
+  reds4.style.top = Math.random() * window.innerHeight + 'px';
+  document.body.appendChild(reds4);
+  reds.push(reds4);
+}
+
+setInterval(movereds, 10);
+
 
 var slider4 = document.createElement('input');
 slider4.type = 'range';
