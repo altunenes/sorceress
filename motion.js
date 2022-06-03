@@ -9,6 +9,7 @@ slider2.oninput = function() {
   speed2 = slider2.value;
 };
 document.body.appendChild(slider2);
+document.body.style.overflow = 'hidden';
 
 function moveRectangles() {
   for (var i = 0; i < rectangles.length; i++) {
