@@ -121,3 +121,18 @@ colorPicker2.addEventListener('change', function() {
     rectangles[i].style.backgroundColor = colorPicker2.value;
   }
 });
+var slider = document.createElement('input');
+slider.type = 'range';
+slider.min = '0';
+slider.max = '100';
+slider.value = '0';
+slider.style.position = 'absolute';
+slider.style.top = '1%';
+slider.style.right = '4%';
+slider.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(slider);
+slider.addEventListener('change', function() {
+  for (var i = 0; i < lines.length; i++) {
+    lines[i].style.width = slider.value + 'px';
+  }
+});
