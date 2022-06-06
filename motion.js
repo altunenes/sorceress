@@ -168,3 +168,16 @@ slider6.addEventListener('change', function() {
     lines[i].style.transform = 'rotate(' + slider6.value + 'deg)';
   }
 });
+var button = document.createElement('button');
+button.innerHTML = 'reset rectangles';
+button.style.position = 'absolute';
+button.style.top = '5%';
+button.style.right = '80%';
+button.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(button);
+button.addEventListener('click', function() {
+  for (var i = 0; i < rectangles.length; i++) {
+    rectangles[i].style.left = Math.random() * window.innerWidth + 'px';
+    rectangles[i].style.top = Math.random() * window.innerHeight + 'px';
+  }
+});
