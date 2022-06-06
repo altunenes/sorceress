@@ -136,3 +136,19 @@ slider.addEventListener('change', function() {
     lines[i].style.width = slider.value + 'px';
   }
 });
+var slider5 = document.createElement('input');
+slider5.type = 'range';
+slider5.min = '0';
+slider5.max = '100';
+slider5.value = '0';
+slider5.style.position = 'absolute';
+slider5.style.top = '1%';
+slider5.style.right = '5%';
+slider5.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(slider5);
+slider5.addEventListener('change', function() {
+  for (var i = 0; i < rectangles.length; i++) {
+    rectangles[i].style.width = slider5.value + 'px';
+    rectangles[i].style.height = slider5.value + 'px';
+  }
+});
