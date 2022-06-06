@@ -66,9 +66,9 @@ function moveLines() {
 
 for (var i = 0; i < window.innerWidth; i += 24) {
   var blackLine = document.createElement('div');
-  blackLine.style.width = '13px';
+  blackLine.style.width = '23px';
   blackLine.style.height = window.innerHeight + 'px';
-  blackLine.style.backgroundColor = 'blue';
+  blackLine.style.backgroundColor = 'black';
   blackLine.style.position = 'absolute';
   blackLine.style.left = i + 'px';
   blackLine.style.top = '0px';
