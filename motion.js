@@ -102,3 +102,17 @@ document.body.appendChild(slider4);
 slider4.addEventListener('change', function() {
   document.body.style.filter = 'blur(' + slider4.value + 'px)';
 });
+
+var slider3 = document.createElement('input');
+slider3.type = 'range';
+slider3.min = '0';
+slider3.max = '360';
+slider3.value = '0';
+slider3.style.position = 'absolute';
+slider3.style.top = '1%';
+slider3.style.right = '55%';
+slider3.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(slider3);
+slider3.addEventListener('change', function() {
+  document.body.style.transform = 'rotate(' + slider3.value + 'deg)';
+});
