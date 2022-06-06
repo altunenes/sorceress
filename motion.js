@@ -109,3 +109,15 @@ colorPicker.addEventListener('change', function() {
     lines[i].style.backgroundColor = colorPicker.value;
   }
 });
+var colorPicker2 = document.createElement('input');
+colorPicker2.type = 'color';
+colorPicker2.style.position = 'absolute';
+colorPicker2.style.top = '1%';
+colorPicker2.style.right = '25%';
+colorPicker2.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(colorPicker2);
+colorPicker2.addEventListener('change', function() {
+  for (var i = 0; i < rectangles.length; i++) {
+    rectangles[i].style.backgroundColor = colorPicker2.value;
+  }
+});
