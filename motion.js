@@ -152,3 +152,19 @@ slider5.addEventListener('change', function() {
     rectangles[i].style.height = slider5.value + 'px';
   }
 });
+
+var slider6 = document.createElement('input');
+slider6.type = 'range';
+slider6.min = '0';
+slider6.max = '360';
+slider6.value = '0';
+slider6.style.position = 'absolute';
+slider6.style.top = '1%';
+slider6.style.right = '85%';
+slider6.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(slider6);
+slider6.addEventListener('change', function() {
+  for (var i = 0; i < lines.length; i++) {
+    lines[i].style.transform = 'rotate(' + slider6.value + 'deg)';
+  }
+});
