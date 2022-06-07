@@ -192,4 +192,3 @@ document.body.appendChild(colorPicker3);
 colorPicker3.style.position = 'fixed';
 colorPicker3.style.bottom = '0';
 colorPicker3.style.right = '0';
-  });
