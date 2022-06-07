@@ -181,3 +181,15 @@ button.addEventListener('click', function() {
     rectangles[i].style.top = Math.random() * window.innerHeight + 'px';
   }
 });
+
+var colorPicker3 = document.createElement('input');
+colorPicker3.type = 'color';
+colorPicker3.value = '#ffffff';
+colorPicker3.addEventListener('change', function() {
+  document.body.style.backgroundColor = colorPicker3.value;
+});
+document.body.appendChild(colorPicker3);
+colorPicker3.style.position = 'fixed';
+colorPicker3.style.bottom = '0';
+colorPicker3.style.right = '0';
+  });
