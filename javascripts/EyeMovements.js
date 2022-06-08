@@ -1,7 +1,7 @@
 var img = document.createElement('img');
 
 
-img.src = 'https://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/durchschnittsgesichter/m(01-32)_gr.jpg';
+img.src = 'https://raw.githubusercontent.com/altunenes/MathArt/main/avarage.jpg';
 
 
 
