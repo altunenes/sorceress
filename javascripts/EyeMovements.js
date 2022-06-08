@@ -214,3 +214,29 @@ document.body.appendChild(slider4);
 slider4.addEventListener('change', function() {
   document.body.style.filter = 'blur(' + slider4.value + 'px)';
 });
+
+var button = document.querySelectorAll('button');
+var text = document.querySelectorAll('div');
+var input = document.querySelectorAll('input');
+for (var i = 0; i < button.length; i++) {
+  button[i].style.backgroundColor = '#4CAF50';
+  button[i].style.border = 'none';
+  button[i].style.color = 'white';
+  button[i].style.padding = '15px 32px';
+  button[i].style.textAlign = 'center';
+  button[i].style.textDecoration = 'none';
+  button[i].style.display = 'inline-block';
+  button[i].style.fontSize = '16px';
+  button[i].style.margin = '4px 2px';
+  button[i].style.cursor = 'pointer';
+}
+for (var i = 0; i < text.length; i++) {
+  text[i].style.fontFamily = 'Arial';
+  text[i].style.fontSize = '20px';
+  text[i].style.color = 'black';
+}
+for (var i = 0; i < input.length; i++) {
+  input[i].style.fontFamily = 'Arial';
+  input[i].style.fontSize = '20px';
+  input[i].style.color = 'black';
+}
