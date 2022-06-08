@@ -128,3 +128,17 @@ document.body.appendChild(slider4);
 slider4.addEventListener('change', function() {
   document.body.style.filter = 'blur(' + slider4.value + 'px)';
 });
+var slider2 = document.createElement('input');
+slider2.type = 'range';
+slider2.min = 0;
+slider2.max = 10;
+slider2.step = 0.1;
+slider2.value = 5;
+document.body.appendChild(slider2);
+function updateThickness() {
+  ctx.fillStyle = 'black';
+  for (var i = 0; i < window.innerWidth; i += 10) {
+    ctx.fillRect(i, 0, slider2.value, window.innerHeight);
+  }
+}
+slider2.addEventListener('input', updateThickness);
