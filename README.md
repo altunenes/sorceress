@@ -23,13 +23,13 @@ from sorceress import sorcerer
 
 ## Functions:
 
-1- chromatic() 2- dotill() 3- realtimegrid() 4- addlines()  17- footsteps (javascript)
+1- chromatic() 2- dotill() 3- realtimegrid()  4- addlines()   17-footsteps (javascript)
 
-5-addlinesAlpha() 6- eyecolour() 7-dakinPex() 8-bruno()    18- thelilac (javascript)
+5-addlinesAlpha() 6- eyecolour() 7-dakinPex() 8-bruno()     18- thelilac (javascript)
 
-9-dolboeuf() 10-kanizsa() 11-ponzol() 12-tAki2001()       19- EyeMovements (javascript)
+9-dolboeuf() 10-kanizsa() 11-ponzol() 12-tAki2001()         19- EyeMovements (javascript)
 
-13-cafewall 14-ccob 15-ebbinghaus() 16-whiteill()         20- enigma()
+13-cafewall 14-ccob 15-ebbinghaus() 16-whiteill()           20- enigma()
 
 ## 1- sorceress.sorcerer.chromatic
 
