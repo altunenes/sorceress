@@ -5,8 +5,6 @@
 
 ### Purpose of package
 
-
-
 The purpose of this package is to provide creating optical illusions with simple way. Package written in Python however repo includes also JavaScript.
 
 More importantly, we shouldn't take optical illusions as just fun. Optical illusions help us to research how the visual system of the brain ,which is the most complex mechanism, processes such cues. Most of the optical illusions in this package are seriously researched in the neuroscience literature. And I must say that the "causation" of the most of effects is still debated in the literature according to my humble knowledge. Optical illusions are researching not only in human vision but in other animals. So we can get a lot of insights from an evolutionary perspective.
@@ -29,6 +27,8 @@ from sorceress import sorceress
 ```
 
 ### Features
+
+[For the API, click here](https://altunenes.github.io/sorceress/api_reference/)
 
 + Illusions written in Python
   - chromatic
@@ -55,11 +55,13 @@ from sorceress import sorceress
 
 ## Examples
 
-For each function, I added example of how to use it. You can find them in the documentation. I will show just few examples.
+[In this page](https://altunenes.github.io/sorceress/explanations%20of%20illusions/), you can find all illusions, explanations, code and how to use. I show just few examples on this page.
 
+```
 from sorcerer import sorcerer
 sorcerer.chromatic("myimage.jpg","outputname" ,circle=False, method="CMCCAT2000", gif=True, Gifduration=7)
 sorcerer.addlines("myimage.png","desiredoutputname",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
+```
 
 ## Contribution
 
