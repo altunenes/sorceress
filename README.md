@@ -50,9 +50,17 @@ from sorceress import sorceress
 
 For each function, I added example of how to use it. You can find them in the documentation. I will show just few examples.
 
+
+```
 from sorcerer import sorcerer
+
 sorcerer.chromatic("myimage.jpg","outputname" ,circle=False, method="CMCCAT2000", gif=True, Gifduration=7)
+
 sorcerer.addlines("myimage.png","desiredoutputname",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
+
+
+```
+
 
 ## Contribution
 
