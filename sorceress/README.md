@@ -1,4 +1,7 @@
-# sorceress 1.7 🎉️ 
+# sorceress 1.7
+
+[![PyPI version](https://badge.fury.io/py/sorceress.svg)](https://badge.fury.io/py/sorceress) [![Jekyll site CI](https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml/badge.svg)](https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml)
+[![Downloads](https://pepy.tech/badge/sorceress)](https://pepy.tech/project/sorceress)
 
 ### Purpose of package
 
@@ -8,24 +11,28 @@ More importantly, we shouldn't take optical illusions as just fun. Optical illus
 
 In summary, I think this topic is very important, especially in vision studies.
 
+For all optical illusions check this documentation: [altunenes.github.io/sorceress/](https://altunenes.github.io/sorceress/)
+
 ### Getting started🚀️
 
 Package can be found on pypi hence you can install it with using pip.
 
 ```
-pip install sorceress
+pip install sorceress==1.7
 ```
 
-importing:
-
 ```
+#importing
+import sorceress
+#another way to import
 from sorceress import sorceress
 ```
 
 ### Features
 
-+ Illusions written in Python
+[For the API, click here](https://altunenes.github.io/sorceress/api_reference/)
 
++ Illusions written in Python
   - chromatic
   - dotill
   - realtimegrid
@@ -42,15 +49,15 @@ from sorceress import sorceress
   - whiteill
   - enigma
   - blackhole
-+ Illusions written in JavaScript
++ **Illusions written in JavaScript**
 
-  - footsteps
-  - thelilac
-  - EyeMovements
+- footsteps
+- thelilac
+- EyeMovements
 
 ## Examples
 
-For each function, I added example of how to use it. You can find them in the documentation. I will show just few examples.
+[In this page](https://altunenes.github.io/sorceress/explanations%20of%20illusions/), you can find all illusions, explanations, code and how to use. I show just few examples on this page.
 
 ```
 from sorcerer import sorcerer
@@ -58,11 +65,7 @@ sorcerer.chromatic("myimage.jpg","outputname" ,circle=False, method="CMCCAT2000"
 sorcerer.addlines("myimage.png","desiredoutputname",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
 ```
 
-illusions that written in JavaScript can be found in the repo. You can find them in the folder called "js". You can run them in the browser or in the node.js.
-
-Check documentation for all functions.
-
-## Contribution ❤️ 
+## Contribution
 
 Any contribution, bug report, suggestion is always welcome.
 

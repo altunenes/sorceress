@@ -11,6 +11,8 @@ More importantly, we shouldn't take optical illusions as just fun. Optical illus
 
 In summary, I think this topic is very important, especially in vision studies.
 
+For all optical illusions check this documentation: [altunenes.github.io/sorceress/](https://altunenes.github.io/sorceress/)
+
 ### Getting started🚀️
 
 Package can be found on pypi hence you can install it with using pip.
