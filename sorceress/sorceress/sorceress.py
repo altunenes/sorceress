@@ -896,7 +896,6 @@ def blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circ
                 for j in range(0, width, circle_size *3):
                     cv2.circle(img, (i, j), circle_size, (b, g, r), -1)
 
-    img= cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     cv2.imshow("img", img)
     cv2.imwrite(f'{outputname}.png', img)
     cv2.waitKey(0)
