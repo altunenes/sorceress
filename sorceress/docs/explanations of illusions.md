@@ -281,6 +281,8 @@ And I also would like to remind you that the illusion may not work for everyone,
 
 ## 21-sorcerer.blackhole
 
+![blackenigma](./assets/blackenigma.png)
+
 `blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circle_color=(0, 0, 0),kill=False) `
 
 This is a recent optical illusion that was described by Laeng et al (2022). According to the paper, the change rates of pupil diameters were significantly related to the illusory motion phenomenology only with the black holes. You can try it with the other colors though.
