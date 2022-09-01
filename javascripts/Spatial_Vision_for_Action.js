@@ -91,13 +91,13 @@ document.body.appendChild(circle2);
 
 
 var changeDirectionButton = document.createElement('button');
-changeDirectionButton.innerHTML = 'Change direction';
+changeDirectionButton.innerHTML = 'bg direction';
 changeDirectionButton.style.position = 'absolute';
-changeDirectionButton.style.left = '8%';
-changeDirectionButton.style.top = '80%';
+changeDirectionButton.style.left = '5%';
+changeDirectionButton.style.top = '85%';
 changeDirectionButton.style.transform = 'translate(-50%, -50%)';
 changeDirectionButton.onclick = function() {
-  if (changeDirectionButton.innerHTML == 'Change direction') {
+  if (changeDirectionButton.innerHTML == 'bg direction') {
     changeDirectionButton.innerHTML = 'direction1';
     clearInterval(animation12);
     animation12 = setInterval(function() {
@@ -124,7 +124,7 @@ changeDirectionButton.onclick = function() {
       }
     }, 10);
   } else {
-    changeDirectionButton.innerHTML = 'Change direction';
+    changeDirectionButton.innerHTML = 'bg direction';
     clearInterval(animation12);
     animation12 = setInterval(function() {
       for (var i = 0; i < dots.length; i++) {
@@ -324,7 +324,7 @@ document.body.appendChild(bgColorPicker);
 
 
 changeDirectionButton.style.fontFamily = 'sans-serif';
-changeDirectionButton.style.fontSize = '20px';
+changeDirectionButton.style.fontSize = '10px';
 changeDirectionButton.style.color = 'white';
 changeDirectionButton.style.backgroundColor = 'black';
 changeDirectionButton.style.border = 'none';
@@ -366,3 +366,57 @@ document.body.appendChild(dustSizeText);
 dustSizeText.style.fontFamily = 'sans-serif';
 dustSizeText.style.fontSize = '8px';
 dustSizeText.style.color = 'white';
+
+var changeCircleDirectionButton = document.createElement('button');
+changeCircleDirectionButton.innerHTML = 'circle direction';
+changeCircleDirectionButton.style.position = 'absolute';
+changeCircleDirectionButton.style.left = '92%';
+changeCircleDirectionButton.style.top = '85%';
+changeCircleDirectionButton.style.transform = 'translate(-50%, -50%)';
+changeCircleDirectionButton.onclick = function() {
+  if (changeCircleDirectionButton.innerHTML == 'clockwise') {
+    changeCircleDirectionButton.innerHTML = 'counterclockwise';
+    clearInterval(animation);
+    animation = setInterval(function() {
+      angle -= 0.01 * speedSlider.value / 50;
+      circle1X = centerX + radius * Math.cos(angle);
+      circle1Y = centerY + radius * Math.sin(angle);
+      circle2X = centerX + radius * Math.cos(angle + Math.PI);
+      circle2Y = centerY + radius * Math.sin(angle + Math.PI);
+      circle1.style.left = circle1X + 'px';
+      circle1.style.top = circle1Y + 'px';
+      circle2.style.left = circle2X + 'px';
+      circle2.style.top = circle2Y + 'px';
+      circle1.style.width = (14 + Math.sin(angle) * 10) + 'px';
+      circle1.style.height = (14 + Math.sin(angle) * 10) + 'px';
+      circle2.style.width = (32 - Math.sin(angle) * 10) + 'px';
+      circle2.style.height = (32 - Math.sin(angle) * 10) + 'px';
+    }, 10);
+  } else {
+    changeCircleDirectionButton.innerHTML = 'clockwise';
+    clearInterval(animation);
+    animation = setInterval(function() {
+      angle += 0.01 * speedSlider.value / 50;
+      circle1X = centerX + radius * Math.cos(angle);
+      circle1Y = centerY + radius * Math.sin(angle);
+      circle2X = centerX + radius * Math.cos(angle + Math.PI);
+      circle2Y = centerY + radius * Math.sin(angle + Math.PI);
+      circle1.style.left = circle1X + 'px';
+      circle1.style.top = circle1Y + 'px';
+      circle2.style.left = circle2X + 'px';
+      circle2.style.top = circle2Y + 'px';
+      circle1.style.width = (14 + Math.sin(angle) * 10) + 'px';
+      circle1.style.height = (14 + Math.sin(angle) * 10) + 'px';
+      circle2.style.width = (32 - Math.sin(angle) * 10) + 'px';
+      circle2.style.height = (32 - Math.sin(angle) * 10) + 'px';
+    }, 10);
+  }
+};
+document.body.appendChild(changeCircleDirectionButton);
+changeCircleDirectionButton.style.fontFamily = 'sans-serif';
+changeCircleDirectionButton.style.fontSize = '10px';
+changeCircleDirectionButton.style.color = 'white';
+changeCircleDirectionButton.style.backgroundColor = 'black';
+changeCircleDirectionButton.style.border = 'none';
+changeCircleDirectionButton.style.padding = '10px 20px';
+changeCircleDirectionButton.style.borderRadius = '5px';
