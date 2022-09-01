@@ -355,3 +355,14 @@ document.body.appendChild(bgAnimationText);
 bgAnimationText.style.fontFamily = 'sans-serif';
 bgAnimationText.style.fontSize = '8px';
 bgAnimationText.style.color = 'white';
+
+var dustSizeText = document.createElement('div');
+dustSizeText.innerHTML = 'dust size';
+dustSizeText.style.position = 'absolute';
+dustSizeText.style.left = '20%';
+dustSizeText.style.top = '8%';
+dustSizeText.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(dustSizeText);
+dustSizeText.style.fontFamily = 'sans-serif';
+dustSizeText.style.fontSize = '8px';
+dustSizeText.style.color = 'white';
