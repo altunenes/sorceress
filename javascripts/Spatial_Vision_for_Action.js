@@ -321,3 +321,11 @@ bgColorPicker.oninput = function() {
   document.body.style.backgroundColor = bgColorPicker.value;
 };
 document.body.appendChild(bgColorPicker);
+
+changeDirectionButton.style.fontFamily = 'sans-serif';
+changeDirectionButton.style.fontSize = '20px';
+changeDirectionButton.style.color = 'white';
+changeDirectionButton.style.backgroundColor = 'black';
+changeDirectionButton.style.border = 'none';
+changeDirectionButton.style.padding = '10px 20px';
+changeDirectionButton.style.borderRadius = '5px';
