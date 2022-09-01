@@ -93,8 +93,8 @@ document.body.appendChild(circle2);
 var changeDirectionButton = document.createElement('button');
 changeDirectionButton.innerHTML = 'Change direction';
 changeDirectionButton.style.position = 'absolute';
-changeDirectionButton.style.left = '4%';
-changeDirectionButton.style.top = '85%';
+changeDirectionButton.style.left = '8%';
+changeDirectionButton.style.top = '80%';
 changeDirectionButton.style.transform = 'translate(-50%, -50%)';
 changeDirectionButton.onclick = function() {
   if (changeDirectionButton.innerHTML == 'Change direction') {
@@ -261,12 +261,12 @@ circle1ColorPicker.oninput = function() {
 };
 document.body.appendChild(circle1ColorPicker);
 var circle1ColorPickerText = document.createElement('div');
-circle1ColorPickerText.innerHTML = 'Circle 1 color';
+circle1ColorPickerText.innerHTML = 'C1color';
 circle1ColorPickerText.style.position = 'absolute';
 
 
 circle1ColorPickerText.style.left = '15%';
-circle1ColorPickerText.style.top = '89%';
+circle1ColorPickerText.style.top = '91%';
 circle1ColorPickerText.style.transform = 'translate(-50%, -50%)';
 document.body.appendChild(circle1ColorPickerText);
 circle1ColorPicker.style.position = 'absolute';
@@ -282,10 +282,10 @@ circle2ColorPicker.oninput = function() {
 };
 document.body.appendChild(circle2ColorPicker);
 var circle2ColorPickerText = document.createElement('div');
-circle2ColorPickerText.innerHTML = 'Circle 2 color';
+circle2ColorPickerText.innerHTML = 'C2color';
 circle2ColorPickerText.style.position = 'absolute';
 circle2ColorPickerText.style.left = '80%';
-circle2ColorPickerText.style.top = '89%';
+circle2ColorPickerText.style.top = '92%';
 circle2ColorPickerText.style.transform = 'translate(-50%, -50%)';
 document.body.appendChild(circle2ColorPickerText);
 circle2ColorPicker.style.position = 'absolute';
@@ -322,6 +322,7 @@ bgColorPicker.oninput = function() {
 };
 document.body.appendChild(bgColorPicker);
 
+
 changeDirectionButton.style.fontFamily = 'sans-serif';
 changeDirectionButton.style.fontSize = '20px';
 changeDirectionButton.style.color = 'white';
@@ -329,3 +330,17 @@ changeDirectionButton.style.backgroundColor = 'black';
 changeDirectionButton.style.border = 'none';
 changeDirectionButton.style.padding = '10px 20px';
 changeDirectionButton.style.borderRadius = '5px';
+
+circle1ColorPickerText.style.fontFamily = 'sans-serif';
+circle1ColorPickerText.style.fontSize = '10px';
+circle1ColorPickerText.style.color = 'white';
+
+
+
+circle2ColorPickerText.style.fontFamily = 'sans-serif';
+circle2ColorPickerText.style.fontSize = '10px';
+circle2ColorPickerText.style.color = 'white';
+
+dustColorPickerText.style.fontFamily = 'sans-serif';
+dustColorPickerText.style.fontSize = '10px';
+dustColorPickerText.style.color = 'white';
