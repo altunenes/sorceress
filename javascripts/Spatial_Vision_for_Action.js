@@ -344,3 +344,14 @@ circle2ColorPickerText.style.color = 'white';
 dustColorPickerText.style.fontFamily = 'sans-serif';
 dustColorPickerText.style.fontSize = '10px';
 dustColorPickerText.style.color = 'white';
+
+var bgAnimationText = document.createElement('div');
+bgAnimationText.innerHTML = 'add dusts';
+bgAnimationText.style.position = 'absolute';
+bgAnimationText.style.left = '5%';
+bgAnimationText.style.top = '8%';
+bgAnimationText.style.transform = 'translate(-50%, -50%)';
+document.body.appendChild(bgAnimationText);
+bgAnimationText.style.fontFamily = 'sans-serif';
+bgAnimationText.style.fontSize = '8px';
+bgAnimationText.style.color = 'white';
