@@ -31,13 +31,36 @@ var neuron = document.createElement('div');
    neuronSpike();
    setInterval(neuronSpike, 1000);
 
-
-   var backgroundColor = '#FFFFFF';
+   var redColorPicker = document.createElement('input');
+redColorPicker.type = 'color';
+redColorPicker.value = '#FF0000';
+redColorPicker.style.position = 'absolute';
+redColorPicker.style.top = '80';
+redColorPicker.style.left = '30';
+redColorPicker.style.width = '10%';
+redColorPicker.style.zIndex = '100';
+redColorPicker.oninput = function() {
+  document.body.style.backgroundColor = redColorPicker.value;
+};
+document.body.appendChild(redColorPicker);
+var whiteColorPicker = document.createElement('input');
+whiteColorPicker.type = 'color';
+whiteColorPicker.value = '#FFFFFF';
+whiteColorPicker.style.position = 'absolute';
+whiteColorPicker.style.top = '190';
+whiteColorPicker.style.left = '30';
+whiteColorPicker.style.width = '10%';
+whiteColorPicker.style.zIndex = '100';
+whiteColorPicker.oninput = function() {
+  document.body.style.backgroundColor = whiteColorPicker.value;
+};
+document.body.appendChild(whiteColorPicker);
+   var backgroundColor = redColorPicker.value;
    var changeBackgroundColor = function() {
-     if (backgroundColor === '#FFFFFF') {
-       backgroundColor = '#FF0000';
+     if (backgroundColor === redColorPicker.value) {
+       backgroundColor = whiteColorPicker.value;
      } else {
-       backgroundColor = '#FFFFFF';
+       backgroundColor = redColorPicker.value;
      }
      document.body.style.backgroundColor = backgroundColor;
    };
@@ -77,31 +100,7 @@ var neuron = document.createElement('div');
    };
 
 
-   var lookHere = document.createElement('div');
-   lookHere.innerHTML = 'look here';
-   lookHere.style.position = 'absolute';
-   lookHere.style.top = '50%';
-   lookHere.style.left = '50%';
-   lookHere.style.transform = 'translate(-50%, -50%)';
-   lookHere.style.fontSize = '100px';
-   document.body.appendChild(lookHere);
-   var colors = ['yellow', 'green'];
-   var colorIndex = 0;
-   var size = 100;
-   var sizeDirection = -1;
-   setInterval(function() {
-     lookHere.style.color = colors[colorIndex];
-     colorIndex = (colorIndex + 1) % colors.length;
-     size += sizeDirection;
-     if (size < 10) {
-       sizeDirection = 1;
-     } else if (size > 100) {
-       sizeDirection = -1;
-     }
-     lookHere.style.fontSize = size + 'px';
-   }, 100);
-   neuronSpike2();
-   setInterval(neuronSpike2, 1000);
+   
 
 var neuron3 = document.createElement('div');
    neuron3.style.width = '100px';
@@ -179,7 +178,7 @@ slider.value = 0;
 slider.style.position = 'absolute';
 slider.style.top = '0';
 slider.style.left = '0';
-slider.style.width = '100%';
+slider.style.width = '100';
 slider.style.zIndex = '100';
 slider.oninput = function() {
   document.body.style.filter = 'blur(' + slider.value + 'px)';
@@ -188,7 +187,7 @@ document.body.appendChild(slider);
 
 var neurons = document.getElementsByTagName('div');
 var angle = 0;
-var radius = 200;
+var radius = 300;
 var centerX = window.innerWidth / 2;
 var centerY = window.innerHeight / 2;
 var angleIncrement = Math.PI / 180;
@@ -211,9 +210,9 @@ slider.min = 0;
 slider.max = 100;
 slider.value = 0;
 slider.style.position = 'absolute';
-slider.style.top = '15';
-slider.style.left = '15';
-slider.style.width = '100%';
+slider.style.top = '10';
+slider.style.left = '10';
+slider.style.width = '10%';
 slider.style.zIndex = '100';
 slider.oninput = function() {
   angleIncrement = Math.PI / 180 * slider.value;
