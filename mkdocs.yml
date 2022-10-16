@@ -10,7 +10,7 @@ nav:
     - footsteps: steps.html
     - eyes: eyes.html
     - lilac: lilac.html
-    - motion: spatialmotion.htnl
+    - motion: spatialmotion.html
 theme:
   name: material
   features:
