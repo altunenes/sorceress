@@ -332,5 +332,6 @@ A recent optical illusion that described by the Laeng et al (2022).
      grids; adds both vertical and horizontal lines to the image
      width: width of lines
      frequency: frequency of lines
+     saturation: saturation of lines, don't use too high values (1 to 20 is recommended)
     """
 ```

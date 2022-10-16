@@ -1,6 +1,6 @@
 #A collection of functions for the sorceress module that is written in python language
 
-###############################  version: 1.7.3,     ###############################
+###############################  version: 1.7.5,     ###############################
 ############################### Author: Enes Altun  ###############################
 
 import cv2
@@ -900,18 +900,20 @@ def blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circ
     cv2.imwrite(f'{outputname}.png', img)
     cv2.waitKey(0)
 
-def colorgrids(img,style="vertical",width=4,frequency=1):
+def colorgrids(img,style="vertical",width=4,frequency=1,saturation=0):
     """
     This function applies Color assimilation Grid Illusion.
     :param img: input image
     :param style: style of mask, "vertical","horizontal","gaussian","grids"
     :param width: width of lines
     :param frequency: frequency of lines
+    :param saturation: saturation of lines
     :return:
     """
     img=cv2.imread(img)
     width=int(width)
     frequency=int(frequency)
+    s=int(saturation)
     img_gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     mask=np.ones(img.shape, np.uint8) * 255
     if style=="vertical":
@@ -941,5 +943,8 @@ def colorgrids(img,style="vertical",width=4,frequency=1):
                 final[i,j,0] = img_gray[i,j]
                 final[i,j,1] = img_gray[i,j]
                 final[i,j,2] = img_gray[i,j]
+    hsv=cv2.cvtColor(final,cv2.COLOR_BGR2HSV)
+    hsv[:,:,1]=np.where(hsv[:,:,1]>100,hsv[:,:,1],hsv[:,:,1]+s)
+    final=cv2.cvtColor(hsv,cv2.COLOR_HSV2BGR)
     cv2.imwrite("gridillusion.png",final)
     print("image saved as gridillusion.png")

@@ -36,7 +36,7 @@ Package can be found on pypi hence you can install it via pip.
 
 ::
 
-   pip install sorceress==1.7
+   pip install sorceress
 
 ::
 

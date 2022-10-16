@@ -20,7 +20,7 @@ For all optical illusions check this documentation: [altunenes.github.io/sorcere
 Package can be found on pypi hence you can install it via pip.
 
 ```
-pip install sorceress==1.7
+pip install sorcer
 ```
 
 ```
