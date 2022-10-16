@@ -910,7 +910,6 @@ def colorgrids(img,style="vertical",width=4,frequency=1):
     :return:
     """
     img=cv2.imread(img)
-    image_name=img.split("/")[-1]
     width=int(width)
     frequency=int(frequency)
     img_gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
