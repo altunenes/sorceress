@@ -17,10 +17,10 @@ For all optical illusions check this documentation: [altunenes.github.io/sorcere
 
 ### Getting started🚀️
 
-Package can be found on pypi hence you can install it via pip.
+The package can be found on PyPI hence you can install it via pip.
 
 ```
-pip install sorceress==1.7
+pip install sorceress
 ```
 
 ```
@@ -61,7 +61,7 @@ from sorceress import sorceress
 
 ## Examples
 
-[In this page](https://altunenes.github.io/sorceress/explanations%20of%20illusions/), you can find all illusions, explanations, code and how to use. I show just few examples on this page.
+[In this page](https://altunenes.github.io/sorceress/explanations%20of%20illusions/), you can find all illusions, explanations, code, and how to use it. I show just a few examples on this page.
 
 ```
 from sorcerer import sorcerer
@@ -71,7 +71,7 @@ sorcerer.addlines("myimage.png","desiredoutputname",linecolour1=(0,255,0),lineco
 
 ## Contribution
 
-Any contribution, bug report, suggestion is always welcome.
+Any contribution, bug report, or suggestion is always welcome.
 
 ##Author
 

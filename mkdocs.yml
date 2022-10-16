@@ -1,0 +1,20 @@
+site_name: sorceress
+site_url: https://github.com/altunenes/sorceress
+nav:
+  - Home: index.md
+  - Contribution: contribution.md
+  - API: api_reference.md
+  - explanations: explanations of illusions.md
+  - Javascripts:
+    - about: jsanimations.md
+    - footsteps: steps.html
+    - eyes: eyes.html
+    - lilac: lilac.html
+    - motion: spatialmotion.htnl
+theme:
+  name: material
+  features:
+    -search.suggests
+    - content.tabs.link
+plugins:
+  - search
