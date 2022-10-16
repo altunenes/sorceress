@@ -287,6 +287,16 @@ And I also would like to remind you that the illusion may not work for everyone,
 
 This is a recent optical illusion that was described by Laeng et al (2022). According to the paper, the change rates of pupil diameters were significantly related to the illusory motion phenomenology only with the black holes. You can try it with the other colors though.
 
+## 22-sorcerer.colorgrids
+![colorgrids](./assets/final.png)
+
+Actually, I'm not %100 sure about this illusion because I couldn't find any paper about it. But I've seen it on Twitter and I thought it's worth sharing with you. Moreover, the backend procedure it's basically adding the actual colors to the image as lines, circles, etc.
+
+I know even though a small amount of the lines is enough for the perception of the color of the whole image. But I m not %100 sure should we take this as an illusion or not. I would be happy if you can share your thoughts about this illusion.
+
+Øyvind Kolås
+[Inspiration, Øyvind Kolås](https://www.patreon.com/posts/color-grid-28734535):
+
 ### REFERENCES
 
 Aglioti S, DeSouza JFX, Goodale MA (1995) Size-contrast illusions deceive the eye but not the hand. Curr Biol 5:679–685

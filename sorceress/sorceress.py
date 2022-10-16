@@ -1,6 +1,6 @@
 #A collection of functions for the sorceress module that is written in python language
 
-###############################  version: 1.7.1     ###############################
+###############################  version: 1.7.2     ###############################
 ############################### Author: Enes Altun  ###############################
 
 import cv2
@@ -899,3 +899,48 @@ def blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circ
     cv2.imshow("img", img)
     cv2.imwrite(f'{outputname}.png', img)
     cv2.waitKey(0)
+
+def colorgrids(img,style="vertical",width=4,frequency=1):
+    """
+    This function applies Color assimilation Grid Illusion.
+    :param img: input image
+    :param style: style of mask, "vertical","horizontal","gaussian","grids"
+    :param width: width of lines
+    :param frequency: frequency of lines
+    :return:
+    """
+    img=cv2.imread(img)
+    image_name=img.split("/")[-1]
+    width=int(width)
+    frequency=int(frequency)
+    img_gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    mask=np.ones(img.shape, np.uint8) * 255
+    if style=="vertical":
+        for i in range(0,mask.shape[1],frequency):
+            cv2.line(mask ,(i,0),(i,mask.shape[0]),(0,0,0),width)
+    elif style=='horizontal':
+        for i in range(0,mask.shape[0],frequency):
+            cv2.line(mask ,(0,i),(mask.shape[1],i),(0,0,0),width)
+    elif style=='gaussian':
+        for i in range(0,mask.shape[0],frequency):
+            for j in range(0,mask.shape[1],frequency):
+                if np.random.randint(0,2)==1:
+                    cv2.circle(mask ,(j+4,i+4),width,(0,0,0),-1)
+    elif style=='grids':
+        for i in range(0,mask.shape[1],frequency):
+             for j in range(0,mask.shape[0],frequency):
+                cv2.line(mask ,(i,0),(i,mask.shape[0]),(0,0,0),width)
+                cv2.line(mask ,(0,j),(mask.shape[1],j),(0,0,0),width)
+    else:
+        print('mask type not supported')
+    masked_bw=cv2.bitwise_not(mask)
+    masked_bw=masked_bw[:,:,0]
+    final=img.copy()
+    for i in range(0,mask.shape[0]):
+        for j in range(0,mask.shape[1]):
+            if masked_bw[i,j] == 0:
+                final[i,j,0] = img_gray[i,j]
+                final[i,j,1] = img_gray[i,j]
+                final[i,j,2] = img_gray[i,j]
+    cv2.imwrite("gridillusion.png",final)
+    print("image saved as gridillusion.png")

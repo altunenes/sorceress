@@ -5,7 +5,9 @@
 
 ### Purpose of package
 
-The purpose of this package is to provide creating optical illusions with simple way. Package written in Python however repo includes also JavaScript.
+This package's purpose is to create optical illusions in a simple way. The package is written in Python. however, the repo also includes JavaScript.
+
+If you find visual illusions fascinating this package is for you. You can reproduce the illusions in the literature with a few lines of code.
 
 More importantly, we shouldn't take optical illusions as just fun. Optical illusions help us to research how the visual system of the brain ,which is the most complex mechanism, processes such cues. Most of the optical illusions in this package are seriously researched in the neuroscience literature. And I must say that the "causation" of the most of effects is still debated in the literature according to my humble knowledge. Optical illusions are researching not only in human vision but in other animals. So we can get a lot of insights from an evolutionary perspective.
 
@@ -15,7 +17,7 @@ For all optical illusions check this documentation: [altunenes.github.io/sorcere
 
 ### Getting started🚀️
 
-Package can be found on pypi hence you can install it with using pip.
+Package can be found on pypi hence you can install it via pip.
 
 ```
 pip install sorceress==1.7
@@ -32,7 +34,7 @@ from sorceress import sorceress
 
 [For the API, click here](https://altunenes.github.io/sorceress/api_reference/)
 
-+ Illusions written in Python
++ Illusions in Python
   - chromatic
   - dotill
   - realtimegrid
@@ -49,11 +51,13 @@ from sorceress import sorceress
   - whiteill
   - enigma
   - blackhole
-+ **Illusions written in JavaScript**
+  - colorgrids
++ **Illusions in JavaScript**
 
 - footsteps
 - thelilac
 - EyeMovements
+- spatialmotion
 
 ## Examples
 

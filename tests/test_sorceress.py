@@ -3,7 +3,7 @@ from unittest import TestCase
 from sorceress import *
 class Testsorcerer(TestCase):
     def test_version(self):
-        assert __version__ == '1.7.1'
+        assert __version__ == '1.7.2'
     def test_chromatic(self):
         return
     def test_dotill(self):
@@ -37,4 +37,6 @@ class Testsorcerer(TestCase):
     def test_enigma(self):
         return
     def test_blackhole(self):
+        return
+    def test_colorgrids(self):
         return

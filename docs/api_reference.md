@@ -36,6 +36,8 @@ This page gives an overview of all sorceress functions and methods.
 
 +[blackhole](#blackhole)
 
++[colorgrids](#colorgrids)
+
 ***chromatic***<a name="chromatic"></a>
 
 This function process image to generate optical illusion about chromatic adaptation. After a fixation of the center, gray scale image will perceived as a colorful.
@@ -314,4 +316,21 @@ A recent optical illusion that described by the Laeng et al (2022).
     kill: if True, circles are not drawn
     """
 
+```
+***colorgrids***<a name="colorgrids"></a>
+
+ This "illusion" was created by artist Øyvind Kolås from GIMP.
+
+```
+    """
+    Color Assimilation Grid Illusion
+    img: input image
+     style: style of mask, "vertical","horizontal","gaussian","grids"
+     vertical is the default style and adds vertical lines to the image
+     horizontal; adds horizontal lines to the image
+     gaussian; add gaussian distributed circles to the image
+     grids; adds both vertical and horizontal lines to the image
+     width: width of lines
+     frequency: frequency of lines
+    """
 ```

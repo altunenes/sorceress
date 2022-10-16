@@ -27,7 +27,7 @@ from sorceress import sorceress
 
 ### Features
 
-+ Illusions written in Python
++ Illusions in Python
 
   - chromatic
   - dotill
@@ -45,11 +45,13 @@ from sorceress import sorceress
   - whiteill
   - enigma
   - blackhole
-+ **Illusions written in JavaScript**
+  - colorgrids
++ **Illusions in JavaScript**
 
 - footsteps
 - thelilac
 - EyeMovements
+- spatialmotion
 
 ## Examples
 
