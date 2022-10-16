@@ -5,7 +5,7 @@
 
 ### Purpose of package
 
-This package's purpose is to create optical illusions in a simple way. The package is written in Python. however, the repo also includes JavaScript.
+This package's purpose is to create optical illusions in a simple way. The package is written in Python. however, the repo also includes JavaScript.  In [explanations](https://altunenes.github.io/sorceress/explanations%20of%20illusions/) section, you can find the explanations of the illusions.
 
 If you find visual illusions fascinating this package is for you. You can reproduce the illusions in the literature with a few lines of code.
 
