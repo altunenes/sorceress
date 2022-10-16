@@ -32,7 +32,7 @@ For all optical illusions check this documentation:
 Getting started🚀️
 -----------------
 
-Package can be found on pypi hence you can install it with using pip.
+Package can be found on pypi hence you can install it via pip.
 
 ::
 
@@ -42,15 +42,14 @@ Package can be found on pypi hence you can install it with using pip.
 
    #importing
    import sorceress
-   #another way to import
+   #another way to import 
    from sorceress import sorceress
 
 Features
 --------
 
 `For the API, click
-here <https://altunenes.github.io/sorceress/api_reference/>`__ You will
-find the functions and their parameters in the API.
+here <https://altunenes.github.io/sorceress/api_reference/>`__
 
 -  Illusions in Python
 
