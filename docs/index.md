@@ -1,4 +1,4 @@
-# sorceress 1.7.3
+# sorceress 1.7
 
 ### Purpose of package
 
