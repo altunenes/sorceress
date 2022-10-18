@@ -1,23 +1,24 @@
 ## This page is trying to explain all optical illusions
 
-`## 1- sorceress.chromatic`
+First, let's import the package. I usally import the package like this:
+
+`from sorceress import sorceress`
+
+## 1- sorceress.chromatic
 
 Chromatic adaptation is probably one of the central concepts in color vision. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. You can apply this function to any image and function automatically processes the image and returns a gif file. The gif file shows the transformation of the image from the original to the adapted image.
-
-`## 2- sorceress.contrast`
 
 simple example via a gif:
 
 focus on the red dot (10 second)
 
-![png_to_gif](https://user-images.githubusercontent.com/54986652/114435413-ca06a980-9bcc-11eb-831f-37730c77f4a9.gif) { width: 200px; }
+![png_to_gif](https://user-images.githubusercontent.com/54986652/114435413-ca06a980-9bcc-11eb-831f-37730c77f4a9.gif)
 
 _[image source](https://extension.unh.edu/blog/fall-good-time-plant-trees-and-shrubs)_
 
 ## 2- sorceress.dotill()
 
 ![CMCCAT2000output.png](./assets/CMCCAT2000output.png)
-
 
 Lateral inhibition is the phenomenon in which a neuron's response to a stimulus is inhibited by the excitation of a neighboring neuron (Bakshi and Ghosh, 2017).Neurons that are firing inhibit the stimulation of surrounding. Accordingly, only the neurons that are most stimulated and least inhibited respond (Cohen, 2011).
 
@@ -231,7 +232,7 @@ whiteill(dimension=300, version2=False, rect1=(255, 255, 255), rect2=(0, 0, 0), 
 ```
 
 ```
-whiteill(dimension=300,version2=False,rect1=(92,92,255),rect2=(47,255,173),outputname="whiteillout")
+sorceress.whiteill(dimension=300,version2=False,rect1=(92,92,255),rect2=(47,255,173),outputname="whiteillout")
 ```
 
 ![whiteillout.png](./assets/whiteillout.png)
@@ -239,7 +240,7 @@ whiteill(dimension=300,version2=False,rect1=(92,92,255),rect2=(47,255,173),outpu
 This is another strong illusion that has been described by White (1979). As you can see above, although the inner rectangles have in same gray ((128,128,128)) scale we perceive it in different contrast. It is hard to believe that two grey patches are the same when they look so different. You may also perceive the "lighter one" as larger but it's another part of the illusion which was described first by Galileo Galilei (1632) as the "irradiation effect". This function has also different various of this illusion you may call with the `version2=True` that shown like the bellow:
 
 ```
-whiteill(version2=True,outputname="whiteillout")
+sorceress.whiteill(version2=True,outputname="whiteillout")
 ```
 
 ![whiteillh.png](./assets/whiteillh.png)
@@ -286,17 +287,25 @@ And I also would like to remind you that the illusion may not work for everyone,
 
 ![blackenigma](./assets/blackenigma.png)
 
-`blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circle_color=(0, 0, 0),kill=False) `
+`sorceress.blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circle_color=(0, 0, 0),kill=False) `
 
 This is a recent optical illusion that was described by Laeng et al (2022). According to the paper, the change rates of pupil diameters were significantly related to the illusory motion phenomenology only with the black holes. You can try it with the other colors though.
 
 ## 22-sorcerer.colorgrids
+
 ![colorgrids](./assets/final.png)
+
 If you look closely enough you will see the original image is black and white. However, via colorful stripes your brain into seeing a color image. Basically, our brain is trying to fill the gaps between the stripes and it gives us an overall impression of what's there.
+Basically, you can call the function like this:
+
+```
+sorceress.colorgrids("inputfolder/test.jpg","grids",frequency=24)
+```
 
 [Inspiration, Øyvind Kolås](https://www.patreon.com/posts/color-grid-28734535):
 
 ## 23-sorcerer.Motion
+
 ![motion](./assets/motions.gif)
 
 It's a very interesting illusion. I've seen it in a paper that was recently published (Brenner & Smeets, 2022) According to this paper when two dots move clockwise or counterclockwise along the circular path, the one dots clearly moves faster than the other one. However, they are at the same speed. I added different conditions to reproduce this illusion in different ways. You can access this illusion from here [sorceress/Motion:](https://altunenes.github.io/sorceress/spatialmotion.html)
