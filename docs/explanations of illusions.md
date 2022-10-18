@@ -1,6 +1,6 @@
 ## This page is trying to explain all optical illusions
 
-First, let's import the package. I usally import the package like this:
+First, let's import the package. I usually import the package like this:
 
 `from sorceress import sorceress`
 
