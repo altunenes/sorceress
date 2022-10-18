@@ -2,9 +2,11 @@
 
 `## 1- sorceress.chromatic`
 
-Chromatic adaptation is probably one of the central concepts in color vision. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best.
+Chromatic adaptation is probably one of the central concepts in color vision. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. You can apply this function to any image and function automatically processes the image and returns a gif file. The gif file shows the transformation of the image from the original to the adapted image.
 
-simple example:
+`## 2- sorceress.contrast`
+
+simple example via a gif:
 
 focus on the red dot (10 second)
 
@@ -16,9 +18,10 @@ _[image source](https://extension.unh.edu/blog/fall-good-time-plant-trees-and-sh
 
 ![CMCCAT2000output.png](./assets/CMCCAT2000output.png)
 
+
 Lateral inhibition is the phenomenon in which a neuron's response to a stimulus is inhibited by the excitation of a neighboring neuron (Bakshi and Ghosh, 2017).Neurons that are firing inhibit the stimulation of surrounding. Accordingly, only the neurons that are most stimulated and least inhibited respond (Cohen, 2011).
 
-It's an old-fashioned illusion that is probably known the most.
+It's an old-fashioned illusion that is probably known the most. I've added many parameters to this function to reproduce in distinctive ways.
 
 ```
 dotill(hsize,wsize,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
@@ -36,7 +39,7 @@ sorceress.dotill(500,500)
 sorceress.realtimegrid(realcolours=True)
 ```
 
-perceive black and white real time (with webcam) frames as colorful.
+perceive black and white real time (with webcam) frames as colorful. It's a real time version of sorceress.colorgrids() function.
 
 with `realcolours=False` code will not calculate the real colors of your frame. I recommend you to use this function with real colors. Illusion is getting powerful if colors of lines separate each other, however,  with `realcolours=False` means a lot of options are needed in the slide bar and it's not a pleasant view. It is an indicator of how flexible the color perception in the human visual system is.
 [Inspiration](https://www.patreon.com/posts/color-grid-28734535):
@@ -45,7 +48,7 @@ with `realcolours=False` code will not calculate the real colors of your frame. 
 
 inspired from prof Akiyoshi Kitaoka.
 
-Have you seen this illusion before? In bellow, someone is hiding after those grids. *Beneath this *grids there* is *more than* Grids. Beneath this *grids there* is an idea. And ideas are bulletproof...*
+Have you seen this illusion before? In the below, someone is hiding after those grids. *Beneath these *grids there* is *more than* Grids. Beneath these *grids there* is an idea. And ideas are bulletproof...*
 
 You can see the Vendetta guy if you scroll down and up the page or zoom out the whole image. Or more accurately, apply a Gaussian.
 
@@ -64,7 +67,7 @@ This function basically adds vertical lines to an image, but it's blending not o
 example usage:
 `sorcerer.addlines("vfor.jpg","mygrids",linecolour1=(150,5,5),linecolour2=(10,155,20),linecolour3=(0,15,15),alphablending==False) `
 
-If you select `alphablending==True`  line colors are much more stable against the luminance change in the background image. It's because in opencv, when you overlay two images or colors the function called `addWeighted` mixes the colors in very "small tones" but you probably do not even notice. Still, this function which I called alpha blending, is much more stable to luminance change. Use both, in the same way and see what is differs.
+If you select `alphablending==True`  line colors are much more stable against the luminance change in the background image. It's because in OpenCV when you overlay two images or colors the function called `addWeighted` mixes the colors in very "small tones" but you probably do not even notice. Still, this function which I called alpha blending, is much more stable to luminance change. Use both, in the same way, and see what differs.
 
 ## 5- sorceress.eyecolour
 
@@ -75,7 +78,7 @@ sorceress.eyecolour("yourimage.jpg")
 
 ```
 
-With this illusion, you perceive the black and white NumPy array as colorful. After you run this code, you need to select the iris manually then push the enter. I didn't want to use the iris detector since it slowing down the script. Just select smaller as much as possible. I've used `seamlessClone` function from the OpenCV for getting much more realistic results. Your ROI (region of interest that you selected manually) will correspond an eclipse' coordinates which I needed to detect the exact position of the iris.
+With this illusion, you perceive the black-and-white NumPy array as colorful. After you run this code, you need to select the iris manually and then push the enter. I didn't want to use the iris detector since it slowed  down the script. Just select smaller as much as possible. I've used `seamlessClone` function from OpenCV for getting much more realistic results. Your ROI (region of interest that you selected manually) will correspond to an eclipse' coordinates which I needed to detect the exact position of the iris.
 
 example: You probably have seen this lady's left eye as blue, but it's exactly the same color as the right eye.
 
@@ -89,9 +92,9 @@ sorceress.dakinPex(outputname="myoutput",dimension=800)
 
 ![myoutput.png](./assets/myoutput.png)
 
-If you see the different tones of gray this illusion is successful. If you perceiving all same, try with the big dimensions.
+If you see the different tones of gray this illusion is successful. If you perceive all same, try with the big dimensions.
 
-I've written this illusion after the read a paper from (Dakin and Bex, 2003).The existence of spatial frequency channels in the visual system is implicated in lightness perception. And I also should note that It has long been known that the brightness of a region of visual space is not related only to that region’s luminance, but depends also upon the luminances of adjacent regions (Von Bekesy, 1968).
+I've written this illusion after the read a paper from (Dakin and Bex, 2003). The existence of spatial frequency channels in the visual system is implicated in lightness perception. And I also should note that It has long been known that the brightness of a region of visual space is not related only to that region’s luminance, but depends also upon the luminances of adjacent regions (Von Bekesy, 1968).
 
 ## 7- sorceress.bruno
 
@@ -102,7 +105,7 @@ sorceress.sorcerer.bruno("myimagee",polycolor=(0,0,255),rectcolor=(34,34,128))
 
 ![myimagee.png](./assets/1631018314614-myimagee.png)
 
-Well in the first time it seems a little bit confusing but in their experiments, Bruno et al. (1997) have shown their participants first the shapes that you've seen on the left then shapes on the right have shown. In this experiment, participants needed to decide quickly as much as possible whether is it the same or not with the previous shape that they had shown. Results have shown that, participants were fast and found it easy to say that the two shapes were the same in the top situation. But they were very slow in the other scenario (It's still same!).
+Well at first time it seems a little bit confusing but in their experiments, Bruno et al. (1997) have shown their participants first the shapes that you've seen on the left then the shapes on the right have shown. In this experiment, participants needed to decide quickly as much as possible whether is it the same or not with the previous shape that they had shown. Results have shown that participants were fast and found it easy to say that the two shapes were the same in the top situation. But they were very slow in the other scenario (It's still the same!).
 
 ## 8- sorceress.dolboeuf
 
@@ -114,7 +117,7 @@ sorceress.dolboeuf("doloeufout",kill=False)
 
 ![doloeufout.png](./assets/1631019152448-doloeufout.png)
 
-Which red circle is bigger than the other? Probably you know what I'm talking about, two of them in the same radius. This illusion was first created by Belgian psychologist Joseph Remi Leopold Delbœuf in 1865. It's all about the perception of size. Of course, it's not the "all" about the story, the size differences of the inner and outer circle also playing their roles in this illusion... Well, I didn't create a parameter for customizing those circle's (inner and outer) radius but I believe you get the point. If you select the `kill=True`, the illusion will be destroyed by the two horizontal lines.
+Which red circle is bigger than the other? Probably you know what I'm talking about, two of them in the same radius. This illusion was first created by Belgian psychologist Joseph Remi Leopold Delbœuf in 1865. It's all about the perception of size. Of course, it's not the "all" about the story, the size differences of the inner and outer circles also play their roles in this illusion... Well, I didn't create a parameter for customizing those circles' (inner and outer) radius but I believe you get the point. If you select the `kill=True`, the illusion will be destroyed by the two horizontal lines.
 
 ## 9- sorceress.kanizsa
 
@@ -289,13 +292,14 @@ This is a recent optical illusion that was described by Laeng et al (2022). Acco
 
 ## 22-sorcerer.colorgrids
 ![colorgrids](./assets/final.png)
+If you look closely enough you will see the original image is black and white. However, via colorful stripes your brain into seeing a color image. Basically, our brain is trying to fill the gaps between the stripes and it gives us an overall impression of what's there.
 
-Actually, I'm not %100 sure about this illusion because I couldn't find any paper about it. But I've seen it on Twitter and I thought it's worth sharing with you. Moreover, the backend procedure it's basically adding the actual colors to the image as lines, circles, etc.
-
-I know even though a small amount of the lines is enough for the perception of the color of the whole image. But I m not %100 sure should we take this as an illusion or not. I would be happy if you can share your thoughts about this illusion.
-
-Øyvind Kolås
 [Inspiration, Øyvind Kolås](https://www.patreon.com/posts/color-grid-28734535):
+
+## 23-sorcerer.Motion
+![motion](./assets/motions.gif)
+
+It's a very interesting illusion. I've seen it in a paper that was recently published (Brenner & Smeets, 2022) According to this paper when two dots move clockwise or counterclockwise along the circular path, the one dots clearly moves faster than the other one. However, they are at the same speed. I added different conditions to reproduce this illusion in different ways. You can access this illusion from here [sorceress/Motion:](https://altunenes.github.io/sorceress/spatialmotion.html)
 
 ### REFERENCES
 
@@ -304,6 +308,8 @@ Aglioti S, DeSouza JFX, Goodale MA (1995) Size-contrast illusions deceive the ey
 Anstis S. Moving objects appear to slow down at low contrasts. Neural Netw. 2003 Jun-Jul;16(5-6):933-8. doi: 10.1016/S0893-6080(03)00111-4. PMID: 12850053.
 
 Bakshi, A., & Ghosh, K. (2017). A Neural Model of Attention and Feedback for Computing Perceived Brightness in Vision. Handbook of Neural Computation, 487–513. doi:10.1016/b978-0-12-811318-9.00026-0
+
+Brenner, E., & Smeets, J.  Spatial Vision for Action. Oxford Research Encyclopedia of Psychology. Retrieved 18 Oct. 2022, from https://oxfordre.com/psychology/view/10.1093/acrefore/9780190236557.001.0001/acrefore-9780190236557-e-842.
 
 Bruno N, Bertamini M, Domini F (1997) Amodal completion of partly occluded surfaces: Is there a mosaic stage. J Exp Psychol Hum Percept Perform 23:1412–1426
 
