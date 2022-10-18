@@ -265,6 +265,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#1-sorceresschromatic" class="md-nav__link">
+    1- sorceress.chromatic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2-sorceressdotill" class="md-nav__link">
     2- sorceress.dotill()
   </a>
@@ -568,6 +575,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#1-sorceresschromatic" class="md-nav__link">
+    1- sorceress.chromatic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2-sorceressdotill" class="md-nav__link">
     2- sorceress.dotill()
   </a>
@@ -744,12 +758,13 @@
   <h1>explanations</h1>
 
 <h2 id="this-page-is-trying-to-explain-all-optical-illusions">This page is trying to explain all optical illusions</h2>
-<p><code>## 1- sorceress.chromatic</code></p>
+<p>First, let's import the package. I usally import the package like this:</p>
+<p><code>from sorceress import sorceress</code></p>
+<h2 id="1-sorceresschromatic">1- sorceress.chromatic</h2>
 <p>Chromatic adaptation is probably one of the central concepts in color vision. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. You can apply this function to any image and function automatically processes the image and returns a gif file. The gif file shows the transformation of the image from the original to the adapted image.</p>
-<p><code>## 2- sorceress.contrast</code></p>
 <p>simple example via a gif:</p>
 <p>focus on the red dot (10 second)</p>
-<p><img alt="png_to_gif" src="https://user-images.githubusercontent.com/54986652/114435413-ca06a980-9bcc-11eb-831f-37730c77f4a9.gif" /> { width: 200px; }</p>
+<p><img alt="png_to_gif" src="https://user-images.githubusercontent.com/54986652/114435413-ca06a980-9bcc-11eb-831f-37730c77f4a9.gif" /></p>
 <p><em><a href="https://extension.unh.edu/blog/fall-good-time-plant-trees-and-shrubs">image source</a></em></p>
 <h2 id="2-sorceressdotill">2- sorceress.dotill()</h2>
 <p><img alt="CMCCAT2000output.png" src="../assets/CMCCAT2000output.png" /></p>
@@ -870,11 +885,11 @@ sorceress.ccob(&quot;aki.jpg&quot;,rms=0.5,amplitudespectrum=300,plttitle=&quot;
 <pre><code>whiteill(dimension=300, version2=False, rect1=(255, 255, 255), rect2=(0, 0, 0), bgrec1=(128, 128, 128),
                  bgrec2=(128, 128, 128), bg1=(0, 0, 0), bg2=(255, 255, 255), outputname=&quot;output&quot;):
 </code></pre>
-<pre><code>whiteill(dimension=300,version2=False,rect1=(92,92,255),rect2=(47,255,173),outputname=&quot;whiteillout&quot;)
+<pre><code>sorceress.whiteill(dimension=300,version2=False,rect1=(92,92,255),rect2=(47,255,173),outputname=&quot;whiteillout&quot;)
 </code></pre>
 <p><img alt="whiteillout.png" src="../assets/whiteillout.png" /></p>
 <p>This is another strong illusion that has been described by White (1979). As you can see above, although the inner rectangles have in same gray ((128,128,128)) scale we perceive it in different contrast. It is hard to believe that two grey patches are the same when they look so different. You may also perceive the "lighter one" as larger but it's another part of the illusion which was described first by Galileo Galilei (1632) as the "irradiation effect". This function has also different various of this illusion you may call with the <code>version2=True</code> that shown like the bellow:</p>
-<pre><code>whiteill(version2=True,outputname=&quot;whiteillout&quot;)
+<pre><code>sorceress.whiteill(version2=True,outputname=&quot;whiteillout&quot;)
 </code></pre>
 <p><img alt="whiteillh.png" src="../assets/whiteillh.png" /></p>
 <p>Do I need to say grays are the same? 😄. The scientific explanations are still debated in the literature at first look. A recent study about White's study (Betz et al (2015)) found that the illusion was marginally enhanced by contour adaptation at the test patch edges parallel to the grating. The contrasting behavior seen in the current investigation in response to independent manipulations of collinear or flanking bar luminance is consistent with these findings.</p>
@@ -900,11 +915,14 @@ When the two colors of circles are equiluminant and the only clues to the existe
 And I also would like to remind you that the illusion may not work for everyone, there are individual differences.</p>
 <h2 id="21-sorcererblackhole">21-sorcerer.blackhole</h2>
 <p><img alt="blackenigma" src="../assets/blackenigma.png" /></p>
-<p><code>blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circle_color=(0, 0, 0),kill=False)</code></p>
+<p><code>sorceress.blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circle_color=(0, 0, 0),kill=False)</code></p>
 <p>This is a recent optical illusion that was described by Laeng et al (2022). According to the paper, the change rates of pupil diameters were significantly related to the illusory motion phenomenology only with the black holes. You can try it with the other colors though.</p>
 <h2 id="22-sorcerercolorgrids">22-sorcerer.colorgrids</h2>
-<p><img alt="colorgrids" src="../assets/final.png" />
-If you look closely enough you will see the original image is black and white. However, via colorful stripes your brain into seeing a color image. Basically, our brain is trying to fill the gaps between the stripes and it gives us an overall impression of what's there.</p>
+<p><img alt="colorgrids" src="../assets/final.png" /></p>
+<p>If you look closely enough you will see the original image is black and white. However, via colorful stripes your brain into seeing a color image. Basically, our brain is trying to fill the gaps between the stripes and it gives us an overall impression of what's there.
+Basically, you can call the function like this:</p>
+<pre><code>sorceress.colorgrids(&quot;inputfolder/test.jpg&quot;,&quot;grids&quot;,frequency=24)
+</code></pre>
 <p><a href="https://www.patreon.com/posts/color-grid-28734535">Inspiration, Øyvind Kolås</a>:</p>
 <h2 id="23-sorcerermotion">23-sorcerer.Motion</h2>
 <p><img alt="motion" src="../assets/motions.gif" /></p>
