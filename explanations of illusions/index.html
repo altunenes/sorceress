@@ -279,13 +279,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-sorceressrealtimegrid" class="md-nav__link">
-    3- sorceress.realtimegrid()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#4-sorceressaddlines" class="md-nav__link">
     4- sorceress.addlines
   </a>
@@ -589,13 +582,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-sorceressrealtimegrid" class="md-nav__link">
-    3- sorceress.realtimegrid()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#4-sorceressaddlines" class="md-nav__link">
     4- sorceress.addlines
   </a>
@@ -762,6 +748,8 @@
 <p><code>from sorceress import sorceress</code></p>
 <h2 id="1-sorceresschromatic">1- sorceress.chromatic</h2>
 <p>Chromatic adaptation is probably one of the central concepts in color vision. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. You can apply this function to any image and function automatically processes the image and returns a gif file. The gif file shows the transformation of the image from the original to the adapted image.</p>
+<pre><code>sorceress.chromatic(&quot;inputfolder/tree.jpg&quot;,Gifduration=10)
+</code></pre>
 <p>simple example via a gif:</p>
 <p>focus on the red dot (10 second)</p>
 <p><img alt="png_to_gif" src="https://user-images.githubusercontent.com/54986652/114435413-ca06a980-9bcc-11eb-831f-37730c77f4a9.gif" /></p>
@@ -770,12 +758,10 @@
 <p><img alt="CMCCAT2000output.png" src="../assets/CMCCAT2000output.png" /></p>
 <p>Lateral inhibition is the phenomenon in which a neuron's response to a stimulus is inhibited by the excitation of a neighboring neuron (Bakshi and Ghosh, 2017).Neurons that are firing inhibit the stimulation of surrounding. Accordingly, only the neurons that are most stimulated and least inhibited respond (Cohen, 2011).</p>
 <p>It's an old-fashioned illusion that is probably known the most. I've added many parameters to this function to reproduce in distinctive ways.</p>
-<pre><code>dotill(hsize,wsize,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
-</code></pre>
 <p>example usage:</p>
-<pre><code>sorceress.dotill(500,500)
+<pre><code>sorceress.dotill((500,500),hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
 </code></pre>
-<h2 id="3-sorceressrealtimegrid">3- sorceress.realtimegrid()</h2>
+<p>3- sorceress.realtimegrid()</p>
 <pre><code>sorceress.realtimegrid(realcolours=True)
 </code></pre>
 <p>perceive black and white real time (with webcam) frames as colorful. It's a real time version of sorceress.colorgrids() function.</p>
@@ -786,15 +772,14 @@
 <p>Have you seen this illusion before? In the below, someone is hiding after those grids. <em>Beneath these </em>grids there<em> is </em>more than<em> Grids. Beneath these </em>grids there<em> is an idea. And ideas are bulletproof...</em></p>
 <p>You can see the Vendetta guy if you scroll down and up the page or zoom out the whole image. Or more accurately, apply a Gaussian.</p>
 <p><img alt="asdddd" src="https://user-images.githubusercontent.com/54986652/130432273-c3b11961-484d-44a1-99a9-6821e46f9c10.png" /></p>
-<pre><code>sorceress.addlines(img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
+<pre><code>sorceress.addlines(img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
 
 </code></pre>
 <p>This function basically adds vertical lines to an image, but it's blending not overlaying!</p>
 <p><code>img</code> your input image like <code>"morgo.jpg"</code>
-<code>outputname</code> desired output like <code>desired</code>
 <code>linecolour1</code> <code>linecolour2</code> and <code>linecolour3</code> are point the colors of lines.
 example usage:
-<code>sorcerer.addlines("vfor.jpg","mygrids",linecolour1=(150,5,5),linecolour2=(10,155,20),linecolour3=(0,15,15),alphablending==False)</code></p>
+<code>sorceress.addlines("vfor.jpg",linecolour1=(150,5,5),linecolour2=(10,155,20),linecolour3=(0,15,15),alphablending==False)</code></p>
 <p>If you select <code>alphablending==True</code>  line colors are much more stable against the luminance change in the background image. It's because in OpenCV when you overlay two images or colors the function called <code>addWeighted</code> mixes the colors in very "small tones" but you probably do not even notice. Still, this function which I called alpha blending, is much more stable to luminance change. Use both, in the same way, and see what differs.</p>
 <h2 id="5-sorceresseyecolour">5- sorceress.eyecolour</h2>
 <p><a href="https://michaelbach.de/ot/col-context/index.html">inspried from:</a></p>
@@ -838,7 +823,7 @@ sorceress.ponzol(&quot;test&quot;,kill=False,line1=(0,0,139),line2=(0,0,139),rec
 <p><img alt="test.png" src="../assets/test.png" /></p>
 <p>The Ponzo illusion is old (Ponzo, 1912). But Ponzo actually published his illusion with a scientific paper. Actually, any image with a strong sense of perspective has this. You could see various methods if you search a little bit (especially in railways).</p>
 <h2 id="11-sorceresstaki2001">11- sorceress.tAki2001</h2>
-<pre><code>tAki2001(outputname, dimension=700, circlecolour=(0, 255, 255), circleradius=15, bglinecolor=(255, 128, 128),bgcolor=(255, 255, 255))
+<pre><code>sorceress.tAki2001(outputname, dimension=700, circlecolour=(0, 255, 255), circleradius=15, bglinecolor=(255, 128, 128),bgcolor=(255, 255, 255))
 </code></pre>
 <pre><code>#example usage:
 sorceress.tAki2001(&quot;YelowRay&quot;,dimension=1200)
@@ -847,7 +832,7 @@ sorceress.tAki2001(&quot;YelowRay&quot;,dimension=1200)
 <p><img alt="ColouredRay.png" src="../assets/ColouredRay.png" /></p>
 <p>“Coloured ray illusion ” by Akiyoshi Kitaoka (Kitaoka, 2001). There were similar kinds of illusions that have been described by other scientists like Prandtl,(1927). Illusory yellow circles appear to run obliquely over the homogeneously white background. I added to function to change the background in the BGR array. Try it with other background colors with <code>bgcolor</code> parameter.</p>
 <h2 id="12-sorceresscafewall">12-sorceress.cafewall</h2>
-<pre><code>cafeWall(outputname, dimension=1200, resize=False, brickcolor=(255, 255, 255), bgcolor=(0, 0, 0))
+<pre><code>sorceress.cafeWall(outputname, dimension=1200, resize=False, brickcolor=(255, 255, 255), bgcolor=(0, 0, 0))
 </code></pre>
 <pre><code>#example:
 sorceress.cafeWall(&quot;myimage&quot;,1200,resize=True,brickcolor=(0,0,128),bgcolor=(114,128,254))
@@ -857,8 +842,6 @@ sorceress.cafeWall(&quot;myimage&quot;,1200,resize=True,brickcolor=(0,0,128),bgc
 <p>This is maybe one of the most strong optical illusions that have ever been created. Bricks create a pattern in which the mortar lines between them do not look parallel. Why do we call it a "cafe wall"? well, a student of Richard Gregory from the University of Bristol has noticed this from a café (on St Michael’s Hill). The illusion is strongest when the mortar has a brightness that is in between that of the two tiles. So illusion will be work as long as colors have different brightness.</p>
 <p>Why we are seeing this? Well, the only scientific explanation that I've known is from Gregory and Heard (1979). The role of orientation-sensitive simple cells in V1 and reactions to luminance borders are mainly involved in this illusion as they've mentioned. Gregory and Heard (1979) proposed that regions of varying luminances be retained in the spatial register by locking their borders. This border-locking technique causes inadvertent contour alterations between sections separated by small gaps. They've also shown that illusion disappears if the luminance of the middle line is noticeably lower or higher than the luminance of the two types of squares.</p>
 <h2 id="13-sorceressccob">13-sorceress.ccob</h2>
-<pre><code>ccob(self,image, rms=0.5, amplitudespectrum=300, plttitle='output')
-</code></pre>
 <pre><code>#usage
 sorceress.ccob(&quot;aki.jpg&quot;,rms=0.5,amplitudespectrum=300,plttitle=&quot;myoutput&quot;)
 
@@ -872,8 +855,6 @@ sorceress.ccob(&quot;aki.jpg&quot;,rms=0.5,amplitudespectrum=300,plttitle=&quot;
 <p><img alt="myoutput2.png" src="../assets/myoutput2.png" /></p>
 <p>Above the color of the circles and the surface is the same. Try yourself with different amplitude spectrum and RMS values.</p>
 <h2 id="14-sorceressebbinghaus">14-sorceress.ebbinghaus</h2>
-<pre><code>ebbinghaus(output, bgcolor=(255, 255, 255), lcradius=22, rcradius=22, lcradius2=25, rcradius2=45)
-</code></pre>
 <pre><code>sorceress.ebbinghaus(&quot;output&quot;,bgcolor=(0,255,255),lcradius=22,rcradius=22)
 
 </code></pre>
@@ -882,9 +863,6 @@ sorceress.ccob(&quot;aki.jpg&quot;,rms=0.5,amplitudespectrum=300,plttitle=&quot;
 <p>If you have psychology major like me you probably heard a lot the German psychologist Hermann Ebbinghaus, especially in the introduction courses. We know his popular work about the memory.</p>
 <p>The illusion is widely replicated in psychology literature with different contexts (Aglioti et al, 1995; Lee and van Donkelaar, 2002; Culham et al, 2003). For example, In Aglioti's study, the direct comparison led to an approximately 50% increase of the illusion, which corresponds well to the difference found between perception and grasping.  These researchers replaced the inner circular image with a tiny poker-chip-like token in their research. When asked to estimate the size of the target tokens, the subjects displayed the illusion throughout the trial, but when asked to manually pick up the central target token, the illusion had a considerably less impact on manual grip size during the grasping process. This was seen to indicate that the ventral system is influenced by the illusion and the dorsal system is not. The findings have been replicated by Haffenden and Goodale (1998).</p>
 <h2 id="15-sorceresswhiteill">15-sorceress.whiteill</h2>
-<pre><code>whiteill(dimension=300, version2=False, rect1=(255, 255, 255), rect2=(0, 0, 0), bgrec1=(128, 128, 128),
-                 bgrec2=(128, 128, 128), bg1=(0, 0, 0), bg2=(255, 255, 255), outputname=&quot;output&quot;):
-</code></pre>
 <pre><code>sorceress.whiteill(dimension=300,version2=False,rect1=(92,92,255),rect2=(47,255,173),outputname=&quot;whiteillout&quot;)
 </code></pre>
 <p><img alt="whiteillout.png" src="../assets/whiteillout.png" /></p>

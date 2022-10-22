@@ -449,7 +449,6 @@
 <pre><code>    &quot;&quot;&quot;
     This function is used to convert an image to chromatic image.
     :param img: input image
-    :param outputname: output image name
     :param circle: a center fixation
     :param method: &quot;CMCCAT2000&quot; or &quot;Von Kries&quot;
     :param gif: export as gif
@@ -461,8 +460,7 @@
 <p>An optical illusion mainly affected by lateral inhibition.</p>
 <pre><code>    &quot;&quot;&quot;
     This function is used to create a dotill image.
-    :param hsize: height of the image
-    :param wsize: width of the image
+    :param dimension: width and height of the image
     :param hlinefreq: horizontal line frequency
     :param wlinefreq: vertical line frequency
     :param dotcolor: color of the dot
@@ -556,7 +554,6 @@ So for best result, i reccomend you to use a clear profile picture.</p>
     Select the iris on the image with mouse click and returns the illusory eye colour.
     Arguments:
     :param img: input image
-    :param outputname: output name
     :return:
     &quot;&quot;&quot;
 </code></pre>
@@ -584,7 +581,7 @@ So for best result, i reccomend you to use a clear profile picture.</p>
     linecolour2: second line colour
     linecolour3: third line colour
     alphablending: if True, line colors are much more stable against the luminance change in the background image.
-    :returnÇ:
+    :return:
     &quot;&quot;&quot;
 </code></pre>
 <p><strong><em>cafeWall</em></strong><a name="cafeWall"></a></p>
@@ -614,7 +611,7 @@ So for best result, i reccomend you to use a clear profile picture.</p>
     &quot;&quot;&quot;
 </code></pre>
 <p><strong><em>whiteill</em></strong><a name="whiteill"></a></p>
-<p>An illusion that has been described by White also about the irradiation effect.eyecolour</p>
+<p>An illusion that has been described by White also about the irradiation effect.</p>
 <pre><code>    &quot;&quot;&quot;
     Optiacal illusion that has been described by White (1979).
     :param dimension: dimension of the image
