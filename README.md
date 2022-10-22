@@ -25,8 +25,6 @@ pip install sorceress
 
 ```
 #importing
-import sorceress
-#another way to import 
 from sorceress import sorceress
 ```
 
@@ -64,9 +62,9 @@ from sorceress import sorceress
 [In this page](https://altunenes.github.io/sorceress/explanations%20of%20illusions/), you can find all illusions, explanations, code, and how to use it. I show just a few examples on this page.
 
 ```
-from sorcerer import sorcerer
-sorcerer.chromatic("myimage.jpg","outputname" ,circle=False, method="CMCCAT2000", gif=True, Gifduration=7)
-sorcerer.addlines("myimage.png","desiredoutputname",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
+from sorceress import sorceress
+sorceress.chromatic("myimage.jpg",circle=False, method="CMCCAT2000", gif=True, Gifduration=7)
+sorceress.addlines("myimage.png",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
 ```
 
 ## Contribution

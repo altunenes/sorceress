@@ -8,6 +8,10 @@ First, let's import the package. I usually import the package like this:
 
 Chromatic adaptation is probably one of the central concepts in color vision. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. You can apply this function to any image and function automatically processes the image and returns a gif file. The gif file shows the transformation of the image from the original to the adapted image.
 
+```
+sorceress.chromatic("inputfolder/tree.jpg",Gifduration=10)
+```
+
 simple example via a gif:
 
 focus on the red dot (10 second)
@@ -24,17 +28,13 @@ Lateral inhibition is the phenomenon in which a neuron's response to a stimulus 
 
 It's an old-fashioned illusion that is probably known the most. I've added many parameters to this function to reproduce in distinctive ways.
 
-```
-dotill(hsize,wsize,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
-```
-
 example usage:
 
 ```
-sorceress.dotill(500,500)
+sorceress.dotill((500,500),hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
 ```
 
-## 3- sorceress.realtimegrid()
+3- sorceress.realtimegrid()
 
 ```
 sorceress.realtimegrid(realcolours=True)
@@ -56,17 +56,16 @@ You can see the Vendetta guy if you scroll down and up the page or zoom out the 
 ![asdddd](https://user-images.githubusercontent.com/54986652/130432273-c3b11961-484d-44a1-99a9-6821e46f9c10.png)
 
 ```
-sorceress.addlines(img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
+sorceress.addlines(img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
 
 ```
 
 This function basically adds vertical lines to an image, but it's blending not overlaying!
 
 `img` your input image like `"morgo.jpg"`
-`outputname` desired output like `desired`
 `linecolour1` `linecolour2` and `linecolour3` are point the colors of lines.
 example usage:
-`sorcerer.addlines("vfor.jpg","mygrids",linecolour1=(150,5,5),linecolour2=(10,155,20),linecolour3=(0,15,15),alphablending==False) `
+`sorceress.addlines("vfor.jpg",linecolour1=(150,5,5),linecolour2=(10,155,20),linecolour3=(0,15,15),alphablending==False) `
 
 If you select `alphablending==True`  line colors are much more stable against the luminance change in the background image. It's because in OpenCV when you overlay two images or colors the function called `addWeighted` mixes the colors in very "small tones" but you probably do not even notice. Still, this function which I called alpha blending, is much more stable to luminance change. Use both, in the same way, and see what differs.
 
@@ -147,7 +146,7 @@ The Ponzo illusion is old (Ponzo, 1912). But Ponzo actually published his illusi
 ## 11- sorceress.tAki2001
 
 ```
-tAki2001(outputname, dimension=700, circlecolour=(0, 255, 255), circleradius=15, bglinecolor=(255, 128, 128),bgcolor=(255, 255, 255))
+sorceress.tAki2001(outputname, dimension=700, circlecolour=(0, 255, 255), circleradius=15, bglinecolor=(255, 128, 128),bgcolor=(255, 255, 255))
 ```
 
 ```
@@ -163,7 +162,7 @@ sorceress.tAki2001("YelowRay",dimension=1200)
 ## 12-sorceress.cafewall
 
 ```
-cafeWall(outputname, dimension=1200, resize=False, brickcolor=(255, 255, 255), bgcolor=(0, 0, 0))
+sorceress.cafeWall(outputname, dimension=1200, resize=False, brickcolor=(255, 255, 255), bgcolor=(0, 0, 0))
 ```
 
 ```
@@ -179,10 +178,6 @@ This is maybe one of the most strong optical illusions that have ever been creat
 Why we are seeing this? Well, the only scientific explanation that I've known is from Gregory and Heard (1979). The role of orientation-sensitive simple cells in V1 and reactions to luminance borders are mainly involved in this illusion as they've mentioned. Gregory and Heard (1979) proposed that regions of varying luminances be retained in the spatial register by locking their borders. This border-locking technique causes inadvertent contour alterations between sections separated by small gaps. They've also shown that illusion disappears if the luminance of the middle line is noticeably lower or higher than the luminance of the two types of squares.
 
 ## 13-sorceress.ccob
-
-```
-ccob(self,image, rms=0.5, amplitudespectrum=300, plttitle='output')
-```
 
 ```
 #usage
@@ -208,10 +203,6 @@ Above the color of the circles and the surface is the same. Try yourself with di
 ## 14-sorceress.ebbinghaus
 
 ```
-ebbinghaus(output, bgcolor=(255, 255, 255), lcradius=22, rcradius=22, lcradius2=25, rcradius2=45)
-```
-
-```
 sorceress.ebbinghaus("output",bgcolor=(0,255,255),lcradius=22,rcradius=22)
 
 ```
@@ -225,11 +216,6 @@ If you have psychology major like me you probably heard a lot the German psychol
 The illusion is widely replicated in psychology literature with different contexts (Aglioti et al, 1995; Lee and van Donkelaar, 2002; Culham et al, 2003). For example, In Aglioti's study, the direct comparison led to an approximately 50% increase of the illusion, which corresponds well to the difference found between perception and grasping.  These researchers replaced the inner circular image with a tiny poker-chip-like token in their research. When asked to estimate the size of the target tokens, the subjects displayed the illusion throughout the trial, but when asked to manually pick up the central target token, the illusion had a considerably less impact on manual grip size during the grasping process. This was seen to indicate that the ventral system is influenced by the illusion and the dorsal system is not. The findings have been replicated by Haffenden and Goodale (1998).
 
 ## 15-sorceress.whiteill
-
-```
-whiteill(dimension=300, version2=False, rect1=(255, 255, 255), rect2=(0, 0, 0), bgrec1=(128, 128, 128),
-                 bgrec2=(128, 128, 128), bg1=(0, 0, 0), bg2=(255, 255, 255), outputname="output"):
-```
 
 ```
 sorceress.whiteill(dimension=300,version2=False,rect1=(92,92,255),rect2=(47,255,173),outputname="whiteillout")

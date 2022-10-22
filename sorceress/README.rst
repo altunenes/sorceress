@@ -41,8 +41,6 @@ Package can be found on pypi hence you can install it via pip.
 ::
 
    #importing
-   import sorceress
-   #another way to import 
    from sorceress import sorceress
 
 Features
@@ -51,34 +49,31 @@ Features
 `For the API, click
 here <https://altunenes.github.io/sorceress/api_reference/>`__
 
--  Illusions in Python
+**Illusions in Python**
 
-   -  chromatic
-   -  dotill
-   -  realtimegrid
-   -  addlines
-   -  eyecolour
-   -  dakinPex
-   -  bruno
-   -  dolboeuf
-   -  kanizsa
-   -  tAki2001
-   -  cafewall
-   -  ccob
-   -  ebbinghaus
-   -  whiteill
-   -  enigma
-   -  blackhole
-   -  colorgrids
+-  chromatic
+-  dotill
+-  realtimegrid
+-  addlines
+-  eyecolour
+-  dakinPex
+-  bruno
+-  dolboeuf
+-  kanizsa
+-  tAki2001
+-  cafewall
+-  ccob
+-  ebbinghaus
+-  whiteill
+-  enigma
+-  blackhole
+-  colorgrids
 
--  **Illusions in JavaScript**
+**Illusions in JavaScript**
 
 -  footsteps
-
 -  thelilac
-
 -  EyeMovements
-
 -  spatialmotion
 
 Examples
@@ -91,9 +86,9 @@ just few examples on this page.
 
 ::
 
-   from sorcerer import sorcerer
-   sorcerer.chromatic("myimage.jpg","outputname" ,circle=False, method="CMCCAT2000", gif=True, Gifduration=7)
-   sorcerer.addlines("myimage.png","desiredoutputname",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
+   from sorceress import sorceress
+   sorceress.chromatic("myimage.jpg",circle=False, method="CMCCAT2000", gif=True, Gifduration=7)
+   sorceress.addlines("myimage.png",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
 
 Contribution
 ------------

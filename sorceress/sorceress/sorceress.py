@@ -1,6 +1,6 @@
 #A collection of functions for the sorceress module that is written in python language
 
-###############################  version: 1.7.5,     ###############################
+###############################  version: 1.7.6,     ###############################
 ############################### Author: Enes Altun  ###############################
 
 import cv2
@@ -13,21 +13,23 @@ from matplotlib import pyplot as plt
 import sys
 from PIL import Image
 
-def chromatic(img, outputname, circle=True, method="CMCCAT2000", gif=True, Gifduration=7):
+def chromatic(img,circle=True, method="CMCCAT2000", gif=True, Gifduration=7):
     """
     This function is used to convert an image to chromatic image.
-    :param img: input image
-    :param outputname: output image name
+    :param img: input image with extension ("test.png")
     :param circle: a center fixation
     :param method: "CMCCAT2000" or "Von Kries"
     :param gif: export as gif
-    :param Gifduration: duration of the gif
+    :param Gifduration: duration of the gif (in seconds)
     :return:
     """
+    outputname = os.path.basename(img).split(".")[0]
     img = cv2.imread(img)
     hsize, wsize, _ = img.shape
     centery = int(hsize / 2)
     centerx = int(wsize / 2)
+    Gifduration=int(Gifduration)
+    pil=int(Gifduration*1000)
 
     XYZ = cv2.cvtColor(img, cv2.COLOR_RGB2LAB)
     gry = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
@@ -47,7 +49,6 @@ def chromatic(img, outputname, circle=True, method="CMCCAT2000", gif=True, Gifdu
     else:
         pass
 
-    outputname = str(outputname)
 
     if gif == True:
         os.mkdir('chromatic')
@@ -83,7 +84,7 @@ def chromatic(img, outputname, circle=True, method="CMCCAT2000", gif=True, Gifdu
         frames2[0].save('chromaticPIL/mygifPIL.gif', format='GIF',
                         append_images=frames2[1:],
                         save_all=True,
-                        duration=7000, loop=0)
+                        duration=pil, loop=0)
     elif gif == False:
         cv2.imwrite(f'{outputname}.png', test)
         cv2.imwrite(f'{outputname}gry.png', gry)
@@ -91,11 +92,10 @@ def chromatic(img, outputname, circle=True, method="CMCCAT2000", gif=True, Gifdu
         print("Your working directory: ", os.getcwd())
 
 
-def dotill(hsize,wsize,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
+def dotill(dimension,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
     """
     This function is used to create a dotill image.
-    :param hsize: height of the image
-    :param wsize: width of the image
+    :param dimension: dimension of the image (width,height)
     :param hlinefreq: horizontal line frequency
     :param wlinefreq: vertical line frequency
     :param dotcolor: color of the dot
@@ -108,6 +108,9 @@ def dotill(hsize,wsize,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,
     :param horizontallines: if True, horizontal lines are drawn
     :return:
     """
+    hsize,wsize=dimension
+    hsize=int(hsize)
+    wsize=int(wsize)
     img2 = np.ones((hsize, wsize, 3), dtype=np.uint8)
     lines = img2.copy()
     h, w, c = lines.shape
@@ -165,12 +168,12 @@ def realtimegrid(realcolours=True):
         :param realcolours: if True, real colours (colors that correspond to the frame) are added to frame.
     :return:
     """
-    def empty(a):  #
+    def empty(a):
         pass
     cap = cv2.VideoCapture(0)
     cv2.namedWindow('tracker')
     if realcolours == False:
-        cv2.resizeWindow('tracker', 720, 640)  # resize
+        cv2.resizeWindow('tracker', 720, 640)
     else:
         cv2.resizeWindow('tracker', 400, 200)
     cv2.createTrackbar('vertical', 'tracker', 1, 300,
@@ -220,10 +223,8 @@ def realtimegrid(realcolours=True):
         height = h / (horizon + 0.0000001)
         if Hthickness == 0:
             Hthickness = Hthickness + 1
-            # print("You can't select thickness as 0, thickness has been converted to 1")
         if Wthickness == 0:
             Wthickness = Wthickness + 1
-            # print("You can't select thickness as 0, thickness has been converted to 1")
         for i in range(vertical):
             for j in range(horizon):
                 first_x, first_y = int(i * width), int(j * height)
@@ -247,7 +248,6 @@ def realtimegrid(realcolours=True):
             for j in range(vertical):
                 first_x, first_y = int(j * width), int(i * height)
                 last_x, last_y = int((j + 1) * width), int(i * height)
-                # renkler
                 col_x = int(first_x + 0.4 * (last_x - first_x))
                 col_y = int(first_y + 0.4 * (last_y - first_y))
                 gridcolor = img[col_y, col_x, :]
@@ -281,7 +281,7 @@ def realtimegrid(realcolours=True):
 
     cv2.destroyAllWindows()
 
-def addlines(img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0),alphablending=False):
+def addlines(img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0),alphablending=False):
     """"
     Adds lines to an image.
     Arguments:
@@ -292,8 +292,8 @@ def addlines(img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),lineco
     alphablending: if True, line colors are much more stable against the luminance change in the background image.
     :return
     """
+    outputname = os.path.basename(img).split(".")[0]
     rect = cv2.imread(img)
-
     h,w,c=rect.shape
 
     if alphablending == False:
@@ -320,8 +320,7 @@ def addlines(img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),lineco
         cv2.imwrite(f'{outputname}ver1.png', result2)
         cv2.imwrite(f'{outputname}ver2.png', result3)
 
-        print("DONE! grids have been added to your image check your working directory:")
-        print("Your working directory: ", os.getcwd())
+        print("DONE! grids have been added to your image check your working directory:",os.getcwd())
     else:
         rect = cv2.cvtColor(rect, cv2.COLOR_BGR2BGRA)
         h, w, c = rect.shape
@@ -354,14 +353,14 @@ def addlines(img,outputname,linecolour1=(0,255,0),linecolour2=(0,255,255),lineco
         print("DONE! images have been added to your working directory:")
         print("Your working directory: ", os.getcwd())
 
-def eyecolour(img,outputname):
+def eyecolour(img):
     """
-    Select the iris on the image with mouse click and returns the illusory eye colour.
+    Select the iris on the image with mouse click and it returns the illusory eye colour.
     Arguments:
-    :param img: input image
-    :param outputname: output name
+    :param img: input image path with extension
     :return:
     """
+    outputname = os.path.basename(img).split(".")[0]
     img = cv2.imread(img)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -372,7 +371,6 @@ def eyecolour(img,outputname):
     roi_cropped = img[int((r[1])):int((r[1]) + int(r[3])), int((r[0])):int((r[0])) + int((r[2]))]
 
     center = int((r[0]+r[0]+r[2]) / 2), int((r[1]+r[1]+r[3]) / 2)
-    # masking for seamless Clone
     redd = 255 * np.ones(roi_cropped.shape, roi_cropped.dtype)
 
     h, w = img.shape
@@ -661,45 +659,29 @@ def ccob(image, rms=0.5, amplitudespectrum=300, plttitle='output'):
     img = (img / 255.0) * 2.0 - 1.0
 
     rms = rms
-
     img = img - np.mean(img)
     img = img / np.std(img)
     img = img * rms
-
-    # convert to frequency domain
     img_freq = np.fft.fft2(img)
-
-    # calculate amplitude spectrum
     img_amp = np.fft.fftshift(np.abs(img_freq))
     amplitudespectrum = int(amplitudespectrum)
     kerne = np.ones((amplitudespectrum, amplitudespectrum), np.float32) / amplitudespectrum
-
     lp_filt = cv2.filter2D(img_amp, -1, kerne)
-
     img_filt = np.fft.fftshift(img_freq) * lp_filt
-
-    # convert back to an image
     img_new = np.real(np.fft.ifft2(np.fft.ifftshift(img_filt)))
-
-    # convert to mean zero and specified RMS contrast
     img_new = img_new - np.mean(img_new)
     img_new = img_new / np.std(img_new)
     img_new = img_new * rms
-
-    # Apply Lapplacian of Gaussian
-
     gaus = cv2.GaussianBlur(img_new, (7, 7), 7)
     laplacian = cv2.Laplacian(gaus, cv2.CV_64F, 3)
-
     plt.imshow(laplacian, cmap='gray')
     plt.title(f'{plttitle}')
     plt.savefig(f'{plttitle}')
     print(f"DONE! image f'{plttitle} has been added to your working directory:")
     print("Your working directory: ", os.getcwd())
-
     plt.show()
 
-def ebbinghaus(output, bgcolor=(255, 255, 255), lcradius=22, rcradius=22, lcradius2=25, rcradius2=45,randcirclecolors=False):
+def ebbinghaus(output, bgcolor=(255, 255, 255), lcradius=22, rcradius=22, lcradius2=25, rcradius2=45,randcirclecolors=True):
     """
     Creates ebbinghaus illision .
     :param output: output name
@@ -718,7 +700,6 @@ def ebbinghaus(output, bgcolor=(255, 255, 255), lcradius=22, rcradius=22, lcradi
     lcradius2 = int(lcradius2)
     rcradius2 = int(rcradius2)
     if randcirclecolors==False:
-
         cv2.circle(img, (180, 180), lcradius, (0, 0, 0), 3)
 
         for i in range(0, 8):
