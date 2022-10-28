@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function() {
     blurButton.style.borderRadius = '5px';
     
     var github = document.createElement('a');
-    github.href = 'https://github.com/jiahaog/';
+    github.href = 'https://github.com/altunenes/';
     github.target = '_blank';
     github.style.position = 'absolute';
     github.style.right = '5%';
