@@ -12,6 +12,7 @@ nav:
     - lilac: lilac.html
     - motion: spatialmotion.html
     - blindness: blindness.html
+    - blindness2: blindness2.html
 theme:
   name: material
   features:

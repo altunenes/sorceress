@@ -304,6 +304,13 @@ With this illusion, you can see the disappearance of the objects in front of you
 
 I added different conditions, "add circle" button adds circles to the screen and you can adjust their positions with your mouse interactively. You can also change the fixation cross with your mouse, + and - buttons change the speed of the moving background. 
 
+In addition, I programmed the another version of this illusion it works with same principles but it's a bit different. You can access this illusion from here [sorceress/blindness2:](https://altunenes.github.io/sorceress/blindness2.html)
+
+Use "add circle" button to add circles to the screen and you can adjust their positions with your mouse interactively. 
+
+![blind](./assets/blind23.gif)
+
+In this demonstration the observer focuses at the flickering green dot in the middle. After about 10 seconds, the observer sees one, two or all three of the static yellow dots arranged at the corners of an imaginary equilateral triangle disappear and then reappear. 
 
 
 
