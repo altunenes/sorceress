@@ -16,3 +16,5 @@ Finished animations :
 [SAction](https://altunenes.github.io/sorceress/spatialmotion.html)
 
 [blindness](https://altunenes.github.io/sorceress/blindness.html)
+
+[blindness2](https://altunenes.github.io/sorceress/blindness2.html)

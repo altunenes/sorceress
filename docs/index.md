@@ -52,6 +52,7 @@ from sorceress import sorceress
 - thelilac
 - EyeMovements
 - spatialmotion
+- Motion Induced Blindness
 
 ## Examples
 
