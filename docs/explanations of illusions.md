@@ -296,6 +296,17 @@ sorceress.colorgrids("inputfolder/test.jpg","grids",frequency=24)
 
 It's a very interesting illusion. I've seen it in a paper that was recently published (Brenner & Smeets, 2022) According to this paper when two dots move clockwise or counterclockwise along the circular path, the one dots clearly moves faster than the other one. However, they are at the same speed. I added different conditions to reproduce this illusion in different ways. You can access this illusion from here [sorceress/Motion:](https://altunenes.github.io/sorceress/spatialmotion.html)
 
+## 24-sorcerer.blindness
+![motion](./assets/Animation6.gif)
+Motion Induced Blindness (MIB) is a phenomenon of visual disappearance or perceptual illusions observed in the lab, in which stationary visual stimuli disappear as if erased in front of an observer's eyes when masked with a moving background. 
+
+With this illusion, you can see the disappearance of the objects in front of your eyes. You can access this illusion from here [sorceress/blindness:](https://altunenes.github.io/sorceress/blindness.html)
+
+I added different conditions, "add circle" button adds circles to the screen and you can adjust their positions with your mouse interactively. You can also change the fixation cross with your mouse, + and - buttons change the speed of the moving background. 
+
+
+
+
 ### REFERENCES
 
 Aglioti S, DeSouza JFX, Goodale MA (1995) Size-contrast illusions deceive the eye but not the hand. Curr Biol 5:679–685
