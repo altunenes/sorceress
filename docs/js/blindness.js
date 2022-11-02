@@ -243,8 +243,8 @@ addCircleButton.style.cursor = 'pointer';
 document.body.appendChild(addCircleButton);
 addCircleButton.onclick = function() {
   var circle = document.createElement('div');
-  circle.style.width = '30px';
-  circle.style.height = '30px';
+  circle.style.width = '25px';
+  circle.style.height = '25px';
   circle.style.backgroundColor = 'yellow';
   circle.style.borderRadius = '50%';
   circle.style.position = 'absolute';
@@ -338,4 +338,50 @@ document.body.appendChild(plus);
     fontAwesome.href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css';
     document.head.appendChild(fontAwesome);
 
-});
+    plus.onmousedown = function(e) {
+      var initialX = e.clientX;
+      var initialY = e.clientY;
+      var initialLeft = parseInt(plus.style.left);
+      var initialTop = parseInt(plus.style.top);
+      document.onmousemove = function(e) {
+        var newX = e.clientX;
+        var newY = e.clientY;
+        var deltaX = newX - initialX;
+        var deltaY = newY - initialY;
+        plus.style.left = initialLeft + deltaX + 'px';
+        plus.style.top = initialTop + deltaY + 'px';
+      };
+      document.onmouseup = function() {
+        document.onmousemove = null;
+        document.onmouseup = null;
+      };
+    };
+
+    var blurButton = document.createElement('button');
+    blurButton.innerHTML = 'Blur';
+    blurButton.style.position = 'absolute';
+    blurButton.style.left = '3%';
+    blurButton.style.top = '95%';
+    blurButton.style.transform = 'translate(-50%, -50%)';
+    blurButton.onclick = function() {
+      if (blurButton.innerHTML == 'Blur') {
+        blurButton.innerHTML = 'Blur more';
+        document.body.style.filter = 'blur(5px)';
+      } else if (blurButton.innerHTML == 'Blur more') {
+        blurButton.innerHTML = 'Blur less';
+        document.body.style.filter = 'blur(10px)';
+      } else {
+        blurButton.innerHTML = 'Blur';
+        document.body.style.filter = 'blur(0px)';
+      }
+    };
+    document.body.appendChild(blurButton);
+    
+    blurButton.style.fontFamily = 'sans-serif';
+    blurButton.style.fontSize = '20px';
+    blurButton.style.color = 'white';
+    blurButton.style.backgroundColor = 'gray';
+    blurButton.style.border = 'none';
+    blurButton.style.padding = '10px 20px';
+    blurButton.style.borderRadius = '5px';
+    });
