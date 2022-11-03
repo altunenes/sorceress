@@ -4,9 +4,15 @@ First, let's import the package. I usually import the package like this:
 
 `from sorceress import sorceress`
 
+Remember you need to also install other packages, otherwise you will get an error. One of the packages is `numpy`, which is used to create arrays. You can install it by typing `pip install numpy` in your terminal. Another package is `matplotlib`, which is used to plot the images. You can install it by typing `pip install matplotlib` in your terminal. If you are using `conda`, you can install them by typing `conda install numpy` and `conda install matplotlib` in your terminal. If you are using `pipenv`, you can install them by typing `pipenv install numpy` and `pipenv install matplotlib` in your terminal. Another package is cv2, which is used to read images and image processing. You can install it by typing `pip install opencv-python` in your terminal. I also use imageio and PIL packages for more basic image processing. You can install them by typing `pip install imageio` and `pip install pillow` in your terminal. Last one is the color-science package, which is used to convert colors. You can install it by typing `pip install color-science` in your terminal.
+
+You don't need to import the other packages, because they are imported in the sorceress package.
+
 ## 1- sorceress.chromatic
 
 Chromatic adaptation is probably one of the central concepts in color vision. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. You can apply this function to any image and function automatically processes the image and returns a gif file. The gif file shows the transformation of the image from the original to the adapted image.
+
+The von Kries chromatic adaptation method is a technique that is sometimes used in camera image processing. The method is to apply a gain to each of the human cone cell spectral sensitivity responses so as to keep the adapted appearance of the reference white constant. Herbert E. Ives was the first to clearly apply Johannes von Kries' theory of adaptive gains on the three cone cell types to the issue of color constancy; as a result, the technique is sometimes known as the Ives transform or the von Kries-Ives adaptation (Gegenfurtner, 1999).
 
 ```
 sorceress.chromatic("inputfolder/tree.jpg",Gifduration=10)
@@ -26,6 +32,9 @@ _[image source](https://extension.unh.edu/blog/fall-good-time-plant-trees-and-sh
 
 Lateral inhibition is the phenomenon in which a neuron's response to a stimulus is inhibited by the excitation of a neighboring neuron (Bakshi and Ghosh, 2017).Neurons that are firing inhibit the stimulation of surrounding. Accordingly, only the neurons that are most stimulated and least inhibited respond (Cohen, 2011).
 
+Some neurons are activated more than others during lateral inhibition. Excitatory neurotransmitters are released to neurons along a specific path by a highly activated cell. In addition, the highly activated primary neuron in the brain activates interneurons that prevent the stimulation of cells that are located laterally. Interneurons are nerve cells that help the central nervous system and motor or sensory neurons communicate with one another. This action increases the contrast between different stimuli and sharpens the focus on a particular stimulus. Body sensory systems like the olfactory, visual, tactile, and auditory systems all experience lateral inhibition.
+
+Mach bands, the perception of light and dark lines next to abrupt brightness changes, and the gray dots that appear between junctions in the Hermann grid illusion can all be explained by lateral inhibition.
 It's an old-fashioned illusion that is probably known the most. I've added many parameters to this function to reproduce in distinctive ways.
 
 example usage:
@@ -49,7 +58,7 @@ with `realcolours=False` code will not calculate the real colors of your frame. 
 
 inspired from prof Akiyoshi Kitaoka.
 
-Have you seen this illusion before? In the below, someone is hiding after those grids. *Beneath these *grids there* is *more than* Grids. Beneath these *grids there* is an idea. And ideas are bulletproof...*
+Have you seen this illusion before? In the below, someone is hiding after those grids. *Beneath these *grids there* is *more than* Grids. Beneath these *grids there* is an idea. And ideas are bulletproof...* What you see is results of vast amounts of neural computation, mixed with a bit of guesswork. If you  look closely you use lower spatial frequencies and if you look at a further distance you will see the high spatial frequencies. In short, there are more grids  that fall on the light-sensitive portion of the back of your eye the further the image is away from you.Low-contrast object perception is impaired by high spatial-frequency components.
 
 You can see the Vendetta guy if you scroll down and up the page or zoom out the whole image. Or more accurately, apply a Gaussian.
 
@@ -78,9 +87,14 @@ sorceress.eyecolour("yourimage.jpg")
 
 ```
 
-With this illusion, you perceive the black-and-white NumPy array as colorful. After you run this code, you need to select the iris manually and then push the enter. I didn't want to use the iris detector since it slowed  down the script. Just select smaller as much as possible. I've used `seamlessClone` function from OpenCV for getting much more realistic results. Your ROI (region of interest that you selected manually) will correspond to an eclipse' coordinates which I needed to detect the exact position of the iris.
+With this illusion, you perceive the black-and-white NumPy array as colorful. After you run this code, you need to select the iris manually and then push the enter. I didn't want to use the iris detector since it slowed  down the script. Just select smaller as much as possible. I've used `seamlessClone` function from OpenCV for getting much more realistic results. Your ROI (region of interest that you selected manually) will correspond to an eclipse' coordinates which I needed to detect the exact position of the iris. 
 
-example: You probably have seen this lady's left eye as blue, but it's exactly the same color as the right eye.
+Red, green, and blue are three overlapping color families that three separate types of photoreceptors in the eye are tuned to, which contributes to the process of seeing color (which are activated by visible light of long, medium and short wavelengths). Then, in the same scenario, these signals are immediately compared with signals from surrounding places. The comparison process continues as the signals move up the brain's hierarchy of processing centers, where they are compared to ever-larger portions of the environment. Accordingly, color and brightness are always relative due to this "opponent process."
+
+
+I must say that this illusion is very sensitive to the brightness values of the image you will use. And you should use an image that you can center exactly.
+
+example: You probably have seen this lady's left eye as blue, but it's exactly the same color as the right eye. Use images that have a similar face structure and brightness values (luminance). In next version, I will add a parameter to adjust the luminance of the image.
 
 ![addd.png](./assets/addd.png)
 
@@ -231,7 +245,9 @@ sorceress.whiteill(version2=True,outputname="whiteillout")
 
 ![whiteillh.png](./assets/whiteillh.png)
 
-Do I need to say grays are the same? 😄. The scientific explanations are still debated in the literature at first look. A recent study about White's study (Betz et al (2015)) found that the illusion was marginally enhanced by contour adaptation at the test patch edges parallel to the grating. The contrasting behavior seen in the current investigation in response to independent manipulations of collinear or flanking bar luminance is consistent with these findings.
+Do I need to say grays are the same? 😄. The scientific explanations are still debated in the literature at first look. A recent study about White's study (Betz et al., 2015) found that the illusion was marginally enhanced by contour adaptation at the test patch edges parallel to the grating. The contrasting behavior seen in the current investigation in response to independent manipulations of collinear or flanking bar luminance is consistent with these findings. 
+
+ Before White identified this phenomenon, it was believed that all brightness illusions were the consequence of rival processes, meaning that a gray item should appear dark when surrounded by light and light when surrounded by darkness. However, in this deception, the darker-appearing gray bars are surrounded by black stimuli whereas the lighter-appearing gray bars are surrounded by white stimuli. As I said before, White's effect's underlying neural mechanisms are still a mystery.
 
 ## 16-sorceress footsteps
 
@@ -276,6 +292,11 @@ And I also would like to remind you that the illusion may not work for everyone,
 `sorceress.blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circle_color=(0, 0, 0),kill=False) `
 
 This is a recent optical illusion that was described by Laeng et al (2022). According to the paper, the change rates of pupil diameters were significantly related to the illusory motion phenomenology only with the black holes. You can try it with the other colors though.
+"The findings demonstrate that the reflex to dilate or contract the pupils is not a closed-loop system, like a photocell opening a door, that is only sensitive to the amount of light stimulating the photoreceptor. Instead of just adjusting to real energy, the eye may also respond to perceived and even imagined light."
+
+The illusion appeared most effective when the hole was black. However, I added many parameters so you can try different colors. 
+
+
 
 ## 22-sorcerer.colorgrids
 
@@ -335,6 +356,8 @@ Dakin S. C. and Bex P. J. 2003 Natural image statistics mediate brightness ‘fi
 Gregory RL, Heard P (1979) Border locking and the café wall illusion. Perception 8(4):365–380
 
 Haffenden, A. M. & Goodale, M. A. (1998) The effect of pictorial illusion on prehension and perception. Journal of Cognitive Neuroscience 10(1):122–36
+
+Karl R. Gegenfurtner, L. T. Sharpe (1999). Color Vision: From Genes to Perception, Cambridge University Press.
 
 Kanizsa G (1976) Subjective contours. Sci Am 234:48–52
 
