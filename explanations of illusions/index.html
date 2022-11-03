@@ -788,8 +788,11 @@
 <h2 id="this-page-is-trying-to-explain-all-optical-illusions">This page is trying to explain all optical illusions</h2>
 <p>First, let's import the package. I usually import the package like this:</p>
 <p><code>from sorceress import sorceress</code></p>
+<p>Remember you need to also install other packages, otherwise you will get an error. One of the packages is <code>numpy</code>, which is used to create arrays. You can install it by typing <code>pip install numpy</code> in your terminal. Another package is <code>matplotlib</code>, which is used to plot the images. You can install it by typing <code>pip install matplotlib</code> in your terminal. If you are using <code>conda</code>, you can install them by typing <code>conda install numpy</code> and <code>conda install matplotlib</code> in your terminal. If you are using <code>pipenv</code>, you can install them by typing <code>pipenv install numpy</code> and <code>pipenv install matplotlib</code> in your terminal. Another package is cv2, which is used to read images and image processing. You can install it by typing <code>pip install opencv-python</code> in your terminal. I also use imageio and PIL packages for more basic image processing. You can install them by typing <code>pip install imageio</code> and <code>pip install pillow</code> in your terminal. Last one is the color-science package, which is used to convert colors. You can install it by typing <code>pip install color-science</code> in your terminal.</p>
+<p>You don't need to import the other packages, because they are imported in the sorceress package.</p>
 <h2 id="1-sorceresschromatic">1- sorceress.chromatic</h2>
 <p>Chromatic adaptation is probably one of the central concepts in color vision. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. You can apply this function to any image and function automatically processes the image and returns a gif file. The gif file shows the transformation of the image from the original to the adapted image.</p>
+<p>The von Kries chromatic adaptation method is a technique that is sometimes used in camera image processing. The method is to apply a gain to each of the human cone cell spectral sensitivity responses so as to keep the adapted appearance of the reference white constant. Herbert E. Ives was the first to clearly apply Johannes von Kries' theory of adaptive gains on the three cone cell types to the issue of color constancy; as a result, the technique is sometimes known as the Ives transform or the von Kries-Ives adaptation (Gegenfurtner, 1999).</p>
 <pre><code>sorceress.chromatic(&quot;inputfolder/tree.jpg&quot;,Gifduration=10)
 </code></pre>
 <p>simple example via a gif:</p>
@@ -799,7 +802,9 @@
 <h2 id="2-sorceressdotill">2- sorceress.dotill()</h2>
 <p><img alt="CMCCAT2000output.png" src="../assets/CMCCAT2000output.png" /></p>
 <p>Lateral inhibition is the phenomenon in which a neuron's response to a stimulus is inhibited by the excitation of a neighboring neuron (Bakshi and Ghosh, 2017).Neurons that are firing inhibit the stimulation of surrounding. Accordingly, only the neurons that are most stimulated and least inhibited respond (Cohen, 2011).</p>
-<p>It's an old-fashioned illusion that is probably known the most. I've added many parameters to this function to reproduce in distinctive ways.</p>
+<p>Some neurons are activated more than others during lateral inhibition. Excitatory neurotransmitters are released to neurons along a specific path by a highly activated cell. In addition, the highly activated primary neuron in the brain activates interneurons that prevent the stimulation of cells that are located laterally. Interneurons are nerve cells that help the central nervous system and motor or sensory neurons communicate with one another. This action increases the contrast between different stimuli and sharpens the focus on a particular stimulus. Body sensory systems like the olfactory, visual, tactile, and auditory systems all experience lateral inhibition.</p>
+<p>Mach bands, the perception of light and dark lines next to abrupt brightness changes, and the gray dots that appear between junctions in the Hermann grid illusion can all be explained by lateral inhibition.
+It's an old-fashioned illusion that is probably known the most. I've added many parameters to this function to reproduce in distinctive ways.</p>
 <p>example usage:</p>
 <pre><code>sorceress.dotill((500,500),hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
 </code></pre>
@@ -811,7 +816,7 @@
 <a href="https://www.patreon.com/posts/color-grid-28734535">Inspiration</a>:</p>
 <h2 id="4-sorceressaddlines">4- sorceress.addlines</h2>
 <p>inspired from prof Akiyoshi Kitaoka.</p>
-<p>Have you seen this illusion before? In the below, someone is hiding after those grids. <em>Beneath these </em>grids there<em> is </em>more than<em> Grids. Beneath these </em>grids there<em> is an idea. And ideas are bulletproof...</em></p>
+<p>Have you seen this illusion before? In the below, someone is hiding after those grids. <em>Beneath these </em>grids there<em> is </em>more than<em> Grids. Beneath these </em>grids there<em> is an idea. And ideas are bulletproof...</em> What you see is results of vast amounts of neural computation, mixed with a bit of guesswork. If you  look closely you use lower spatial frequencies and if you look at a further distance you will see the high spatial frequencies. In short, there are more grids  that fall on the light-sensitive portion of the back of your eye the further the image is away from you.Low-contrast object perception is impaired by high spatial-frequency components.</p>
 <p>You can see the Vendetta guy if you scroll down and up the page or zoom out the whole image. Or more accurately, apply a Gaussian.</p>
 <p><img alt="asdddd" src="https://user-images.githubusercontent.com/54986652/130432273-c3b11961-484d-44a1-99a9-6821e46f9c10.png" /></p>
 <pre><code>sorceress.addlines(img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
@@ -828,8 +833,10 @@ example usage:
 <pre><code>sorceress.eyecolour(&quot;yourimage.jpg&quot;)
 
 </code></pre>
-<p>With this illusion, you perceive the black-and-white NumPy array as colorful. After you run this code, you need to select the iris manually and then push the enter. I didn't want to use the iris detector since it slowed  down the script. Just select smaller as much as possible. I've used <code>seamlessClone</code> function from OpenCV for getting much more realistic results. Your ROI (region of interest that you selected manually) will correspond to an eclipse' coordinates which I needed to detect the exact position of the iris.</p>
-<p>example: You probably have seen this lady's left eye as blue, but it's exactly the same color as the right eye.</p>
+<p>With this illusion, you perceive the black-and-white NumPy array as colorful. After you run this code, you need to select the iris manually and then push the enter. I didn't want to use the iris detector since it slowed  down the script. Just select smaller as much as possible. I've used <code>seamlessClone</code> function from OpenCV for getting much more realistic results. Your ROI (region of interest that you selected manually) will correspond to an eclipse' coordinates which I needed to detect the exact position of the iris. </p>
+<p>Red, green, and blue are three overlapping color families that three separate types of photoreceptors in the eye are tuned to, which contributes to the process of seeing color (which are activated by visible light of long, medium and short wavelengths). Then, in the same scenario, these signals are immediately compared with signals from surrounding places. The comparison process continues as the signals move up the brain's hierarchy of processing centers, where they are compared to ever-larger portions of the environment. Accordingly, color and brightness are always relative due to this "opponent process."</p>
+<p>I must say that this illusion is very sensitive to the brightness values of the image you will use. And you should use an image that you can center exactly.</p>
+<p>example: You probably have seen this lady's left eye as blue, but it's exactly the same color as the right eye. Use images that have a similar face structure and brightness values (luminance). In next version, I will add a parameter to adjust the luminance of the image.</p>
 <p><img alt="addd.png" src="../assets/addd.png" /></p>
 <h2 id="6-sorceressdakinpexc">6- sorceress.dakinPexc</h2>
 <pre><code>sorceress.dakinPex(outputname=&quot;myoutput&quot;,dimension=800)
@@ -912,7 +919,8 @@ sorceress.ccob(&quot;aki.jpg&quot;,rms=0.5,amplitudespectrum=300,plttitle=&quot;
 <pre><code>sorceress.whiteill(version2=True,outputname=&quot;whiteillout&quot;)
 </code></pre>
 <p><img alt="whiteillh.png" src="../assets/whiteillh.png" /></p>
-<p>Do I need to say grays are the same? 😄. The scientific explanations are still debated in the literature at first look. A recent study about White's study (Betz et al (2015)) found that the illusion was marginally enhanced by contour adaptation at the test patch edges parallel to the grating. The contrasting behavior seen in the current investigation in response to independent manipulations of collinear or flanking bar luminance is consistent with these findings.</p>
+<p>Do I need to say grays are the same? 😄. The scientific explanations are still debated in the literature at first look. A recent study about White's study (Betz et al., 2015) found that the illusion was marginally enhanced by contour adaptation at the test patch edges parallel to the grating. The contrasting behavior seen in the current investigation in response to independent manipulations of collinear or flanking bar luminance is consistent with these findings. </p>
+<p>Before White identified this phenomenon, it was believed that all brightness illusions were the consequence of rival processes, meaning that a gray item should appear dark when surrounded by light and light when surrounded by darkness. However, in this deception, the darker-appearing gray bars are surrounded by black stimuli whereas the lighter-appearing gray bars are surrounded by white stimuli. As I said before, White's effect's underlying neural mechanisms are still a mystery.</p>
 <h2 id="16-sorceress-footsteps">16-sorceress footsteps</h2>
 <p><img alt="gl" src="https://user-images.githubusercontent.com/54986652/134406779-173bd034-4f1f-408c-8327-eff8158f1ad7.gif" /></p>
 <p>Ok since this is not part of our python package I have not listed it as a function. You can access this illusion from here <a href="https://altunenes.github.io/sorceress/footsteps">sorceress/footsteps:</a>. I also added source codes of the js, you can find it under the "javascripts" folder.</p>
@@ -936,7 +944,9 @@ And I also would like to remind you that the illusion may not work for everyone,
 <h2 id="21-sorcererblackhole">21-sorcerer.blackhole</h2>
 <p><img alt="blackenigma" src="../assets/blackenigma.png" /></p>
 <p><code>sorceress.blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circle_color=(0, 0, 0),kill=False)</code></p>
-<p>This is a recent optical illusion that was described by Laeng et al (2022). According to the paper, the change rates of pupil diameters were significantly related to the illusory motion phenomenology only with the black holes. You can try it with the other colors though.</p>
+<p>This is a recent optical illusion that was described by Laeng et al (2022). According to the paper, the change rates of pupil diameters were significantly related to the illusory motion phenomenology only with the black holes. You can try it with the other colors though.
+"The findings demonstrate that the reflex to dilate or contract the pupils is not a closed-loop system, like a photocell opening a door, that is only sensitive to the amount of light stimulating the photoreceptor. Instead of just adjusting to real energy, the eye may also respond to perceived and even imagined light."</p>
+<p>The illusion appeared most effective when the hole was black. However, I added many parameters so you can try different colors. </p>
 <h2 id="22-sorcerercolorgrids">22-sorcerer.colorgrids</h2>
 <p><img alt="colorgrids" src="../assets/final.png" /></p>
 <p>If you look closely enough you will see the original image is black and white. However, via colorful stripes your brain into seeing a color image. Basically, our brain is trying to fill the gaps between the stripes and it gives us an overall impression of what's there.
@@ -967,6 +977,7 @@ Motion Induced Blindness (MIB) is a phenomenon of visual disappearance or percep
 <p>Dakin S. C. and Bex P. J. 2003 Natural image statistics mediate brightness ‘filling in’<strong>Proc. R. Soc. Lond. B.</strong>270**2341–2348 http://doi.org/10.1098/rspb.2003.2528</p>
 <p>Gregory RL, Heard P (1979) Border locking and the café wall illusion. Perception 8(4):365–380</p>
 <p>Haffenden, A. M. &amp; Goodale, M. A. (1998) The effect of pictorial illusion on prehension and perception. Journal of Cognitive Neuroscience 10(1):122–36</p>
+<p>Karl R. Gegenfurtner, L. T. Sharpe (1999). Color Vision: From Genes to Perception, Cambridge University Press.</p>
 <p>Kanizsa G (1976) Subjective contours. Sci Am 234:48–52</p>
 <p>Kitaoka, A. (2001).　Illusion designology (7): Illusory light perception that cannot be explained by the Fourier analysis. <em>Nikkei Science,</em>  <strong>31</strong> (8), 66-68 (in Japanese).</p>
 <p>Laeng B, Nabil S and Kitaoka A (2022) The Eye Pupil Adjusts to Illusorily Expanding Holes. Front. Hum. Neurosci. 16:877249. doi: 10.3389/fnhum.2022.877249</p>
