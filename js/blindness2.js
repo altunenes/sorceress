@@ -30,7 +30,25 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
     
-    
+    /*/ if you want to use an image instead of a symbol, use this code instead of the above code, replacing the image url with your own
+var freq = 10;
+for (var i = 0; i < freq; i++) {
+  for (var j = 0; j < freq; j++) {
+    var plus = document.createElement('div');
+    plus.style.position = 'absolute';
+    plus.style.left = (i * rect.offsetWidth / freq) + 'px';
+    plus.style.top = (j * rect.offsetHeight / freq) + 'px';
+    plus.style.width = (rect.offsetWidth / freq) + 'px';
+    plus.style.height = (rect.offsetHeight / freq) + 'px';
+    plus.style.backgroundColor = 'white';
+    plus.style.border = 'white';
+    plus.style.fontSize = '25px';
+    plus.innerHTML = "<img src='https://icons-for-free.com/iconfiles/png/512/meh-1321215622624409092.png' style='width:25px;height:25px;border-radius:50%;'>" ;
+    rect.appendChild(plus);
+  }
+}
+/*/
+
     
     
     var blue = document.getElementsByTagName('div');
