@@ -353,13 +353,14 @@ def addlines(img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,
         print("DONE! images have been added to your working directory:")
         print("Your working directory: ", os.getcwd())
 
-def eyecolour(img,alpha=0.8,beta=0.3,M=25,luminance=1,saturation=1):
+def eyecolour(img,alpha=0.8,beta=0.3,M=25,luminance=1,saturation=1,colors=(0,0,255)):
     """
     Select the iris on the image with mouse click and it returns the illusory eye colour.
     Arguments:
     :param img: input image path with extension
     :param alpha: alpha beta and M are the parameters of blending. Play with them to get the best results
     :param luminance and saturation: Don't use values greater than 1 for luminance and saturation
+    :param colors: BGR values of the color you want to use for the left half of the image (default is red)
     :return:
     """
     #if user enter luminance and saturation values more than 1 raise error and exit
@@ -386,10 +387,8 @@ def eyecolour(img,alpha=0.8,beta=0.3,M=25,luminance=1,saturation=1):
 
     j = 0
     for i in range(0, centw, 20):
-        mask[0:h, i:i + 25][:, :, 2] = j + 45
-        j = j + 5
-        if j > 230:
-            break
+        mask[j:h, i:centw] = colors
+        j += 20
 
     img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
 
