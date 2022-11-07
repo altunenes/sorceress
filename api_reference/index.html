@@ -581,7 +581,10 @@ So for best result, i reccomend you to use a clear profile picture.</p>
 <pre><code>    &quot;&quot;&quot;
     Select the iris on the image with mouse click and returns the illusory eye colour.
     Arguments:
-    :param img: input image
+    :param img: input image path with extension
+    :param alpha: alpha beta and M are the parameters of blending. Play with them to get the best results
+    :param luminance and saturation: Don't use values greater than 1 for luminance and saturation
+    :param colors: BGR values of the color you want to use for the left half of the image (default is red)
     :return:
     &quot;&quot;&quot;
 </code></pre>
