@@ -50,12 +50,13 @@ from sorceress import sorceress
   - enigma
   - blackhole
   - colorgrids
-+ **Illusions in JavaScript**
 
-- footsteps
-- thelilac
-- EyeMovements
-- spatialmotion
+ **Illusions in JavaScript**
+
+  - footsteps
+  - thelilac
+  - EyeMovements
+  - spatialmotion
 
 ## Examples
 
