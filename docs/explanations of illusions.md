@@ -8,7 +8,7 @@ Remember you need to also install other packages, otherwise you will get an erro
 
 You don't need to import the other packages, because they are imported in the sorceress package.
 
-## 1- sorceress.chromatic
+## 1- chromatic
 
 Chromatic adaptation is probably one of the central concepts in color vision. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. You can apply this function to any image and function automatically processes the image and returns a gif file. The gif file shows the transformation of the image from the original to the adapted image.
 
@@ -26,7 +26,7 @@ focus on the red dot (10 second)
 
 _[image source](https://extension.unh.edu/blog/fall-good-time-plant-trees-and-shrubs)_
 
-## 2- sorceress.dotill()
+## 2- dotill
 
 ![CMCCAT2000output.png](./assets/CMCCAT2000output.png)
 
@@ -54,7 +54,7 @@ perceive black and white real time (with webcam) frames as colorful. It's a real
 with `realcolours=False` code will not calculate the real colors of your frame. I recommend you to use this function with real colors. Illusion is getting powerful if colors of lines separate each other, however,  with `realcolours=False` means a lot of options are needed in the slide bar and it's not a pleasant view. It is an indicator of how flexible the color perception in the human visual system is.
 [Inspiration](https://www.patreon.com/posts/color-grid-28734535):
 
-## 4- sorceress.addlines
+## 4- addlines
 
 inspired from prof Akiyoshi Kitaoka.
 
@@ -78,7 +78,7 @@ example usage:
 
 If you select `alphablending==True`  line colors are much more stable against the luminance change in the background image. It's because in OpenCV when you overlay two images or colors the function called `addWeighted` mixes the colors in very "small tones" but you probably do not even notice. Still, this function which I called alpha blending, is much more stable to luminance change. Use both, in the same way, and see what differs.
 
-## 5- sorceress.eyecolour
+## 5- eyecolour
 
 [inspried from:](https://michaelbach.de/ot/col-context/index.html)
 
@@ -91,14 +91,13 @@ With this illusion, you perceive the black-and-white NumPy array as colorful. Af
 
 Red, green, and blue are three overlapping color families that three separate types of photoreceptors in the eye are tuned to, which contributes to the process of seeing color (which are activated by visible light of long, medium and short wavelengths). Then, in the same scenario, these signals are immediately compared with signals from surrounding places. The comparison process continues as the signals move up the brain's hierarchy of processing centers, where they are compared to ever-larger portions of the environment. Accordingly, color and brightness are always relative due to this "opponent process."
 
-
 I must say that this illusion is very sensitive to the brightness values of the image you will use. And you should use an image that you can center exactly.
 
 example: You probably have seen this lady's left eye as blue, but it's exactly the same color as the right eye. Use images that have a similar face structure and brightness values (luminance). In next version, I will add a parameter to adjust the luminance of the image.
 
 ![addd.png](./assets/addd.png)
 
-## 6- sorceress.dakinPexc
+## 6- dakinPexc
 
 ```
 sorceress.dakinPex(outputname="myoutput",dimension=800)
@@ -110,7 +109,7 @@ If you see the different tones of gray this illusion is successful. If you perce
 
 I've written this illusion after the read a paper from (Dakin and Bex, 2003). The existence of spatial frequency channels in the visual system is implicated in lightness perception. And I also should note that It has long been known that the brightness of a region of visual space is not related only to that region’s luminance, but depends also upon the luminances of adjacent regions (Von Bekesy, 1968).
 
-## 7- sorceress.bruno
+## 7- bruno
 
 ```
 bruno(outputname,circle=False,polycolor=(0, 255, 255), rectcolor=(255, 255, 0), circColor=(0, 0, 255))
@@ -121,7 +120,7 @@ sorceress.sorcerer.bruno("myimagee",polycolor=(0,0,255),rectcolor=(34,34,128))
 
 Well at first time it seems a little bit confusing but in their experiments, Bruno et al. (1997) have shown their participants first the shapes that you've seen on the left then the shapes on the right have shown. In this experiment, participants needed to decide quickly as much as possible whether is it the same or not with the previous shape that they had shown. Results have shown that participants were fast and found it easy to say that the two shapes were the same in the top situation. But they were very slow in the other scenario (It's still the same!).
 
-## 8- sorceress.dolboeuf
+## 8- dolboeuf
 
 ```
 dolboeuf(outputname,circleColor=(0,0,255),kill=False)
@@ -133,7 +132,7 @@ sorceress.dolboeuf("doloeufout",kill=False)
 
 Which red circle is bigger than the other? Probably you know what I'm talking about, two of them in the same radius. This illusion was first created by Belgian psychologist Joseph Remi Leopold Delbœuf in 1865. It's all about the perception of size. Of course, it's not the "all" about the story, the size differences of the inner and outer circles also play their roles in this illusion... Well, I didn't create a parameter for customizing those circles' (inner and outer) radius but I believe you get the point. If you select the `kill=True`, the illusion will be destroyed by the two horizontal lines.
 
-## 9- sorceress.kanizsa
+## 9- kanizsa
 
 ```
 kanizsa(outputname,dims,circleColor=(0,0,255))
@@ -145,7 +144,7 @@ sorceress.kanizsa("12outkaniza",400,circleColor=(34,34,178))
 
 The Kanizsa illusion is probably one of the most known it was created by an Italian psychologist Gaetano Kanizsa (1913–1993). We can see surfaces, in this example squares (even though there are different kinds of Kanizas), with contours that are not present in the image. It is called illusory contours you can call this illusion also the "subjective contours" (Kanizsa, 1976). The first time I heard the name "Kanizsa" I thought he is Japanese for a long time. Then I learned that Kaniza was actually an Italian! It's because his name is used in many psychology textbooks to describe the Kanizsa triangle and most of those books don't give the full name of Kanizsa.
 
-## 10- sorceress.ponzol
+## 10- ponzol
 
 ```
 ponzol(outputname,kill=False,line1=(255,0,0),line2=(255,0,0),rectangle1=(0,0,255),rectangle2=(0,0,255))
@@ -157,7 +156,7 @@ sorceress.ponzol("test",kill=False,line1=(0,0,139),line2=(0,0,139),rectangle1=(0
 
 The Ponzo illusion is old (Ponzo, 1912). But Ponzo actually published his illusion with a scientific paper. Actually, any image with a strong sense of perspective has this. You could see various methods if you search a little bit (especially in railways).
 
-## 11- sorceress.tAki2001
+## 11- tAki2001
 
 ```
 sorceress.tAki2001(outputname, dimension=700, circlecolour=(0, 255, 255), circleradius=15, bglinecolor=(255, 128, 128),bgcolor=(255, 255, 255))
@@ -173,7 +172,7 @@ sorceress.tAki2001("YelowRay",dimension=1200)
 
 “Coloured ray illusion ” by Akiyoshi Kitaoka (Kitaoka, 2001). There were similar kinds of illusions that have been described by other scientists like Prandtl,(1927). Illusory yellow circles appear to run obliquely over the homogeneously white background. I added to function to change the background in the BGR array. Try it with other background colors with `bgcolor` parameter.
 
-## 12-sorceress.cafewall
+## 12-cafewall
 
 ```
 sorceress.cafeWall(outputname, dimension=1200, resize=False, brickcolor=(255, 255, 255), bgcolor=(0, 0, 0))
@@ -191,7 +190,7 @@ This is maybe one of the most strong optical illusions that have ever been creat
 
 Why we are seeing this? Well, the only scientific explanation that I've known is from Gregory and Heard (1979). The role of orientation-sensitive simple cells in V1 and reactions to luminance borders are mainly involved in this illusion as they've mentioned. Gregory and Heard (1979) proposed that regions of varying luminances be retained in the spatial register by locking their borders. This border-locking technique causes inadvertent contour alterations between sections separated by small gaps. They've also shown that illusion disappears if the luminance of the middle line is noticeably lower or higher than the luminance of the two types of squares.
 
-## 13-sorceress.ccob
+## 13-ccob
 
 ```
 #usage
@@ -214,7 +213,7 @@ sorceress.ccob("kaniza.png",rms=0.2,amplitudespectrum=300,plttitle="myoutput2")
 
 Above the color of the circles and the surface is the same. Try yourself with different amplitude spectrum and RMS values.
 
-## 14-sorceress.ebbinghaus
+## 14-ebbinghaus
 
 ```
 sorceress.ebbinghaus("output",bgcolor=(0,255,255),lcradius=22,rcradius=22)
@@ -229,7 +228,7 @@ If you have psychology major like me you probably heard a lot the German psychol
 
 The illusion is widely replicated in psychology literature with different contexts (Aglioti et al, 1995; Lee and van Donkelaar, 2002; Culham et al, 2003). For example, In Aglioti's study, the direct comparison led to an approximately 50% increase of the illusion, which corresponds well to the difference found between perception and grasping.  These researchers replaced the inner circular image with a tiny poker-chip-like token in their research. When asked to estimate the size of the target tokens, the subjects displayed the illusion throughout the trial, but when asked to manually pick up the central target token, the illusion had a considerably less impact on manual grip size during the grasping process. This was seen to indicate that the ventral system is influenced by the illusion and the dorsal system is not. The findings have been replicated by Haffenden and Goodale (1998).
 
-## 15-sorceress.whiteill
+## 15-whiteill
 
 ```
 sorceress.whiteill(dimension=300,version2=False,rect1=(92,92,255),rect2=(47,255,173),outputname="whiteillout")
@@ -249,7 +248,7 @@ Do I need to say grays are the same? 😄. The scientific explanations are still
 
  Before White identified this phenomenon, it was believed that all brightness illusions were the consequence of rival processes, meaning that a gray item should appear dark when surrounded by light and light when surrounded by darkness. However, in this deception, the darker-appearing gray bars are surrounded by black stimuli whereas the lighter-appearing gray bars are surrounded by white stimuli. As I said before, White's effect's underlying neural mechanisms are still a mystery.
 
-## 16-sorceress footsteps
+## 16-footsteps
 
 ![gl](https://user-images.githubusercontent.com/54986652/134406779-173bd034-4f1f-408c-8327-eff8158f1ad7.gif)
 
@@ -259,13 +258,13 @@ The footsteps illusion is a motion illusion in which objects appear to move fast
 
 The key point of explanation of this illusion is the brightness differences. Between the moving objects and the background is important for the explanation of this illusion (Anstis, 2003).
 
-## 17-sorceress thelilac
+## 17-thelilac
 
 The Lilac chaser illusion is a visual illusion described by Jeremy L. Hinton in 2005 and was shown by Michael Bach on his website of the same year. For the best results, using a pinkish-violet color is a good choice, but other colors can also be used; in our animation, we'll use two different colors in two concentric rings. I also added a blur section which makes the stronger effect.  You can access this illusion from here [sorceress/thelilac:](https://altunenes.github.io/sorceress/thelilac). I added various methods so you can use different combinations.
 
 ![ezgf](https://user-images.githubusercontent.com/54986652/134998824-b46dbdf4-a77d-4c94-8f2f-8e95ec30c6f5.gif)
 
-## 18-sorceress EyeMovements
+## 18-EyeMovements
 
 [sorceress/EyeMovements:](https://altunenes.github.io/sorceress/EyeMovements)
 This illusion is quite interesting actually, when I first saw this illusion I immediately thought of the footstep illusion. It works in very similar. You can read the whole Twitter thread for the comments of its original creators.[twitter/Ben Balas:](https://twitter.com/bjbalas/status/1447927395789516801)
@@ -273,7 +272,7 @@ This illusion is quite interesting actually, when I first saw this illusion I im
 I've customized this illusion with different conditions but I highly recommend the blur section. If you increase the blur of the screen the illusion is much stronger than you've realized.
 ![ezgif-2-24a2caac1d7b](https://user-images.githubusercontent.com/54986652/138953801-08b0d2ca-b7a8-4b0a-94a8-e11756b99646.gif)
 
-## 20-sorceress Enigma
+## 20-Enigma
 
 enigma(linecolors=(255,255,255), bgcolor=(1, 1, 1),circle1=(76, 0, 153),circle2=(102, 0, 204),centercircle=(0,255,255), outputname="enigma"): `
 
@@ -285,7 +284,7 @@ This illusion based on the a paper from the Zeki et al (1993). In their paper, t
 When the two colors of circles are equiluminant and the only clues to the existence of moving stripes are color differences, the perception of motion is greatly diminished. These alterations are linked to V5 activity.
 And I also would like to remind you that the illusion may not work for everyone, there are individual differences.
 
-## 21-sorcerer.blackhole
+## 21-blackhole
 
 ![blackenigma](./assets/blackenigma.png)
 
@@ -298,12 +297,12 @@ The illusion appeared most effective when the hole was black. However, I added m
 
 
 
-## 22-sorcerer.colorgrids
+## 22-colorgrids
 
 ![colorgrids](./assets/final.png)
 
 If you look closely enough you will see the original image is black and white. However, via colorful stripes your brain into seeing a color image. Basically, our brain is trying to fill the gaps between the stripes and it gives us an overall impression of what's there.
-Basically, you can call the function like this:
+You can call the function like this:
 
 ```
 sorceress.colorgrids("inputfolder/test.jpg","grids",frequency=24)
@@ -311,13 +310,13 @@ sorceress.colorgrids("inputfolder/test.jpg","grids",frequency=24)
 
 [Inspiration, Øyvind Kolås](https://www.patreon.com/posts/color-grid-28734535):
 
-## 23-sorcerer.Motion
+## 23-Motion
 
 ![motion](./assets/motions.gif)
 
 It's a very interesting illusion. I've seen it in a paper that was recently published (Brenner & Smeets, 2022) According to this paper when two dots move clockwise or counterclockwise along the circular path, the one dots clearly moves faster than the other one. However, they are at the same speed. I added different conditions to reproduce this illusion in different ways. You can access this illusion from here [sorceress/Motion:](https://altunenes.github.io/sorceress/spatialmotion.html)
 
-## 24-sorcerer.blindness
+## 24-blindness
 ![motion](./assets/Animation6.gif)
 Motion Induced Blindness (MIB) is a phenomenon of visual disappearance or perceptual illusions observed in the lab, in which stationary visual stimuli disappear as if erased in front of an observer's eyes when masked with a moving background. 
 
@@ -331,9 +330,7 @@ Use "add circle" button to add circles to the screen and you can adjust their po
 
 ![blind](./assets/blind23.gif)
 
-In this demonstration the observer focuses at the flickering green dot in the middle. After about 10 seconds, the observer sees one, two or all three of the static yellow dots arranged at the corners of an imaginary equilateral triangle disappear and then reappear. 
-
-
+In this demonstration the observer focuses at the flickering green dot in the middle. After about 10 seconds, the observer sees one, two or all three of the static yellow dots arranged at the corners of an imaginary equilateral triangle disappear and then reappear.
 
 ### REFERENCES
 
