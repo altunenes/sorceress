@@ -1,6 +1,6 @@
 #A collection of functions for the sorceress module that is written in python language
 
-###############################  version: 1.7.6,     ###############################
+###############################  version: 1.8     ###############################
 ############################### Author: Enes Altun  ###############################
 
 import cv2
@@ -353,17 +353,24 @@ def addlines(img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,
         print("DONE! images have been added to your working directory:")
         print("Your working directory: ", os.getcwd())
 
-def eyecolour(img):
+def eyecolour(img,alpha=0.8,beta=0.3,M=25,luminance=1,saturation=1):
     """
     Select the iris on the image with mouse click and it returns the illusory eye colour.
     Arguments:
     :param img: input image path with extension
+    :param alpha: alpha beta and M are the parameters of blending. Play with them to get the best results
+    :param luminance and saturation: Don't use values greater than 1 for luminance and saturation
     :return:
     """
+    #if user enter luminance and saturation values more than 1 raise error and exit
+    if luminance>1 or saturation>1:
+        raise ValueError("Luminance and saturation values should be between 0 and 1")
+
     outputname = os.path.basename(img).split(".")[0]
     img = cv2.imread(img)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
+    luminance=float(luminance)
+    saturation=float(saturation)
     img = cv2.equalizeHist(img)
     print("select the iris (select smaller as much as possible for good results); then press to enter ")
     r = cv2.selectROI(img,fromCenter=False)
@@ -394,21 +401,28 @@ def eyecolour(img):
     mask[:, :, 2] = 200
     mask[:, :, 0] = 200
 
-    aplha = 0.8
-    beta = 0.3
-    M = 25
-    result = cv2.addWeighted(img, aplha, bit, beta, M)
+    alpha = float(alpha)
+    beta =float(beta)
+    M = int(M)
+    result = cv2.addWeighted(img, alpha, bit, beta, M)
 
     output = cv2.seamlessClone(roi_cropped, result, redd, center, cv2.NORMAL_CLONE)
     blur = cv2.GaussianBlur(result, (5, 5), 0)
+    # result[int((r[1])):int((r[1]) + int(r[3])), int((r[0])):int((r[0])) + int((r[2]))] = roi_cropped
+    output = cv2.cvtColor(output, cv2.COLOR_BGR2HSV)
+    output[:, :, 2] = np.where(output[:, :, 2] < 10, output[:,:,2]*luminance, output[:, :, 2])
+    output = cv2.cvtColor(output, cv2.COLOR_HSV2BGR)
 
-    result[int((r[1])):int((r[1]) + int(r[3])), int((r[0])):int((r[0])) + int((r[2]))] = roi_cropped
+    output = cv2.cvtColor(output, cv2.COLOR_BGR2HSV)
+    output[:,:,1]=np.where(output[:,:,1]<100,output[:,:,1]*saturation,output[:,:,1])
+    output = cv2.cvtColor(output, cv2.COLOR_HSV2BGR)
 
     cv2.imwrite(f'{outputname}.png', output)
     cv2.imwrite(f'{outputname}blur.png', blur)
 
     print("DONE! images have been added to your working directory:")
     print("Your working directory: ", os.getcwd())
+
 def dakinPex(outputname,dimension=800):
     """
     Creates an optical illusion from the Dakin and Bex, 2003 paper.
