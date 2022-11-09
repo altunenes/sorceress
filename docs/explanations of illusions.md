@@ -80,13 +80,15 @@ If you select `alphablending==True`  line colors are much more stable against th
 
 ## 5- eyecolour
 
-[inspried from:](https://michaelbach.de/ot/col-context/index.html)
+[inspried from m.bach:](https://michaelbach.de/ot/col-context/index.html)
 
 ```
-sorceress.eyecolour("yourimage.jpg")
+eyecolour("yourimage.jpg")
+#best results:
+eyecolour("galadriel2.jpg",alpha=0.9,beta=0.5,M=1,luminance=1,saturation=1,colors=(0,0,255)
+
 
 ```
-
 With this illusion, you perceive the black-and-white NumPy array as colorful. After you run this code, you need to select the iris manually and then push the enter. I didn't want to use the iris detector since it slowed  down the script. Just select smaller as much as possible. I've used `seamlessClone` function from OpenCV for getting much more realistic results. Your ROI (region of interest that you selected manually) will correspond to an eclipse' coordinates which I needed to detect the exact position of the iris. 
 
 Red, green, and blue are three overlapping color families that three separate types of photoreceptors in the eye are tuned to, which contributes to the process of seeing color (which are activated by visible light of long, medium and short wavelengths). Then, in the same scenario, these signals are immediately compared with signals from surrounding places. The comparison process continues as the signals move up the brain's hierarchy of processing centers, where they are compared to ever-larger portions of the environment. Accordingly, color and brightness are always relative due to this "opponent process."
