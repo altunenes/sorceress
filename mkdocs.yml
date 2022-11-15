@@ -13,6 +13,7 @@ nav:
     - motion: spatialmotion.html
     - blindness: blindness.html
     - blindness2: blindness2.html
+    - Depth: depth.html
 theme:
   name: material
   features:
