@@ -333,11 +333,13 @@ Use "add circle" button to add circles to the screen and you can adjust their po
 In this demonstration the observer focuses at the flickering green dot in the middle. After about 10 seconds, the observer sees one, two or all three of the static yellow dots arranged at the corners of an imaginary equilateral triangle disappear and then reappear.
 
 ## 25-Depth
-Our visual system is very good at estimating the depth of objects in the world. However, it's not perfect. Being able to view the world in three dimensions is known as depth perception. In order to perceive depth, we must also be able to determine how far away an item is from us. Our perception of an object's size and distance depends on the size and proximity of other items. For me, there is an incredibly strong depth illusion. Even though in 2D the squares are the same size, same color, and same distance but our brain creates a perception of depth. It's because of the borders of the squares, moreover if you animate you may also see a motion illusion.  You can access this illusion from here, play with the parameters and see what happens.
+Our visual system is very good at estimating the depth of objects in the world. However, it's not perfect. Being able to view the world in three dimensions is known as depth perception. In order to perceive depth, we must also be able to determine how far away an item is from us. Our perception of an object's size and distance depends on the size and proximity of other items. For me, there is an incredibly strong depth illusion. Even though in 2D the squares are the same size, same color, and same distance but our brain creates a perception of depth. It's because of the borders of the squares, moreover if you animate you may also see a motion illusion.  You can access this illusion from here, play with the parameters and see what happens
 
-[Web demo](https://altunenes.github.io/sorceress/depth.html) 
+[Web demo](https://altunenes.github.io/sorceress/depth.html)
 
 ![depth](./assets/depth.png)
+
+
 
 
 
