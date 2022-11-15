@@ -53,6 +53,7 @@ from sorceress import sorceress
 - EyeMovements
 - spatialmotion
 - Motion Induced Blindness
+- Depth
 
 ## Examples
 
