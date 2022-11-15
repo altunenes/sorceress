@@ -207,4 +207,22 @@ borderThicknessSlider.addEventListener('change', function() {
 document.body.appendChild(borderThicknessSlider);
 
 
+var github = document.createElement('a');
+github.href = 'https://github.com/altunenes/';
+github.target = '_blank';
+github.style.position = 'absolute';
+github.style.right = '4%';
+github.style.bottom = '15%';
+github.style.transform = 'translate(50%, 50%)';
+github.style.width = '80px';
+github.style.height = '80px';
+github.style.backgroundImage = 'url(https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)';
+github.style.backgroundSize = 'contain';
+github.style.backgroundRepeat = 'no-repeat';
+github.style.backgroundPosition = 'center';
+document.body.appendChild(github);
+
+github.style.borderRadius = '70%';
+github.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.5)';
+
 });
