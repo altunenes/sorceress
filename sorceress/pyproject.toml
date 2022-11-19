@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sorceress"
-version = "1.8"
+version = "1.8.1"
 description = "Python package for creating optical illusions"
 authors = ["altunenes <enesaltun2@gmail.com>"]
 license = "MIT"

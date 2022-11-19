@@ -1,6 +1,6 @@
 #A collection of functions for the sorceress module that is written in python language
 
-###############################  version: 1.8     ###############################
+###############################  version: 1.8.1     ###############################
 ############################### Author: Enes Altun  ###############################
 
 import cv2
@@ -658,16 +658,19 @@ def cafeWall(outputname, dimension=1200, resize=False, brickcolor=(255, 255, 255
     cv2.imshow("img", img)
     cv2.waitKey(0)
 
-def ccob(image, rms=0.5, amplitudespectrum=300, plttitle='output'):
+def ccob(image, rms=0.5, amplitudespectrum=300, plttitle='output',figs=(0.8, 0.8)):
     """
     Creates an optical illusion about Spatial Frequency.
     :param image: input image
     :param rms: desired root mean square
     :param amplitudespectrum: amplitude spectrum
     :param plttitle: output name
+    :param figs: figure size of the output (it will multiply by 1000)
     :return:
     """
     img = cv2.imread(image, 0)
+    figs = float(figs[0]), float(figs[1])
+
 
     img = (img / 255.0) * 2.0 - 1.0
 
@@ -687,9 +690,11 @@ def ccob(image, rms=0.5, amplitudespectrum=300, plttitle='output'):
     img_new = img_new * rms
     gaus = cv2.GaussianBlur(img_new, (7, 7), 7)
     laplacian = cv2.Laplacian(gaus, cv2.CV_64F, 3)
+    plt.figure(figsize=(figs[0],figs[1]), dpi=1000)
+    plt.subplots_adjust(left=0, right=1, top=1, bottom=0)
+    plt.axis('off')
     plt.imshow(laplacian, cmap='gray')
-    plt.title(f'{plttitle}')
-    plt.savefig(f'{plttitle}')
+    plt.savefig(f'{plttitle}', bbox_inches='tight', pad_inches=0, dpi=1000)
     print(f"DONE! image f'{plttitle} has been added to your working directory:")
     print("Your working directory: ", os.getcwd())
     plt.show()
