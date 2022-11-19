@@ -49,7 +49,10 @@ def chromatic(img,circle=True, method="CMCCAT2000", gif=True, Gifduration=7):
     else:
         pass
 
-
+    if os.path.exists("chromatic") and os.path.exists("chromaticPIL"):
+        sys.exit("ERROR: chromatic and chromaticPIL folder already exists, please delete them or change the name of the output folder")
+    else:
+        pass
     if gif == True:
         os.mkdir('chromatic')
 
