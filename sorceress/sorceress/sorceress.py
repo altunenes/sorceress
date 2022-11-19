@@ -13,7 +13,7 @@ from matplotlib import pyplot as plt
 import sys
 from PIL import Image
 
-def chromatic(img,circle=True, method="CMCCAT2000", gif=True, Gifduration=7):
+def chromatic(img,circle=True, method="CMCCAT2000", gif=True, Gifduration=7,XYZ_w=(110, 75, 35),XYZ_wr=(200, 120, 75),L_A=2000):
     """
     This function is used to convert an image to chromatic image.
     :param img: input image with extension ("test.png")
@@ -21,6 +21,7 @@ def chromatic(img,circle=True, method="CMCCAT2000", gif=True, Gifduration=7):
     :param method: "CMCCAT2000" or "Von Kries"
     :param gif: export as gif
     :param Gifduration: duration of the gif (in seconds)
+    :param XYZ_w, XYZ_wr, L_A: chromatic adaptation parameters (has default values)
     :return:
     """
     outputname = os.path.basename(img).split(".")[0]
@@ -33,10 +34,9 @@ def chromatic(img,circle=True, method="CMCCAT2000", gif=True, Gifduration=7):
 
     XYZ = cv2.cvtColor(img, cv2.COLOR_RGB2LAB)
     gry = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-    XYZ_w = np.array([110, 75, 35])
-    XYZ_wr = np.array([200, 120, 75])
-    L_A = 2000
-
+    L_A = int(L_A)
+    XYZ_w = np.array(XYZ_w)
+    XYZ_wr = np.array(XYZ_wr)
     if method == "CMCCAT2000":
         test = colour.chromatic_adaptation(XYZ, XYZ_w, XYZ_wr, method="CMCCAT2000", L_A1=L_A, L_A2=L_A)
     elif method == "Von Kries":
@@ -48,11 +48,11 @@ def chromatic(img,circle=True, method="CMCCAT2000", gif=True, Gifduration=7):
         cv2.circle(test, (centerx, centery), 4, (0, 0, 255), -1)
     else:
         pass
-
     if os.path.exists("chromatic") and os.path.exists("chromaticPIL"):
         sys.exit("ERROR: chromatic and chromaticPIL folder already exists, please delete them or change the name of the output folder")
     else:
         pass
+
     if gif == True:
         os.mkdir('chromatic')
 
@@ -93,6 +93,7 @@ def chromatic(img,circle=True, method="CMCCAT2000", gif=True, Gifduration=7):
         cv2.imwrite(f'{outputname}gry.png', gry)
         print("Done ", f'{outputname}.png has been added your working dir.')
         print("Your working directory: ", os.getcwd())
+
 
 
 def dotill(dimension,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
