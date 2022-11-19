@@ -52,6 +52,7 @@ Fast spatial tuning in chromatic adaptation is possible as a possible sensory me
     :param method: "CMCCAT2000" or "Von Kries"
     :param gif: export as gif
     :param Gifduration: duration of the gif
+    :param XYZ_w, XYZ_wr, L_A: chromatic adaptation parameters (has default values)
     :return:
     """
 ```
