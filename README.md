@@ -1,4 +1,4 @@
-# sorceress 1.7
+# sorceress 1.8
 
 [![PyPI version](https://badge.fury.io/py/sorceress.svg)](https://badge.fury.io/py/sorceress) [![Jekyll site CI](https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml/badge.svg)](https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml)
 [![Downloads](https://pepy.tech/badge/sorceress)](https://pepy.tech/project/sorceress)
@@ -57,6 +57,8 @@ from sorceress import sorceress
   - thelilac
   - EyeMovements
   - spatialmotion
+  - Motion Induced Blindness (2 versions)
+  - Depth Perception
 
 ## Examples
 
@@ -66,6 +68,17 @@ from sorceress import sorceress
 from sorceress import sorceress
 sorceress.chromatic("myimage.jpg",circle=False, method="CMCCAT2000", gif=True, Gifduration=7)
 sorceress.addlines("myimage.png",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
+```
+
+As you can see above, you can use the package in a very simple way. You will need to install the following packages to use the package. You will not need to import them, the package will do it for you.
+
+```
+pip install opencv-python
+pip install numpy
+pip install matplotlib
+pip install imageio
+pip install Pillow
+pip install colour-science
 ```
 
 ## Contribution

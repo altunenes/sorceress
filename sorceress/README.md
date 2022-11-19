@@ -1,11 +1,11 @@
-# sorceress 1.7
+# sorceress 1.8
 
 [![PyPI version](https://badge.fury.io/py/sorceress.svg)](https://badge.fury.io/py/sorceress) [![Jekyll site CI](https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml/badge.svg)](https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml)
 [![Downloads](https://pepy.tech/badge/sorceress)](https://pepy.tech/project/sorceress)
 
 ### Purpose of package
 
-This package's purpose is to create optical illusions in a simple way. The package is written in Python. however, the repo also includes JavaScript.
+This package's purpose is to create optical illusions in a simple way. The package is written in Python. however, the repo also includes JavaScript.  In [explanations](https://altunenes.github.io/sorceress/explanations%20of%20illusions/) section, you can find the explanations of the illusions.
 
 If you find visual illusions fascinating this package is for you. You can reproduce the illusions in the literature with a few lines of code.
 
@@ -17,7 +17,7 @@ For all optical illusions check this documentation: [altunenes.github.io/sorcere
 
 ### Getting started🚀️
 
-Package can be found on pypi hence you can install it via pip.
+The package can be found on PyPI hence you can install it via pip.
 
 ```
 pip install sorceress
@@ -32,36 +32,37 @@ from sorceress import sorceress
 
 [For the API, click here](https://altunenes.github.io/sorceress/api_reference/)
 
-**Illusions in Python**
++ Illusions in Python
+  - chromatic
+  - dotill
+  - realtimegrid
+  - addlines
+  - eyecolour
+  - dakinPex
+  - bruno
+  - dolboeuf
+  - kanizsa
+  - tAki2001
+  - cafewall
+  - ccob
+  - ebbinghaus
+  - whiteill
+  - enigma
+  - blackhole
+  - colorgrids
 
-- chromatic
-- dotill
-- realtimegrid
-- addlines
-- eyecolour
-- dakinPex
-- bruno
-- dolboeuf
-- kanizsa
-- tAki2001
-- cafewall
-- ccob
-- ebbinghaus
-- whiteill
-- enigma
-- blackhole
-- colorgrids
+ **Illusions in JavaScript**
 
-**Illusions in JavaScript**
-
-- footsteps
-- thelilac
-- EyeMovements
-- spatialmotion
+  - footsteps
+  - thelilac
+  - EyeMovements
+  - spatialmotion
+  - Motion Induced Blindness (2 versions)
+  - Depth Perception
 
 ## Examples
 
-[In this page](https://altunenes.github.io/sorceress/explanations%20of%20illusions/), you can find all illusions, explanations, code and how to use. I show just few examples on this page.
+[In this page](https://altunenes.github.io/sorceress/explanations%20of%20illusions/), you can find all illusions, explanations, code, and how to use it. I show just a few examples on this page.
 
 ```
 from sorceress import sorceress
@@ -69,9 +70,20 @@ sorceress.chromatic("myimage.jpg",circle=False, method="CMCCAT2000", gif=True, G
 sorceress.addlines("myimage.png",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
 ```
 
+As you can see above, you can use the package in a very simple way. You will need to install the following packages to use the package. You will not need to import them, the package will do it for you.
+
+```
+pip install opencv-python
+pip install numpy
+pip install matplotlib
+pip install imageio
+pip install Pillow
+pip install colour-science
+```
+
 ## Contribution
 
-Any contribution, bug report, suggestion is always welcome.
+Any contribution, bug report, or suggestion is always welcome.
 
 ##Author
 
