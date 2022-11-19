@@ -158,6 +158,7 @@ An optical illusion about the spatial frequency. ccob stands for "Craik–Cornsw
     :param rms: desired root mean square
     :param amplitudespectrum: amplitude spectrum
     :param plttitle: output name
+    :param figs: figure size of the output (it will multiply by 1000)
     :return:
     """
 ```
