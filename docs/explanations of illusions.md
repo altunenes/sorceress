@@ -320,7 +320,7 @@ It's a very interesting illusion. I've seen it in a paper that was recently publ
 
 ## 24-blindness
 ![motion](./assets/Animation6.gif)
-Motion Induced Blindness (MIB) is a phenomenon of visual disappearance or perceptual illusions observed in the lab, in which stationary visual stimuli disappear as if erased in front of an observer's eyes when masked with a moving background. 
+Motion Induced Blindness (MIB) is a phenomenon of visual disappearance or perceptual illusions observed in the lab, in which stationary visual stimuli disappear as if erased in front of an observer's eyes when masked with a moving background.
 
 With this illusion, you can see the disappearance of the objects in front of your eyes. You can access this illusion from here [sorceress/blindness:](https://altunenes.github.io/sorceress/blindness.html)
 
@@ -341,8 +341,19 @@ Our visual system is very good at estimating the depth of objects in the world. 
 
 ![depth](./assets/depth.png)
 
+## 26-Munker
 
+![Munker](./assets/munker800x800.png)
 
+Above you can see 3 different colored circles. However, all circles actually have the same color RGB(255,255,255). Stripes are added to the circles to create the illusion of different colors.
+
+Actually, this illusion is not called "Munker" but it's very similar to the Munker illusion. It's also a different version of the colorgrids illusion. It's because, we have greater shape perception than color acuity, which indicates that we detect shapes in greater detail and colors in less detail. As a result, even if the spheres' contours are all similar, the color "kind of bleeds over, or assimilates, to adjacent regions (Novick & Kitaoka, 2021). The paper that I added in the references section has a very detailed explanation.
+
+I didn't want to adjust ratios to give more freedom to the user. So, you can adjust the parameters and see what happens. In this version, dimensions are optimized for square shapes so you may see some distortions if you use rectangular shapes. Below you can see the 1200x1200 version of the illusion.
+
+![Munker2](./assets/munker1200x1200.png)
+
+I would like to also thank [Fred Weinhaus](http://www.fmwconcepts.com/fmw/fmw.html), a hero of image processing, for helping me to code this illusion. I was trying to code this illusion in a very hard way, using hough transform, detecting the edges, and certain colors, and applying some ugly trigonometric functions. However, Fred recommended me "why you just don't mask the circles". I was like "oh, that's a good idea". So, I coded this illusion in a very easy way. You can check the whole story in stackoverflow [here](https://stackoverflow.com/questions/74500038/detecting-a-specific-color-in-a-circular-area-and-adding-horizontal-lines-inside?noredirect=1#comment131518493_74500038).
 
 
 ### REFERENCES
@@ -350,6 +361,8 @@ Our visual system is very good at estimating the depth of objects in the world. 
 Aglioti S, DeSouza JFX, Goodale MA (1995) Size-contrast illusions deceive the eye but not the hand. Curr Biol 5:679–685
 
 Anstis S. Moving objects appear to slow down at low contrasts. Neural Netw. 2003 Jun-Jul;16(5-6):933-8. doi: 10.1016/S0893-6080(03)00111-4. PMID: 12850053.
+
+Bach, M. (2019). Optical illusions and visual phenomena. Retrieved from http://www.michaelbach.de/ot/col-Munker/
 
 Bakshi, A., & Ghosh, K. (2017). A Neural Model of Attention and Feedback for Computing Perceived Brightness in Vision. Handbook of Neural Computation, 487–513. doi:10.1016/b978-0-12-811318-9.00026-0
 
@@ -376,6 +389,8 @@ Kitaoka, A. (2001).　Illusion designology (7): Illusory light perception that c
 Laeng B, Nabil S and Kitaoka A (2022) The Eye Pupil Adjusts to Illusorily Expanding Holes. Front. Hum. Neurosci. 16:877249. doi: 10.3389/fnhum.2022.877249
 
 Lee, JH., van Donkelaar, P. Dorsal and ventral visual stream contributions to perception-action interactions during pointing. *Exp Brain Res* **143, **440–446 (2002). https://doi.org/10.1007/s00221-002-1011-2
+
+Novick D., & Kitaoka A. (2021). The confetti illusion. Journal of Illusion, 2. https://doi.org/10.47691/joi.v2.6152
 
 Ponzo, M. (1911). "Intorno ad alcune illusioni nel campo delle sensazioni tattili sull'illusione di Aristotele e fenomeni analoghi".
 
