@@ -40,3 +40,5 @@ class Testsorcerer(TestCase):
         return
     def test_colorgrids(self):
         return
+    def test_munker(self):
+        return
