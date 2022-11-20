@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sorceress-17" class="md-skip">
+        <a href="#sorceress-18" class="md-skip">
           Skip to content
         </a>
       
@@ -539,29 +539,27 @@
                 
 
 
-<h1 id="sorceress-17">sorceress 1.7</h1>
+<h1 id="sorceress-18">sorceress 1.8</h1>
+<p><a href="https://badge.fury.io/py/sorceress"><img alt="PyPI version" src="https://badge.fury.io/py/sorceress.svg" /></a> <a href="https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml"><img alt="Jekyll site CI" src="https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml/badge.svg" /></a>
+<a href="https://pepy.tech/project/sorceress"><img alt="Downloads" src="https://pepy.tech/badge/sorceress" /></a></p>
 <h3 id="purpose-of-package">Purpose of package</h3>
-<p>This package's purpose is to create optical illusions in a simple way. The package is written in Python. however, the repo also includes JavaScript. In <a href="https://altunenes.github.io/sorceress/explanations%20of%20illusions/">explanations</a> section, you can find the explanations of the illusions.</p>
+<p>This package's purpose is to create optical illusions in a simple way. The package is written in Python. however, the repo also includes JavaScript.  In <a href="https://altunenes.github.io/sorceress/explanations%20of%20illusions/">explanations</a> section, you can find the explanations of the illusions.</p>
 <p>If you find visual illusions fascinating this package is for you. You can reproduce the illusions in the literature with a few lines of code.</p>
 <p>More importantly, we shouldn't take optical illusions as just fun. Optical illusions help us to research how the visual system of the brain ,which is the most complex mechanism, processes such cues. Most of the optical illusions in this package are seriously researched in the neuroscience literature. And I must say that the "causation" of the most of effects is still debated in the literature according to my humble knowledge. Optical illusions are researching not only in human vision but in other animals. So we can get a lot of insights from an evolutionary perspective.</p>
 <p>In summary, I think this topic is very important, especially in vision studies.</p>
+<p>For all optical illusions check this documentation: <a href="https://altunenes.github.io/sorceress/">altunenes.github.io/sorceress/</a></p>
 <h3 id="getting-started">Getting started🚀️</h3>
-<p>Package can be found on pypi hence you can install it with using pip.</p>
+<p>The package can be found on PyPI hence you can install it via pip.</p>
 <pre><code>pip install sorceress
 </code></pre>
 <pre><code>#importing
-import sorceress
-#another way to import 
 from sorceress import sorceress
 </code></pre>
 <h3 id="features">Features</h3>
+<p><a href="https://altunenes.github.io/sorceress/api_reference/">For the API, click here</a></p>
 <ul>
-<li>
-<p>Illusions in Python</p>
-</li>
-<li>
-<p>chromatic</p>
-</li>
+<li>Illusions in Python</li>
+<li>chromatic</li>
 <li>dotill</li>
 <li>realtimegrid</li>
 <li>addlines</li>
@@ -578,25 +576,33 @@ from sorceress import sorceress
 <li>enigma</li>
 <li>blackhole</li>
 <li>colorgrids</li>
-<li>
+<li>munker</li>
+</ul>
 <p><strong>Illusions in JavaScript</strong></p>
-</li>
-<li>
-<p>footsteps</p>
-</li>
+<ul>
+<li>footsteps</li>
 <li>thelilac</li>
 <li>EyeMovements</li>
 <li>spatialmotion</li>
-<li>Motion Induced Blindness</li>
-<li>Depth</li>
+<li>Motion Induced Blindness (2 versions)</li>
+<li>Depth Perception</li>
 </ul>
 <h2 id="examples">Examples</h2>
-<p>For each function, I added example of how to use it. You can find them in the documentation. I will show just few examples.</p>
-<p><code>from sorcerer import sorcerer</code></p>
-<p><code>sorcerer.chromatic("myimage.jpg","outputname" ,circle=False, method="CMCCAT2000", gif=True, Gifduration=7)</code></p>
-<p><code>sorcerer.addlines("myimage.png","desiredoutputname",linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3 (255,0,0))</code></p>
+<p><a href="https://altunenes.github.io/sorceress/explanations%20of%20illusions/">In this page</a>, you can find all illusions, explanations, code, and how to use it. I show just a few examples on this page.</p>
+<pre><code>from sorceress import sorceress
+sorceress.chromatic(&quot;myimage.jpg&quot;,circle=False, method=&quot;CMCCAT2000&quot;, gif=True, Gifduration=7)
+sorceress.addlines(&quot;myimage.png&quot;,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0))
+</code></pre>
+<p>As you can see above, you can use the package in a very simple way. You will need to install the following packages to use the package. You will not need to import them, the package will do it for you.</p>
+<pre><code>pip install opencv-python
+pip install numpy
+pip install matplotlib
+pip install imageio
+pip install Pillow
+pip install colour-science
+</code></pre>
 <h2 id="contribution">Contribution</h2>
-<p>Any contribution, bug report, suggestion is always welcome.</p>
+<p>Any contribution, bug report, or suggestion is always welcome.</p>
 <h2 id="author">Author</h2>
 <ul>
 <li>Main Maintainer: Enes Altun</li>

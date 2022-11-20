@@ -423,7 +423,14 @@
     25-Depth
   </a>
   
-    <nav class="md-nav" aria-label="25-Depth">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-munker" class="md-nav__link">
+    26-Munker
+  </a>
+  
+    <nav class="md-nav" aria-label="26-Munker">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -782,7 +789,14 @@
     25-Depth
   </a>
   
-    <nav class="md-nav" aria-label="25-Depth">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-munker" class="md-nav__link">
+    26-Munker
+  </a>
+  
+    <nav class="md-nav" aria-label="26-Munker">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -990,7 +1004,7 @@ You can call the function like this:</p>
 <p>It's a very interesting illusion. I've seen it in a paper that was recently published (Brenner &amp; Smeets, 2022) According to this paper when two dots move clockwise or counterclockwise along the circular path, the one dots clearly moves faster than the other one. However, they are at the same speed. I added different conditions to reproduce this illusion in different ways. You can access this illusion from here <a href="https://altunenes.github.io/sorceress/spatialmotion.html">sorceress/Motion:</a></p>
 <h2 id="24-blindness">24-blindness</h2>
 <p><img alt="motion" src="../assets/Animation6.gif" />
-Motion Induced Blindness (MIB) is a phenomenon of visual disappearance or perceptual illusions observed in the lab, in which stationary visual stimuli disappear as if erased in front of an observer's eyes when masked with a moving background. </p>
+Motion Induced Blindness (MIB) is a phenomenon of visual disappearance or perceptual illusions observed in the lab, in which stationary visual stimuli disappear as if erased in front of an observer's eyes when masked with a moving background.</p>
 <p>With this illusion, you can see the disappearance of the objects in front of your eyes. You can access this illusion from here <a href="https://altunenes.github.io/sorceress/blindness.html">sorceress/blindness:</a></p>
 <p>I added different conditions, "add circle" button adds circles to the screen and you can adjust their positions with your mouse interactively. You can also change the fixation cross with your mouse, + and - buttons change the speed of the moving background. </p>
 <p>In addition, I programmed the another version of this illusion it works with same principles but it's a bit different. You can access this illusion from here <a href="https://altunenes.github.io/sorceress/blindness2.html">sorceress/blindness2:</a></p>
@@ -1001,9 +1015,17 @@ Motion Induced Blindness (MIB) is a phenomenon of visual disappearance or percep
 <p>Our visual system is very good at estimating the depth of objects in the world. However, it's not perfect. Being able to view the world in three dimensions is known as depth perception. In order to perceive depth, we must also be able to determine how far away an item is from us. Our perception of an object's size and distance depends on the size and proximity of other items. For me, there is an incredibly strong depth illusion. Even though in 2D the squares are the same size, same color, and same distance but our brain creates a perception of depth. It's because of the borders of the squares, moreover if you animate you may also see a motion illusion.  You can access this illusion from here, play with the parameters and see what happens</p>
 <p><a href="https://altunenes.github.io/sorceress/depth.html">Web demo</a></p>
 <p><img alt="depth" src="../assets/depth.png" /></p>
+<h2 id="26-munker">26-Munker</h2>
+<p><img alt="Munker" src="../assets/munker800x800.png" /></p>
+<p>Above you can see 3 different colored circles. However, all circles actually have the same color RGB(255,255,255). Stripes are added to the circles to create the illusion of different colors.</p>
+<p>Actually, this illusion is not called "Munker" but it's very similar to the Munker illusion. It's also a different version of the colorgrids illusion. It's because, we have greater shape perception than color acuity, which indicates that we detect shapes in greater detail and colors in less detail. As a result, even if the spheres' contours are all similar, the color "kind of bleeds over, or assimilates, to adjacent regions (Novick &amp; Kitaoka, 2021). The paper that I added in the references section has a very detailed explanation.</p>
+<p>I didn't want to adjust ratios to give more freedom to the user. So, you can adjust the parameters and see what happens. In this version, dimensions are optimized for square shapes so you may see some distortions if you use rectangular shapes. Below you can see the 1200x1200 version of the illusion.</p>
+<p><img alt="Munker2" src="../assets/munker1200x1200.png" /></p>
+<p>I would like to also thank <a href="http://www.fmwconcepts.com/fmw/fmw.html">Fred Weinhaus</a>, a hero of image processing, for helping me to code this illusion. I was trying to code this illusion in a very hard way, using hough transform, detecting the edges, and certain colors, and applying some ugly trigonometric functions. However, Fred recommended me "why you just don't mask the circles". I was like "oh, that's a good idea". So, I coded this illusion in a very easy way. You can check the whole story in stackoverflow <a href="https://stackoverflow.com/questions/74500038/detecting-a-specific-color-in-a-circular-area-and-adding-horizontal-lines-inside?noredirect=1#comment131518493_74500038">here</a>.</p>
 <h3 id="references">REFERENCES</h3>
 <p>Aglioti S, DeSouza JFX, Goodale MA (1995) Size-contrast illusions deceive the eye but not the hand. Curr Biol 5:679–685</p>
 <p>Anstis S. Moving objects appear to slow down at low contrasts. Neural Netw. 2003 Jun-Jul;16(5-6):933-8. doi: 10.1016/S0893-6080(03)00111-4. PMID: 12850053.</p>
+<p>Bach, M. (2019). Optical illusions and visual phenomena. Retrieved from http://www.michaelbach.de/ot/col-Munker/</p>
 <p>Bakshi, A., &amp; Ghosh, K. (2017). A Neural Model of Attention and Feedback for Computing Perceived Brightness in Vision. Handbook of Neural Computation, 487–513. doi:10.1016/b978-0-12-811318-9.00026-0</p>
 <p>Brenner, E., &amp; Smeets, J.  Spatial Vision for Action. Oxford Research Encyclopedia of Psychology. Retrieved 18 Oct. 2022, from https://oxfordre.com/psychology/view/10.1093/acrefore/9780190236557.001.0001/acrefore-9780190236557-e-842.</p>
 <p>Bruno N, Bertamini M, Domini F (1997) Amodal completion of partly occluded surfaces: Is there a mosaic stage. J Exp Psychol Hum Percept Perform 23:1412–1426</p>
@@ -1017,6 +1039,7 @@ Motion Induced Blindness (MIB) is a phenomenon of visual disappearance or percep
 <p>Kitaoka, A. (2001).　Illusion designology (7): Illusory light perception that cannot be explained by the Fourier analysis. <em>Nikkei Science,</em>  <strong>31</strong> (8), 66-68 (in Japanese).</p>
 <p>Laeng B, Nabil S and Kitaoka A (2022) The Eye Pupil Adjusts to Illusorily Expanding Holes. Front. Hum. Neurosci. 16:877249. doi: 10.3389/fnhum.2022.877249</p>
 <p>Lee, JH., van Donkelaar, P. Dorsal and ventral visual stream contributions to perception-action interactions during pointing. <em>Exp Brain Res</em> <strong>143, </strong>440–446 (2002). https://doi.org/10.1007/s00221-002-1011-2</p>
+<p>Novick D., &amp; Kitaoka A. (2021). The confetti illusion. Journal of Illusion, 2. https://doi.org/10.47691/joi.v2.6152</p>
 <p>Ponzo, M. (1911). "Intorno ad alcune illusioni nel campo delle sensazioni tattili sull'illusione di Aristotele e fenomeni analoghi".</p>
 <p>Prandtl A (1927) Über gleichsinnige Induktion und die Lichtverteilung in gitterartigen Mustern [Onuniform induction and light distribution in lattice patterns]. Zeitschrift für Sinnesphysiologie58:263–307</p>
 <p>Torsten Betz, Robert Shapley, Felix A. Wichmann, Marianne Maertens; Testing the role of luminance edges in White's illusion with contour adaptation. <em>Journal of Vision</em> 2015;15(11):14. doi:10.1167/15.11.14.</p>
