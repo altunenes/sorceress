@@ -951,3 +951,48 @@ def colorgrids(img,style="vertical",width=4,frequency=1,saturation=0):
     final=cv2.cvtColor(hsv,cv2.COLOR_HSV2BGR)
     cv2.imwrite("gridillusion.png",final)
     print("image saved as gridillusion.png")
+
+def munker(dimensions=(1200,1200),linefrequency=100,rad=100,thickness=6,saturation=1):
+    """
+    Creates an image of the Munker illusion.
+    Parameters
+    ----------
+    dimensions : tuple of ints (width, height) of the image. This version is optimized for square images. 
+    linefrequency : This is the ratio of the horizontal lines to the width of the image, this value is used to calculate the distance between the lines. The default ratio is dimensions[0]/120
+    rad : radius of the circles, default ratio is dimensions[0]/120
+    thickness :thickness of the lines. If you change the dimensions of the image, you may need to change this value as well. Default ratio is dimensions[0]/200
+    saturation : saturation of the colors. 1 is full saturation, 0 is no saturation. 
+    """ 
+    img = 255*np.ones((dimensions[0],dimensions[1],3), np.uint8)
+    alpha = linefrequency
+    alpha= int(dimensions[0]/alpha)
+    b,g,r=cv2.split(img)
+    mask_b = np.zeros(dimensions, np.uint8)
+    mask_g = np.zeros(dimensions, np.uint8)
+    mask_r = np.zeros(dimensions, np.uint8)
+    thickness=int(thickness)
+    circle_ratio_height=int(dimensions[0]/2)
+    circle_ratio_width=int(dimensions[1]/12)
+    for i in range(0, int(dimensions[0]), int(dimensions[0]/5)):
+        cv2.circle(mask_b, (i, i), rad, (255), -1)
+        cv2.circle(mask_r, (i, i), rad, (255), -1)
+    
+    for i in range(0, int(dimensions[0]), int(dimensions[0]/5)):
+        cv2.circle(mask_b, (i+circle_ratio_height, i+circle_ratio_width), rad, (255), -1)
+        cv2.circle(mask_g, (i+circle_ratio_height, i+circle_ratio_width), rad, (255), -1)        
+    for i in range(0, int(dimensions[0]), int(dimensions[0]/5)):
+        cv2.circle(mask_g, (i, i+circle_ratio_width+int(dimensions[0]/3)), rad, (255), -1)
+        cv2.circle(mask_r, (i, i+circle_ratio_width+int(dimensions[0]/3)), rad, (255), -1)
+    for i in range(0, dimensions[0], alpha):
+        cv2.line(mask_b, (0, i), (dimensions[0], i), (255), thickness)
+        cv2.line(mask_g, (0, i+5), (dimensions[0], i+5), (255), thickness)
+        cv2.line(mask_r, (0, i+8), (dimensions[0], i+8), (255), thickness)
+    b=cv2.bitwise_and(b,b,mask=mask_b)
+    g=cv2.bitwise_and(g,g,mask=mask_g)
+    r=cv2.bitwise_and(r,r,mask=mask_r)
+    img=cv2.merge((b,g,r))
+    img=cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    img[:,:,1]=img[:,:,1]*saturation
+    img=cv2.cvtColor(img, cv2.COLOR_HSV2BGR)
+    cv2.imwrite('munker'+str(dimensions[0])+'x'+str(dimensions[1])+'.png',img)
+    print('munker'+str(dimensions[0])+'x'+str(dimensions[1])+'.png was saved')
