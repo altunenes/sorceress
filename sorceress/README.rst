@@ -70,6 +70,7 @@ here <https://altunenes.github.io/sorceress/api_reference/>`__
    -  enigma
    -  blackhole
    -  colorgrids
+   -  munker
 
 **Illusions in JavaScript**
 

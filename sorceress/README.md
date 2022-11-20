@@ -50,6 +50,7 @@ from sorceress import sorceress
   - enigma
   - blackhole
   - colorgrids
+  - munker
 
  **Illusions in JavaScript**
 
