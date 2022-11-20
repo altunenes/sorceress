@@ -38,6 +38,8 @@ This page gives an overview of all sorceress functions and methods.
 
 +[colorgrids](#colorgrids)
 
++[munker](#munker)
+
 ***chromatic***<a name="chromatic"></a>
 
 This function process image to generate optical illusion about chromatic adaptation. After a fixation of the center, gray scale image will perceived as a colorful.
@@ -336,4 +338,21 @@ A recent optical illusion that described by the Laeng et al (2022).
      frequency: frequency of lines
      saturation: saturation of lines, don't use too high values (1 to 20 is recommended)
     """
+```
+
+***munker***<a name="munker"></a>
+
+Parameters for the Munker illusion.
+
+```
+    """
+    Creates an image of the Munker illusion.
+    Parameters
+    ----------
+    dimensions : tuple of ints (width, height) of the image. This version is optimized for square images. 
+    linefrequency : This is the ratio of the horizontal lines to the width of the image, this value is used to calculate the distance between the lines. The default ratio is dimensions[0]/120
+    rad : radius of the circles, default ratio is dimensions[0]/120
+    thickness :thickness of the lines. If you change the dimensions of the image, you may need to change this value as well. Default ratio is dimensions[0]/200
+    saturation : saturation of the colors. 1 is full saturation, 0 is no saturation. 
+    """ 
 ```
