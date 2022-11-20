@@ -10,7 +10,7 @@ classifiers = [
 
 setup(
     name='sorceress',
-    version='1.8.1',
+    version='1.8.2',
     description='Optical Illusions with Python',
     long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
     url='https://github.com/emportent/sorceress',
