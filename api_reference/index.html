@@ -486,6 +486,9 @@
 <p>+<a href="#blackhole">blackhole</a></p>
 <p>+<a href="#colorgrids">colorgrids</a></p>
 <p>+<a href="#munker">munker</a></p>
+<p>+<a href="#munker2">munker2</a></p>
+<p>+<a href="#pareidolia">pareidolia</a></p>
+<p>+<a href="#grids2">grids2</a></p>
 <p><strong><em>chromatic</em></strong><a name="chromatic"></a></p>
 <p>This function process image to generate optical illusion about chromatic adaptation. After a fixation of the center, gray scale image will perceived as a colorful.</p>
 <p>Fast spatial tuning in chromatic adaptation is possible as a possible sensory mechanism for linking color constancy to the spatial structure of a scene.</p>
@@ -718,7 +721,6 @@ So for best result, i reccomend you to use a clear profile picture.</p>
 <p>Parameters for the Munker illusion.</p>
 <pre><code>    &quot;&quot;&quot;
     Creates an image of the Munker illusion.
-    Parameters
     ----------
     dimensions : tuple of ints (width, height) of the image. This version is optimized for square images. 
     linefrequency : This is the ratio of the horizontal lines to the width of the image, this value is used to calculate the distance between the lines. The default ratio is dimensions[0]/120
@@ -726,6 +728,41 @@ So for best result, i reccomend you to use a clear profile picture.</p>
     thickness :thickness of the lines. If you change the dimensions of the image, you may need to change this value as well. Default ratio is dimensions[0]/200
     saturation : saturation of the colors. 1 is full saturation, 0 is no saturation. 
     &quot;&quot;&quot; 
+</code></pre>
+<p><strong><em>munker2</em></strong><a name="munker2"></a></p>
+<p>Creates an image of a rectangular munker illusion.</p>
+<pre><code>    &quot;&quot;&quot;
+    Parameters
+    ----------
+    &quot;&quot;&quot;
+    dimensions : tuple of ints (width, height) of the image.
+    ilussory_colors : tuple of ints (r,g,b) of the ilussory colors (left and right rectangles)
+    leftstripes : tuple of ints (r,g,b) of the left stripes color.
+    rightstripes : tuple of ints (r,g,b) of the right stripes color.
+    bgcolor1 : tuple of ints (r,g,b) of the background color of the left rectangle.
+    bgcolor2 : tuple of ints (r,g,b) of the background color of the right rectangle.
+    &quot;&quot;&quot;
+    &quot;&quot;&quot; 
+</code></pre>
+<p><strong><em>pareidolia</em></strong><a name="pareidolia"></a></p>
+<p>Parameters for the face paredolia effect</p>
+<pre><code>
+    &quot;&quot;&quot;
+    dimensions : tuple of ints (width, height) of the image. This version is optimized for square images.
+    bg : tuple of ints (r,g,b) of the background color. Default is white.
+    emotion : string of the emotion of the face. Options are happy an sad. Default is happy.
+    &quot;&quot;&quot;
+</code></pre>
+<p><strong><em>grids2</em></strong><a name="grids2"></a></p>
+<pre><code>Creates an image of a grids and dots pattern.
+</code></pre>
+<pre><code>    Parameters
+    &quot;&quot;&quot;
+    dimensions : tuple of ints (width, height) of the image. This version is optimized for only 340x640 images.
+    line_width : int of the width of the lines. Default is 5
+    line_color : tuple of ints (r,g,b) of the line color. Default is gray.
+    fill_color : tuple of ints (r,g,b) of the fill color. Default is white.
+    &quot;&quot;&quot;
 </code></pre>
 
 
