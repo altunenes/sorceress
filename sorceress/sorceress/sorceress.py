@@ -1,6 +1,6 @@
 #A collection of functions for the sorceress module that is written in python language
 
-###############################  version: 1.8.1     ###############################
+###############################  version: 1.8.3     ###############################
 ############################### Author: Enes Altun  ###############################
 
 import cv2
@@ -996,3 +996,94 @@ def munker(dimensions=(1200,1200),linefrequency=100,rad=100,thickness=6,saturati
     img=cv2.cvtColor(img, cv2.COLOR_HSV2BGR)
     cv2.imwrite('munker'+str(dimensions[0])+'x'+str(dimensions[1])+'.png',img)
     print('munker'+str(dimensions[0])+'x'+str(dimensions[1])+'.png was saved')
+
+def pareidolia(dimensions=(700,700),bg=(255,255,255),emotion="happy"):
+    """
+    With gabor filter coefficients, creates an image of a face with a pareidolic effect :) 
+    Parameters
+    dimensions : tuple of ints (width, height) of the image. This version is optimized for square images.
+    bg : tuple of ints (r,g,b) of the background color. Default is white.
+    emotion : string of the emotion of the face. Options are happy an sad. Default is happy.
+    """
+    img = 255*np.ones((dimensions[0],dimensions[1],3), np.uint8)
+    img[:,:,:] = bg
+    h,w,_ = img.shape
+    if emotion=="happy":
+        for i in range(0, h,15):
+            cv2.line(img, (w-1-i, 0), (w-1, i), (0, 0, 0), 5)   
+     
+        for i in range(0, h,12):
+            cv2.line(img, (0, h-1-i), (i, h-1), (0, 0, 0), 5)
+        for i in range(0, h,24):
+            cv2.circle(img, (i, i), 15, (0, 255, 255), -1)
+
+    elif emotion=="sad":
+        for i in range(0, h,15):
+            cv2.line(img, (w-1-i, 0), (w-1, i), (0, 0, 0), 5)
+            cv2.line(img, (0, h-1-i), (i, h-1), (0, 0, 0), 5)
+
+     
+        for i in range(0, h,12):
+            cv2.line(img, (0, h-1-i), (i, h-1), (0, 0, 0), 5)
+        for i in range(0, h,24):
+            cv2.circle(img, (i, i), 15, (0, 255, 255), -1)
+    
+    gabor = cv2.getGaborKernel((21,21), 8.0, np.pi/4, 10.0, 0.5, 0, ktype=cv2.CV_32F)
+    gabor = cv2.filter2D(img, cv2.CV_8UC3, gabor)
+    cv2.imwrite('pareidolia'+str(dimensions[0])+'x'+str(dimensions[1])+'.png',gabor)
+    print('pareidolia'+str(dimensions[0])+'x'+str(dimensions[1])+'.png was saved')
+def grids2(dimensions=(340,640),line_width=5,line_color=(128,128,128),fill_color=(255,255,255)):
+    """
+    Creates an image of a grids and dots pattern.
+    Parameters
+    dimensions : tuple of ints (width, height) of the image. This version is optimized for only 340x640 images.
+    line_width : int of the width of the lines. Default is 5
+    line_color : tuple of ints (r,g,b) of the line color. Default is gray.
+    fill_color : tuple of ints (r,g,b) of the fill color. Default is white.
+    
+    """
+    img = np.ones((dimensions[0],dimensions[1],3),np.uint8)*1
+    height,width,_ = img.shape
+    for x in range(0,28):
+        cv2.line(img,(x*40-304,0),(x*40+20,height),line_color,line_width)
+        cv2.line(img,(x*40,0),(x*40-324,height),line_color,line_width)
+    for x in range(0,20):
+        for y in range(0,9):
+            cv2.circle(img,(8+x*40, y*42-9), 3, fill_color, -1)
+            cv2.circle(img,(28+x*40, y*42-29), 3, fill_color, -1)
+    
+    cv2.imwrite('grids2'+str(dimensions[0])+'x'+str(dimensions[1])+'.png',img)
+    print('grids2'+str(dimensions[0])+'x'+str(dimensions[1])+'.png was saved')
+
+def munker2(dimensions=(900,900),ilussory_colors=(255,238,138),leftstripes=(255,0,255),rightstripes=(0,255,0),bgcolor1=(255, 0, 255),bgcolor2=(0,255,0)):
+    """
+    Creates an image of a rectangular munker illusion.
+    Parameters
+    dimensions : tuple of ints (width, height) of the image.
+    ilussory_colors : tuple of ints (r,g,b) of the ilussory colors (left and right rectangles)
+    leftstripes : tuple of ints (r,g,b) of the left stripes color.
+    rightstripes : tuple of ints (r,g,b) of the right stripes color.
+    bgcolor1 : tuple of ints (r,g,b) of the background color of the left rectangle.
+    bgcolor2 : tuple of ints (r,g,b) of the background color of the right rectangle.
+    """
+
+    img = 255*np.ones((dimensions[0],dimensions[1],3), np.uint8)
+    for i in range(50):
+        if i % 2 == 0:
+            cv2.rectangle(img, (0, int(dimensions[1]/50*i)), (dimensions[0], int(dimensions[1]/50*(i+1))), bgcolor1, -1)
+        else:
+            cv2.rectangle(img, (0, int(dimensions[1]/50*i)), (dimensions[0], int(dimensions[1]/50*(i+1))), bgcolor2, -1)
+    for i in range(50):
+        if i % 2 == 0:
+            cv2.rectangle(img, (int(dimensions[0]*0.2), int(dimensions[1]/50*i)), (int(dimensions[0]*0.4), int(dimensions[1]/50*(i+1))), leftstripes, -1)
+        else:
+            cv2.rectangle(img, (int(dimensions[0]*0.2), int(dimensions[1]/50*i)), (int(dimensions[0]*0.4), int(dimensions[1]/50*(i+1))), ilussory_colors, -1)
+    for i in range(50):
+        if i % 2 == 0:
+            cv2.rectangle(img, (int(dimensions[0]*0.6), int(dimensions[1]/50*i)), (int(dimensions[0]*0.8), int(dimensions[1]/50*(i+1))), ilussory_colors, -1)
+        else:
+            cv2.rectangle(img, (int(dimensions[0]*0.6), int(dimensions[1]/50*i)), (int(dimensions[0]*0.8), int(dimensions[1]/50*(i+1))), rightstripes, -1)
+
+    cv2.imwrite('munker2'+str(dimensions[0])+'x'+str(dimensions[1])+'.png',img)
+    print('munker2'+str(dimensions[0])+'x'+str(dimensions[1])+'.png was saved')
+

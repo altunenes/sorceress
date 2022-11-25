@@ -355,6 +355,25 @@ I didn't want to adjust ratios to give more freedom to the user. So, you can adj
 
 I would like to also thank [Fred Weinhaus](http://www.fmwconcepts.com/fmw/fmw.html), a hero of image processing, for helping me to code this illusion. I was trying to code this illusion in a very hard way, using hough transform, detecting the edges, and certain colors, and applying some ugly trigonometric functions. However, Fred recommended me "why you just don't mask the circles". I was like "oh, that's a good idea". So, I coded this illusion in a very easy way. You can check the whole story in stackoverflow [here](https://stackoverflow.com/questions/74500038/detecting-a-specific-color-in-a-circular-area-and-adding-horizontal-lines-inside?noredirect=1#comment131518493_74500038).
 
+## 27-Munker2
+
+![Munkerrect](./assets/munker2.png)
+
+This is a different version of the Munker illusion. The effect is the same but it's rectangular. You can adjust the parameters and see what happens. Above, the two rectangles have the same color but they have different stripe colors. But you may perceive them as different colors.
+
+## 28-Pareidolia
+
+![pareidolia](./assets/gabor_patch.png)
+
+Face pareidolia is a phenomenon in which people see faces in random objects. I have created this illusion accidentally. I was trying to create a Gabor patch and I was trying to add some noise to the image with Gabor coefficients. But I saw a face while I working on it. So I re-designed the code and add into the sorceress :)
+
+## 29-Grids2
+
+![grids2](./assets/grids2.png)
+
+Above, there are little circles for each corner of the squares. However, when you fix your gaze on an area you will see the other circles disappears. It looks like the Herman grid illusion. But I'm not sure if it's the same.
+
+```
 
 ### REFERENCES
 

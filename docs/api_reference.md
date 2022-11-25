@@ -40,6 +40,12 @@ This page gives an overview of all sorceress functions and methods.
 
 +[munker](#munker)
 
++[munker2](#munker2)
+
++[pareidolia](#pareidolia)
+
++[grids2](#grids2)
+
 ***chromatic***<a name="chromatic"></a>
 
 This function process image to generate optical illusion about chromatic adaptation. After a fixation of the center, gray scale image will perceived as a colorful.
@@ -347,7 +353,6 @@ Parameters for the Munker illusion.
 ```
     """
     Creates an image of the Munker illusion.
-    Parameters
     ----------
     dimensions : tuple of ints (width, height) of the image. This version is optimized for square images. 
     linefrequency : This is the ratio of the horizontal lines to the width of the image, this value is used to calculate the distance between the lines. The default ratio is dimensions[0]/120
@@ -355,4 +360,47 @@ Parameters for the Munker illusion.
     thickness :thickness of the lines. If you change the dimensions of the image, you may need to change this value as well. Default ratio is dimensions[0]/200
     saturation : saturation of the colors. 1 is full saturation, 0 is no saturation. 
     """ 
+```
+
+***munker2***<a name="munker2"></a>
+
+Creates an image of a rectangular munker illusion.
+```
+    """
+    Parameters
+    ----------
+    """
+    dimensions : tuple of ints (width, height) of the image.
+    ilussory_colors : tuple of ints (r,g,b) of the ilussory colors (left and right rectangles)
+    leftstripes : tuple of ints (r,g,b) of the left stripes color.
+    rightstripes : tuple of ints (r,g,b) of the right stripes color.
+    bgcolor1 : tuple of ints (r,g,b) of the background color of the left rectangle.
+    bgcolor2 : tuple of ints (r,g,b) of the background color of the right rectangle.
+    """
+    """ 
+```
+
+***pareidolia***<a name="pareidolia"></a>
+
+Parameters for the face paredolia effect
+```
+
+    """
+    dimensions : tuple of ints (width, height) of the image. This version is optimized for square images.
+    bg : tuple of ints (r,g,b) of the background color. Default is white.
+    emotion : string of the emotion of the face. Options are happy an sad. Default is happy.
+    """
+```
+
+***grids2***<a name="grids2"></a>
+
+    Creates an image of a grids and dots pattern.
+```
+    Parameters
+    """
+    dimensions : tuple of ints (width, height) of the image. This version is optimized for only 340x640 images.
+    line_width : int of the width of the lines. Default is 5
+    line_color : tuple of ints (r,g,b) of the line color. Default is gray.
+    fill_color : tuple of ints (r,g,b) of the fill color. Default is white.
+    """
 ```

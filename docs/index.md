@@ -51,6 +51,9 @@ from sorceress import sorceress
   - blackhole
   - colorgrids
   - munker
+  - munker2
+  - grids2
+  - pareidolia
 
  **Illusions in JavaScript**
 
