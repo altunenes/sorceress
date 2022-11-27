@@ -71,6 +71,9 @@ here <https://altunenes.github.io/sorceress/api_reference/>`__
    -  blackhole
    -  colorgrids
    -  munker
+   -  munker2
+   -  grids2
+   -  pareidolia
 
 **Illusions in JavaScript**
 
