@@ -378,6 +378,7 @@ Above, there are little circles for each corner of the squares. However, when yo
 
 Okay, first of all, I m not sure if this is an illusion or not. The idea emerged after reading a paper from (Anstis et al., 2006). After I read this paper, I thought maybe [sorceress/Motion:](https://altunenes.github.io/sorceress/spatialmotion.html) illusion somehow could have a similar effect. So, I added stripes on the background and a line that routed clockwise. Speed and length are constant. The question is do you feel any difference between with background stripes and without background stripes? For me, I feel the line is growing longer when I look at the stripes.
 
+Try demo [here](https://altunenes.github.io/sorceress/length.html) You can adjust the length and speed of the line.
 
 ```
 
