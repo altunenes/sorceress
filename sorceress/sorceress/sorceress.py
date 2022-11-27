@@ -1087,3 +1087,45 @@ def munker2(dimensions=(900,900),ilussory_colors=(255,238,138),leftstripes=(255,
     cv2.imwrite('munker2'+str(dimensions[0])+'x'+str(dimensions[1])+'.png',img)
     print('munker2'+str(dimensions[0])+'x'+str(dimensions[1])+'.png was saved')
 
+def spiral(m):
+    #function for crazy spirals
+    r = np.linalg.norm(m)*6.
+    a = np.arctan2(m[1], m[0])
+    v = 50.*np.sin(60.*(np.power(r,1.)-1.*a))
+    return np.clip(v,0.,1.)
+def spiral2(m):
+    #function for spirals
+    r = np.power(np.linalg.norm(m)*40.,0.8)
+    a = np.arctan2(-m[1], m[0])
+    v = np.sin(r-a)*2.*0.707
+    rv = np.clip(v,-1.,1.)
+    return rv
+def mainImage(fragCoord):
+    #function for image generation
+    uv = fragCoord / 512.   
+    m = np.array([.9,.5])
+    s2 = int(spiral2(m-uv))
+    s1 = spiral(m-uv)
+    uv = fragCoord / 512.
+    green = np.array([0.,1.,0.])
+    s2_1 = np.clip(s2,0.,1.)
+    s2_2 = np.abs(np.clip(s2,-1.,0.))
+    magenta = (np.array([1.,0.,1.]) * (1.-s2_1) + green * s2_1)
+    orange = (np.array([1.,0.5,0.]) * (1.-s2_2) + green * s2_2)
+    col = magenta * (1.-s1) + orange * s1  
+    return col
+def spirals(dimensions=(800,800)):
+    """"
+    Creates an image of a spiral illusion.
+    Parameters
+    dimensions : tuple of ints (width, height) of the image.
+    """
+    img = np.zeros((dimensions[0],dimensions[1],3))
+    h,w,_ = img.shape
+    for i in range(h):
+        for j in range(h):
+            img[i,j,:] = mainImage(np.array([i,j]))
+    
+    cv2.imwrite('spirals.png',img*255)
+    cv2.imwrite('spirals2.png',img[:,:,::-1]*255)
+    print('spirals.png and spirals2.png were saved')

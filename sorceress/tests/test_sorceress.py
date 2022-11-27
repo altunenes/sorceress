@@ -48,4 +48,5 @@ class Testsorcerer(TestCase):
         return
     def grids2(self):
         return
-    
+    def spirals(self):
+        return

@@ -46,6 +46,8 @@ This page gives an overview of all sorceress functions and methods.
 
 +[grids2](#grids2)
 
++[spirals](#spirals)
+
 ***chromatic***<a name="chromatic"></a>
 
 This function process image to generate optical illusion about chromatic adaptation. After a fixation of the center, gray scale image will perceived as a colorful.
@@ -402,5 +404,14 @@ Parameters for the face paredolia effect
     line_width : int of the width of the lines. Default is 5
     line_color : tuple of ints (r,g,b) of the line color. Default is gray.
     fill_color : tuple of ints (r,g,b) of the fill color. Default is white.
+    """
+```
+
+***spirals***<a name="spirals"></a>
+    Creates a confetti illusion. 
+```
+    Parameters
+    ----------
+    dimensions : tuple of ints (width, height) of the image.
     """
 ```

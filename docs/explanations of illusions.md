@@ -380,6 +380,11 @@ Okay, first of all, I m not sure if this is an illusion or not. The idea emerged
 
 Try demo [here](https://altunenes.github.io/sorceress/length.html) You can adjust the length and speed of the line.
 
+## 31-Spirals
+![spiral](./assets/image.png)
+
+Above, there are only 3 different colors, blue, magenta, and green. However, you may see different shades of green. It looks like a Munker illusion. The mechanism of the Munker illusion involves both a color-assimilation effect and a contrast effect (Novick & Kitaoka, 2021). I actually "translated" this [code](https://www.shadertoy.com/view/4dy3Dc) from GLSL language into python. But I wish I could do it in a better way since it's a bit slow with heavy math in the background.
+
 ```
 
 ### REFERENCES

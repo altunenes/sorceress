@@ -54,6 +54,7 @@ from sorceress import sorceress
   - munker2
   - grids2
   - pareidolia
+  - spirals
 
  **Illusions in JavaScript**
 
