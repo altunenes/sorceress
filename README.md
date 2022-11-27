@@ -63,6 +63,7 @@ from sorceress import sorceress
   - spatialmotion
   - Motion Induced Blindness (2 versions)
   - Depth Perception
+  - Speed of Rotation
 
 ## Examples
 

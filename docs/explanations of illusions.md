@@ -373,11 +373,19 @@ Face pareidolia is a phenomenon in which people see faces in random objects. I h
 
 Above, there are little circles for each corner of the squares. However, when you fix your gaze on an area you will see the other circles disappears. It looks like the Herman grid illusion. But I'm not sure if it's the same.
 
+## 30-Length
+![length](./assets/Animation17.gif)
+
+Okay, first of all, I m not sure if this is an illusion or not. The idea emerged after reading a paper from (Anstis et al., 2006). After I read this paper, I thought maybe [sorceress/Motion:](https://altunenes.github.io/sorceress/spatialmotion.html) illusion somehow could have a similar effect. So, I added stripes on the background and a line that routed clockwise. Speed and length are constant. The question is do you feel any difference between with background stripes and without background stripes? For me, I feel the line is growing longer when I look at the stripes.
+
+
 ```
 
 ### REFERENCES
 
 Aglioti S, DeSouza JFX, Goodale MA (1995) Size-contrast illusions deceive the eye but not the hand. Curr Biol 5:679–685
+
+Anstis, S., Ito, H., & Cavanagh, P. (2006). Background Stripes Affect Apparent Speed of Rotation. Perception, 35(7), 959–964. https://doi.org/10.1068/p5557
 
 Anstis S. Moving objects appear to slow down at low contrasts. Neural Netw. 2003 Jun-Jul;16(5-6):933-8. doi: 10.1016/S0893-6080(03)00111-4. PMID: 12850053.
 

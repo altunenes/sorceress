@@ -19,3 +19,5 @@ Finished animations :
 [blindness2](https://altunenes.github.io/sorceress/blindness2.html)
 
 [depth](https://altunenes.github.io/sorceress/depth.html)
+
+[speed of rotation](https://altunenes.github.io/sorceress/length.html)
