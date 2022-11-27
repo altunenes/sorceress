@@ -74,6 +74,7 @@ here <https://altunenes.github.io/sorceress/api_reference/>`__
    -  munker2
    -  grids2
    -  pareidolia
+   -  spirals
 
 **Illusions in JavaScript**
 
@@ -83,6 +84,7 @@ here <https://altunenes.github.io/sorceress/api_reference/>`__
 -  spatialmotion
 -  Motion Induced Blindness (2 versions)
 -  Depth Perception
+-  Speed of Rotation
 
 Examples
 --------
