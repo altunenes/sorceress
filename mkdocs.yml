@@ -15,9 +15,32 @@ nav:
     - blindness2: blindness2.html
     - Depth: depth.html
 theme:
+  logo: assets/sitelogo.png
   name: material
   features:
-    -search.suggests
+    - search.suggests
     - content.tabs.link
+    - navigation.tabs
+    - navigation.tabs.sticky
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 plugins:
   - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter 
+      link: https://twitter.com/altunenes
+    - icon: fontawesome/brands/github
+      link: https://github.com/altunenes
