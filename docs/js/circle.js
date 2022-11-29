@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
     numButton.style.color = 'red';
     numButton.style.position = 'absolute';
     numButton.style.bottom = '0px';
-    numButton.style.left = '56%';
+    numButton.style.left = '66%';
     numButton.style.padding = '10px';
     numButton.style.boxShadow = '0px 0px 10px red';
     numButton.onclick = function() {
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
     bwButton.style.color = 'green';
     bwButton.style.position = 'absolute';
     bwButton.style.bottom = '10%';
-    bwButton.style.left = '56%';
+    bwButton.style.left = '66%';
     bwButton.style.padding = '10px';
     bwButton.style.boxShadow = '0px 0px 10px red';
     bwButton.onclick = function() {
