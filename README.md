@@ -65,7 +65,7 @@ from sorceress import sorceress
   - Motion Induced Blindness (2 versions)
   - Depth Perception
   - Speed of Rotation
-
+  - hypnotic circle
 ## Examples
 
 [In this page](https://altunenes.github.io/sorceress/explanations%20of%20illusions/), you can find all illusions, explanations, code, and how to use it. I show just a few examples on this page.

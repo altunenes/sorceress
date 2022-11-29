@@ -385,6 +385,13 @@ Try demo [here](https://altunenes.github.io/sorceress/length.html) You can adjus
 
 Above, there are only 3 different colors, blue, magenta, and green. However, you may see different shades of green. It looks like a Munker illusion. The mechanism of the Munker illusion involves both a color-assimilation effect and a contrast effect (Novick & Kitaoka, 2021). I actually "translated" this [code](https://www.shadertoy.com/view/4dy3Dc) from GLSL language into python. But I wish I could do it in a better way since it's a bit slow with heavy math in the background.
 
+## 32-Hypnotic Circles
+![hypnotic](./assets/circle2.gif)
+
+I inspired this effect from a video by [brusspup](https://www.youtube.com/watch?v=pNe6fsaCVtI). Circles within a larger black circle (actually I coded it into a rectangle). The inner circles in turn seem to form a circular shape that's rolling around the inside of the larger circle. But, believe it or not, the direction that each circle is linear, not circular. You can try the demo [here](https://altunenes.github.io/sorceress/circle.html)
+
+To me, after 5 circles the illusion is starting. Increasing or decreasing the radius of the circles or animation speed didn't affect my perception. However, you can try it and see what happens.
+
 ```
 
 ### REFERENCES
