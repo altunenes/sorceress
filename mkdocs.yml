@@ -14,6 +14,8 @@ nav:
     - blindness: blindness.html
     - blindness2: blindness2.html
     - Depth: depth.html
+    - Cicles: cicle.html
+    - Length: length.html
 theme:
   logo: assets/sitelogo.png
   name: material
