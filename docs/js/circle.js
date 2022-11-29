@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
     numButton.innerHTML = 'Lines+';
     numButton.style.color = 'red';
     numButton.style.position = 'absolute';
-    numButton.style.top = '0px';
+    numButton.style.bottom = '0px';
     numButton.style.left = '50%';
     numButton.style.padding = '10px';
     numButton.style.boxShadow = '0px 0px 10px red';
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
     numButton.innerHTML = 'Lines-';
     numButton.style.color = 'red';
     numButton.style.position = 'absolute';
-    numButton.style.top = '0px';
+    numButton.style.bottom = '0px';
     numButton.style.left = '56%';
     numButton.style.padding = '10px';
     numButton.style.boxShadow = '0px 0px 10px red';
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
     bwButton.innerHTML = 'size+';
     bwButton.style.color = 'green';
     bwButton.style.position = 'absolute';
-    bwButton.style.top = '10%';
+    bwButton.style.bottom = '10%';
     bwButton.style.left = '50%';
     bwButton.style.padding = '10px';
     bwButton.style.boxShadow = '0px 0px 10px red';
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
     bwButton.innerHTML = 'size-';
     bwButton.style.color = 'green';
     bwButton.style.position = 'absolute';
-    bwButton.style.top = '10%';
+    bwButton.style.bottom = '10%';
     bwButton.style.left = '56%';
     bwButton.style.padding = '10px';
     bwButton.style.boxShadow = '0px 0px 10px red';
