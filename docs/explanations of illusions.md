@@ -388,7 +388,8 @@ Above, there are only 3 different colors, blue, magenta, and green. However, you
 ## 32-Hypnotic Circles
 ![hypnotic](./assets/circle2.gif)
 
-I inspired this effect from a video by [brusspup](https://www.youtube.com/watch?v=pNe6fsaCVtI). Circles within a larger black circle (actually I coded it into a rectangle). The inner circles in turn seem to form a circular shape that's rolling around the inside of the larger circle. But, believe it or not, the direction that each circle is linear, not circular. You can try the demo [here](https://altunenes.github.io/sorceress/circle.html)
+I inspired this effect from a video by [brusspup](https://www.youtube.com/watch?v=pNe6fsaCVtI). However, when I search for the video I found the illusion was actually created by Arthur Shapiro and Alex Rose-Henig unfortunately I couldn't find the original paper.
+Circles within a larger black circle (actually I coded it into a rectangle). The inner circles in turn seem to form a circular shape that's rolling around the inside of the larger circle. But, believe it or not, the direction that each circle is linear, not circular. You can try the demo [here](https://altunenes.github.io/sorceress/circle.html)
 
 To me, after 5 circles the illusion is starting. Increasing or decreasing the radius of the circles or animation speed didn't affect my perception. However, you can try it and see what happens.
 

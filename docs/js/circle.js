@@ -6,6 +6,19 @@ document.addEventListener("DOMContentLoaded", function() {
     canvas.height = 400;
     document.body.appendChild(canvas);
     
+
+
+    var colorPicker = document.createElement('input');
+colorPicker.type = 'color';
+    colorPicker.style.position = 'absolute';
+    colorPicker.style.bottom = '0px';
+    colorPicker.style.left = '3%';
+colorPicker.value = '#ffff00';
+colorPicker.addEventListener('change', function(e) {
+  circles.strokeStyle = circles.fillStyle = e.target.value;
+});
+document.body.appendChild(colorPicker);
+
     var d = document.getElementById('canvas');
     var circles= d.getContext('2d');
     var width= d.width, width2= width/2;
@@ -32,13 +45,10 @@ document.addEventListener("DOMContentLoaded", function() {
     
         circle(width2,width2,width2);
         circles.lineWidth= 3;
-        /*/circles.strokeStyle= circles.fillStyle= 'yellow';/*/
+        circles.strokeStyle= circles.fillStyle= colorPicker.value;
     
-        var r= Math.random()*255;
-        var g= Math.random()*0;
-        var b= Math.random()*255;
-        circles.fillStyle= 'rgb('+r+','+g+','+b+')';
-        circles.strokeStyle= 'rgb('+r+','+g+','+b+')';
+
+        
         circles.stroke();
         var a= 0;
         for (var i=0; i< num*2; i++){
@@ -68,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
         circles.fill();
         
     }
-    
+
     
     
     var num = 1;
@@ -136,5 +146,5 @@ document.addEventListener("DOMContentLoaded", function() {
     var style = document.createElement('style');
     style.innerHTML = 'button { background: black; }';
     document.body.appendChild(style);
-    
+
     });
