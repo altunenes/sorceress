@@ -7,7 +7,14 @@
 
 This package's purpose is to create optical illusions in a simple way. The package is written in Python. however, the repo also includes JavaScript.  In [explanations](https://altunenes.github.io/sorceress/explanations%20of%20illusions/) section, you can find the explanations of the illusions.
 
-If you find visual illusions fascinating this package is for you. You can reproduce the illusions in the literature with a few lines of code.
+This package contains a collection of well-known visual illusions, as well as some lesser-known ones that are just as fascinating.
+
+By using the code provided in the package, you can easily recreate the illusions and see how they work for yourself.
+Not only can you reproduce the illusions, but you can also experiment with them and modify the code to create your own variations.
+
+With this package, you can dive deep into the world of visual illusions and learn more about how the human brain processes visual information.
+
+Whether you're a researcher, a student, or just someone who loves illusions, this package has something for you. So if you're interested in exploring the mysteries of the human visual system, give it a try!
 
 More importantly, we shouldn't take optical illusions as just fun. Optical illusions are visual phenomena that occur when our brain interprets information from our eyes in a way that is different from reality. These illusions can reveal a lot about how our brain works and how it processes visual information, which can help us understand the underlying mechanisms of human vision. Most of the optical illusions in this package are seriously researched in the neuroscience literature. And I must say that the "causation" of the most of effects is still debated in the literature according to my humble knowledge. Optical illusions are researching not only in human vision but in other animals. So we can get a lot of insights from an evolutionary perspective.
 
