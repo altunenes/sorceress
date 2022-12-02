@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     img.style.width = '300px';
     img.style.height = '300px';
     img.style.position = 'absolute';
-    img.style.left = '20%';
+    img.style.left = '30%';
     img.style.top = '40%';
     img.style.transform = 'translate(-50%, -50%)';
     document.body.appendChild(img);
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     button.innerHTML = 'Restart';
     button.style.position = 'absolute';
     button.style.left = '10%';
-    button.style.top = '10%';
+    button.style.top = '95%';
     button.style.transform = 'translate(-50%, -50%)';
     document.body.appendChild(button);
     
@@ -71,8 +71,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var input = document.createElement('input');
     input.type = 'file';
     input.style.position = 'absolute';
-    input.style.left = '92%';
-    input.style.top = '10%';
+    input.style.left = '10%';
+    input.style.top = '85%';
     input.style.transform = 'translate(-50%, -50%)';
     document.body.appendChild(input);
     
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
     
-    var point = document.createElement('div');
+    /*/var point = document.createElement('div');
     point.style.width = '10px';
     point.style.height = '10px';
     point.style.backgroundColor = 'red';
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
     point.style.top = '40%';
     point.style.transform = 'translate(-50%, -50%)';
     document.body.appendChild(point);
-    
+  
     var text = document.createElement('div');
     text.innerHTML = 'Look at the red dot or an eye';
     text.style.position = 'absolute';
@@ -98,11 +98,12 @@ document.addEventListener("DOMContentLoaded", function() {
     text.style.top = '10%';
     text.style.transform = 'translate(-50%, -50%)';
     document.body.appendChild(text);
+    /*/
     
     
     
     
-    var text = document.createElement('div');
+    /*/var text = document.createElement('div');
     text.innerHTML = 'restart the animation';
     text.style.fontWeight = 'bold';
     text.style.position = 'absolute';
@@ -110,69 +111,16 @@ document.addEventListener("DOMContentLoaded", function() {
     text.style.top = '5%';
     text.style.transform = 'translate(-50%, -50%)';
     document.body.appendChild(text);
+    /*/
     
-    
-    var text = document.createElement('div');
+    /*/var text = document.createElement('div');
     text.innerHTML = 'upload an img';
     text.style.position = 'absolute';
     text.style.left = '85%';
     text.style.top = '5%';
     text.style.transform = 'translate(-50%, -50%)';
     document.body.appendChild(text);
-    
-    var text = document.createElement('div');
-    text.innerHTML = 'thickness';
-    text.style.position = 'absolute';
-    text.style.left = '38%';
-    text.style.top = '7%';
-    text.style.transform = 'translate(-50%, -50%)';
-    document.body.appendChild(text);
-    
-    
-    var text = document.createElement('div');
-    text.innerHTML = 'line colors';
-    text.style.position = 'absolute';
-    text.style.left = '60%';
-    text.style.top = '5%';
-    text.style.transform = 'translate(-50%, -50%)';
-    document.body.appendChild(text);
-    
-    
-    
-    var text = document.createElement('div');
-    text.innerHTML = 'Blur (recommended) ';
-    text.style.position = 'absolute';
-    text.style.fontWeight = 'bold';
-    text.style.left = '75%';
-    text.style.top = '7%';
-    text.style.transform = 'translate(-50%, -50%)';
-    document.body.appendChild(text);
-    
-    
-    var button = document.createElement('button');
-    button.innerHTML = 'Speed: 0.1';
-    button.style.position = 'absolute';
-    button.style.left = '50%';
-    button.style.top = '10%';
-    button.style.transform = 'translate(-50%, -50%)';
-    document.body.appendChild(button);
-    button.addEventListener('click', function() {
-      if (lineMove == 0.1) {
-        lineMove = 0.2;
-        button.innerHTML = 'Speed: 0.2';
-      } else if (lineMove == 0.2) {
-        lineMove = 0.3;
-        button.innerHTML = 'Speed: 0.3';
-      } else if (lineMove == 0.3) {
-        lineMove = 0.4;
-        button.innerHTML = 'Speed: 0.4';
-      } else {
-        lineMove = 0.1;
-        button.innerHTML = 'Speed: 0.1';
-      }
-    });
-    
-    
+    /*/
     
     var slider = document.createElement('input');
     slider.type = 'range';
@@ -180,8 +128,8 @@ document.addEventListener("DOMContentLoaded", function() {
     slider.max = '10';
     slider.value = '1';
     slider.style.position = 'absolute';
-    slider.style.left = '40%';
-    slider.style.top = '10%';
+    slider.style.left = '5%';
+    slider.style.top = '2%';
     slider.style.transform = 'translate(-50%, -50%)';
     document.body.appendChild(slider);
     slider.addEventListener('input', function() {
@@ -193,8 +141,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var colorpicker = document.createElement('input');
     colorpicker.type = 'color';
     colorpicker.style.position = 'absolute';
-    colorpicker.style.left = '60%';
-    colorpicker.style.top = '10%';
+    colorpicker.style.left = '30%';
+    colorpicker.style.top = '90%';
     colorpicker.style.transform = 'translate(-50%, -50%)';
     document.body.appendChild(colorpicker);
     colorpicker.addEventListener('input', function() {
@@ -203,19 +151,90 @@ document.addEventListener("DOMContentLoaded", function() {
         lines[i].style.backgroundColor = lineColor;
       }
     });
-    var slider4 = document.createElement('input');
-    slider4.type = 'range';
-    slider4.min = '0';
-    slider4.max = '25';
-    slider4.value = '0';
-    slider4.style.position = 'absolute';
-    slider4.style.top = '10%';
-    slider4.style.right = '15%';
-    slider4.style.transform = 'translate(-50%, -50%)';
-    document.body.appendChild(slider4);
-    slider4.addEventListener('change', function() {
-      document.body.style.filter = 'blur(' + slider4.value + 'px)';
+    var blurButton = document.createElement('button');
+    blurButton.innerHTML = 'Blur';
+    blurButton.style.position = 'absolute';
+    blurButton.style.left = '3%';
+    blurButton.style.top = '95%';
+    blurButton.style.transform = 'translate(-50%, -50%)';
+    blurButton.onclick = function() {
+      if (blurButton.innerHTML == 'Blur') {
+        blurButton.innerHTML = 'Blur more';
+        document.body.style.filter = 'blur(5px)';
+      } else if (blurButton.innerHTML == 'Blur more') {
+        blurButton.innerHTML = 'Blur less';
+        document.body.style.filter = 'blur(10px)';
+      } else {
+        blurButton.innerHTML = 'Blur';
+        document.body.style.filter = 'blur(0px)';
+      }
+    };
+    document.body.appendChild(blurButton);
+    
+    blurButton.style.fontFamily = 'sans-serif';
+    blurButton.style.fontSize = '20px';
+    blurButton.style.color = 'white';
+    blurButton.style.backgroundColor = 'black';
+    blurButton.style.border = 'none';
+    blurButton.style.padding = '10px 20px';
+    blurButton.style.borderRadius = '5px';
+
+    /*/add stlye to other buttons restart, upload and speed/*/
+
+    var restartButton = document.createElement('button');
+    restartButton.innerHTML = 'Restart';
+    restartButton.style.position = 'absolute';
+    restartButton.style.left = '10%';
+    restartButton.style.top = '95%';
+    restartButton.style.transform = 'translate(-50%, -50%)';
+    restartButton.onclick = function() {
+      location.reload();
+    }
+    document.body.appendChild(restartButton);
+
+    restartButton.style.fontFamily = 'sans-serif';
+    restartButton.style.fontSize = '20px';
+    restartButton.style.color = 'white';
+    restartButton.style.backgroundColor = 'black';
+    restartButton.style.border = 'none';
+    restartButton.style.padding = '10px 20px';
+    restartButton.style.borderRadius = '5px';
+
+
+
+    var speedButton = document.createElement('button');
+    speedButton.innerHTML = 'Speed: 0.1';
+    speedButton.style.position = 'absolute';
+    speedButton.style.left = '20%';
+    speedButton.style.top = '95%';
+    speedButton.style.transform = 'translate(-50%, -50%)';
+    speedButton.onclick = function() {
+      if (lineMove == 0.1) {
+        lineMove = 0.2;
+        speedButton.innerHTML = 'Speed: 0.2';
+      } else if (lineMove == 0.2) {
+        lineMove = 0.3;
+        speedButton.innerHTML = 'Speed: 0.3';
+      } else if (lineMove == 0.3) {
+        lineMove = 0.4;
+        speedButton.innerHTML = 'Speed: 0.4';
+      } else {
+        lineMove = 0.1;
+        speedButton.innerHTML = 'Speed: 0.1';
+      }
+    }
+    document.body.appendChild(speedButton);
+
+    speedButton.style.fontFamily = 'sans-serif';
+    speedButton.style.fontSize = '20px';
+    speedButton.style.color = 'white';
+    speedButton.style.backgroundColor = 'black';
+    speedButton.style.border = 'none';
+    speedButton.style.padding = '10px 20px';
+    speedButton.style.borderRadius = '5px';
+
+
+    
       
-    });
        
 });
