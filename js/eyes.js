@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var input = document.createElement('input');
     input.type = 'file';
     input.style.position = 'absolute';
-    input.style.left = '10%';
+    input.style.left = '25%';
     input.style.top = '85%';
     input.style.transform = 'translate(-50%, -50%)';
     document.body.appendChild(input);
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
     slider.max = '10';
     slider.value = '1';
     slider.style.position = 'absolute';
-    slider.style.left = '5%';
+    slider.style.left = '15%';
     slider.style.top = '2%';
     slider.style.transform = 'translate(-50%, -50%)';
     document.body.appendChild(slider);
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var blurButton = document.createElement('button');
     blurButton.innerHTML = 'Blur';
     blurButton.style.position = 'absolute';
-    blurButton.style.left = '3%';
+    blurButton.style.left = '30%';
     blurButton.style.top = '95%';
     blurButton.style.transform = 'translate(-50%, -50%)';
     blurButton.onclick = function() {
