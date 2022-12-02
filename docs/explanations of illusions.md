@@ -10,7 +10,7 @@ You don't need to import the other packages, because they are imported in the so
 
 ## 1- chromatic
 
-Chromatic adaptation is probably one of the central concepts in color vision. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. You can apply this function to any image and function automatically processes the image and returns a gif file. The gif file shows the transformation of the image from the original to the adapted image.
+Chromatic adaptation is probably one of the central concepts in color vision.It is an important factor in the perception of color. When the color of the light source changes, the brain automatically compensates for this change, which can alter the way that we perceive the colors in an image. For example, if you look at an optical illusion under different lighting conditions, it may appear to change in its intensity or color, due to the brain's ability to adapt to changes in the color of the light. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. You can apply this function to any image and function automatically processes the image and returns a gif file. The gif file shows the transformation of the image from the original to the adapted image.
 
 The von Kries chromatic adaptation method is a technique that is sometimes used in camera image processing. The method is to apply a gain to each of the human cone cell spectral sensitivity responses so as to keep the adapted appearance of the reference white constant. Herbert E. Ives was the first to clearly apply Johannes von Kries' theory of adaptive gains on the three cone cell types to the issue of color constancy; as a result, the technique is sometimes known as the Ives transform or the von Kries-Ives adaptation (Gegenfurtner, 1999).
 
@@ -32,7 +32,9 @@ _[image source](https://extension.unh.edu/blog/fall-good-time-plant-trees-and-sh
 
 Lateral inhibition is the phenomenon in which a neuron's response to a stimulus is inhibited by the excitation of a neighboring neuron (Bakshi and Ghosh, 2017).Neurons that are firing inhibit the stimulation of surrounding. Accordingly, only the neurons that are most stimulated and least inhibited respond (Cohen, 2011).
 
-Some neurons are activated more than others during lateral inhibition. Excitatory neurotransmitters are released to neurons along a specific path by a highly activated cell. In addition, the highly activated primary neuron in the brain activates interneurons that prevent the stimulation of cells that are located laterally. Interneurons are nerve cells that help the central nervous system and motor or sensory neurons communicate with one another. This action increases the contrast between different stimuli and sharpens the focus on a particular stimulus. Body sensory systems like the olfactory, visual, tactile, and auditory systems all experience lateral inhibition.
+Some neurons are activated more than others during lateral inhibition. Excitatory neurotransmitters are released to neurons along a specific path by a highly activated cell. In addition, the highly activated primary neuron in the brain activates interneurons that prevent the stimulation of cells that are located laterally. Interneurons are nerve cells that help the central nervous system and motor or sensory neurons communicate with one another. This action increases the contrast between different stimuli and sharpens the focus on a particular stimulus. Body sensory systems like the olfactory, visual, tactile, and auditory systems all experience lateral inhibition. 
+
+
 
 Mach bands, the perception of light and dark lines next to abrupt brightness changes, and the gray dots that appear between junctions in the Hermann grid illusion can all be explained by lateral inhibition.
 It's an old-fashioned illusion that is probably known the most. I've added many parameters to this function to reproduce in distinctive ways.
@@ -146,6 +148,8 @@ sorceress.kanizsa("12outkaniza",400,circleColor=(34,34,178))
 
 The Kanizsa illusion is probably one of the most known it was created by an Italian psychologist Gaetano Kanizsa (1913–1993). We can see surfaces, in this example squares (even though there are different kinds of Kanizas), with contours that are not present in the image. It is called illusory contours you can call this illusion also the "subjective contours" (Kanizsa, 1976). The first time I heard the name "Kanizsa" I thought he is Japanese for a long time. Then I learned that Kaniza was actually an Italian! It's because his name is used in many psychology textbooks to describe the Kanizsa triangle and most of those books don't give the full name of Kanizsa.
 
+The illusion is thought to be caused by the way that the brain processes information about shapes and figures. When we look at an image, our brains automatically try to organize the visual information into recognizable patterns and shapes, and in the case of the Kanizsa squares, the brain is tricked into perceiving a square where none actually exists.
+
 ## 10- ponzol
 
 ```
@@ -157,6 +161,8 @@ sorceress.ponzol("test",kill=False,line1=(0,0,139),line2=(0,0,139),rectangle1=(0
 ![test.png](./assets/test.png)
 
 The Ponzo illusion is old (Ponzo, 1912). But Ponzo actually published his illusion with a scientific paper. Actually, any image with a strong sense of perspective has this. You could see various methods if you search a little bit (especially in railways).
+
+ The Ponzo illusion is an example of how the brain uses information about depth and perspective to perceive the world around us, and it shows how the brain can be fooled by optical illusions.
 
 ## 11- tAki2001
 
@@ -202,7 +208,15 @@ sorceress.ccob("aki.jpg",rms=0.5,amplitudespectrum=300,plttitle="myoutput")
 
 ![myoutput.png](./assets/1631644760887-myoutput.png)
 
-The signs with the letters R inside are the same color! This one is probably the most math-required optical illusion in this package. 😄 First why do I call it "ccob" it stands for "Craik–Cornsweet–O'Brien" and is commonly called as CCOB effect. The illusion is the same `sorceress.sorcerer.dakinPexc()`. This illusion is taken as evidence for a low–level ‘filling–in’ mechanism subserving lightness perception. How do I create this illusion? Well, it's about the spatial frequency filtering with Fourier transform. And this illusion is mostly stimulus-oriented, so be sure your input image has some big luminance differences and does not have too much roughness. The function is converting your image to grayscale first then scaling to -1 +1. Then RMS which is the standard deviation of a measure of image contrast, also known as “root means square”, the contrast has been adjusting. The most important part is the amplitude spectrum. You can either apply a low or high pass filter it depends on your input image. Finally, to minimize coarse changes in luminance, the function applies a Laplacian-of-Gaussians (LoG) filter. If you look close enough to the edges of the domains you may see some "ringing". This is the result of the discrete Fourier transform.
+The signs with the letters R inside are the same color! This one is probably the most math-required optical illusion in this package. 😄 First why do I call it "ccob" it stands for "Craik–Cornsweet–O'Brien" and is commonly called as CCOB effect. The illusion is the same `sorceress.sorcerer.dakinPexc()`. This illusion is taken as evidence for a low–level ‘filling–in’ mechanism subserving lightness perception. How do I create this illusion? Well, it's about the spatial frequency filtering with Fourier transform. 
+
+But what is spatial freuqency? 
+
+Spatial frequency is a measure of how much detail is in an image or a pattern. Low spatial frequency means that there is not much detail in the image, and it looks blurry or fuzzy. High spatial frequency means that there is a lot of detail in the image, and it looks sharp and clear.
+
+Imagine that you are looking at a picture of a tree. If the picture has low spatial frequency, it might look like a big green blob with no branches or leaves. This is because there is not much detail in the picture, and it is hard to see the different parts of the tree. On the other hand, if the picture has high spatial frequency, you would be able to see all of the branches and leaves on the tree, and it would look much more like a real tree.
+
+And this illusion is mostly stimulus-oriented, so be sure your input image has some big luminance differences and does not have too much roughness. The function is converting your image to grayscale first then scaling to -1 +1. Then RMS which is the standard deviation of a measure of image contrast, also known as “root means square”, the contrast has been adjusting. The most important part is the amplitude spectrum. You can either apply a low or high pass filter it depends on your input image. Finally, to minimize coarse changes in luminance, the function applies a Laplacian-of-Gaussians (LoG) filter. If you look close enough to the edges of the domains you may see some "ringing". This is the result of the discrete Fourier transform.
 
 The image that've shown image has been taken from the A. Kitaoka's twitter account. Here, I would like to show another example with another input image:
 
@@ -249,6 +263,8 @@ sorceress.whiteill(version2=True,outputname="whiteillout")
 Do I need to say grays are the same? 😄. The scientific explanations are still debated in the literature at first look. A recent study about White's study (Betz et al., 2015) found that the illusion was marginally enhanced by contour adaptation at the test patch edges parallel to the grating. The contrasting behavior seen in the current investigation in response to independent manipulations of collinear or flanking bar luminance is consistent with these findings. 
 
  Before White identified this phenomenon, it was believed that all brightness illusions were the consequence of rival processes, meaning that a gray item should appear dark when surrounded by light and light when surrounded by darkness. However, in this deception, the darker-appearing gray bars are surrounded by black stimuli whereas the lighter-appearing gray bars are surrounded by white stimuli. As I said before, White's effect's underlying neural mechanisms are still a mystery.
+
+ Imagine that you are looking at a picture with a white dog on a black background. The cells in your eyes that help you see the white dog will send a message to your brain saying "white dog!" But the cells that help you see the black background will also send a message to your brain saying "not white dog!" The second message helps your brain understand that the white dog is standing out from the black background, and makes the white dog look even whiter. This is lateral inhibition. It helps your brain see the differences between things, like white and black.
 
 ## 16-footsteps
 
@@ -298,7 +314,6 @@ This is a recent optical illusion that was described by Laeng et al (2022). Acco
 The illusion appeared most effective when the hole was black. However, I added many parameters so you can try different colors. 
 
 
-
 ## 22-colorgrids
 
 ![colorgrids](./assets/final.png)
@@ -322,6 +337,8 @@ It's a very interesting illusion. I've seen it in a paper that was recently publ
 ![motion](./assets/Animation6.gif)
 Motion Induced Blindness (MIB) is a phenomenon of visual disappearance or perceptual illusions observed in the lab, in which stationary visual stimuli disappear as if erased in front of an observer's eyes when masked with a moving background.
 
+ This illusion is thought to be caused by the way that the brain processes visual information. When we look at a scene, our brains automatically focus on the moving objects, while ignoring the stationary ones. This is because our brains are designed to track moving objects, as they are often potential threats or sources of food. In the case of motion-induced blindness, the brain becomes so focused on the moving objects that it fails to register the stationary object, causing it to disappear from view. This is why the stationary object appears to "disappear" in the midst of all the moving objects.
+
 With this illusion, you can see the disappearance of the objects in front of your eyes. You can access this illusion from here [sorceress/blindness:](https://altunenes.github.io/sorceress/blindness.html)
 
 I added different conditions, "add circle" button adds circles to the screen and you can adjust their positions with your mouse interactively. You can also change the fixation cross with your mouse, + and - buttons change the speed of the moving background. 
@@ -333,6 +350,8 @@ Use "add circle" button to add circles to the screen and you can adjust their po
 ![blind](./assets/blind23.gif)
 
 In this demonstration the observer focuses at the flickering green dot in the middle. After about 10 seconds, the observer sees one, two or all three of the static yellow dots arranged at the corners of an imaginary equilateral triangle disappear and then reappear.
+
+
 
 ## 25-Depth
 Our visual system is very good at estimating the depth of objects in the world. However, it's not perfect. Being able to view the world in three dimensions is known as depth perception. In order to perceive depth, we must also be able to determine how far away an item is from us. Our perception of an object's size and distance depends on the size and proximity of other items. For me, there is an incredibly strong depth illusion. Even though in 2D the squares are the same size, same color, and same distance but our brain creates a perception of depth. It's because of the borders of the squares, moreover if you animate you may also see a motion illusion.  You can access this illusion from here, play with the parameters and see what happens
@@ -365,7 +384,9 @@ This is a different version of the Munker illusion. The effect is the same but i
 
 ![pareidolia](./assets/gabor_patch.png)
 
-Face pareidolia is a phenomenon in which people see faces in random objects. I have created this illusion accidentally. I was trying to create a Gabor patch and I was trying to add some noise to the image with Gabor coefficients. But I saw a face while I working on it. So I re-designed the code and add into the sorceress :)
+Face pareidolia is a phenomenon in which people see faces in random objects. Pareidolia is the phenomenon of perceiving a pattern or meaning where none exists. It is a type of illusion, and it is thought to be a result of the brain's tendency to try to make sense of random or ambiguous stimuli. Our brains are constantly bombarded with sensory information, and they are very good at organizing and interpreting this information in a way that makes sense to us. Sometimes, however, our brains can interpret random or meaningless stimuli as being meaningful, which can result in pareidolia. For example, if you see a cloud that looks like a face, your brain may interpret it as a face even though it is just a random arrangement of water droplets. This is because your brain is trying to make sense of the information it is receiving, and it is using its knowledge of faces to do so.
+
+I have created this illusion accidentally. I was trying to create a Gabor patch and I was trying to add some noise to the image with Gabor coefficients. But I saw a face while I working on it. So I re-designed the code and add into the sorceress :)
 
 ## 29-Grids2
 

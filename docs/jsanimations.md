@@ -1,4 +1,7 @@
-Since I thought JavaScript is handier than python when it comes to animations and web deployment, I created animations in JavaScript.
+ Both JavaScript and Python are popular programming languages that are widely used for a variety of tasks, including creating animations. However, the two languages are very different. JavaScript is a scripting language that is used to create interactive web pages. For most user, accessing JavaScript code is as simple as opening a web browser and visiting a demo.
+
+JavaScript is a client-side programming language that is commonly used to create interactive elements on web pages. It is particularly well-suited for creating animations that run in a web browser, as it can easily manipulate the HTML and CSS elements on a web page to create dynamic and interactive effects. P
+
 Currently, there are 9 illusions that can be seen on the page. But as you can notice, the repository has also some other js files.
 These are currently in the development stage. You can open them in the browser and see the code and feel free to contribute to finishing them.
 
