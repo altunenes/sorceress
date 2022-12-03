@@ -7,7 +7,21 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.appendChild(canvas);
     
 
+    var speedButton = document.createElement('button');
+    speedButton.innerHTML = 'Increase Speed';
+    speedButton.style.position = 'absolute';
+    speedButton.style.bottom = '15%';
+    speedButton.style.left = '15%';
+    speedButton.style.backgroundColor = '#4CAF50';
+    speedButton.style.padding = '10px';
+    speedButton.style.boxShadow = '0px 0px 10px red';
+    speedButton.addEventListener('click', function(e) {
+      
+      speedFactor *= 2;
+    });
+    document.body.appendChild(speedButton);
 
+    var speedFactor = 1;
     var colorPicker = document.createElement('input');
 colorPicker.type = 'color';
     colorPicker.style.position = 'absolute';
@@ -59,8 +73,8 @@ document.body.appendChild(colorPicker);
         circles.stroke();
         a= 0;
         for (var i=0; i< num; i++){
-            circle(width2+Math.cos(a)*Math.sin(time+i*Math.PI/num)*(width2-bw), 
-                   width2+Math.sin(a)*Math.sin(time+i*Math.PI/num)*(width2-bw), bw);
+            circle(width2+Math.cos(a)*Math.sin(time*speedFactor+i*Math.PI/num)*(width2-bw), 
+                   width2+Math.sin(a)*Math.sin(time*speedFactor+i*Math.PI/num)*(width2-bw), bw);
             a+= ratio/2;
         }
         time+= 0.03;
@@ -146,5 +160,7 @@ document.body.appendChild(colorPicker);
     var style = document.createElement('style');
     style.innerHTML = 'button { background: black; }';
     document.body.appendChild(style);
+
+
 
     });
