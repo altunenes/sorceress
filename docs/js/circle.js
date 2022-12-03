@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     speedButton.style.padding = '10px';
     speedButton.style.boxShadow = '0px 0px 10px red';
     speedButton.addEventListener('click', function(e) {
-      // Increase the speed factor by a factor of 2
+      
       speedFactor *= 2;
     });
     document.body.appendChild(speedButton);
