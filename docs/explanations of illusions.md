@@ -4,15 +4,29 @@ First, let's import the package. I usually import the package like this:
 
 `from sorceress import sorceress`
 
-Remember you need to also install other packages, otherwise you will get an error. One of the packages is `numpy`, which is used to create arrays. You can install it by typing `pip install numpy` in your terminal. Another package is `matplotlib`, which is used to plot the images. You can install it by typing `pip install matplotlib` in your terminal. If you are using `conda`, you can install them by typing `conda install numpy` and `conda install matplotlib` in your terminal. If you are using `pipenv`, you can install them by typing `pipenv install numpy` and `pipenv install matplotlib` in your terminal. Another package is cv2, which is used to read images and image processing. You can install it by typing `pip install opencv-python` in your terminal. I also use imageio and PIL packages for more basic image processing. You can install them by typing `pip install imageio` and `pip install pillow` in your terminal. Last one is the color-science package, which is used to convert colors. You can install it by typing `pip install color-science` in your terminal.
+### Dependencies
+
+To use the code in this tutorial, you need to install several packages. This can be done by typing the following commands in your terminal:
+``` python
+
+pip install numpy
+pip install matplotlib
+pip install opencv-python
+pip install imageio
+pip install pillow
+pip install color-science
+```
+If you are using conda, you can install the packages by replacing pip install with conda install. If you are using pipenv, you can install the packages by replacing pip install with pipenv install
 
 You don't need to import the other packages, because they are imported in the sorceress package.
 
 ## 1- chromatic
 
-Chromatic adaptation is probably one of the central concepts in color vision.It is an important factor in the perception of color. When the color of the light source changes, the brain automatically compensates for this change, which can alter the way that we perceive the colors in an image. For example, if you look at an optical illusion under different lighting conditions, it may appear to change in its intensity or color, due to the brain's ability to adapt to changes in the color of the light. Chromatic adaptation is decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus. The chromatic adaptation transforms were mainly studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. You can apply this function to any image and function automatically processes the image and returns a gif file. The gif file shows the transformation of the image from the original to the adapted image.
+Chromatic adaptation is a central concept in color vision that is important for the perception of color. When the color of the light source changes, the brain automatically compensates for this change, which can alter the way that colors are perceived in an image. For example, if you look at an optical illusion under different lighting conditions, it may appear to change in intensity or color due to the brain's ability to adapt to changes in the color of the light. Chromatic adaptation is a decreased sensitivity to a particular color as a result of prolonged exposure to a colored stimulus.
 
-The von Kries chromatic adaptation method is a technique that is sometimes used in camera image processing. The method is to apply a gain to each of the human cone cell spectral sensitivity responses so as to keep the adapted appearance of the reference white constant. Herbert E. Ives was the first to clearly apply Johannes von Kries' theory of adaptive gains on the three cone cell types to the issue of color constancy; as a result, the technique is sometimes known as the Ives transform or the von Kries-Ives adaptation (Gegenfurtner, 1999).
+The chromatic adaptation transforms were studied with von Kries, Bradford, Sharp, and CMCCAT2000. However, CMCCAT2000 performed best. This function can be applied to any image and automatically processes the image, returning a gif file showing the transformation of the image from the original to the adapted image.
+
+The von Kries chromatic adaptation method is a technique used in camera image processing. It applies a gain to each of the human cone cell spectral sensitivity responses in order to keep the adapted appearance of the reference white constant. Herbert E. Ives was the first to apply Johannes von Kries' theory of adaptive gains on the three cone cell types to the issue of color constancy. As a result, the technique is sometimes known as the Ives transform or the von Kries-Ives adaptation (Gegenfurtner, 1999).
 
 ```
 sorceress.chromatic("inputfolder/tree.jpg",Gifduration=10)
@@ -30,14 +44,11 @@ _[image source](https://extension.unh.edu/blog/fall-good-time-plant-trees-and-sh
 
 ![CMCCAT2000output.png](./assets/CMCCAT2000output.png)
 
-Lateral inhibition is the phenomenon in which a neuron's response to a stimulus is inhibited by the excitation of a neighboring neuron (Bakshi and Ghosh, 2017).Neurons that are firing inhibit the stimulation of surrounding. Accordingly, only the neurons that are most stimulated and least inhibited respond (Cohen, 2011).
+Lateral inhibition is a phenomenon in which a neuron's response to a stimulus is inhibited by the excitation of a neighboring neuron (Bakshi and Ghosh, 2017). This process occurs when neurons that are firing inhibit the stimulation of surrounding neurons, resulting in only the neurons that are most stimulated and least inhibited responding (Cohen, 2011).
 
-Some neurons are activated more than others during lateral inhibition. Excitatory neurotransmitters are released to neurons along a specific path by a highly activated cell. In addition, the highly activated primary neuron in the brain activates interneurons that prevent the stimulation of cells that are located laterally. Interneurons are nerve cells that help the central nervous system and motor or sensory neurons communicate with one another. This action increases the contrast between different stimuli and sharpens the focus on a particular stimulus. Body sensory systems like the olfactory, visual, tactile, and auditory systems all experience lateral inhibition. 
+During lateral inhibition, some neurons are activated more than others. Highly activated primary neurons in the brain release excitatory neurotransmitters to neurons along a specific path, as well as activate interneurons that prevent the stimulation of cells located laterally. Interneurons are nerve cells that facilitate communication between the central nervous system and motor or sensory neurons. This action enhances the contrast between different stimuli and sharpens the focus on a particular stimulus. Lateral inhibition can be observed in body sensory systems such as the olfactory, visual, tactile, and auditory systems.
 
-
-
-Mach bands, the perception of light and dark lines next to abrupt brightness changes, and the gray dots that appear between junctions in the Hermann grid illusion can all be explained by lateral inhibition.
-It's an old-fashioned illusion that is probably known the most. I've added many parameters to this function to reproduce in distinctive ways.
+This process allows for the enhanced perception of certain stimuli, such as the Mach bands, the perception of light and dark lines next to abrupt brightness changes, and the gray dots that appear between junctions in the Hermann grid illusion. These phenomena can all be explained by lateral inhibition. In addition, lateral inhibition is observed in various sensory systems, including the olfactory, visual, tactile, and auditory systems.
 
 example usage:
 
@@ -51,18 +62,17 @@ sorceress.dotill((500,500),hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradiu
 sorceress.realtimegrid(realcolours=True)
 ```
 
-perceive black and white real time (with webcam) frames as colorful. It's a real time version of sorceress.colorgrids() function.
+The real-time perception of black and white frames as colorful can be achieved through the use of the `sorceress.colorgrids()` function. The use of this function with the parameter `realcolors=True` allows for the calculation of the actual colors of the frame, resulting in a more powerful illusion. However, without this parameter, a greater number of options in the slide bar are required for a visually appealing result, highlighting the flexibility of the human visual system in color perception.
 
-with `realcolours=False` code will not calculate the real colors of your frame. I recommend you to use this function with real colors. Illusion is getting powerful if colors of lines separate each other, however,  with `realcolours=False` means a lot of options are needed in the slide bar and it's not a pleasant view. It is an indicator of how flexible the color perception in the human visual system is.
 [Inspiration](https://www.patreon.com/posts/color-grid-28734535):
 
 ## 4- addlines
 
 inspired from prof Akiyoshi Kitaoka.
 
-Have you seen this illusion before? In the below, someone is hiding after those grids. *Beneath these *grids there* is *more than* Grids. Beneath these *grids there* is an idea. And ideas are bulletproof...* What you see is results of vast amounts of neural computation, mixed with a bit of guesswork. If you  look closely you use lower spatial frequencies and if you look at a further distance you will see the high spatial frequencies. In short, there are more grids  that fall on the light-sensitive portion of the back of your eye the further the image is away from you.Low-contrast object perception is impaired by high spatial-frequency components.
+Have you come across this illusion before? The image below may appear to be just a grid of lines at first glance, but there is more to it than meets the eye. If you look closely, you may be able to spot the hidden figure hidden among the grids. This illusion is the result of complex neural computations and a bit of guesswork. If you focus on the details, you will notice the low spatial frequencies, but if you view the image from a distance, you will see the high spatial frequencies. In other words, the further away the image is from your eye, the more grids fall on the light-sensitive portion of your retina. Low-contrast object perception is impaired by high spatial-frequency components.
 
-You can see the Vendetta guy if you scroll down and up the page or zoom out the whole image. Or more accurately, apply a Gaussian.
+To reveal the hidden figure, try scrolling up and down the page or zooming out. Alternatively, applying a Gaussian filter can also make it more visible.
 
 ![asdddd](https://user-images.githubusercontent.com/54986652/130432273-c3b11961-484d-44a1-99a9-6821e46f9c10.png)
 
@@ -71,14 +81,12 @@ sorceress.addlines(img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3
 
 ```
 
-This function basically adds vertical lines to an image, but it's blending not overlaying!
+This function is used to add vertical lines to an image. The lines are blended, not overlaid.
 
-`img` your input image like `"morgo.jpg"`
-`linecolour1` `linecolour2` and `linecolour3` are point the colors of lines.
-example usage:
-`sorceress.addlines("vfor.jpg",linecolour1=(150,5,5),linecolour2=(10,155,20),linecolour3=(0,15,15),alphablending==False) `
+To use the function, specify the input image (`img`) and the colors of the lines (`linecolour1`, `linecolour2`, and `linecolour3`). For example:
+`sorceress.addlines("vfor.jpg", linecolour1=(150, 5, 5), linecolour2=(10, 155, 20), linecolour3=(0, 15, 15))`
 
-If you select `alphablending==True`  line colors are much more stable against the luminance change in the background image. It's because in OpenCV when you overlay two images or colors the function called `addWeighted` mixes the colors in very "small tones" but you probably do not even notice. Still, this function which I called alpha blending, is much more stable to luminance change. Use both, in the same way, and see what differs.
+By default, the function uses "alpha blending" to mix the colors of the lines and the background image. This makes the resulting colors more stable against changes in the background luminance. You can turn off alpha blending by setting alphablending to False in the function call.
 
 ## 5- eyecolour
 
@@ -88,12 +96,11 @@ If you select `alphablending==True`  line colors are much more stable against th
 eyecolour("yourimage.jpg")
 #best results:
 eyecolour("galadriel2.jpg",alpha=0.9,beta=0.5,M=1,luminance=1,saturation=1,colors=(0,0,255)
-
-
 ```
-With this illusion, you perceive the black-and-white NumPy array as colorful. After you run this code, you need to select the iris manually and then push the enter. I didn't want to use the iris detector since it slowed  down the script. Just select smaller as much as possible. I've used `seamlessClone` function from OpenCV for getting much more realistic results. Your ROI (region of interest that you selected manually) will correspond to an eclipse' coordinates which I needed to detect the exact position of the iris. 
 
-Red, green, and blue are three overlapping color families that three separate types of photoreceptors in the eye are tuned to, which contributes to the process of seeing color (which are activated by visible light of long, medium and short wavelengths). Then, in the same scenario, these signals are immediately compared with signals from surrounding places. The comparison process continues as the signals move up the brain's hierarchy of processing centers, where they are compared to ever-larger portions of the environment. Accordingly, color and brightness are always relative due to this "opponent process."
+This illusion allows you to see a black and white NumPy array as colorful. To use it, simply run the code and then manually select the iris. The iris selection process is necessary because using an iris detector would slow down the script. It's important to select the smallest iris possible for the best results. The seamlessClone function from OpenCV is used to create a realistic effect. Your region of interest (the manually selected iris) will be used to detect the exact position of the iris, which is necessary for the illusion to work properly.
+
+Red, green, and blue are three overlapping color families that are each tuned to a different type of photoreceptor in the eye. When light with different wavelengths hits these photoreceptors, they are activated and produce signals that are immediately compared to signals from surrounding areas. This comparison process continues as the signals move up through the brain's hierarchy of processing centers, where they are compared to ever-larger portions of the environment. As a result, color and brightness are always relative due to this "opponent process" of signal comparison.
 
 I must say that this illusion is very sensitive to the brightness values of the image you will use. And you should use an image that you can center exactly.
 
@@ -109,9 +116,9 @@ sorceress.dakinPex(outputname="myoutput",dimension=800)
 
 ![myoutput.png](./assets/myoutput.png)
 
-If you see the different tones of gray this illusion is successful. If you perceive all same, try with the big dimensions.
+If you are able to perceive different shades of gray in this illusion, it is successful. If you perceive them all as the same, try using a larger image size.
 
-I've written this illusion after the read a paper from (Dakin and Bex, 2003). The existence of spatial frequency channels in the visual system is implicated in lightness perception. And I also should note that It has long been known that the brightness of a region of visual space is not related only to that region’s luminance, but depends also upon the luminances of adjacent regions (Von Bekesy, 1968).
+I developed this illusion after reading a paper by Dakin and Bex (2003), which suggests that the existence of spatial frequency channels in the visual system plays a role in lightness perception. Additionally, it has been well established that the brightness of a region in visual space is not only dependent on its own luminance, but also on the luminance of adjacent regions (Von Bekesy, 1968).
 
 ## 7- bruno
 
@@ -122,7 +129,7 @@ sorceress.sorcerer.bruno("myimagee",polycolor=(0,0,255),rectcolor=(34,34,128))
 
 ![myimagee.png](./assets/1631018314614-myimagee.png)
 
-Well at first time it seems a little bit confusing but in their experiments, Bruno et al. (1997) have shown their participants first the shapes that you've seen on the left then the shapes on the right have shown. In this experiment, participants needed to decide quickly as much as possible whether is it the same or not with the previous shape that they had shown. Results have shown that participants were fast and found it easy to say that the two shapes were the same in the top situation. But they were very slow in the other scenario (It's still the same!).
+In a study conducted by Bruno et al. (1997), participants were shown two sets of shapes. In the first set, the shapes were the same, while in the second set, the shapes were slightly different. Participants were asked to quickly determine whether the shapes were the same or not. The results showed that participants were able to quickly and easily identify the matching shapes in the first set, but were much slower in identifying the matching shapes in the second set.
 
 ## 8- dolboeuf
 
@@ -134,7 +141,7 @@ sorceress.dolboeuf("doloeufout",kill=False)
 
 ![doloeufout.png](./assets/1631019152448-doloeufout.png)
 
-Which red circle is bigger than the other? Probably you know what I'm talking about, two of them in the same radius. This illusion was first created by Belgian psychologist Joseph Remi Leopold Delbœuf in 1865. It's all about the perception of size. Of course, it's not the "all" about the story, the size differences of the inner and outer circles also play their roles in this illusion... Well, I didn't create a parameter for customizing those circles' (inner and outer) radius but I believe you get the point. If you select the `kill=True`, the illusion will be destroyed by the two horizontal lines.
+Which red circle is bigger than the other? This illusion was first created by Belgian psychologist Joseph Remi Leopold Delbœuf in 1865. It's all about the perception of size.The Delboeuf illusion is a well-known optical illusion where two circles appear to have different sizes, even though they are the same size. This illusion is caused by the surrounding context in which the circles are presented. In this case, the size of the outer circle influences the perceived size of the inner circle. The illusion can be destroyed by adding horizontal lines to the circles, which helps the viewer accurately perceive their actual size. The Delboeuf illusion is an interesting example of how our perception can be influenced by the context in which we see things. If you select the `kill=True`, the illusion will be destroyed by the two horizontal lines.
 
 ## 9- kanizsa
 
@@ -146,9 +153,9 @@ sorceress.kanizsa("12outkaniza",400,circleColor=(34,34,178))
 
 ![12outkaniza.png](./assets/12outkaniza.png)
 
-The Kanizsa illusion is probably one of the most known it was created by an Italian psychologist Gaetano Kanizsa (1913–1993). We can see surfaces, in this example squares (even though there are different kinds of Kanizas), with contours that are not present in the image. It is called illusory contours you can call this illusion also the "subjective contours" (Kanizsa, 1976). The first time I heard the name "Kanizsa" I thought he is Japanese for a long time. Then I learned that Kaniza was actually an Italian! It's because his name is used in many psychology textbooks to describe the Kanizsa triangle and most of those books don't give the full name of Kanizsa.
+The Kanizsa illusion is a well-known phenomenon in psychology, first described by Italian psychologist Gaetano Kanizsa in 1976. The illusion involves the perception of illusory contours or subjective contours, where the brain perceives the presence of a shape or figure despite the absence of actual physical contours in the image. In the case of the Kanizsa squares, the brain is tricked into perceiving squares where none actually exist.
 
-The illusion is thought to be caused by the way that the brain processes information about shapes and figures. When we look at an image, our brains automatically try to organize the visual information into recognizable patterns and shapes, and in the case of the Kanizsa squares, the brain is tricked into perceiving a square where none actually exists.
+This illusion is thought to arise from the way the brain processes information about shapes and figures. When we view an image, our brains automatically attempt to organize the visual information into recognizable patterns and shapes. In the case of the Kanizsa illusion, the brain mistakenly perceives illusory contours due to its innate tendency to find order in visual stimuli. This phenomenon highlights the complex processes involved in visual perception and the inherent subjectivity of our visual experiences.
 
 ## 10- ponzol
 
@@ -160,9 +167,7 @@ sorceress.ponzol("test",kill=False,line1=(0,0,139),line2=(0,0,139),rectangle1=(0
 
 ![test.png](./assets/test.png)
 
-The Ponzo illusion is old (Ponzo, 1912). But Ponzo actually published his illusion with a scientific paper. Actually, any image with a strong sense of perspective has this. You could see various methods if you search a little bit (especially in railways).
-
- The Ponzo illusion is an example of how the brain uses information about depth and perspective to perceive the world around us, and it shows how the brain can be fooled by optical illusions.
+The Ponzo illusion, named after its creator, Italian psychologist Mario Ponzo, is a classic example of how the brain uses information about depth and perspective to perceive the surrounding environment. The illusion, first published in 1912, involves an image with a strong sense of perspective, such as a set of parallel lines converging towards a vanishing point. When presented with such an image, the brain is tricked into perceiving the lines as having different lengths, even though they are actually the same. This illusion highlights the ways in which the brain can be deceived by optical illusions and the importance of considering depth and perspective in visual perception.
 
 ## 11- tAki2001
 
@@ -178,7 +183,7 @@ sorceress.tAki2001("YelowRay",dimension=1200)
 
 ![ColouredRay.png](./assets/ColouredRay.png)
 
-“Coloured ray illusion ” by Akiyoshi Kitaoka (Kitaoka, 2001). There were similar kinds of illusions that have been described by other scientists like Prandtl,(1927). Illusory yellow circles appear to run obliquely over the homogeneously white background. I added to function to change the background in the BGR array. Try it with other background colors with `bgcolor` parameter.
+The "Coloured ray illusion" by Akiyoshi Kitaoka (Kitaoka, 2001) is an optical illusion in which illusory yellow rays appear to run obliquely over a homogeneously white background. Similar illusions have been described by other scientists such as Prandtl (1927). The illusion is thought to be caused by the brain's use of depth and perspective information to perceive the world around us. The function allows for customization of the background color through the use of the `bgcolor` parameter.
 
 ## 12-cafewall
 
@@ -194,9 +199,11 @@ sorceress.cafeWall("myimage",1200,resize=True,brickcolor=(0,0,128),bgcolor=(114,
 
 ![myimageresized.png](./assets/myimageresized.png)
 
-This is maybe one of the most strong optical illusions that have ever been created. Bricks create a pattern in which the mortar lines between them do not look parallel. Why do we call it a "cafe wall"? well, a student of Richard Gregory from the University of Bristol has noticed this from a café (on St Michael’s Hill). The illusion is strongest when the mortar has a brightness that is in between that of the two tiles. So illusion will be work as long as colors have different brightness.
+The cafe wall illusion is a well-known optical illusion in which the mortar lines between bricks appear to be slanted, even though they are actually parallel. The illusion is strongest when the mortar has a brightness that is in between that of the two tiles.
 
-Why we are seeing this? Well, the only scientific explanation that I've known is from Gregory and Heard (1979). The role of orientation-sensitive simple cells in V1 and reactions to luminance borders are mainly involved in this illusion as they've mentioned. Gregory and Heard (1979) proposed that regions of varying luminances be retained in the spatial register by locking their borders. This border-locking technique causes inadvertent contour alterations between sections separated by small gaps. They've also shown that illusion disappears if the luminance of the middle line is noticeably lower or higher than the luminance of the two types of squares.
+The scientific explanation for this illusion is thought to involve the role of orientation-sensitive simple cells in the primary visual cortex, as well as the brain's reactions to luminance borders. Gregory and Heard (1979) proposed that the spatial register retains regions of varying luminances by locking their borders, which inadvertently causes contour alterations between sections separated by small gaps. The illusion disappears if the luminance of the middle line is significantly different from the luminance of the two types of squares.
+
+The cafe wall illusion was first observed by a student of Richard Gregory at the University of Bristol, who noticed it in a cafe on St Michael's Hill. It is named after the location where it was discovered
 
 ## 13-ccob
 
@@ -208,7 +215,7 @@ sorceress.ccob("aki.jpg",rms=0.5,amplitudespectrum=300,plttitle="myoutput")
 
 ![myoutput.png](./assets/1631644760887-myoutput.png)
 
-The signs with the letters R inside are the same color! This one is probably the most math-required optical illusion in this package. 😄 First why do I call it "ccob" it stands for "Craik–Cornsweet–O'Brien" and is commonly called as CCOB effect. The illusion is the same `sorceress.sorcerer.dakinPexc()`. This illusion is taken as evidence for a low–level ‘filling–in’ mechanism subserving lightness perception. How do I create this illusion? Well, it's about the spatial frequency filtering with Fourier transform. 
+The signs with the letters R inside are the same color 😄, despite appearing differently! This illusion, known as the Craik-Cornsweet-O'Brien (CCOB) effect, is created through the use of spatial frequency filtering with Fourier transform. It is often cited as evidence for a low-level "filling-in" mechanism involved in lightness perception. The CCOB effect is similar to the `dakinPexc()`, which is another example of the brain's ability to be tricked by optical illusions. It's about the spatial frequency filtering with Fourier transform. 
 
 But what is spatial freuqency? 
 
@@ -216,8 +223,13 @@ Spatial frequency is a measure of how much detail is in an image or a pattern. L
 
 Imagine that you are looking at a picture of a tree. If the picture has low spatial frequency, it might look like a big green blob with no branches or leaves. This is because there is not much detail in the picture, and it is hard to see the different parts of the tree. On the other hand, if the picture has high spatial frequency, you would be able to see all of the branches and leaves on the tree, and it would look much more like a real tree.
 
-And this illusion is mostly stimulus-oriented, so be sure your input image has some big luminance differences and does not have too much roughness. The function is converting your image to grayscale first then scaling to -1 +1. Then RMS which is the standard deviation of a measure of image contrast, also known as “root means square”, the contrast has been adjusting. The most important part is the amplitude spectrum. You can either apply a low or high pass filter it depends on your input image. Finally, to minimize coarse changes in luminance, the function applies a Laplacian-of-Gaussians (LoG) filter. If you look close enough to the edges of the domains you may see some "ringing". This is the result of the discrete Fourier transform.
+And this illusion is mostly stimulus-oriented, so be sure your input image has some big luminance differences and does not have too much roughness. In this function, the input image is first converted to grayscale and then scaled to a range of -1 to +1. The root mean square (RMS) contrast is then adjusted to create the illusion. A discrete Fourier transform is applied to the image, followed by a low or high pass filter depending on the input image. 
 
+Discrete Fourier transform (DFT) is a mathematical operation that is used to convert the input image from the spatial domain (i.e. its original representation in terms of pixels) to the frequency domain (i.e. a representation of the image in terms of its spatial frequencies). This is done because the spatial frequencies of an image are closely related to its contrast and luminance, which are the visual features that are being manipulated in order to create the illusion.
+
+Once the input image has been transformed into the frequency domain, a low or high pass filter can be applied to remove or enhance certain spatial frequencies in the image. This technique can result in some "ringing" around the edges of the domains, which can be seen when looking closely at the image.
+
+Finally, a Laplacian-of-Gaussians (LoG) filter is applied to minimize coarse changes in luminance. 
 The image that've shown image has been taken from the A. Kitaoka's twitter account. Here, I would like to show another example with another input image:
 
 ```
@@ -238,9 +250,11 @@ sorceress.ebbinghaus("output",bgcolor=(0,255,255),lcradius=22,rcradius=22)
 
 ![enes.png](./assets/enes.png)
 
-It looks simple, but the creating process of this illusion is about trigonometry 😄. The illusion called Ebbinghaus Illusion is similar to the Delbœuf illusion. In both illusions, the size of an object is affected by the surrounding context. As you can see at the above bot circles has 22 radius. You also can change the outer circles' radius.
+The Ebbinghaus illusion, also known as the Titchener circles, is an optical illusion that demonstrates how the size of an object can be affected by its surrounding context. In this illusion, two circles with the same radius appear to be different sizes due to the influence of the surrounding circles. This illusion was first discovered by German psychologist Hermann Ebbinghaus and is widely studied in psychology literature. 
 
-If you have psychology major like me you probably heard a lot the German psychologist Hermann Ebbinghaus, especially in the introduction courses. We know his popular work about the memory.
+Studies have shown that the Ebbinghaus illusion can have a strong impact on size perception, but has little effect on manual grasping. This suggests that the ventral system, which is involved in perception, is influenced by the illusion, while the dorsal system, which is involved in motor control, is not.
+
+The exact mechanisms behind the Ebbinghaus illusion are not fully understood, but it is thought to be related to the brain's ability to interpret spatial relationships and depth cues. The illusion is often used as a tool for studying visual perception and the brain's ability to process visual information.
 
 The illusion is widely replicated in psychology literature with different contexts (Aglioti et al, 1995; Lee and van Donkelaar, 2002; Culham et al, 2003). For example, In Aglioti's study, the direct comparison led to an approximately 50% increase of the illusion, which corresponds well to the difference found between perception and grasping.  These researchers replaced the inner circular image with a tiny poker-chip-like token in their research. When asked to estimate the size of the target tokens, the subjects displayed the illusion throughout the trial, but when asked to manually pick up the central target token, the illusion had a considerably less impact on manual grip size during the grasping process. This was seen to indicate that the ventral system is influenced by the illusion and the dorsal system is not. The findings have been replicated by Haffenden and Goodale (1998).
 
@@ -252,7 +266,7 @@ sorceress.whiteill(dimension=300,version2=False,rect1=(92,92,255),rect2=(47,255,
 
 ![whiteillout.png](./assets/whiteillout.png)
 
-This is another strong illusion that has been described by White (1979). As you can see above, although the inner rectangles have in same gray ((128,128,128)) scale we perceive it in different contrast. It is hard to believe that two grey patches are the same when they look so different. You may also perceive the "lighter one" as larger but it's another part of the illusion which was described first by Galileo Galilei (1632) as the "irradiation effect". This function has also different various of this illusion you may call with the `version2=True` that shown like the bellow:
+he White illusion, described by White (1979), is an optical illusion that occurs when two gray rectangles are placed adjacent to each other and appear to have different levels of contrast despite having the same color value. This illusion is also known as the "irradiation effect", which was first described by Galileo Galilei in 1632. The White illusion demonstrates the role of context in perception, as the surrounding areas of the rectangles influence our perception of their contrast. This function offers different variations of the White illusion, which can be accessed by setting the version2 parameter to `True`
 
 ```
 sorceress.whiteill(version2=True,outputname="whiteillout")
@@ -264,7 +278,6 @@ Do I need to say grays are the same? 😄. The scientific explanations are still
 
  Before White identified this phenomenon, it was believed that all brightness illusions were the consequence of rival processes, meaning that a gray item should appear dark when surrounded by light and light when surrounded by darkness. However, in this deception, the darker-appearing gray bars are surrounded by black stimuli whereas the lighter-appearing gray bars are surrounded by white stimuli. As I said before, White's effect's underlying neural mechanisms are still a mystery.
 
- Imagine that you are looking at a picture with a white dog on a black background. The cells in your eyes that help you see the white dog will send a message to your brain saying "white dog!" But the cells that help you see the black background will also send a message to your brain saying "not white dog!" The second message helps your brain understand that the white dog is standing out from the black background, and makes the white dog look even whiter. This is lateral inhibition. It helps your brain see the differences between things, like white and black.
 
 ## 16-footsteps
 
@@ -278,7 +291,7 @@ The key point of explanation of this illusion is the brightness differences. Bet
 
 ## 17-thelilac
 
-The Lilac chaser illusion is a visual illusion described by Jeremy L. Hinton in 2005 and was shown by Michael Bach on his website of the same year. For the best results, using a pinkish-violet color is a good choice, but other colors can also be used; in our animation, we'll use two different colors in two concentric rings. I also added a blur section which makes the stronger effect.  You can access this illusion from here [sorceress/thelilac:](https://altunenes.github.io/sorceress/thelilac). I added various methods so you can use different combinations.
+The Lilac chaser illusion is a visual illusion described by Jeremy L. Hinton in 2005 and was shown by Michael Bach (my biggest inspiration) on his website of the same year. For the best results, using a pinkish-violet color is a good choice, but other colors can also be used; in our animation, we'll use two different colors in two concentric rings. I also added a blur section which makes the stronger effect.  You can access this illusion from here [sorceress/thelilac:](https://altunenes.github.io/sorceress/thelilac). I added various methods so you can use different combinations.
 
 ![ezgf](https://user-images.githubusercontent.com/54986652/134998824-b46dbdf4-a77d-4c94-8f2f-8e95ec30c6f5.gif)
 
@@ -298,9 +311,9 @@ enigma(linecolors=(255,255,255), bgcolor=(1, 1, 1),circle1=(76, 0, 153),circle2=
 
 Fixation of the centre will result in  the perception of rotatory motion in the circles.
 
-This illusion based on the a paper from the Zeki et al (1993). In their paper, they have shown that human V5 which basically responsible for the perception of motion, even there is no real motion, can be active with such illusions.  So they concluded that activity in a visual area devoted to visual motion might be expected to correlate with the perception of motion, even if there is no real motion.
-When the two colors of circles are equiluminant and the only clues to the existence of moving stripes are color differences, the perception of motion is greatly diminished. These alterations are linked to V5 activity.
-And I also would like to remind you that the illusion may not work for everyone, there are individual differences.
+This illusion is based on a paper by Zeki et al. (1993), which showed that human V5, the area of the brain responsible for the perception of motion, can be activated by such illusions even when there is no real motion present. This suggests that activity in V5 can be correlated with the perception of motion, even in the absence of actual motion.
+
+When the colors of the circles are equiluminant and the only clues to the existence of moving stripes are color differences, the perception of motion is greatly diminished. These alterations have been linked to V5 activity. It is important to note that this illusion may not work for everyone, as there can be individual differences in perception
 
 ## 21-blackhole
 
@@ -308,17 +321,17 @@ And I also would like to remind you that the illusion may not work for everyone,
 
 `sorceress.blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circle_color=(0, 0, 0),kill=False) `
 
-This is a recent optical illusion that was described by Laeng et al (2022). According to the paper, the change rates of pupil diameters were significantly related to the illusory motion phenomenology only with the black holes. You can try it with the other colors though.
-"The findings demonstrate that the reflex to dilate or contract the pupils is not a closed-loop system, like a photocell opening a door, that is only sensitive to the amount of light stimulating the photoreceptor. Instead of just adjusting to real energy, the eye may also respond to perceived and even imagined light."
+This optical illusion, described by Laeng et al (2022), is based on the relationship between pupil diameter and the perception of motion. The study found that the change in pupil diameter was significantly correlated with the illusion of motion only when the "holes" were black. However, the illusion can be experienced with different colors, as the function offers various parameters to experiment with.
 
-The illusion appeared most effective when the hole was black. However, I added many parameters so you can try different colors. 
+The findings suggest that the reflex to dilate or contract the pupils is not solely influenced by the amount of light stimulating the photoreceptor, but may also respond to perceived and even imagined light. The illusion was most effective when the hole was black, but individuals may experience it differently.
 
 
 ## 22-colorgrids
 
 ![colorgrids](./assets/final.png)
 
-If you look closely enough you will see the original image is black and white. However, via colorful stripes your brain into seeing a color image. Basically, our brain is trying to fill the gaps between the stripes and it gives us an overall impression of what's there.
+This optical illusion uses colorful stripes to trick the brain into perceiving a color image, even though the original image is black and white. Our brain attempts to fill in the gaps between the stripes, resulting in an overall impression of a colored image. This maybe real world application of Munker Illusion (?)
+
 You can call the function like this:
 
 ```
@@ -331,7 +344,7 @@ sorceress.colorgrids("inputfolder/test.jpg","grids",frequency=24)
 
 ![motion](./assets/motions.gif)
 
-It's a very interesting illusion. I've seen it in a paper that was recently published (Brenner & Smeets, 2022) According to this paper when two dots move clockwise or counterclockwise along the circular path, the one dots clearly moves faster than the other one. However, they are at the same speed. I added different conditions to reproduce this illusion in different ways. You can access this illusion from here [sorceress/Motion:](https://altunenes.github.io/sorceress/spatialmotion.html)
+The illusion, known as the "subjective speed effect," was  described in a paper by Brenner and Smeets (2022). In their study, they found that when two dots move along a circular path, one dot appears to be moving faster than the other, even though they are actually moving at the same speed. The sorceress package includes different variations of this illusion, which can be accessed through the [sorceress/Motion page:](https://altunenes.github.io/sorceress/spatialmotion.html)
 
 ## 24-blindness
 ![motion](./assets/Animation6.gif)
@@ -354,7 +367,8 @@ In this demonstration the observer focuses at the flickering green dot in the mi
 
 
 ## 25-Depth
-Our visual system is very good at estimating the depth of objects in the world. However, it's not perfect. Being able to view the world in three dimensions is known as depth perception. In order to perceive depth, we must also be able to determine how far away an item is from us. Our perception of an object's size and distance depends on the size and proximity of other items. For me, there is an incredibly strong depth illusion. Even though in 2D the squares are the same size, same color, and same distance but our brain creates a perception of depth. It's because of the borders of the squares, moreover if you animate you may also see a motion illusion.  You can access this illusion from here, play with the parameters and see what happens
+
+The visual system is designed to help us perceive the world in three dimensions. This is known as depth perception, and it allows us to determine the distance of objects from us. Our brain uses several cues to determine an object's size and distance, including its size and proximity to other objects. The squares in this illusion are the same size, color, and distance, but our brain creates a perception of depth due to the borders of the squares. This illusion can also create a motion illusion when animated. You can access this illusion and play with the parameters to see the different effects it creates.
 
 [Web demo](https://altunenes.github.io/sorceress/depth.html)
 
@@ -364,21 +378,21 @@ Our visual system is very good at estimating the depth of objects in the world. 
 
 ![Munker](./assets/munker800x800.png)
 
-Above you can see 3 different colored circles. However, all circles actually have the same color RGB(255,255,255). Stripes are added to the circles to create the illusion of different colors.
+The illusion above features three circles with different colors. However, all circles actually have the same color of RGB(255,255,255). The illusion of different colors is created by adding stripes to the circles.
 
-Actually, this illusion is not called "Munker" but it's very similar to the Munker illusion. It's also a different version of the colorgrids illusion. It's because, we have greater shape perception than color acuity, which indicates that we detect shapes in greater detail and colors in less detail. As a result, even if the spheres' contours are all similar, the color "kind of bleeds over, or assimilates, to adjacent regions (Novick & Kitaoka, 2021). The paper that I added in the references section has a very detailed explanation.
+This illusion is similar to the Munker illusion, and is a variant of the colorgrids illusion. This is because our shape perception is stronger than our color acuity, meaning that we are able to detect shapes in greater detail than colors. As a result, the color "bleeds over" or blends into adjacent regions (Novick & Kitaoka, 2021). The paper I have included in the references section provides a detailed explanation of this effect.
 
-I didn't want to adjust ratios to give more freedom to the user. So, you can adjust the parameters and see what happens. In this version, dimensions are optimized for square shapes so you may see some distortions if you use rectangular shapes. Below you can see the 1200x1200 version of the illusion.
+I have not adjusted the ratios in this illusion to give the user more freedom to experiment. You can adjust the parameters and see what happens. In this version, the dimensions are optimized for square shapes, so you may see some distortions if you use rectangular shapes. Below, you can see the 1200x1200 version of the illusion.
 
 ![Munker2](./assets/munker1200x1200.png)
 
-I would like to also thank [Fred Weinhaus](http://www.fmwconcepts.com/fmw/fmw.html), a hero of image processing, for helping me to code this illusion. I was trying to code this illusion in a very hard way, using hough transform, detecting the edges, and certain colors, and applying some ugly trigonometric functions. However, Fred recommended me "why you just don't mask the circles". I was like "oh, that's a good idea". So, I coded this illusion in a very easy way. You can check the whole story in stackoverflow [here](https://stackoverflow.com/questions/74500038/detecting-a-specific-color-in-a-circular-area-and-adding-horizontal-lines-inside?noredirect=1#comment131518493_74500038).
+I would like to thank [Fred Weinhaus](http://www.fmwconcepts.com/fmw/fmw.html) for helping me code this illusion. Originally, I was trying to use complex methods such as hough transform and edge detection, but Fred suggested a simpler approach using masks. This made it much easier to create the illusion.  You can read  the whole story in stackoverflow[here](https://stackoverflow.com/questions/74500038/detecting-a-specific-color-in-a-circular-area-and-adding-horizontal-lines-inside?noredirect=1#comment131518493_74500038).
 
 ## 27-Munker2
 
 ![Munkerrect](./assets/munker2.png)
 
-This is a different version of the Munker illusion. The effect is the same but it's rectangular. You can adjust the parameters and see what happens. Above, the two rectangles have the same color but they have different stripe colors. But you may perceive them as different colors.
+The Munker illusion, also known as the rectilinear variant, creates the perception of different colors in two rectangles with the same color. By adding stripes of different colors, our brain fills in the gaps and perceives the rectangles as different colors. This illusion highlights the greater shape perception compared to color acuity in our visual system. Users can adjust the parameters of this illusion to see how it affects their perception.
 
 ## 28-Pareidolia
 
@@ -386,7 +400,8 @@ This is a different version of the Munker illusion. The effect is the same but i
 
 Face pareidolia is a phenomenon in which people see faces in random objects. Pareidolia is the phenomenon of perceiving a pattern or meaning where none exists. It is a type of illusion, and it is thought to be a result of the brain's tendency to try to make sense of random or ambiguous stimuli. Our brains are constantly bombarded with sensory information, and they are very good at organizing and interpreting this information in a way that makes sense to us. Sometimes, however, our brains can interpret random or meaningless stimuli as being meaningful, which can result in pareidolia. For example, if you see a cloud that looks like a face, your brain may interpret it as a face even though it is just a random arrangement of water droplets. This is because your brain is trying to make sense of the information it is receiving, and it is using its knowledge of faces to do so.
 
-I have created this illusion accidentally. I was trying to create a Gabor patch and I was trying to add some noise to the image with Gabor coefficients. But I saw a face while I working on it. So I re-designed the code and add into the sorceress :)
+I accidentally created this illusion while working on a Gabor patch. I re-designed the code and added it to sorceress :)
+
 
 ## 29-Grids2
 
@@ -397,14 +412,15 @@ Above, there are little circles for each corner of the squares. However, when yo
 ## 30-Length
 ![length](./assets/Animation17.gif)
 
-Okay, first of all, I m not sure if this is an illusion or not. The idea emerged after reading a paper from (Anstis et al., 2006). After I read this paper, I thought maybe [sorceress/Motion:](https://altunenes.github.io/sorceress/spatialmotion.html) illusion somehow could have a similar effect. So, I added stripes on the background and a line that routed clockwise. Speed and length are constant. The question is do you feel any difference between with background stripes and without background stripes? For me, I feel the line is growing longer when I look at the stripes.
+This may or may not be an optical illusion. The idea for it came from a paper by Anstis et al. (2006), which led me to think that the [sorceress/Motion:](https://altunenes.github.io/sorceress/spatialmotion.html) illusion might have a similar effect. I added stripes to the background and a line that moved clockwise at a constant speed and length. Do you feel like the line gets longer when you look at the stripes, or is it the same with or without the background stripes? For me, I feel like the line gets longer when I look at the stripes.
 
 Try demo [here](https://altunenes.github.io/sorceress/length.html) You can adjust the length and speed of the line.
 
 ## 31-Spirals
 ![spiral](./assets/image.png)
 
-Above, there are only 3 different colors, blue, magenta, and green. However, you may see different shades of green. It looks like a Munker illusion. The mechanism of the Munker illusion involves both a color-assimilation effect and a contrast effect (Novick & Kitaoka, 2021). I actually "translated" this [code](https://www.shadertoy.com/view/4dy3Dc) from GLSL language into python. But I wish I could do it in a better way since it's a bit slow with heavy math in the background.
+The above image contains only three colors: blue, magenta, and green. However, you may see different shades of green. This is similar to the Munker illusion, where the mechanism involves both a color-assimilation effect and a contrast effect (Novick & Kitaoka, 2021). I translated this code from GLSL into Python, but it may be slow due to the heavy math involved in the background.
+[ref](https://www.shadertoy.com/view/4dy3Dc)
 
 ## 32-Hypnotic Circles
 ![hypnotic](./assets/circle2.gif)
