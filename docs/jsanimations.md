@@ -26,3 +26,5 @@ Finished animations :
 [speed of rotation](https://altunenes.github.io/sorceress/length.html)
 
 [hypnotic circle](https://altunenes.github.io/sorceress/circle.html)
+
+[bright](https://altunenes.github.io/sorceress/bright.html)

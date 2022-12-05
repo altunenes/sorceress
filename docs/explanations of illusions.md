@@ -430,7 +430,26 @@ Circles within a larger black circle (actually I coded it into a rectangle). The
 
 To me, after 5 circles the illusion is starting. Increasing or decreasing the radius of the circles or animation speed didn't affect my perception. However, you can try it and see what happens.
 
-```
+## 33-Bright Illusion
+![bright](./assets/suny.png)
+
+The two white circles depicted above likely appear to have different levels of brightness, with the circle on the right appearing brighter. However, both circles possess the same RGB values of RGB (255, 255, 255), 
+
+I created this illusion entirely myself, and you're probably seeing it for the first time.
+
+In adherence to the findings of Laeng & Endestad (2012), I have created this illusion. As a result, your pupil size is likely to increase upon viewing the right circle. This illusion was developed using JavaScript and has not undergone any modifications in the code. You may try the demo [here](https://altunenes.github.io/sorceress/bright.html). If you wish to alter the colors of the circles, the line frequency, or the background color, you may do so by modifying the relevant parameters within the code. Regrettably, I have been unable to make this more user-friendly as I am currently occupied with my thesis. To provide further insight, I will elaborate on the inner workings of the code:
+
+The code sets an interval timer that will run every interval milliseconds and update the color of the circle by incrementing the values of the `currentColor` array. The `currentColor` array is initialized to the `startColor` array, and the values of `currentColor` are updated by adding the corresponding values of the colorDelta array, which represents the change in color over the specified number of steps.  
+
+Above there is same paradigm. Which circle looks brighter then the other? 
+![moons](./assets/moon.png)
+
+Update: Now you can change the colors without changing the code. I added two color pickers in the top left corner of the page. One is for the starting color and the other one is for the end colors. I recommend using the "clear" button if you want to change the colors, then click on the "Restart" button. Note that the code is not very user-friendly, but I will try to improve it in the future.
+
+But currently, it's perfectly working. I hope you enjoy it.
+
+
+
 
 ### REFERENCES
 
@@ -463,6 +482,8 @@ Karl R. Gegenfurtner, L. T. Sharpe (1999). Color Vision: From Genes to Perceptio
 Kanizsa G (1976) Subjective contours. Sci Am 234:48–52
 
 Kitaoka, A. (2001).　Illusion designology (7): Illusory light perception that cannot be explained by the Fourier analysis. *Nikkei Science,*  **31** (8), 66-68 (in Japanese).
+
+Laeng, B., & Endestad, T. (2012). Bright illusions reduce the eye’s pupil. Proceedings of the National Academy of Sciences, 109(6), 2162–2167. doi:10.1073/pnas.1118298109 
 
 Laeng B, Nabil S and Kitaoka A (2022) The Eye Pupil Adjusts to Illusorily Expanding Holes. Front. Hum. Neurosci. 16:877249. doi: 10.3389/fnhum.2022.877249
 
