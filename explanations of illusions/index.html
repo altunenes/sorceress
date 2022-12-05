@@ -586,7 +586,14 @@
     32-Hypnotic Circles
   </a>
   
-    <nav class="md-nav" aria-label="32-Hypnotic Circles">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-bright-illusion" class="md-nav__link">
+    33-Bright Illusion
+  </a>
+  
+    <nav class="md-nav" aria-label="33-Bright Illusion">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -756,7 +763,7 @@
   
     <li class="md-nav__item">
       <a href="../circle.html" class="md-nav__link">
-        Cicles
+        circles
       </a>
     </li>
   
@@ -771,6 +778,20 @@
     <li class="md-nav__item">
       <a href="../length.html" class="md-nav__link">
         Length
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bright.html" class="md-nav__link">
+        Bright
       </a>
     </li>
   
@@ -1035,7 +1056,14 @@
     32-Hypnotic Circles
   </a>
   
-    <nav class="md-nav" aria-label="32-Hypnotic Circles">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-bright-illusion" class="md-nav__link">
+    33-Bright Illusion
+  </a>
+  
+    <nav class="md-nav" aria-label="33-Bright Illusion">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1298,7 +1326,16 @@ Motion Induced Blindness (MIB) is a phenomenon of visual disappearance or percep
 <p>I inspired this effect from a video by <a href="https://www.youtube.com/watch?v=pNe6fsaCVtI">brusspup</a>. However, when I search for the video I found the illusion was actually created by Arthur Shapiro and Alex Rose-Henig unfortunately I couldn't find the original paper.
 Circles within a larger black circle (actually I coded it into a rectangle). The inner circles in turn seem to form a circular shape that's rolling around the inside of the larger circle. But, believe it or not, the direction that each circle is linear, not circular. You can try the demo <a href="https://altunenes.github.io/sorceress/circle.html">here</a></p>
 <p>To me, after 5 circles the illusion is starting. Increasing or decreasing the radius of the circles or animation speed didn't affect my perception. However, you can try it and see what happens.</p>
-<p>```</p>
+<h2 id="33-bright-illusion">33-Bright Illusion</h2>
+<p><img alt="bright" src="../assets/suny.png" /></p>
+<p>The two white circles depicted above likely appear to have different levels of brightness, with the circle on the right appearing brighter. However, both circles possess the same RGB values of RGB (255, 255, 255), </p>
+<p>I created this illusion entirely myself, and you're probably seeing it for the first time.</p>
+<p>In adherence to the findings of Laeng &amp; Endestad (2012), I have created this illusion. As a result, your pupil size is likely to increase upon viewing the right circle. This illusion was developed using JavaScript and has not undergone any modifications in the code. You may try the demo <a href="https://altunenes.github.io/sorceress/bright.html">here</a>. If you wish to alter the colors of the circles, the line frequency, or the background color, you may do so by modifying the relevant parameters within the code. Regrettably, I have been unable to make this more user-friendly as I am currently occupied with my thesis. To provide further insight, I will elaborate on the inner workings of the code:</p>
+<p>The code sets an interval timer that will run every interval milliseconds and update the color of the circle by incrementing the values of the <code>currentColor</code> array. The <code>currentColor</code> array is initialized to the <code>startColor</code> array, and the values of <code>currentColor</code> are updated by adding the corresponding values of the colorDelta array, which represents the change in color over the specified number of steps.  </p>
+<p>Above there is same paradigm. Which circle looks brighter then the other? 
+<img alt="moons" src="../assets/moon.png" /></p>
+<p>Update: Now you can change the colors without changing the code. I added two color pickers in the top left corner of the page. One is for the starting color and the other one is for the end colors. I recommend using the "clear" button if you want to change the colors, then click on the "Restart" button. Note that the code is not very user-friendly, but I will try to improve it in the future.</p>
+<p>But currently, it's perfectly working. I hope you enjoy it.</p>
 <h3 id="references">REFERENCES</h3>
 <p>Aglioti S, DeSouza JFX, Goodale MA (1995) Size-contrast illusions deceive the eye but not the hand. Curr Biol 5:679–685</p>
 <p>Anstis, S., Ito, H., &amp; Cavanagh, P. (2006). Background Stripes Affect Apparent Speed of Rotation. Perception, 35(7), 959–964. https://doi.org/10.1068/p5557</p>
@@ -1315,6 +1352,7 @@ Circles within a larger black circle (actually I coded it into a rectangle). The
 <p>Karl R. Gegenfurtner, L. T. Sharpe (1999). Color Vision: From Genes to Perception, Cambridge University Press.</p>
 <p>Kanizsa G (1976) Subjective contours. Sci Am 234:48–52</p>
 <p>Kitaoka, A. (2001).　Illusion designology (7): Illusory light perception that cannot be explained by the Fourier analysis. <em>Nikkei Science,</em>  <strong>31</strong> (8), 66-68 (in Japanese).</p>
+<p>Laeng, B., &amp; Endestad, T. (2012). Bright illusions reduce the eye’s pupil. Proceedings of the National Academy of Sciences, 109(6), 2162–2167. doi:10.1073/pnas.1118298109 </p>
 <p>Laeng B, Nabil S and Kitaoka A (2022) The Eye Pupil Adjusts to Illusorily Expanding Holes. Front. Hum. Neurosci. 16:877249. doi: 10.3389/fnhum.2022.877249</p>
 <p>Lee, JH., van Donkelaar, P. Dorsal and ventral visual stream contributions to perception-action interactions during pointing. <em>Exp Brain Res</em> <strong>143, </strong>440–446 (2002). https://doi.org/10.1007/s00221-002-1011-2</p>
 <p>Novick D., &amp; Kitaoka A. (2021). The confetti illusion. Journal of Illusion, 2. https://doi.org/10.47691/joi.v2.6152</p>
