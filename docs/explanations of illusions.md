@@ -449,8 +449,6 @@ Update: Now you can change the colors without changing the code. I added two col
 But currently, it's perfectly working. I hope you enjoy it.
 
 
-
-
 ### REFERENCES
 
 Aglioti S, DeSouza JFX, Goodale MA (1995) Size-contrast illusions deceive the eye but not the hand. Curr Biol 5:679–685
