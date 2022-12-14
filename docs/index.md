@@ -22,7 +22,7 @@ The difficulty of creating an optical illusion with code will depend on the spec
 
 Another challenge is that creating optical illusions often requires a high level of precision and control over the visual elements in an image. This can be difficult to achieve with code, especially if you're working with complex or dynamic images that need to be updated in real time.
 
-Overall, creating optical illusions with code can be a challenging but rewarding task that requires a combination of technical skills, creativity, and an understanding of the underlying principles of perception.
+Overall, creating optical illusions with code can be a challenging but rewarding task that requires a combination of technical skills, creativity, and an understanding of the underlying principles of perception  [(Bach, 2014)](https://pubmed.ncbi.nlm.nih.gov/25420328/).
 
 For all optical illusions check this documentation: [altunenes.github.io/sorceress/](https://altunenes.github.io/sorceress/)
 
@@ -66,6 +66,7 @@ from sorceress import sorceress
   - grids2
   - pareidolia
   - spirals
+  - color negative
 
  **Illusions in JavaScript**
 

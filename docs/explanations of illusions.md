@@ -493,6 +493,8 @@ Anstis S. Moving objects appear to slow down at low contrasts. Neural Netw. 2003
 
 Bach, M. (2019). Optical illusions and visual phenomena. Retrieved from http://www.michaelbach.de/ot/col-Munker/
 
+Bach M. Visual illusions on the Internet: 15 years of change in technology and user behavior. Perception. 2014;43(9):873-80. doi: 10.1068/p7708. PMID: 25420328.
+
 Bakshi, A., & Ghosh, K. (2017). A Neural Model of Attention and Feedback for Computing Perceived Brightness in Vision. Handbook of Neural Computation, 487–513. doi:10.1016/b978-0-12-811318-9.00026-0
 
 Brenner, E., & Smeets, J.  Spatial Vision for Action. Oxford Research Encyclopedia of Psychology. Retrieved 18 Oct. 2022, from https://oxfordre.com/psychology/view/10.1093/acrefore/9780190236557.001.0001/acrefore-9780190236557-e-842.
