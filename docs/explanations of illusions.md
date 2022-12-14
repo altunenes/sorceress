@@ -470,7 +470,7 @@ The above animation is working similiar with [sorceress/EyeMovements:](https://a
 
 ## 36-Negative color illusion
 
-![enes](./assets/enes.png)
+![enes](./assets/enes_neg.png)
 
 `negate_image('lena.png', 'subtract', 'hsv', 100)`
 *example usage*
