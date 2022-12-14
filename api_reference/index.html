@@ -666,6 +666,7 @@
 <p>+<a href="#pareidolia">pareidolia</a></p>
 <p>+<a href="#grids2">grids2</a></p>
 <p>+<a href="#spirals">spirals</a></p>
+<p>+<a href="#negate_image">negate_image</a></p>
 <p><strong><em>chromatic</em></strong><a name="chromatic"></a></p>
 <p>This function process image to generate optical illusion about chromatic adaptation. After a fixation of the center, gray scale image will perceived as a colorful.</p>
 <p>Fast spatial tuning in chromatic adaptation is possible as a possible sensory mechanism for linking color constancy to the spatial structure of a scene.</p>
@@ -946,6 +947,17 @@ So for best result, i reccomend you to use a clear profile picture.</p>
 <pre><code>    Parameters
     ----------
     dimensions : tuple of ints (width, height) of the image.
+    &quot;&quot;&quot;
+</code></pre>
+<p><strong><em>spirals2</em></strong><a name="negate_image"></a>
+    Negates an image. </p>
+<pre><code>    &quot;&quot;&quot;&quot;
+    Negates an image.
+    Parameters
+    input_file : string of the input file path.
+    negation_method : string of the negation method ('subtract', 'bitwise_not', 'subtract_hsv')
+    color_space : string of the color space. ('hsv', 'gray', 'bgr')
+    output_quality : int of the output quality.
     &quot;&quot;&quot;
 </code></pre>
 
