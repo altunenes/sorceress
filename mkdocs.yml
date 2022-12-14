@@ -17,6 +17,8 @@ nav:
     - circles: circle.html
     - Length: length.html
     - Bright: bright.html
+    - sine: crazysin.html
+    - eeg: crazyeeg.html
 theme:
   logo: assets/sitelogo.png
   name: material

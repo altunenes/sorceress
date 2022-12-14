@@ -78,6 +78,9 @@ from sorceress import sorceress
   - Speed of Rotation
   - hypnotic circle
   - Bright Illusion
+  - Length Illusion
+  - Crazy Sine Waves
+  - Crazy EEG-Fourier
   
 ## Examples
 

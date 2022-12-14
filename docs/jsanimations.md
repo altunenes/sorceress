@@ -28,3 +28,7 @@ Finished animations :
 [hypnotic circle](https://altunenes.github.io/sorceress/circle.html)
 
 [bright](https://altunenes.github.io/sorceress/bright.html)
+
+[crazy eeg](https://altunenes.github.io/sorceress/crazyeeg.html)
+
+[crazy sine](https://altunenes.github.io/sorceress/crazysin.html)

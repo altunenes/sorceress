@@ -449,6 +449,26 @@ Update: Now you can change the colors without changing the code. I added two col
 But currently, it's perfectly working. I hope you enjoy it.
 
 
+## 34-Crazy Sinusoid
+
+![sinusoid](./assets/crazysinee.gif)
+
+[try live demo!](https://altunenes.github.io/sorceress/crazysin.html)
+
+Is the pattern of motion of the white circles in the animation sinusoidal? Upon closer inspection, one can see that each individual circle is moving in a perfectly straight line. This demonstration allows the viewer to determine their own "absolute threshold," a term from psychology that refers to the minimum amount of stimulation that an individual can detect.
+
+In scientific terms, the motion of the white circles in the animation may be described as a *Superposition principle* of linear and sinusoidal movements. The linear movement of each circle is a result of their individual straight-line trajectories, while the overall pattern of motion may appear to be sinusoidal due to the combination of these linear movements. The ability to distinguish between these two types of motion is a testament to the human visual system's ability to detect subtle differences in stimuli, which is captured by the concept of absolute threshold.
+
+The superposition principle is a rule that helps us understand how different waves behave when they meet each other. Imagine that you have two balls that are bouncing up and down on a trampoline. If the balls are bouncing at the same time and in the same way, they will make the trampoline move up and down in a certain pattern. But if one of the balls starts bouncing in a different way, the pattern of the trampoline will change. That's kind of like the superposition principle - it helps us understand how different waves can combine to make a new pattern.
+
+## 35-Crazy EEG Waves
+
+![eeg](./assets/eeg.gif)
+
+The above animation is working similiar with [sorceress/EyeMovements:](https://altunenes.github.io/sorceress/EyeMovements). You can try the demo [here](https://altunenes.github.io/sorceress/crazyeeg.html). I didn't add any sliders or buttons to the page. You can change the colors by changing the values in the code. I hope you enjoy it. Maybe I will add some sliders in the future.
+
+
+
 ### REFERENCES
 
 Aglioti S, DeSouza JFX, Goodale MA (1995) Size-contrast illusions deceive the eye but not the hand. Curr Biol 5:679–685
