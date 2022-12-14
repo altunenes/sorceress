@@ -66,6 +66,7 @@ from sorceress import sorceress
   - grids2
   - pareidolia
   - spirals
+  - color negative
 
  **Illusions in JavaScript**
 

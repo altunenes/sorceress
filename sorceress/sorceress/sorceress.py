@@ -1,6 +1,6 @@
 #A collection of functions for the sorceress module that is written in python language
 
-###############################  version: 1.8.3     ###############################
+###############################  version: 1.8.5     ###############################
 ############################### Author: Enes Altun  ###############################
 
 import cv2
@@ -1129,3 +1129,34 @@ def spirals(dimensions=(800,800)):
     cv2.imwrite('spirals.png',img*255)
     cv2.imwrite('spirals2.png',img[:,:,::-1]*255)
     print('spirals.png and spirals2.png were saved')
+
+def negate_image(input_file, negation_method, color_space, output_quality):
+    """"
+    Negates an image.
+    Parameters
+    input_file : string of the input file path.
+    negation_method : string of the negation method ('subtract', 'bitwise_not', 'subtract_hsv')
+    color_space : string of the color space. ('hsv', 'gray', 'bgr')
+    output_quality : int of the output quality.
+    """
+
+    img = cv2.imread(input_file)
+
+    if color_space == 'hsv':
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    elif color_space == 'gray':
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    if negation_method == 'subtract':
+        neg_img = 255 - img
+    elif negation_method == 'bitwise_not':
+        neg_img = cv2.bitwise_not(img)
+    elif negation_method == 'subtract_hsv':
+        neg_img = 255 - img
+        neg_img = cv2.cvtColor(neg_img, cv2.COLOR_HSV2BGR)
+
+    filename, file_ext = os.path.splitext(input_file)
+
+    output_file = filename + '_neg.png'
+
+    cv2.imwrite(output_file, neg_img, [cv2.IMWRITE_PNG_COMPRESSION, output_quality])

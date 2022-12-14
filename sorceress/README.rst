@@ -4,7 +4,7 @@ sorceress 1.8
 |PyPI version| |Jekyll site CI| |Downloads|
 
 Purpose of package
-------------------
+~~~~~~~~~~~~~~~~~~
 
 This package’s purpose is to create optical illusions in a simple way.
 The package is written in Python. however, the repo also includes
@@ -12,27 +12,62 @@ JavaScript. In
 `explanations <https://altunenes.github.io/sorceress/explanations%20of%20illusions/>`__
 section, you can find the explanations of the illusions.
 
-If you find visual illusions fascinating this package is for you. You
-can reproduce the illusions in the literature with a few lines of code.
+This package contains a collection of well-known visual illusions, as
+well as some lesser-known ones that are just as fascinating.
+
+By using the code provided in the package, you can easily recreate the
+illusions and see how they work for yourself. Not only can you reproduce
+the illusions, but you can also experiment with them and modify the code
+to create your own variations.
+
+With this package, you can dive deep into the world of visual illusions
+and learn more about how the human brain processes visual information.
+
+Whether you’re a researcher, a student, or just someone who loves
+illusions, this package has something for you. So if you’re interested
+in exploring the mysteries of the human visual system, give it a try!
 
 More importantly, we shouldn’t take optical illusions as just fun.
-Optical illusions help us to research how the visual system of the brain
-,which is the most complex mechanism, processes such cues. Most of the
-optical illusions in this package are seriously researched in the
-neuroscience literature. And I must say that the “causation” of the most
-of effects is still debated in the literature according to my humble
-knowledge. Optical illusions are researching not only in human vision
-but in other animals. So we can get a lot of insights from an
-evolutionary perspective.
+Optical illusions are visual phenomena that occur when our brain
+interprets information from our eyes in a way that is different from
+reality. These illusions can reveal a lot about how our brain works and
+how it processes visual information, which can help us understand the
+underlying mechanisms of human vision. Most of the optical illusions in
+this package are seriously researched in the neuroscience literature.
+And I must say that the “causation” of the most of effects is still
+debated in the literature according to my humble knowledge. Optical
+illusions are researching not only in human vision but in other animals.
+So we can get a lot of insights from an evolutionary perspective.
 
-In summary, I think this topic is very important, especially in vision
-studies.
+The difficulty of creating an optical illusion with code will depend on
+the specific illusion you’re trying to create and your experience with
+coding. Some optical illusions may be relatively simple to implement,
+while others may be more complex and require a deeper understanding of
+graphics programming and the underlying principles of perception.To
+create an effective optical illusion, you (also me) need to understand
+the principles of perception and be able to use code to manipulate the
+visual information in a way that tricks the brain into seeing something
+that isn’t actually there. This requires a deep understanding of the
+underlying mechanisms of perception and a lot of experimentation and
+trial and error to find the right combination of visual elements that
+creates the desired illusion.
+
+Another challenge is that creating optical illusions often requires a
+high level of precision and control over the visual elements in an
+image. This can be difficult to achieve with code, especially if you’re
+working with complex or dynamic images that need to be updated in real
+time.
+
+Overall, creating optical illusions with code can be a challenging but
+rewarding task that requires a combination of technical skills,
+creativity, and an understanding of the underlying principles of
+perception.
 
 For all optical illusions check this documentation:
 `altunenes.github.io/sorceress/ <https://altunenes.github.io/sorceress/>`__
 
 Getting started🚀️
------------------
+~~~~~~~~~~~~~~~~~
 
 The package can be found on PyPI hence you can install it via pip.
 
@@ -46,7 +81,7 @@ The package can be found on PyPI hence you can install it via pip.
    from sorceress import sorceress
 
 Features
---------
+~~~~~~~~
 
 `For the API, click
 here <https://altunenes.github.io/sorceress/api_reference/>`__
@@ -75,6 +110,7 @@ here <https://altunenes.github.io/sorceress/api_reference/>`__
    -  grids2
    -  pareidolia
    -  spirals
+   -  color negative
 
 **Illusions in JavaScript**
 
@@ -85,6 +121,11 @@ here <https://altunenes.github.io/sorceress/api_reference/>`__
 -  Motion Induced Blindness (2 versions)
 -  Depth Perception
 -  Speed of Rotation
+-  hypnotic circle
+-  Bright Illusion
+-  Length Illusion
+-  Crazy Sine Waves
+-  Crazy EEG-Fourier
 
 Examples
 --------

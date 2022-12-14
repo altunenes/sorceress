@@ -50,3 +50,5 @@ class Testsorcerer(TestCase):
         return
     def spirals(self):
         return
+    def negate_image(self):
+        return

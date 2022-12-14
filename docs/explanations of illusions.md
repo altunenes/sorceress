@@ -468,6 +468,20 @@ The superposition principle is a rule that helps us understand how different wav
 The above animation is working similiar with [sorceress/EyeMovements:](https://altunenes.github.io/sorceress/EyeMovements). You can try the demo [here](https://altunenes.github.io/sorceress/crazyeeg.html). I didn't add any sliders or buttons to the page. You can change the colors by changing the values in the code. I hope you enjoy it. Maybe I will add some sliders in the future.
 
 
+## 36-Negative color illusion
+
+![enes](./assets/enes.png)
+
+`negate_image('lena.png', 'subtract', 'hsv', 100)`
+*example usage*
+
+Above you're seeing my ugly face with a negative color illusion. Look at the image above and fix your gaze for 15 seconds, than shift your gaze elsewhere, especially a white background. You will see my face in a different colors. It also works if you close your eyes and wait for 5 second.
+
+The negative color/image illusion is an optical illusion in which a person sees a reversed version of an image, with colors that are the opposite of what they would normally be. This is typically achieved by presenting the person with an image that has been transformed in some way, such as by inverting the colors or by using a negative filter. The brain then interprets this transformed image as if it were the original image, resulting in the illusion of seeing a "negative" version of the image.
+
+I would like to also mention that this illusion is not working on all images and people. The negative color/image illusion is related to the presence of cells in the eye known as ganglion cells. These cells are responsible for sending coded messages to the brain that identify pairs of primary colors, such as red and green and blue and yellow. When someone stares at a blue background for a prolonged period of time, the blue and yellow channel in the ganglion cells becomes temporarily suppressed. This suppression causes the cells to start projecting the opposite color, which in this case is yellow. As a result, some people may see the woman in the original negative image as being in full color due to the yellow hues that are projected by the ganglion cells
+
+
 
 ### REFERENCES
 
