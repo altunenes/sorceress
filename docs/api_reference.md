@@ -48,6 +48,8 @@ This page gives an overview of all sorceress functions and methods.
 
 +[spirals](#spirals)
 
++[negate_image](#negate_image)
+
 ***chromatic***<a name="chromatic"></a>
 
 This function process image to generate optical illusion about chromatic adaptation. After a fixation of the center, gray scale image will perceived as a colorful.
@@ -413,5 +415,18 @@ Parameters for the face paredolia effect
     Parameters
     ----------
     dimensions : tuple of ints (width, height) of the image.
+    """
+```
+
+***spirals2***<a name="negate_image"></a>
+    Negates an image. 
+```
+    """"
+    Negates an image.
+    Parameters
+    input_file : string of the input file path.
+    negation_method : string of the negation method ('subtract', 'bitwise_not', 'subtract_hsv')
+    color_space : string of the color space. ('hsv', 'gray', 'bgr')
+    output_quality : int of the output quality.
     """
 ```
