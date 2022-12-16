@@ -1,6 +1,6 @@
 #A collection of functions for the sorceress module that is written in python language
 
-###############################  version: 1.8.5     ###############################
+###############################  version: 1.8.6     ###############################
 ############################### Author: Enes Altun  ###############################
 
 import cv2
