@@ -560,8 +560,6 @@ def kanizsa(outputname, dims=600, circleColor=(0, 0, 255), bgcolor=(255, 255, 25
         for j in range(0, w, int(w / 2)):
             cv2.rectangle(img, (i + a, j + a), (i + a + b, j + a + b), bgcolor, -1)
     cv2.imwrite(f'{outputname}.png', img)
-    cv2.imshow("img", img)
-    cv2.waitKey(0)
     print("DONE! image has been added to your working directory:")
     print("Your working directory: ", os.getcwd())
 
@@ -668,8 +666,7 @@ def cafeWall(outputname, dimension=1200, resize=False, brickcolor=(255, 255, 255
 
     print("DONE! image has been added to your working directory:")
     print("Your working directory: ", os.getcwd())
-    cv2.imshow("img", img)
-    cv2.waitKey(0)
+
     
 def ccob(image, rms=0.5, amplitudespectrum=300, plttitle='output',figs=(0.8, 0.8)):
     """

@@ -339,6 +339,16 @@ class Testssorceress(TestCase):
         #clean the file
         os.remove("test_image_neg.png")
         os.remove("test_image.png")
+    def test_display_image(self):
+        # Create a mock image
+        img = np.zeros((100, 100, 3), dtype=np.uint8)
+        cv2.imwrite("test_image.png",img)
+        # Call the colordetection function with the mock image it should open a window and prints 0,0,0 on the console with mouse movements
+        sorceress.colordetection("test_image.png")
+        #clean the file
+        os.remove("test_image.png")
+
+        
 
 
 if __name__ == '__main__':
