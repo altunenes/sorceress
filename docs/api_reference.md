@@ -111,6 +111,9 @@ An optical illusion about lightness perception.
     Creates an optical illusion from the Dakin and Bex, 2003 paper.
     :param outputname: output name
     :param dimension: dimension of the image
+    :param black: line color1 (default is black)
+    :param white: line color2 (default is white)
+    :param bg_color: background color (default is gray)
     :return:
     """
 ```
@@ -337,16 +340,13 @@ A recent optical illusion that described by the Laeng et al (2022).
 
 ```
     """
-    Color Assimilation Grid Illusion
-    img: input image
-     style: style of mask, "vertical","horizontal","gaussian","grids"
-     vertical is the default style and adds vertical lines to the image
-     horizontal; adds horizontal lines to the image
-     gaussian; add gaussian distributed circles to the image
-     grids; adds both vertical and horizontal lines to the image
-     width: width of lines
-     frequency: frequency of lines
-     saturation: saturation of lines, don't use too high values (1 to 20 is recommended)
+    This function applies Color assimilation Grid Illusion.
+    :param img: input image
+    :param style: style of mask, "vertical","horizontal","gaussian","grids"
+    :param width: width of lines
+    :param frequency: frequency of lines
+    :param saturation: saturation of lines increasing this value will increase the saturation of lines but it will distort the image if it is too high
+    :return:
     """
 ```
 
@@ -357,12 +357,14 @@ Parameters for the Munker illusion.
 ```
     """
     Creates an image of the Munker illusion.
+    Parameters
     ----------
-    dimensions : tuple of ints (width, height) of the image. This version is optimized for square images. 
+    dimensions : tuple of ints (width, height) of the image. If you change this you also need to change the thickness and linefrequency. 
     linefrequency : This is the ratio of the horizontal lines to the width of the image, this value is used to calculate the distance between the lines. The default ratio is dimensions[0]/120
-    rad : radius of the circles, default ratio is dimensions[0]/120
+    rad_ratio :radius ratio of the circles.
     thickness :thickness of the lines. If you change the dimensions of the image, you may need to change this value as well. Default ratio is dimensions[0]/200
     saturation : saturation of the colors. 1 is full saturation, 0 is no saturation. 
+    bgcolor : background color of the image. Default is white. This also will determines of the colors of the all circles
     """ 
 ```
 

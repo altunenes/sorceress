@@ -93,9 +93,6 @@ def chromatic(img,circle=True, method="CMCCAT2000", gif=True, Gifduration=7,XYZ_
         cv2.imwrite(f'{outputname}gry.png', gry)
         print("Done ", f'{outputname}.png has been added your working dir.')
         print("Your working directory: ", os.getcwd())
-
-
-
 def dotill(dimension,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
     """
     This function is used to create a dotill image.
@@ -166,12 +163,12 @@ def dotill(dimension,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,ho
     cv2.imwrite("CMCCAT2000output.png", test)
     cv2.imwrite("hsvoutput.png", hsv)
     print("Done! Your working directory: ", os.getcwd())
-
 def realtimegrid(realcolours=True):
     """ realtimegrid is a function that add grids to the gray frame.
         :param realcolours: if True, real colours (colors that correspond to the frame) are added to frame.
     :return:
     """
+
     def empty(a):
         pass
     cap = cv2.VideoCapture(0)
@@ -181,7 +178,7 @@ def realtimegrid(realcolours=True):
     else:
         cv2.resizeWindow('tracker', 400, 200)
     cv2.createTrackbar('vertical', 'tracker', 1, 300,
-                       empty)
+                    empty)
     cv2.createTrackbar('horizontal', 'tracker', 1, 300, empty)
     cv2.createTrackbar('Hthickness', 'tracker', 1, 20, empty)
     cv2.createTrackbar('Wthickness', 'tracker', 1, 20, empty)
@@ -202,7 +199,7 @@ def realtimegrid(realcolours=True):
     while True:
         _, img = cap.read()
         bgr_img = cv2.cvtColor(img,
-                               cv2.COLOR_RGB2BGR)
+                            cv2.COLOR_RGB2BGR)
         gry_img = cv2.cvtColor(bgr_img, cv2.COLOR_BGR2GRAY)
         gry2bgr = cv2.cvtColor(gry_img, cv2.COLOR_GRAY2BGR)
 
@@ -241,7 +238,7 @@ def realtimegrid(realcolours=True):
                 color = gridcolor
                 if realcolours == False:
                     cv2.line(gry2bgr, (first_x, first_y), (last_x, last_y), (bluever, greenver, redver), Wthickness,
-                             1)
+                            1)
                 elif realcolours == True:
                     cv2.line(gry2bgr, (first_x, first_y), (last_x, last_y), color, Wthickness, 1)
                 else:
@@ -272,7 +269,7 @@ def realtimegrid(realcolours=True):
                     last_x, last_y = int((j + 1) * width), int(i * height)
 
                     cv2.line(gry2bgr, (first_x + 1, first_y + 1), (last_x + 1, last_y + 1),
-                             (Hblue2, Hgreen2, Hred2), Hthickness, 1)
+                            (Hblue2, Hgreen2, Hred2), Hthickness, 1)
 
         blur = cv2.GaussianBlur(gry2bgr, (7, 7),
                                 0)
@@ -284,8 +281,10 @@ def realtimegrid(realcolours=True):
             break
 
     cv2.destroyAllWindows()
+    
 
-def addlines(img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,0,0),alphablending=False):
+
+def addlines(img, linecolour1=(0,255,0), linecolour2=(0,255,255), linecolour3=(255,0,0), alphablending=False, thickness=3, frequency=3):
     """"
     Adds lines to an image.
     Arguments:
@@ -293,7 +292,9 @@ def addlines(img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,
     linecolour1: first line colour
     linecolour2: second line colour
     linecolour3: third line colour
-    alphablending: if True, line colors are much more stable against the luminance change in the background image.
+    alphablending: if False, line colors are much more stable against the luminance change in the background image.
+    thickness: line thickness (default=3)
+    frequency: line frequency (default=3)
     :return
     """
     outputname = os.path.basename(img).split(".")[0]
@@ -303,15 +304,15 @@ def addlines(img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,
     if alphablending == False:
         img2 = np.ones((h,w,c),dtype=np.uint8)
         if w > h or w==h:
-            for i in range(0, w, 3):
-                cv2.line(img2, (i, 0), (i, w), linecolour1, 3)
-                cv2.line(img2, (i + 1, 0), (i + 1, (w)), linecolour2, 3)
-                cv2.line(img2, (i + 2, 0), (i + 2, (w)), linecolour3, 3)
+            for i in range(0, w, frequency):
+                cv2.line(img2, (i, 0), (i, w), linecolour1, thickness)
+                cv2.line(img2, (i + 1, 0), (i + 1, (w)), linecolour2, thickness)
+                cv2.line(img2, (i + 2, 0), (i + 2, (w)), linecolour3, thickness)
         else:
-            for i in range(0, h, 3):
-                cv2.line(img2, (0, i), (h, i), linecolour1, 3)
-                cv2.line(img2, (0, i+1), (h, (i+1)), linecolour2, 3)
-                cv2.line(img2, (0, i+2), (h, (i+2)), linecolour3, 3)
+            for i in range(0, h, frequency):
+                cv2.line(img2, (0, i), (h, i), linecolour1, thickness)
+                cv2.line(img2, (0, i+1), (h, (i+1)), linecolour2, thickness)
+                cv2.line(img2, (0, i+2), (h, (i+2)), linecolour3, thickness)
 
 
         result2 = cv2.addWeighted(rect, 0.1, img2, 77, 0)
@@ -329,11 +330,16 @@ def addlines(img,linecolour1=(0,255,0),linecolour2=(0,255,255),linecolour3=(255,
         rect = cv2.cvtColor(rect, cv2.COLOR_BGR2BGRA)
         h, w, c = rect.shape
         img2 = rect.copy()
-
-        for i in range(0, w, 3):
-            cv2.line(img2, (i, 0), (i, w), linecolour1, 12)
-            cv2.line(img2, (i + 1, 0), (i + 1, (w)), linecolour2, 12)
-            cv2.line(img2, (i + 2, 0), (i + 2, (w)), linecolour3, 12)
+        if w > h or w==h:
+            for i in range(0, w, frequency):
+                cv2.line(img2, (i, 0), (i, w), linecolour1, thickness)
+                cv2.line(img2, (i + 1, 0), (i + 1, (w)), linecolour2, thickness)
+                cv2.line(img2, (i + 2, 0), (i + 2, (w)), linecolour3, thickness)
+        else:
+            for i in range(0, h, frequency):
+                cv2.line(img2, (0, i), (h, i), linecolour1, thickness)
+                cv2.line(img2, (0, i+1), (h, (i+1)), linecolour2, thickness)
+                cv2.line(img2, (0, i+2), (h, (i+2)), linecolour3, thickness)
         srcBGR = img2[..., :3]
         dstBGR = rect[..., :3]
         srcA = img2[..., 3] / 255.0
@@ -367,7 +373,6 @@ def eyecolour(img,alpha=0.8,beta=0.3,M=25,luminance=1,saturation=1,colors=(0,0,2
     :param colors: BGR values of the color you want to use for the left half of the image (default is red)
     :return:
     """
-    #if user enter luminance and saturation values more than 1 raise error and exit
     if luminance>1 or saturation>1:
         raise ValueError("Luminance and saturation values should be between 0 and 1")
 
@@ -426,33 +431,34 @@ def eyecolour(img,alpha=0.8,beta=0.3,M=25,luminance=1,saturation=1,colors=(0,0,2
     print("DONE! images have been added to your working directory:")
     print("Your working directory: ", os.getcwd())
 
-def dakinPex(outputname,dimension=800):
+def dakinPex(outputname, dimension=800, black=(0, 0, 0), white=(255, 255, 255), bg_color=(128, 128, 128)):    
     """
     Creates an optical illusion from the Dakin and Bex, 2003 paper.
     :param outputname: output name
     :param dimension: dimension of the image
+    :param black: line color1 (default is black)
+    :param white: line color2 (default is white)
+    :param bg_color: background color (default is gray)
     :return:
     """
 
-
-    img = 128 * np.ones((int(dimension), int(dimension), 3), dtype=np.uint8)
+    img = bg_color * np.ones((int(dimension), int(dimension), 3), dtype=np.uint8)
     h, w, _ = img.shape
     for i in range(0, h, 160):
         for j in range(0, w, 160):
-            cv2.rectangle(img, (i, j), (i + 75, j + 75), (0, 0, 0), 5)
-            cv2.rectangle(img, (i + 80, j + 80), (i + 155, j + 155), (0, 0, 0), 5)
+            cv2.rectangle(img, (i, j), (i + 75, j + 75), black, 5)
+            cv2.rectangle(img, (i + 80, j + 80), (i + 155, j + 155), black, 5)
 
     for i in range(0, h, 160):
         for j in range(0, w, 160):
-            cv2.rectangle(img, (i + 80, j), (i + 155, j + 75), (255, 255, 255), 2)
-            cv2.rectangle(img, (i, j + 80), (i + 75, j + 155), (255, 255, 255), 2)
-
+            cv2.rectangle(img, (i + 80, j), (i + 155, j + 75), white, 2)
+            cv2.rectangle(img, (i, j + 80), (i + 75, j + 155), white, 2)
 
     cv2.imwrite(f'{outputname}.png', img)
 
-
     print("DONE! images have been added to your working directory:")
     print("Your working directory: ", os.getcwd())
+
 
 def bruno(outputname,circle=False, polycolor=(0, 255, 255), rectcolor=(255, 255, 0), circColor=(0, 0, 255)):
     """
@@ -501,26 +507,30 @@ def bruno(outputname,circle=False, polycolor=(0, 255, 255), rectcolor=(255, 255,
     print("DONE! image has been added to your working directory:")
     print("Your working directory: ", os.getcwd())
 
-def dolboeuf(outputname,circleColor=(0,0,255),kill=False):
+def dolboeuf(outputname, dimension=800,bg_color=(255,255,255) ,circle1_color=(0, 0, 255), circle2_color=(0, 0, 255), radius=0.045,kill=False):
     """
     Creates an optical illusion from the Joseph Remi Leopold Delbœuf (1865).
     :param outputname: output name
-    :param circleColor: color of the circle
+    :param bgcolor: background color (default is white)
+    :param circleColor1: color of the first circle
+    :param circleColor2: color of the second circle
     :param kill: if true, the illusion will be destroyed by the lines
+    :param dimension: dimension of the image
+    :param radius: radius of the circle (default is 0.045, which is 45% of the image. It's sensitive to the dimension)
+
     :return:
     """
-    img = 255 * np.ones((800, 800, 3), dtype=np.uint8)
+    img = bg_color * np.ones((dimension, dimension, 3), dtype=np.uint8)
+    center1 = (int(dimension * 0.10), int(dimension * 0.375))
+    center2 = (int(dimension * 0.75), int(dimension * 0.375))
     for i in range(35, 37, 2):
-        cv2.circle(img, (250, 300), 35, circleColor, -1)
-        cv2.circle(img, (250, 300), i + 7, (0, 0, 0), 3)
-
-    cv2.circle(img, (600, 300), 35, circleColor, -1)
-    cv2.circle(img, (600, 300), 100, (0, 0, 0), 3)
-
-    if kill == True:
-        cv2.line(img, (250, 335), (600, 335), (0, 0, 0), 2)
-        cv2.line(img, (250, 265), (600, 265), (0, 0, 0), 2)
-
+        cv2.circle(img, center1, int(dimension * radius), circle1_color, -1)
+        cv2.circle(img, center1,int(dimension * radius * 1.1), (0, 0, 0), 3)
+    cv2.circle(img, center2, int(dimension * radius), circle2_color, -1)
+    cv2.circle(img, center2, int(dimension * radius * 2.7), (0, 0, 0), 3)
+    if kill:
+        cv2.line(img, (int(center1[0]), int(center1[1] + dimension * radius)), (int(center2[0]), int(center2[1] + dimension * radius)), (0, 0, 0), 2)
+        cv2.line(img, (int(center1[0]), int(center1[1] - dimension * radius)), (int(center2[0]), int(center2[1] - dimension * radius)), (0, 0, 0), 2)
     cv2.imwrite(f'{outputname}.png', img)
 
 
@@ -555,7 +565,7 @@ def kanizsa(outputname, dims=600, circleColor=(0, 0, 255), bgcolor=(255, 255, 25
     print("DONE! image has been added to your working directory:")
     print("Your working directory: ", os.getcwd())
 
-def ponzol(outputname,kill=False,line1=(255,0,0),line2=(255,0,0),rectangle1=(0,0,255),rectangle2=(0,0,255)):
+def ponzol(outputname,kill=False,line1=(255,0,0),line2=(255,0,0),rectangle1=(0,0,255),rectangle2=(0,0,255), dimension=600, bgcolor=(255, 255, 255)):
     """
     Creates an optical illusion from Ponzo, 1912.
     :param outputname: output name
@@ -564,22 +574,24 @@ def ponzol(outputname,kill=False,line1=(255,0,0),line2=(255,0,0),rectangle1=(0,0
     :param line2: color of the second line
     :param rectangle1: color of the first rectangle
     :param rectangle2: color of the second rectangle
+    :param dimension: dimension of the image
+    :param bgcolor: color of the background
     :return:
     """
-    img = 255 * np.ones((600, 600, 3), dtype=np.uint8)
+    img = bgcolor * np.ones((dimension, dimension, 3), dtype=np.uint8)
     h, w, _ = img.shape
 
-    cv2.line(img, (80, 400), (300, 20), line1, 4)
-    cv2.line(img, (340, 20), (560, 400), line2, 4)
+    cv2.line(img, (int(dimension * 0.1333), int(dimension * 0.6667)), (int(dimension * 0.5), int(dimension * 0.0333)), line1, int(dimension * 0.0067))
+    cv2.line(img, (int(dimension * 0.5667), int(dimension * 0.0333)), (int(dimension * 0.9333), int(dimension * 0.6667)), line2, int(dimension * 0.0067))
 
-    cv2.rectangle(img, (250, 70), (390, 90), rectangle1, -1)
-    cv2.rectangle(img, (250, 350), (390, 370), rectangle2, -1)
-    #
+    cv2.rectangle(img, (int(dimension * 0.4167), int(dimension * 0.1167)), (int(dimension * 0.65), int(dimension * 0.0667)), rectangle1, -1)
+    cv2.rectangle(img, (int(dimension * 0.4167), int(dimension * 0.5833)), (int(dimension * 0.65), int(dimension * 0.5333)), rectangle2, -1)
+
     if kill == True:
-        for i in range(70, (340), 30):
-            cv2.rectangle(img, (250, i), (390, i + 20), (0, 0, 255), -1)
-            cv2.line(img, (250, 70), (250, 370), (0, 0, 0), 4)
-            cv2.line(img, (390, 70), (390, 370), (0, 0, 0), 4)
+        for i in range(int(dimension * 0.1167), int(dimension * 0.5667), int(dimension * 0.05)):
+            cv2.rectangle(img, (int(dimension * 0.4167), i), (int(dimension * 0.65), i + int(dimension * 0.0333)), (0, 0, 255), -1)
+            cv2.line(img, (int(dimension * 0.4167), int(dimension * 0.1167)), (int(dimension * 0.4167), int(dimension * 0.5833)), (0, 0, 0), int(dimension * 0.01))
+            cv2.line(img, (int(dimension * 0.65), int(dimension * 0.1167)), (int(dimension * 0.65), int(dimension * 0.5833)), (0, 0, 0), int(dimension * 0.01))
 
     cv2.imwrite(f'{outputname}.png', img)
 
@@ -623,9 +635,6 @@ def tAki2001(outputname, dimension=700, circlecolour=(0, 255, 255), circleradius
 
     print("DONE! image has been added to your working directory:")
     print("Your working directory: ", os.getcwd())
-    cv2.imshow("img", img)
-    cv2.waitKey(0)
-
 
 def cafeWall(outputname, dimension=1200, resize=False, brickcolor=(255, 255, 255), bgcolor=(0, 0, 0)):
     """
@@ -661,7 +670,7 @@ def cafeWall(outputname, dimension=1200, resize=False, brickcolor=(255, 255, 255
     print("Your working directory: ", os.getcwd())
     cv2.imshow("img", img)
     cv2.waitKey(0)
-
+    
 def ccob(image, rms=0.5, amplitudespectrum=300, plttitle='output',figs=(0.8, 0.8)):
     """
     Creates an optical illusion about Spatial Frequency.
@@ -703,7 +712,7 @@ def ccob(image, rms=0.5, amplitudespectrum=300, plttitle='output',figs=(0.8, 0.8
     print("Your working directory: ", os.getcwd())
     plt.show()
 
-def ebbinghaus(output, bgcolor=(255, 255, 255), lcradius=22, rcradius=22, lcradius2=25, rcradius2=45,randcirclecolors=True):
+def ebbinghaus(output, bgcolor=(255, 255, 255), lcradius=22, rcradius=22, lcradius2=25, rcradius2=45, randcirclecolors=True, dimensions=(400, 800)):
     """
     Creates ebbinghaus illision .
     :param output: output name
@@ -713,118 +722,99 @@ def ebbinghaus(output, bgcolor=(255, 255, 255), lcradius=22, rcradius=22, lcradi
     :param lcradius2:  left circles radius
     :param rcradius2:  right circles radius
     :param randcirclecolors: circles  have random colors (recommended)
+    :param dimensions: dimensions of the image (be sure you entered a rectangular image otherwise it will be distorted it's highly experimental default is (400,800)
     :return:
     """
-    img = 255 * np.ones((400, 800, 3), np.uint8)
+    img = 255 * np.ones((dimensions[0], dimensions[1], 3), np.uint8)
     img[:, :, :] = bgcolor
-    lcradius = int(lcradius)
-    rcradius = int(rcradius)
-    lcradius2 = int(lcradius2)
-    rcradius2 = int(rcradius2)
-    if randcirclecolors==False:
-        cv2.circle(img, (180, 180), lcradius, (0, 0, 0), 3)
 
-        for i in range(0, 8):
-            center = (int(180 + 65 * np.sin(i * np.pi / 4)), int(180 + 65 * np.cos(i * np.pi / 4)))
-            cv2.circle(img, center, lcradius2, (0, 0, 0), 3)
+    lcradius = int(lcradius * dimensions[0] / 400)
+    rcradius = int(rcradius * dimensions[0] / 400)
+    lcradius2 = int(lcradius2 * dimensions[0] / 400)
+    rcradius2 = int(rcradius2 * dimensions[0] / 400)
 
-        cv2.circle(img, (620, 180), rcradius, (0, 0, 0), 3)
+    lccenter = (int(dimensions[1] * 180 / 800), int(dimensions[0] * 180 / 400))
+    rccenter = (int(dimensions[1] * 620 / 800), int(dimensions[0] * 180 / 400))
 
-        for i in range(0, 8):
-            center = (int(620 + 130 * np.sin(i * np.pi / 4)), int(180 + 130 * np.cos(i * np.pi / 4)))
-            cv2.circle(img, center, rcradius2, (0, 0, 0), 3)
+    b = np.random.randint(0, 255) if randcirclecolors else 0
+    g = np.random.randint(0, 255) if randcirclecolors else 0
+    r = np.random.randint(0, 255) if randcirclecolors else 0
+    cv2.circle(img, lccenter, lcradius, (b, g, r), -1)
 
-        cv2.imshow("img", img)
-        cv2.imwrite(f'{output}.png', img)
-        print(f"DONE! image f'{output} has been added to your working directory:")
-        print("Your working directory: ", os.getcwd())
-        cv2.waitKey(0)
-    else:
-        cv2.circle(img, (180, 180), lcradius, (np.random.randint(0, 255), np.random.randint(0, 255), np.random.randint(0, 255)), -1)
+    for i in range(0, 8):
+        center = (int(lccenter[0] + (dimensions[1] / 800) * 65 * np.sin(i * np.pi / 4)), int(lccenter[1] + (dimensions[0] / 400) * 65 * np.cos(i * np.pi / 4)))
+        b = np.random.randint(0, 255) if randcirclecolors else 0
+        g = np.random.randint(0, 255) if randcirclecolors else 0
+        r = np.random.randint(0, 255) if randcirclecolors else 0
+        cv2.circle(img, center, lcradius2, (b, g, r), -1)
 
-        for i in range(0, 8):
-            center = (int(180 + 65 * np.sin(i * np.pi / 4)), int(180 + 65 * np.cos(i * np.pi / 4)))
-            b = np.random.randint(0, 255)
-            g = np.random.randint(0, 255)
-            r = np.random.randint(0, 255)
-            cv2.circle(img, center, lcradius2, (b, g, r), -1)
+    b = np.random.randint(0, 255) if randcirclecolors else 0
+    g = np.random.randint(0, 255) if randcirclecolors else 0
+    r = np.random.randint(0, 255) if randcirclecolors else 0
+    cv2.circle(img, rccenter, rcradius, (b, g, r), -1)
 
-        cv2.circle(img, (620, 180), rcradius,(np.random.randint(0, 255), np.random.randint(0, 255), np.random.randint(0, 255)), -1)
-        for i in range(0, 8):
-            center = (int(620 + 130 * np.sin(i * np.pi / 4)), int(180 + 130 * np.cos(i * np.pi / 4)))
-            b = np.random.randint(0, 255)
-            g = np.random.randint(0, 255)
-            r = np.random.randint(0, 255)
-            cv2.circle(img, center, rcradius2, (b, g, r), -1)
-        cv2.imshow("img", img)
-        cv2.imwrite(f'{output}.png', img)
-        print(f"DONE! image f'{output} has been added to your working directory:")
-        print("Your working directory: ", os.getcwd())
-        cv2.waitKey(0)
+    for i in range(0, 8):
+        center = (int(rccenter[0] + (dimensions[1] / 800) * 130
+                        * np.sin(i * np.pi / 4)), int(rccenter[1] + (dimensions[0] / 400) * 130 * np.cos(i * np.pi / 4)))
+        b = np.random.randint(0, 255) if randcirclecolors else 0
+        g = np.random.randint(0, 255) if randcirclecolors else 0
+        r = np.random.randint(0, 255) if randcirclecolors else 0
 
-def whiteill(dimension=300, version2=False, rect1=(255, 255, 255), rect2=(0, 0, 0), bgrec1=(128, 128, 128),
+        cv2.circle(img, center, rcradius2, (b, g, r), -1)
+
+    cv2.imwrite(f'{output}.png', img)
+    print(f"DONE! image f'{output} has been added to your working directory:")
+    print("Your working directory: ", os.getcwd())
+
+def whiteill(dimension=600, version2=False, rect1=(255, 255, 255), rect2=(0, 0, 0), bgrec1=(128, 128, 128),
              bgrec2=(128, 128, 128), bg1=(0, 0, 0), bg2=(255, 255, 255), outputname="output"):
     """
     Optiacal illusion that has been described by White (1979).
-    :param dimension: dimension of the image
+    :param dimension: dimension of the image (note, in version 2 if you enter smallar dimension than 600 it will be distorted)
     :param version2: if True, the second version of the illusion is created
     :param rect1: color of the first rectangle
     :param rect2: color of the second rectangle
-    :param bgrec1: background color of the first rectangle
+    :param bgrec1: background color of the first rectangle, this also works on version2. Gray is default.
     :param bgrec2: background color of the second rectangle
     :param bg1: background color of the first image
     :param bg2: background color of the second image
     :param outputname: output name
-
     """
-
     dimension = int(dimension)
-
-    if version2 == False:
+    if version2:
+        img = np.zeros((dimension, dimension, 3), dtype=np.uint8)
+        for i in range(0, dimension, 40):
+            cv2.line(img, (0, i), (dimension, i), (255, 255, 255), 15)
+        for i in range(160, int(dimension / 2), 40):
+            cv2.line(img, (80, i + 40), (240, i + 40), bgrec1, 15)
+        for i in range(140, int(dimension / 2), 40):
+            cv2.line(img, (400, i + 40), (560, i + 40), bgrec1, 15)
+        cv2.imwrite(f'{outputname}vers1.png', img)
+    else:
         img = np.ones((dimension, dimension, 3), dtype=np.uint8)
         img[:, :, :] = bg1
         h, w, _ = img.shape
         cnt1 = int(h / 2)
-        cnt2 = int(w / 2)
-
         cv2.rectangle(img, (cnt1 - 75, cnt1 - 75), (cnt1 + 60, cnt1 + 70), bgrec1, -1)
         for i in range(0, h, 75):
             for j in range(20, h, 75):
                 cv2.rectangle(img, (i + 5, j), (i + 45, j + 40), rect1, -1)
-
         img2 = 255 * np.ones((dimension, dimension, 3), dtype=np.uint8)
         img2[:, :, :] = bg2
         h, w, _ = img2.shape
         cnt1 = int(h / 2)
-        cnt2 = int(w / 2)
         cv2.rectangle(img2, (cnt1 - 75, cnt1 - 75), (cnt1 + 60, cnt1 + 70), bgrec2, -1)
         for i in range(0, h, 75):
             for j in range(20, h, 75):
                 cv2.rectangle(img2, (i + 5, j), (i + 45, j + 40), rect2, -1)
+        img = np.concatenate((img, img2), axis=1)
         cv2.imwrite(f'{outputname}.png', img)
-        cv2.imwrite(f'{outputname}2.png', img2)
+    print(f"DONE! image f'{outputname} has been added to your working directory:")
+    print("Your working directory: ", os.getcwd())
 
-        cv2.imshow("img2", img2)
-
-        cv2.imshow("img1", img)
-
-        cv2.waitKey(0)
-    else:
-        img = np.ones((700, 700, 3), dtype=np.uint8)
-        for i in range(0, 700, 40):
-            cv2.line(img, (0, i), (700, i), (255, 255, 255), 15)
-        for i in range(160, int(700 / 2), 40):
-            cv2.line(img, (80, i + 40), (240, i + 40), (128, 128, 128), 15)
-        for i in range(140, int(700 / 2), 40):
-            cv2.line(img, (400, i + 40), (560, i + 40), (128, 128, 128), 15)
-        cv2.imshow("img", img)
-        cv2.imwrite(f'{outputname}vers1.png', img)
-
-        cv2.waitKey(0)
-
-def enigma(linecolors=(255,255,255), bgcolor=(1, 1, 1),circle1=(76, 0, 153),circle2=(102, 0, 204),
-           centercircle=(0,255,255),
-           outputname="enigma"):
+        
+def enigma(dimension=512, linecolors=(255,255,255), bgcolor=(1, 1, 1), circle1=(76, 0, 153), circle2=(102, 0, 204),
+           centercircle=(0,255,255),outputname="enigma",gif=True):
     """
     based on the a paper from the Zeki et al (1993).
     :param linecolors: color of the lines
@@ -833,29 +823,24 @@ def enigma(linecolors=(255,255,255), bgcolor=(1, 1, 1),circle1=(76, 0, 153),circ
     :param circle2: inner circle color
     :param centercircle: central circle color
     :param outputname: output name
+    :param gif: if True, the gif version of the illusion for the another illusion!Fix your gaze on the center than see what happens!
     :return:
     """
-    x = int(512)
-    y = int(512)
-
+    x = int(dimension)
+    y = int(dimension)
     img = np.ones((x, y, 3), np.uint8)
     img[:, :, :] = bgcolor
     h, w, _c = img.shape
+    for i in range(0, h, int(h / 43)):
+        cv2.line(img, (i, 0), (h - i, h), linecolors, int(h / dimension))
+        cv2.line(img, (0, i), (h, h - i), linecolors, int(h / dimension))
+    for i in range(0, h, int(h / 43)):
+        cv2.line(img, (i + 1, 0), ((h - 1) - i, h), linecolors, int(h / dimension))
+        cv2.line(img, (0, i + 1), (h, (h - 1) - i), linecolors, int(h / dimension))
 
     for i in range(0, h, int(h / 43)):
-        # cv2.line(img,(0,i),(512-i,512),(255,255,255),3)
-        cv2.line(img, (i, 0), (h - i, h), linecolors, int(h / 512))
-        cv2.line(img, (0, i), (h, h - i), linecolors, int(h / 512))
-
-    for i in range(0, h, int(h / 43)):
-        # cv2.line(img,(0,i),(512-i,512),(255,255,255),3)
-        cv2.line(img, (i + 1, 0), ((h - 1) - i, h), linecolors, int(h / 512))
-        cv2.line(img, (0, i + 1), (h, (h - 1) - i), linecolors, int(h / 512))
-
-    for i in range(0, h, int(h / 43)):
-        # cv2.line(img,(0,i),(512-i,512),(255,255,255),3)
-        cv2.line(img, (i + 2, 0), ((h - 2) - i, h), linecolors, int(h / 512))
-        cv2.line(img, (0, i + 2), (h, (h - 2) - i), linecolors, int(h / 512))
+        cv2.line(img, (i + 2, 0), ((h - 2) - i, h), linecolors, int(h / dimension))
+        cv2.line(img, (0, i + 2), (h, (h - 2) - i), linecolors, int(h / dimension))
 
     for i in range(int(h / 4), int(h / 2), int(h / 8)):
         cv2.circle(img, (int(h / 2), int(h / 2)), i - 10, circle1, int(h / 26))
@@ -867,18 +852,28 @@ def enigma(linecolors=(255,255,255), bgcolor=(1, 1, 1),circle1=(76, 0, 153),circ
     cv2.circle(img, (int(h / 2), int(h / 2)), 4, (0, 0, 255), -1)
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    if gif == True:
+        img=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        images = [img, gray]
+        imageio.mimsave(outputname + '.gif', images, duration = 5)
+        pass
+    img=cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
     cv2.imwrite(f'{outputname}gray.png', gray)
     cv2.imwrite(f'{outputname}.png', img)
 
-def blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circle_color=(0, 0, 0),kill=False):
+
+
+def blackhole(outputname="blackhole",dimensions=(800,800),circle_size=10, circle_color=(0, 0, 0),kill=False):
     """"
     Illusorily Expanding Holes.
-    height: height of the image
-    width: width of the image
+    dimensions: dimensions of the image
     circle_size: size of the circles (center ellipse is adjusted with this ratio)
     circle_color: color of the circles
     kill: if True, circles are not drawn
     """
+
+    height = dimensions[0]
+    width = dimensions[1]
     img = 255*np.ones((height, width, 3), np.uint8)
 
     b = circle_color[0]
@@ -898,21 +893,20 @@ def blackhole(outputname="blackhole",height=800, width=800, circle_size=10, circ
             for i in range(0, width, circle_size * 3):
                 for j in range(0, width, circle_size *3):
                     cv2.circle(img, (i, j), circle_size, (b, g, r), -1)
-
-    cv2.imshow("img", img)
     cv2.imwrite(f'{outputname}.png', img)
-    cv2.waitKey(0)
 
-def colorgrids(img,style="vertical",width=4,frequency=1,saturation=0):
+
+def colorgrids(img,style="vertical",width=4,frequency=12,saturation=0):
     """
     This function applies Color assimilation Grid Illusion.
     :param img: input image
     :param style: style of mask, "vertical","horizontal","gaussian","grids"
     :param width: width of lines
     :param frequency: frequency of lines
-    :param saturation: saturation of lines
+    :param saturation: saturation of lines increasing this value will increase the saturation of lines but it will distort the image if it is too high
     :return:
     """
+    outputname=os.path.splitext(img)[0]
     img=cv2.imread(img)
     width=int(width)
     frequency=int(frequency)
@@ -949,34 +943,38 @@ def colorgrids(img,style="vertical",width=4,frequency=1,saturation=0):
     hsv=cv2.cvtColor(final,cv2.COLOR_BGR2HSV)
     hsv[:,:,1]=np.where(hsv[:,:,1]>100,hsv[:,:,1],hsv[:,:,1]+s)
     final=cv2.cvtColor(hsv,cv2.COLOR_HSV2BGR)
-    cv2.imwrite("gridillusion.png",final)
-    print("image saved as gridillusion.png")
+    cv2.imwrite(outputname+"gridillusion.png",final)
 
-def munker(dimensions=(1200,1200),linefrequency=100,rad=100,thickness=6,saturation=1):
+
+def munker(dimensions=(1200,1200), linefrequency=100, rad_ratio=0.05, thickness=6, saturation=1,bgcolor=(255,255,255)):
     """
     Creates an image of the Munker illusion.
     Parameters
     ----------
-    dimensions : tuple of ints (width, height) of the image. This version is optimized for square images. 
+    dimensions : tuple of ints (width, height) of the image. If you change this you also need to change the thickness and linefrequency. 
     linefrequency : This is the ratio of the horizontal lines to the width of the image, this value is used to calculate the distance between the lines. The default ratio is dimensions[0]/120
-    rad : radius of the circles, default ratio is dimensions[0]/120
+    rad_ratio :radius ratio of the circles.
     thickness :thickness of the lines. If you change the dimensions of the image, you may need to change this value as well. Default ratio is dimensions[0]/200
     saturation : saturation of the colors. 1 is full saturation, 0 is no saturation. 
+    bgcolor : background color of the image. Default is white. This also will determines of the colors of the all circles
     """ 
-    img = 255*np.ones((dimensions[0],dimensions[1],3), np.uint8)
+    img = np.ones((dimensions[0],dimensions[1],3), np.uint8)
+    img[:,:,:] = bgcolor
+
     alpha = linefrequency
-    alpha= int(dimensions[0]/alpha)
-    b,g,r=cv2.split(img)
+    alpha = int(dimensions[0]/alpha)
+    b,g,r = cv2.split(img)
     mask_b = np.zeros(dimensions, np.uint8)
     mask_g = np.zeros(dimensions, np.uint8)
     mask_r = np.zeros(dimensions, np.uint8)
-    thickness=int(thickness)
-    circle_ratio_height=int(dimensions[0]/2)
-    circle_ratio_width=int(dimensions[1]/12)
+    thickness = int(thickness)
+    rad = int(min(dimensions[0], dimensions[1]) * rad_ratio)
+    circle_ratio_height = int(dimensions[0]/2)
+    circle_ratio_width = int(dimensions[1]/12)
     for i in range(0, int(dimensions[0]), int(dimensions[0]/5)):
         cv2.circle(mask_b, (i, i), rad, (255), -1)
         cv2.circle(mask_r, (i, i), rad, (255), -1)
-    
+
     for i in range(0, int(dimensions[0]), int(dimensions[0]/5)):
         cv2.circle(mask_b, (i+circle_ratio_height, i+circle_ratio_width), rad, (255), -1)
         cv2.circle(mask_g, (i+circle_ratio_height, i+circle_ratio_width), rad, (255), -1)        
@@ -995,7 +993,6 @@ def munker(dimensions=(1200,1200),linefrequency=100,rad=100,thickness=6,saturati
     img[:,:,1]=img[:,:,1]*saturation
     img=cv2.cvtColor(img, cv2.COLOR_HSV2BGR)
     cv2.imwrite('munker'+str(dimensions[0])+'x'+str(dimensions[1])+'.png',img)
-    print('munker'+str(dimensions[0])+'x'+str(dimensions[1])+'.png was saved')
 
 def pareidolia(dimensions=(700,700),bg=(255,255,255),emotion="happy"):
     """
@@ -1008,10 +1005,11 @@ def pareidolia(dimensions=(700,700),bg=(255,255,255),emotion="happy"):
     img = 255*np.ones((dimensions[0],dimensions[1],3), np.uint8)
     img[:,:,:] = bg
     h,w,_ = img.shape
+    center = (h / 2, w / 2)
     if emotion=="happy":
         for i in range(0, h,15):
             cv2.line(img, (w-1-i, 0), (w-1, i), (0, 0, 0), 5)   
-     
+    
         for i in range(0, h,12):
             cv2.line(img, (0, h-1-i), (i, h-1), (0, 0, 0), 5)
         for i in range(0, h,24):
@@ -1022,7 +1020,7 @@ def pareidolia(dimensions=(700,700),bg=(255,255,255),emotion="happy"):
             cv2.line(img, (w-1-i, 0), (w-1, i), (0, 0, 0), 5)
             cv2.line(img, (0, h-1-i), (i, h-1), (0, 0, 0), 5)
 
-     
+    
         for i in range(0, h,12):
             cv2.line(img, (0, h-1-i), (i, h-1), (0, 0, 0), 5)
         for i in range(0, h,24):
@@ -1030,8 +1028,11 @@ def pareidolia(dimensions=(700,700),bg=(255,255,255),emotion="happy"):
     
     gabor = cv2.getGaborKernel((21,21), 8.0, np.pi/4, 10.0, 0.5, 0, ktype=cv2.CV_32F)
     gabor = cv2.filter2D(img, cv2.CV_8UC3, gabor)
-    cv2.imwrite('pareidolia'+str(dimensions[0])+'x'+str(dimensions[1])+'.png',gabor)
+    rotation_matrix = cv2.getRotationMatrix2D(center, 45, 1.0)
+    rotated_img = cv2.warpAffine(gabor, rotation_matrix, (w, h))
+    cv2.imwrite('pareidolia'+str(dimensions[0])+'x'+str(dimensions[1])+'.png',rotated_img)
     print('pareidolia'+str(dimensions[0])+'x'+str(dimensions[1])+'.png was saved')
+
 def grids2(dimensions=(340,640),line_width=5,line_color=(128,128,128),fill_color=(255,255,255)):
     """
     Creates an image of a grids and dots pattern.
@@ -1088,13 +1089,13 @@ def munker2(dimensions=(900,900),ilussory_colors=(255,238,138),leftstripes=(255,
     print('munker2'+str(dimensions[0])+'x'+str(dimensions[1])+'.png was saved')
 
 def spiral(m):
-    #function for crazy spirals
+    #function for crazy spirals for the further use
     r = np.linalg.norm(m)*6.
     a = np.arctan2(m[1], m[0])
     v = 50.*np.sin(60.*(np.power(r,1.)-1.*a))
     return np.clip(v,0.,1.)
 def spiral2(m):
-    #function for spirals
+    #function for spirals 
     r = np.power(np.linalg.norm(m)*40.,0.8)
     a = np.arctan2(-m[1], m[0])
     v = np.sin(r-a)*2.*0.707
@@ -1139,6 +1140,7 @@ def negate_image(input_file, negation_method, color_space, output_quality):
     color_space : string of the color space. ('hsv', 'gray', 'bgr')
     output_quality : int of the output quality.
     """
+
 
     img = cv2.imread(input_file)
 
