@@ -334,10 +334,11 @@ A recent optical illusion that described by the Laeng et al (2022).
 ```
     """"
     Illusorily Expanding Holes.
-    height: height of the image
-    width: width of the image
+    dimensions: dimensions of the image
     circle_size: size of the circles (center ellipse is adjusted with this ratio)
     circle_color: color of the circles
+    frequency: frequency of the circles
+    shape: "circle" or "rectangle"
     kill: if True, circles are not drawn
     """
 

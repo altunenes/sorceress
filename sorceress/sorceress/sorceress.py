@@ -953,12 +953,14 @@ def enigma(dimension=512, linecolors=(255,255,255), bgcolor=(1, 1, 1), circle1=(
 
 
 
-def blackhole(outputname="blackhole",dimensions=(800,800),circle_size=10, circle_color=(0, 0, 0),kill=False):
+def blackhole(outputname="blackhole", dimensions=(800,800), circle_size=10, circle_color=(0, 0, 0), shape='circle', frequency=3,kill=False):
     """"
     Illusorily Expanding Holes.
     dimensions: dimensions of the image
     circle_size: size of the circles (center ellipse is adjusted with this ratio)
     circle_color: color of the circles
+    frequency: frequency of the circles
+    shape: "circle" or "rectangle"
     kill: if True, circles are not drawn
     """
 
@@ -974,15 +976,37 @@ def blackhole(outputname="blackhole",dimensions=(800,800),circle_size=10, circle
     for i in range(255,0,-2):
         cv2.ellipse(img, center, (circle_size * 22+i, circle_size * 11+i), 0, 0, 360, (b+i, g+i, r+i), -1)
 
-    if kill==False:
+    if shape == 'circle':
         if height >= width:
-            for i in range(0, height, circle_size * 3):
-                for j in range(0, height, circle_size *3):
+            for i in range(0, height, circle_size * frequency):
+                for j in range(0, height, circle_size * frequency):
                     cv2.circle(img, (i, j), circle_size, (b, g, r), -1)
         elif width > height:
-            for i in range(0, width, circle_size * 3):
-                for j in range(0, width, circle_size *3):
+            for i in range(0, width, circle_size * frequency):
+                for j in range(0, width, circle_size * frequency):
                     cv2.circle(img, (i, j), circle_size, (b, g, r), -1)
+    elif shape == 'rectangle':
+        if height >= width:
+            for i in range(0, height, circle_size * frequency):
+                for j in range(0, height, circle_size * frequency):
+                    cv2.rectangle(img, (i - circle_size, j - circle_size), (i + circle_size, j + circle_size), (b, g, r), -1)
+        elif width > height:
+            for i in range(0, width, circle_size * frequency):
+                for j in range(0, width, circle_size * frequency):
+                    cv2.rectangle(img, (i - circle_size, j - circle_size), (i + circle_size, j + circle_size), (b, g, r), -1)   
+    else:
+        pass
+
+    if kill==False:
+        if height >= width:
+            for i in range(0, height, circle_size * frequency):
+                for j in range(0, height, circle_size * frequency):
+                    cv2.circle(img, (i, j), circle_size, (b, g, r), -1)
+        elif width > height:
+            for i in range(0, width, circle_size * frequency):
+                for j in range(0, width, circle_size * frequency):
+                    cv2.circle(img, (i, j), circle_size, (b, g, r), -1)
+
     cv2.imwrite(f'{outputname}.png', img)
 
 
