@@ -990,7 +990,7 @@ def colorgrids(img,style="vertical",width=4,frequency=12,saturation=0):
     """
     This function applies Color assimilation Grid Illusion.
     :param img: input image
-    :param style: style of mask, "vertical","horizontal","gaussian","grids"
+    :param style: style of mask, "vertical","horizontal","gaussian","grids","checkerboard"
     :param width: width of lines
     :param frequency: frequency of lines
     :param saturation: saturation of lines increasing this value will increase the saturation of lines but it will distort the image if it is too high
@@ -1019,6 +1019,12 @@ def colorgrids(img,style="vertical",width=4,frequency=12,saturation=0):
              for j in range(0,mask.shape[0],frequency):
                 cv2.line(mask ,(i,0),(i,mask.shape[0]),(0,0,0),width)
                 cv2.line(mask ,(0,j),(mask.shape[1],j),(0,0,0),width)
+
+    elif style == 'checkerboard':
+        for i in range(0, mask.shape[0], frequency):
+            for j in range(0, mask.shape[1], frequency):
+                if (i + j) % (2 * frequency) < frequency:
+                    cv2.rectangle(mask, (j, i), (j + frequency, i + frequency), (0, 0, 0), -1)
     else:
         print('mask type not supported')
     masked_bw=cv2.bitwise_not(mask)
