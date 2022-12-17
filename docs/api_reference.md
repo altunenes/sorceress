@@ -233,17 +233,25 @@ So for best result, i reccomend you to use a clear profile picture.
 
 Function add lines to the image to create an illusion to see actual photo. I dont sure can we classify this as an optical illusion but I inspired from the Akiyoshi Kitaoka.eyecolour
 
-If you select `alphablending==True`  line colors are much more stable against the luminance change in the background image. It's because in opencv, when you overlay two images or colors the function called `addWeighted` mixes the colors in very "small tones" but you probably do not even notice. Still, this function which I called alpha blending, is much more stable to luminance change. Use both, in the same way and see what is differs.
+If you select `alphablending==True`  line colors are much more stable against the luminance change in the background image. It's because in opencv, when you overlay two images or colors the function called `addWeighted` mixes the colors in very "small tones" but you probably do not even notice. Still, this function which I called alpha blending, is much more stable to luminance change. Use both, in the same way and see what is differs. 
+
+Note that this function automatically fits the image of the dimensions. You may encounter some "problems" with the style parameter. For example you may see "horizontal" lines even if you select "vertical". So in that case, try to change your parameters. 
+
+There are so many styles. Try them all.
 
 ```
 """
     Adds lines to an image.
     Arguments:
     img: input image
-    linecolour1: first line colour
-    linecolour2: second line colour
-    linecolour3: third line colour
-    alphablending: if True, line colors are much more stable against the luminance change in the background image.
+    linecolours:  line colours
+    alphablending: if False, line colors are much more stable against the luminance change in the background image.
+    thickness: line thickness (default=3)
+    frequency: line frequency (default=3)
+    style: "vertical","horizontal", "diagonal","cross","zigzag","cross","checkerboard", "wave", "wave2", "circles", "rectangles"
+    amplitude: wave amplitude (default=1) // only for wave and wave2
+    period: wave period (default=15)    // only for wave and wave2
+    midpoint: wave midpoint (default=12) // only for wave and wave2
     :return:
     """
 ```

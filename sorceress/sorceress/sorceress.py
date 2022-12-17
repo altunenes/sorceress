@@ -284,16 +284,19 @@ def realtimegrid(realcolours=True):
     
 
 
-def addlines(img, linecolour1=(0,255,0), linecolour2=(0,255,255), linecolour3=(255,0,0), linecolour4=(255,255,0),alphablending=False, thickness=3, frequency=3, style='vertical'):
+def addlines(img, linecolour1=(0,255,0), linecolour2=(0,255,255), linecolour3=(255,0,0), linecolour4=(255,255,0),alphablending=False, thickness=3, frequency=3, style='vertical', amplitude=1,period=15,midpoint=12):
     """"
     Adds lines to an image.
     Arguments:
     img: input image
-    linecolour1,2,3,4= colors of the lines.
+    linecolours:  line colours
     alphablending: if False, line colors are much more stable against the luminance change in the background image.
     thickness: line thickness (default=3)
     frequency: line frequency (default=3)
-    style: "vertical", "horizontal" or "diagonal".
+    style: "vertical","horizontal", "diagonal","cross","zigzag","cross","checkerboard", "wave", "wave2", "circles", "rectangles"
+    amplitude: wave amplitude (default=1) // only for wave and wave2
+    period: wave period (default=15)    // only for wave and wave2
+    midpoint: wave midpoint (default=12) // only for wave and wave2
     :return
     """
     outputname = os.path.basename(img).split(".")[0]
@@ -337,16 +340,84 @@ def addlines(img, linecolour1=(0,255,0), linecolour2=(0,255,255), linecolour3=(2
                 cv2.line(img2, (0, i+2), (w, (i+2+i)), linecolour3, thickness)
                 cv2.line(img2, (0, i+3), (w, (i+3+i)), linecolour4, thickness)
 
+        elif style == 'cross':
+            for i in range(0, h, frequency):
+                cv2.line(img2, (0, i), (w, i+i), linecolour1, thickness)
+                cv2.line(img2, (0, i+1), (w, (i+1+i)), linecolour2, thickness)
+                cv2.line(img2, (0, i+2), (w, (i+2+i)), linecolour3, thickness)
+                cv2.line(img2, (0, i+3), (w, (i+3+i)), linecolour4, thickness)
+            for i in range(0, h, frequency):
+                cv2.line(img2, (i, 0), (i+i, h), linecolour1, thickness)
+                cv2.line(img2, (i+1, 0), ((i+1)+i, h), linecolour2, thickness)
+                cv2.line(img2, (i+2, 0), ((i+2)+i, h), linecolour3, thickness)
+                cv2.line(img2, (i+3, 0), ((i+3)+i, h), linecolour4, thickness)   
+        elif style == 'zigzag':
+            for i in range(0, h, frequency):
+                cv2.line(img2, (0, i), (w, i+i), linecolour1, thickness)
+                cv2.line(img2, (0, i+1), (w, (i+1+i)), linecolour2, thickness)
+                cv2.line(img2, (0, i+2), (w, (i+2+i)), linecolour3, thickness)
+                cv2.line(img2, (0, i+3), (w, (i+3+i)), linecolour4, thickness)
+                cv2.line(img2, (w, i), (0, i+i), linecolour1, thickness)
+                cv2.line(img2, (w, i+1), (0, (i+1+i)), linecolour2, thickness)
+                cv2.line(img2, (w, i+2), (0, (i+2+i)), linecolour3, thickness)
+                cv2.line(img2, (w, i+3), (0, (i+3+i)), linecolour4, thickness)
+        
+        elif style == 'checkerboard':
+            for i in range(h):
+                for j in range(w):
+                    if (i % 2 == 0 and j % 2 == 0) or (i % 2 == 1 and j % 2 == 1):
+                        cv2.line(img2, (j, i), (j+1, i), linecolour1, thickness)
+                    else:
+                        cv2.line(img2, (j, i), (j+1, i), linecolour2, thickness)
+        
+        elif style == 'wave':
+            amplitude = h // 1
+            midpoint = h // 12
+            period = w // 15
+            for i in range(h):
+                x = i * frequency
+                y = int(amplitude * np.sin(x * 2 * np.pi / period) + midpoint)
+                cv2.line(img2, (0, i), (y, i), linecolour1, thickness)
+                cv2.line(img2, (y+1, i), (w, i), linecolour2, thickness)
+        elif style == 'wave2':
+            amplitude = w // amplitude
+            midpoint = w // midpoint
+            period = h // period
+    
+            for i in range(w):
+                x = i * frequency
+                y = int(amplitude * np.sin(x * 2 * np.pi / period) + midpoint)
+                cv2.line(img2, (i, 0), (i, y), linecolour1, thickness)
+                cv2.line(img2, (i, y+1), (i, h), linecolour2, thickness)   
+                    
+                    
+        elif style == 'circles':
+            for i in range(frequency, h//2, frequency):
+                cv2.circle(img2, (w//2, h//2), i, linecolour1, thickness)
+                cv2.circle(img2, (w//2, h//2), i+1, linecolour2, thickness)
+                cv2.circle(img2, (w//2, h//2), i+2, linecolour3, thickness)
+                cv2.circle(img2, (w//2, h//2), i+3, linecolour4, thickness)   
+        
+
+        elif style == 'rectangles':
+            for i in range(frequency, min(w, h)//2, frequency):
+                cv2.rectangle(img2, (w//2-i, h//2-i), (w//2+i, h//2+i), linecolour1, thickness)
+                cv2.rectangle(img2, (w//2-i-1, h//2-i-1), (w//2+i+1, h//2+i+1), linecolour2, thickness)
+                cv2.rectangle(img2, (w//2-i-2, h//2-i-2), (w//2+i+2, h//2+i+2), linecolour3, thickness)
+                cv2.rectangle(img2, (w//2-i-3, h//2-i-3), (w//2+i+3, h//2+i+3), linecolour4, thickness)
+
+        
         result2 = cv2.addWeighted(rect, 0.1, img2, 77, 0)
         result3 = cv2.addWeighted(img2, 77, rect, 0.1, 77)
-
-
+        result4 = cv2.addWeighted(img2, 0.5, rect, 0.5, 0)
+        result5 = cv2.addWeighted(rect, 0.5, img2, 0.5, 0)
         blur = cv2.GaussianBlur(result2, (7, 7), 0)
 
         cv2.imwrite(f'{outputname}blur.png', blur)
-        cv2.imwrite(f'{outputname}ver1.png', result2)
-        cv2.imwrite(f'{outputname}ver2.png', result3)
-
+        cv2.imwrite(f'{outputname}ver7.png', result2)
+        cv2.imwrite(f'{outputname}ver8.png', result3)
+        cv2.imwrite(f'{outputname}ver9.png', result4)
+        cv2.imwrite(f'{outputname}ver10.png', result5)
         print("DONE! grids have been added to your image check your working directory:",os.getcwd())
     else:
         rect = cv2.cvtColor(rect, cv2.COLOR_BGR2BGRA)
