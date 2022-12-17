@@ -804,15 +804,21 @@ So for best result, i reccomend you to use a clear profile picture.</p>
 </code></pre>
 <p><strong><em>addlines</em></strong><a name="addlines"></a></p>
 <p>Function add lines to the image to create an illusion to see actual photo. I dont sure can we classify this as an optical illusion but I inspired from the Akiyoshi Kitaoka.eyecolour</p>
-<p>If you select <code>alphablending==True</code>  line colors are much more stable against the luminance change in the background image. It's because in opencv, when you overlay two images or colors the function called <code>addWeighted</code> mixes the colors in very "small tones" but you probably do not even notice. Still, this function which I called alpha blending, is much more stable to luminance change. Use both, in the same way and see what is differs.</p>
+<p>If you select <code>alphablending==True</code>  line colors are much more stable against the luminance change in the background image. It's because in opencv, when you overlay two images or colors the function called <code>addWeighted</code> mixes the colors in very "small tones" but you probably do not even notice. Still, this function which I called alpha blending, is much more stable to luminance change. Use both, in the same way and see what is differs. </p>
+<p>Note that this function automatically fits the image of the dimensions. You may encounter some "problems" with the style parameter. For example you may see "horizontal" lines even if you select "vertical". So in that case, try to change your parameters. </p>
+<p>There are so many styles. Try them all.</p>
 <pre><code>&quot;&quot;&quot;
     Adds lines to an image.
     Arguments:
     img: input image
-    linecolour1: first line colour
-    linecolour2: second line colour
-    linecolour3: third line colour
-    alphablending: if True, line colors are much more stable against the luminance change in the background image.
+    linecolours:  line colours
+    alphablending: if False, line colors are much more stable against the luminance change in the background image.
+    thickness: line thickness (default=3)
+    frequency: line frequency (default=3)
+    style: &quot;vertical&quot;,&quot;horizontal&quot;, &quot;diagonal&quot;,&quot;cross&quot;,&quot;zigzag&quot;,&quot;cross&quot;,&quot;checkerboard&quot;, &quot;wave&quot;, &quot;wave2&quot;, &quot;circles&quot;, &quot;rectangles&quot;
+    amplitude: wave amplitude (default=1) // only for wave and wave2
+    period: wave period (default=15)    // only for wave and wave2
+    midpoint: wave midpoint (default=12) // only for wave and wave2
     :return:
     &quot;&quot;&quot;
 </code></pre>
@@ -875,10 +881,11 @@ So for best result, i reccomend you to use a clear profile picture.</p>
 <p>A recent optical illusion that described by the Laeng et al (2022).</p>
 <pre><code>    &quot;&quot;&quot;&quot;
     Illusorily Expanding Holes.
-    height: height of the image
-    width: width of the image
+    dimensions: dimensions of the image
     circle_size: size of the circles (center ellipse is adjusted with this ratio)
     circle_color: color of the circles
+    frequency: frequency of the circles
+    shape: &quot;circle&quot; or &quot;rectangle&quot;
     kill: if True, circles are not drawn
     &quot;&quot;&quot;
 
