@@ -88,6 +88,10 @@ To use the function, specify the input image (`img`) and the colors of the lines
 
 By default, the function uses "alpha blending" to mix the colors of the lines and the background image. This makes the resulting colors more stable against changes in the background luminance. You can turn off alpha blending by setting alphablending to False in the function call.
 
+function takes a "style" parameter with following patterns: `"vertical","horizontal", "diagonal","cross","zigzag","cross","checkerboard", "wave", "wave2", "circles", "rectangles"`
+You can use one of them.
+
+
 ## 5- eyecolour
 
 [inspried from m.bach:](https://michaelbach.de/ot/col-context/index.html)
