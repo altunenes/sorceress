@@ -284,17 +284,16 @@ def realtimegrid(realcolours=True):
     
 
 
-def addlines(img, linecolour1=(0,255,0), linecolour2=(0,255,255), linecolour3=(255,0,0), alphablending=False, thickness=3, frequency=3):
+def addlines(img, linecolour1=(0,255,0), linecolour2=(0,255,255), linecolour3=(255,0,0), linecolour4=(255,255,0),alphablending=False, thickness=3, frequency=3, style='vertical'):
     """"
     Adds lines to an image.
     Arguments:
     img: input image
-    linecolour1: first line colour
-    linecolour2: second line colour
-    linecolour3: third line colour
+    linecolour1,2,3,4= colors of the lines.
     alphablending: if False, line colors are much more stable against the luminance change in the background image.
     thickness: line thickness (default=3)
     frequency: line frequency (default=3)
+    style: "vertical", "horizontal" or "diagonal".
     :return
     """
     outputname = os.path.basename(img).split(".")[0]
@@ -303,17 +302,40 @@ def addlines(img, linecolour1=(0,255,0), linecolour2=(0,255,255), linecolour3=(2
 
     if alphablending == False:
         img2 = np.ones((h,w,c),dtype=np.uint8)
-        if w > h or w==h:
-            for i in range(0, w, frequency):
-                cv2.line(img2, (i, 0), (i, w), linecolour1, thickness)
-                cv2.line(img2, (i + 1, 0), (i + 1, (w)), linecolour2, thickness)
-                cv2.line(img2, (i + 2, 0), (i + 2, (w)), linecolour3, thickness)
-        else:
+        if style == 'horizontal':
+            if w > h or w==h:
+                for i in range(0, w, frequency):
+                    cv2.line(img2, (i, 0), (i, w), linecolour1, thickness)
+                    cv2.line(img2, (i + 1, 0), (i + 1, (w)), linecolour2, thickness)
+                    cv2.line(img2, (i + 2, 0), (i + 2, (w)), linecolour3, thickness)
+                    cv2.line(img2, (i + 3, 0), (i + 3, (w)), linecolour4, thickness)
+                   
+            else:
+                for i in range(0, h, frequency):
+                    cv2.line(img2, (0, i), (h, i), linecolour1, thickness)
+                    cv2.line(img2, (0, i+1), (h, (i+1)), linecolour2, thickness)
+                    cv2.line(img2, (0, i+2), (h, (i+2)), linecolour3, thickness)
+                    cv2.line(img2, (0, i+3), (h, (i+3)), linecolour4, thickness)
+        elif style == 'vertical':
+            if w > h or w==h:
+                for i in range(0, h, frequency):
+                    cv2.line(img2, (0, i), (w, i), linecolour1, thickness)
+                    cv2.line(img2, (0, i+1), (w, (i+1)), linecolour2, thickness)
+                    cv2.line(img2, (0, i+2), (w, (i+2)), linecolour3, thickness)
+                    cv2.line(img2, (0, i+3), (w, (i+3)), linecolour4, thickness)
+            else:
+                for i in range(0, w, frequency):
+                    cv2.line(img2, (i, 0), (i, h), linecolour1, thickness)
+                    cv2.line(img2, (i + 1, 0), (i + 1, (h)), linecolour2, thickness)
+                    cv2.line(img2, (i + 2, 0), (i + 2, (h)), linecolour3, thickness)
+                    cv2.line(img2, (i + 3, 0), (i + 3, (h)), linecolour4, thickness)
+                               
+        elif style == 'diagonal':
             for i in range(0, h, frequency):
-                cv2.line(img2, (0, i), (h, i), linecolour1, thickness)
-                cv2.line(img2, (0, i+1), (h, (i+1)), linecolour2, thickness)
-                cv2.line(img2, (0, i+2), (h, (i+2)), linecolour3, thickness)
-
+                cv2.line(img2, (0, i), (w, i+i), linecolour1, thickness)
+                cv2.line(img2, (0, i+1), (w, (i+1+i)), linecolour2, thickness)
+                cv2.line(img2, (0, i+2), (w, (i+2+i)), linecolour3, thickness)
+                cv2.line(img2, (0, i+3), (w, (i+3+i)), linecolour4, thickness)
 
         result2 = cv2.addWeighted(rect, 0.1, img2, 77, 0)
         result3 = cv2.addWeighted(img2, 77, rect, 0.1, 77)
