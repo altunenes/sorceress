@@ -2,6 +2,8 @@
 
 [![PyPI version](https://badge.fury.io/py/sorceress.svg)](https://badge.fury.io/py/sorceress) [![Jekyll site CI](https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml/badge.svg)](https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml)
 [![Downloads](https://pepy.tech/badge/sorceress)](https://pepy.tech/project/sorceress)
+[![Build status](https://ci.appveyor.com/api/projects/status/71rohei2h9q6ru0s?svg=true)](https://ci.appveyor.com/project/altunenes/sorceress)
+
 
 ### Purpose of package
 
