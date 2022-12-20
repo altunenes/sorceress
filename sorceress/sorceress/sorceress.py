@@ -24,75 +24,44 @@ def chromatic(img,circle=True, method="CMCCAT2000", gif=True, Gifduration=7,XYZ_
     :param XYZ_w, XYZ_wr, L_A: chromatic adaptation parameters (has default values)
     :return:
     """
-    outputname = os.path.basename(img).split(".")[0]
     img = cv2.imread(img)
     hsize, wsize, _ = img.shape
-    centery = int(hsize / 2)
-    centerx = int(wsize / 2)
-    Gifduration=int(Gifduration)
-    pil=int(Gifduration*1000)
-
+    center_y = int(hsize / 2)
+    center_x = int(wsize / 2)
+    Gifduration = int(Gifduration)
     XYZ = cv2.cvtColor(img, cv2.COLOR_RGB2LAB)
     gry = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-    L_A = int(L_A)
     XYZ_w = np.array(XYZ_w)
     XYZ_wr = np.array(XYZ_wr)
     if method == "CMCCAT2000":
-        test = colour.chromatic_adaptation(XYZ, XYZ_w, XYZ_wr, method="CMCCAT2000", L_A1=L_A, L_A2=L_A)
+        adapted_img = colour.chromatic_adaptation(XYZ, XYZ_w, XYZ_wr, method="CMCCAT2000", L_A1=L_A, L_A2=L_A)
     elif method == "Von Kries":
-        test = colour.chromatic_adaptation(XYZ, XYZ_w, XYZ_wr, method="Von Kries")
+        adapted_img = colour.chromatic_adaptation(XYZ, XYZ_w, XYZ_wr, method="Von Kries")
     else:
         sys.exit("no method selected")
 
-    if circle == True:
-        cv2.circle(test, (centerx, centery), 4, (0, 0, 255), -1)
-    else:
-        pass
+    if circle:
+        cv2.circle(adapted_img, (center_x, center_y), 4, (0, 0, 255), -1)
+
     if os.path.exists("chromatic") and os.path.exists("chromaticPIL"):
         sys.exit("ERROR: chromatic and chromaticPIL folder already exists, please delete them or change the name of the output folder")
-    else:
-        pass
 
-    if gif == True:
-        os.mkdir('chromatic')
+    if gif:
+        if not os.path.exists("chromatic"):
+            os.mkdir("chromatic")
 
-        cv2.imwrite("chromatic/"f'{outputname}.png', test)
-        cv2.imwrite("chromatic/"f'{outputname}gry.png', gry)
-        frames = []
-        imgs = glob.glob("chromatic/*.*")
-        for i in imgs:
-            new_frame = cv2.imread(i)
-            frames.append(new_frame)
+        cv2.imwrite("chromatic/adapted_img.png", adapted_img)
+        cv2.imwrite("chromatic/grayscale_img.png", gry)
 
-        with imageio.get_writer(f"chromatic/{outputname}.gif", mode="I", duration=Gifduration) as writer:
-            for idx, frame in enumerate(frames):
+        imgs = ["chromatic/adapted_img.png", "chromatic/grayscale_img.png"]
+        with imageio.get_writer("chromatic/adapted_img.gif", mode="I", duration=Gifduration) as writer:
+            for idx, frame in enumerate(imgs):
                 print("Adding frame to GIF file: in chromatic folder ", idx + 1)
-                rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
+                img = cv2.imread(frame)
+                rgb_frame = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
                 writer.append_data(rgb_frame)
-                print("Done")
-                print("Done ", f'{outputname}.png has been added your working dir.')
-                print("Your working directory: ", os.getcwd())
-
-        os.mkdir('chromaticPIL')
-
-        cv2.imwrite("chromaticPIL/"f'{outputname}.png', test)
-        cv2.imwrite("chromaticPIL/"f'{outputname}gry.png', gry)
-        frames2 = []
-        imgs2 = glob.glob("chromaticPIL/*.png")
-        for i in imgs2:
-            new_frame2 = Image.open(i)
-            frames2.append(new_frame2)
-
-        frames2[0].save('chromaticPIL/mygifPIL.gif', format='GIF',
-                        append_images=frames2[1:],
-                        save_all=True,
-                        duration=pil, loop=0)
-    elif gif == False:
-        cv2.imwrite(f'{outputname}.png', test)
-        cv2.imwrite(f'{outputname}gry.png', gry)
-        print("Done ", f'{outputname}.png has been added your working dir.')
-        print("Your working directory: ", os.getcwd())
+            print("Done")
+            print("Done ", f"adapted_img.png has been saved to chromatic folder")
 def dotill(dimension,hlinefreq=12,wlinefreq=12,dotcolor=(0,255,0),dotradius=5,horizontalcolor=(14, 75, 3),verticalcolor=(14, 75, 3),horizontalthickness=4,verticalthickness=4,verticallines=True,horizontallines=True):
     """
     This function is used to create a dotill image.
