@@ -4,95 +4,113 @@ document.addEventListener("DOMContentLoaded", function() {
     canvas.id = 'canvas';
     canvas.width = 400;
     canvas.height = 400;
-    document.body.appendChild(canvas);
     
+    document.body.appendChild(canvas);
+    var increaseButton = document.createElement('button');
+    increaseButton.innerHTML = 'Increase Speed';
 
-    var speedButton = document.createElement('button');
-    speedButton.innerHTML = 'Increase Speed';
-    speedButton.style.position = 'absolute';
-    speedButton.style.bottom = '15%';
-    speedButton.style.left = '15%';
-    speedButton.style.backgroundColor = '#4CAF50';
-    speedButton.style.padding = '10px';
-    speedButton.style.boxShadow = '0px 0px 10px red';
-    speedButton.addEventListener('click', function(e) {
-      
+    increaseButton.style.position = 'absolute';
+    increaseButton.style.bottom = '15%';
+    increaseButton.style.left = '15%';
+    increaseButton.style.backgroundColor = '#4CAF50';
+    increaseButton.style.padding = '10px';
+    increaseButton.style.boxShadow = '0px 0px 10px red';
+
+    increaseButton.addEventListener('click', function(e) {
       speedFactor *= 2;
     });
-    document.body.appendChild(speedButton);
 
+    document.body.appendChild(increaseButton);
+
+    var decreaseButton = document.createElement('button');
+    decreaseButton.innerHTML = 'Decrease Speed';
+
+    decreaseButton.style.position = 'absolute';
+    decreaseButton.style.bottom = '15%';
+    decreaseButton.style.left = '30%';
+    decreaseButton.style.backgroundColor = '#4CAF50';
+    decreaseButton.style.padding = '10px';
+    decreaseButton.style.boxShadow = '0px 0px 10px red';
+
+    decreaseButton.addEventListener('click', function(e) {
+      speedFactor /= 2;
+    });
+
+    document.body.appendChild(decreaseButton);
+        
+
+    
     var speedFactor = 1;
+    
     var colorPicker = document.createElement('input');
-colorPicker.type = 'color';
+    colorPicker.type = 'color';
+    
     colorPicker.style.position = 'absolute';
     colorPicker.style.bottom = '0px';
     colorPicker.style.left = '3%';
-colorPicker.value = '#ffff00';
-colorPicker.addEventListener('change', function(e) {
-  circles.strokeStyle = circles.fillStyle = e.target.value;
-});
-document.body.appendChild(colorPicker);
-
+    colorPicker.value = '#ffff00';
+    
+    colorPicker.addEventListener('change', function(e) {
+      circles.strokeStyle = circles.fillStyle = e.target.value;
+    });
+    
+    document.body.appendChild(colorPicker);
+    
     var d = document.getElementById('canvas');
     var circles= d.getContext('2d');
+    
     var width= d.width, width2= width/2;
+    
     var num= 1; 
-    angle= Math.PI*2; 
-    ratio= angle/num;
+    var angle= Math.PI*2; 
+    var ratio= angle/num;
+    
     draw();
+    
     var bw= 8;
     var time= 0;
+    
     document.body.style.background = 'rgb(0,0,0)';
     
-    function draw()
-    {
-        d.width= width;
-        circles.beginPath();
-        circles.fillStyle= 'black';
-        circles.fillRect(0,0,width,width);
-        circles.closePath();
-        circles.beginPath();
-        circles.arc(width2,width2,width2-bw,0,angle);
-    
-    
-        
-    
-        circle(width2,width2,width2);
-        circles.lineWidth= 3;
-        circles.strokeStyle= circles.fillStyle= colorPicker.value;
-    
+    function draw() {
+      d.width= width;
+      circles.beginPath();
+      circles.fillStyle= 'black';
+      circles.fillRect(0,0,width,width);
+      circles.closePath();
+  circles.beginPath();
+  circles.arc(width2,width2,width2-bw,0,angle);
+  circle(width2,width2,width2);
+  
+  circles.lineWidth= 3;
+  circles.strokeStyle= circles.fillStyle= colorPicker.value;
 
-        
-        circles.stroke();
-        var a= 0;
-        for (var i=0; i< num*2; i++){
-            circles.moveTo(width2,width2);
-            circles.lineTo(width2+Math.cos(a)*width2, width2+Math.sin(a)*width2);
-            a+= ratio/2;
-        }
-        circles.stroke();
-        a= 0;
-        for (var i=0; i< num; i++){
-            circle(width2+Math.cos(a)*Math.sin(time*speedFactor+i*Math.PI/num)*(width2-bw), 
-                   width2+Math.sin(a)*Math.sin(time*speedFactor+i*Math.PI/num)*(width2-bw), bw);
-            a+= ratio/2;
-        }
-        time+= 0.03;
-    
-    
-    
-       requestAnimationFrame(draw);
-    }
-    
-    
-    function circle(x,y,r)
-    {
-        circles.beginPath();
-        circles.arc(x, y, r, 0, angle);
-        circles.fill();
-        
-    }
+  circles.stroke();
+  var a= 0;
+  for (var i=0; i< num*2; i++){
+      circles.moveTo(width2,width2);
+      circles.lineTo(width2+Math.cos(a)*width2, width2+Math.sin(a)*width2);
+      a+= ratio/2;
+  }
+  circles.stroke();
 
+  a= 0;
+  for (var i=0; i< num; i++){
+      circle(width2+Math.cos(a)*Math.sin(time*speedFactor+i*Math.PI/num)*(width2-bw), 
+             width2+Math.sin(a)*Math.sin(time*speedFactor+i*Math.PI/num)*(width2-bw), bw);
+      a+= ratio/2;
+  }
+
+  time+= 0.03;
+
+  requestAnimationFrame(draw);
+}
+
+function circle(x,y,r) {
+  circles.beginPath();
+  circles.arc(x, y, r, 0, angle);
+  circles.fill();
+}
     
     
     var num = 1;
