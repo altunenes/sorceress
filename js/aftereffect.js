@@ -4,9 +4,11 @@ let strokeSlider;
 let bgColorPicker;
 let color1, color2, color3, color4, color5, color6, color7, color8;
 let movingSquareColorPicker;
+let pattern = 0;
+
 
 function setup() {
-  frameRate(10); //speed
+  frameRate(8); //speed
   createCanvas(900,900);
   strokeSlider = createSlider(1, 40, 4, 1);
   strokeSlider.position(20, 600);
@@ -14,7 +16,9 @@ function setup() {
   bgColorPicker = createColorPicker("#000000"); // default background color is black
   movingSquareColorPicker = createColorPicker('white');
   movingSquareColorPicker.position(120, 600);
-
+  patternButton = createButton("Change pattern");
+  patternButton.position(width/2, height - 30);
+  patternButton.mousePressed(changePattern);
   bgColorPicker.position(20, 550);
     for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
@@ -53,7 +57,10 @@ function setup() {
   color7.position(20, 135);
   color8.position(90, 135);
 }
-
+function changePattern() {
+  pattern++;
+  pattern %= 4; // change this to the total number of patterns
+}
 let counter = 0;
 
 function draw() {
@@ -84,15 +91,72 @@ function draw() {
 
 function drawSquares(xPos, r,g,b, yPos) {
   let color = movingSquareColorPicker.color();
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-      fill(r,g,b);
-      
+  
+   if (pattern == 0) {
+for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    if ((i*j) % 5 === 1) {
+        fill(255);
+    } else {
+        fill(r, g, b);
+    }
+    rect((i * 50) + (i * 10) + xPos, (j * 50) + (j * 10) + yPos, 50, 50);
+    if (i == (counter % 3) && j == (counter % 4)) {
+      fill(color);
       rect((i * 50) + (i * 10) + xPos, (j * 50) + (j * 10) + yPos, 50, 50);
-      if (i == (counter % 3) && j == (counter % 4)) {
-        fill(color);
-        rect((i * 50) + (i * 10) + xPos, (j * 50) + (j * 10) + yPos, 50, 50);
-      }
     }
   }
+}  } else if (pattern == 1) {
+for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+if ((i+j) % (1*3) == counter % (1*3)) {
+        fill(255);
+    } else {
+        fill(r, g, b);
+    }
+    rect((i * 50) + (i * 10) + xPos, (j * 50) + (j * 10) + yPos, 50, 50);
+if ((i+j) % (2*12) == counter % (3*3)) {
+      fill(255);
+      rect((i * 50) + (i * 10) + xPos, (j * 50) + (j * 10) + yPos, 50, 50);
+    }
+  }
+}
+  
+  } else if (pattern == 2) {
+for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    if ((i*j) % 4 === 1) {
+        fill(255);
+    } else {
+        fill(r, g, b);
+    }
+    rect((i * 50) + (i * 10) + xPos, (j * 50) + (j * 10) + yPos, 50, 50);
+if ((i+j) % (5*2) == counter % (2*3)) {
+      fill(255);
+      rect((i * 50) + (i * 10) + xPos, (j * 50) + (j * 10) + yPos, 50, 50);
+    }
+  }
+} 
+  
+  
+  
+    } else {
+for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    if ((i + j) % 4 === 0) {
+        fill(255);
+    } else {
+        fill(r, g, b);
+    }
+    rect((i * 50) + (i * 10) + xPos, (j * 50) + (j * 10) + yPos, 50, 50);
+if ((i+j) % (1*1) == counter % (2*1)) {
+  fill(color);
+  rect((i * 50) + (i * 10) + xPos, (j * 50) + (j * 10) + yPos, 50, 50);
+}
+  }
+}   }
+
+  
+  
+
 }
