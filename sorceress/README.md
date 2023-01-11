@@ -84,6 +84,8 @@ from sorceress import sorceress
   - Length Illusion
   - Crazy Sine Waves
   - Crazy EEG-Fourier
+  - phimotion
+  - colour adaptation
   
 ## Examples
 

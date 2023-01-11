@@ -19,6 +19,8 @@ nav:
     - Bright: bright.html
     - sine: crazysin.html
     - eeg: crazyeeg.html
+    - phi: phi.html
+    - coloradapt: cafter.html
 theme:
   logo: assets/sitelogo.png
   name: material

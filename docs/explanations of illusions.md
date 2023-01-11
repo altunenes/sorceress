@@ -6,7 +6,7 @@ First, let's import the package. I usually import the package like this:
 
 ### Dependencies
 
-To use the code in this tutorial, you need to install several packages. This can be done by typing the following commands in your terminal:
+To use the code in this tutorial, you need to install several packages. This can be done by typing the following commands in your terminal via pip:
 ``` python
 
 pip install numpy
@@ -16,9 +16,7 @@ pip install imageio
 pip install pillow
 pip install color-science
 ```
-If you are using conda, you can install the packages by replacing pip install with conda install. If you are using pipenv, you can install the packages by replacing pip install with pipenv install
-
-You don't need to import the other packages, because they are imported in the sorceress package.
+You don't need to import the other packages. The package will do it for you.
 
 ## 1- chromatic
 
@@ -484,6 +482,28 @@ Above you're seeing my ugly face with a negative color illusion. Look at the ima
 The negative color/image illusion is an optical illusion in which a person sees a reversed version of an image, with colors that are the opposite of what they would normally be. This is typically achieved by presenting the person with an image that has been transformed in some way, such as by inverting the colors or by using a negative filter. The brain then interprets this transformed image as if it were the original image, resulting in the illusion of seeing a "negative" version of the image.
 
 I would like to also mention that this illusion is not working on all images and people. The negative color/image illusion is related to the presence of cells in the eye known as ganglion cells. These cells are responsible for sending coded messages to the brain that identify pairs of primary colors, such as red and green and blue and yellow. When someone stares at a blue background for a prolonged period of time, the blue and yellow channel in the ganglion cells becomes temporarily suppressed. This suppression causes the cells to start projecting the opposite color, which in this case is yellow. As a result, some people may see the woman in the original negative image as being in full color due to the yellow hues that are projected by the ganglion cells
+
+## 37-Reverse Phi Motion
+
+![phi](./assets/phi.gif)
+
+[try live demo!](https://altunenes.github.io/sorceress/phi.html)
+
+
+In this video, an illusory face appears to rotate towards the position of the mouse cursor, even though it remains in the same place. This phenomenon is called "reverse phi." The way we perceive motion is determined by the direction of changes we see, rather than the overall direction things are moving in. Even if we flip an image and the direction of motion simultaneously, it will still appear to be moving in the same direction. Here is my code to demonstrate this effect, which you can use to try it with different speeds.
+
+You can try the demo here. I don't know how to extend this animation other than adding a speed slider.
+PS: The Pareidolia image came to me while I was messing around with gabor patches again, normally I wanted to create some cylinders in my first attempt lol.
+
+## 38-Color Illusion
+![lilac2](./assets/anim33.gif)
+
+[try live demo!](https://altunenes.github.io/sorceress/cafter.html)
+
+The animation is inspired by a tweet by [twitter/Gavin Buckingham:](https://twitter.com/DrGBuckingham/status/1611642179616743424), in which he shared an intriguing variation of the Lilac Chaser illusion. The animation is interactive, as the user can adjust the speed, colors of the rotating square, as well as the colors of the square patterns using sliders and color pickers.
+
+Additionally, The code uses the p5.js library to create the animation and allows the user to customize their viewing experience by adjusting various parameters. The code generates squares on the canvas and uses a loop to update the positions of the squares, creating the illusion of rotation.
+You can adjust the speed of the animation with a built-in frame rate, choose colors for the rotation square and background. 
 
 
 
