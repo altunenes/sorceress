@@ -1,6 +1,6 @@
 #A collection of functions for the sorceress module that is written in python language
 
-###############################  version: 1.8.6     ###############################
+###############################  version: 1.8.8     ###############################
 ############################### Author: Enes Altun  ###############################
 
 import cv2
@@ -12,6 +12,7 @@ import imageio
 from matplotlib import pyplot as plt
 import sys
 from PIL import Image
+import pygame
 
 def chromatic(img,circle=True, method="CMCCAT2000", gif=True, Gifduration=7,XYZ_w=(110, 75, 35),XYZ_wr=(200, 120, 75),L_A=2000):
     """
@@ -1279,3 +1280,46 @@ def colordetection(inputimage):
     cv2.setMouseCallback('image', click_event)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
+def footsteps(speed=1, strip_width=11, block_width=44,block_height=20, y_yellow=40, y_blue=130, canvas_height=400, canvas_width=484):
+    """"
+    Creates an animation of a footsteps illusion.
+    Parameters:
+    speed : int of the speed of the animation.
+    strip_width : int of the width of the strips.
+    block_width : int of the width of the blocks.
+    block_height : int of the height of the blocks.
+    y_yellow : int of the y coordinate of the yellow block.
+    y_blue : int of the y coordinate of the blue block.
+    canvas_height : int of the height of the canvas (window).
+    canvas_width : int of the width of the canvas (window).
+    """
+    pygame.init()
+    canvas_height = int(canvas_height)
+    canvas_width = int(canvas_width)
+    size = (canvas_width, canvas_height)
+    screen = pygame.display.set_mode(size)
+    pygame.display.set_caption("Animation")
+    block_height = int(block_height)
+    block_width= int(block_width)
+    strip_width = int(strip_width)
+    y_yellow = int(y_yellow)
+    y_blue = int(y_blue)
+    counter = 0
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+        screen.fill((255, 255, 255))
+        if not pygame.mouse.get_pressed()[0]:
+            for i in range(0, canvas_width, 2 * strip_width):
+                pygame.draw.rect(screen, (0, 0, 0), (i, 0, strip_width, canvas_height))
+        counter += speed
+        pygame.draw.rect(screen, (255, 255, 0), (counter, y_yellow, block_width, block_height))
+        pygame.draw.rect(screen, (0, 0, 255), (counter, y_blue, block_width, block_height))
+        if counter == canvas_width:
+            counter = 0
+        pygame.display.flip()
+        pygame.time.wait(30)
+    pygame.quit()

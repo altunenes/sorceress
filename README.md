@@ -69,6 +69,7 @@ from sorceress import sorceress
   - pareidolia
   - spirals
   - color negative
+  - footsteps
 
  **Illusions in JavaScript**
 
@@ -106,12 +107,11 @@ pip install matplotlib
 pip install imageio
 pip install Pillow
 pip install colour-science
+pip install pygame
 ```
 
 ## Contribution
 
-Any contribution, bug report, or suggestion is always welcome.
-
-##Author
+Any contribution, bug report, or suggestion is always welcome <3
 
 + Main Maintainer: Enes Altun

@@ -15,6 +15,7 @@ pip install opencv-python
 pip install imageio
 pip install pillow
 pip install color-science
+pip install pygame
 ```
 You don't need to import the other packages. The package will do it for you.
 
@@ -291,6 +292,13 @@ The footsteps illusion is a motion illusion in which objects appear to move fast
 
 The key point of explanation of this illusion is the brightness differences. Between the moving objects and the background is important for the explanation of this illusion (Anstis, 2003).
 
+update: I've also added python version of this illusion. You can call it by writing `sorceress.footsteps()`
+
+The python version looks like this (if you click on the screen stripes will remove it). You can customize this illusion I've added many things you can find on the API page.
+
+![eeg](./assets/steps3.gif)
+
+
 ## 17-thelilac
 
 The Lilac chaser illusion is a visual illusion described by Jeremy L. Hinton in 2005 and was shown by Michael Bach (my biggest inspiration) on his website of the same year. For the best results, using a pinkish-violet color is a good choice, but other colors can also be used; in our animation, we'll use two different colors in two concentric rings. I also added a blur section which makes the stronger effect.  You can access this illusion from here [sorceress/thelilac:](https://altunenes.github.io/sorceress/thelilac). I added various methods so you can use different combinations.
@@ -481,7 +489,7 @@ Above you're seeing my ugly face with a negative color illusion. Look at the ima
 
 The negative color/image illusion is an optical illusion in which a person sees a reversed version of an image, with colors that are the opposite of what they would normally be. This is typically achieved by presenting the person with an image that has been transformed in some way, such as by inverting the colors or by using a negative filter. The brain then interprets this transformed image as if it were the original image, resulting in the illusion of seeing a "negative" version of the image.
 
-I would like to also mention that this illusion is not working on all images and people. The negative color/image illusion is related to the presence of cells in the eye known as ganglion cells. These cells are responsible for sending coded messages to the brain that identify pairs of primary colors, such as red and green and blue and yellow. When someone stares at a blue background for a prolonged period of time, the blue and yellow channel in the ganglion cells becomes temporarily suppressed. This suppression causes the cells to start projecting the opposite color, which in this case is yellow. As a result, some people may see the woman in the original negative image as being in full color due to the yellow hues that are projected by the ganglion cells
+I would like to also mention that this illusion is not working on all images and people. The negative color/image illusion is related to the presence of cells in the eye known as ganglion cells. These cells are responsible for sending coded messages to the brain that identify pairs of primary colors, such as red and green and blue and yellow. When someone stares at a blue background for a prolonged period of time, the blue and yellow channel in the ganglion cells becomes temporarily suppressed. This suppression causes the cells to start projecting the opposite color, which in this case is yellow. As a result, some people may see the image in the original negative image as being in full color due to the yellow hues that are projected by the ganglion cells
 
 ## 37-Reverse Phi Motion
 

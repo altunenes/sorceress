@@ -50,6 +50,8 @@ This page gives an overview of all sorceress functions and methods.
 
 +[negate_image](#negate_image)
 
++[footsteps](#footsteps)
+
 ***chromatic***<a name="chromatic"></a>
 
 This function process image to generate optical illusion about chromatic adaptation. After a fixation of the center, gray scale image will perceived as a colorful.
@@ -429,7 +431,7 @@ Parameters for the face paredolia effect
     """
 ```
 
-***spirals2***<a name="negate_image"></a>
+***negate_image***<a name="negate_image"></a>
     Negates an image. 
 ```
     """"
@@ -441,3 +443,20 @@ Parameters for the face paredolia effect
     output_quality : int of the output quality.
     """
 ```
+***footsteps***<a name="footsteps"></a>
+    Creates an animation of a footsteps illusion. This animation uses pygame.
+```
+    Parameters:
+    -------------- 
+    speed : int of the speed of the animation.
+    strip_width : int of the width of the strips.
+    block_width : int of the width of the blocks.
+    block_height : int of the height of the blocks.
+    y_yellow : int of the y coordinate of the yellow block.
+    y_blue : int of the y coordinate of the blue block.
+    canvas_height : int of the height of the canvas (window).
+    canvas_width : int of the width of the canvas (window).
+    """
+```
+
+

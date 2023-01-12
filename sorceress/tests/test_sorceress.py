@@ -347,8 +347,9 @@ class Testssorceress(TestCase):
         sorceress.colordetection("test_image.png")
         #clean the file
         os.remove("test_image.png")
-
-        
+    def test_footsteps(self):
+        sorceress.footsteps()
+        self.assertTrue(True)
 
 
 if __name__ == '__main__':

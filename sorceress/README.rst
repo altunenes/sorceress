@@ -1,10 +1,10 @@
 sorceress 1.8
 =============
 
-|PyPI version| |Jekyll site CI| |Downloads|
+|PyPI version| |Jekyll site CI| |Downloads| |Build status|
 
 Purpose of package
-~~~~~~~~~~~~~~~~~~
+------------------
 
 This package’s purpose is to create optical illusions in a simple way.
 The package is written in Python. however, the repo also includes
@@ -61,13 +61,13 @@ time.
 Overall, creating optical illusions with code can be a challenging but
 rewarding task that requires a combination of technical skills,
 creativity, and an understanding of the underlying principles of
-perception.
+perception `(Bach, 2014) <https://pubmed.ncbi.nlm.nih.gov/25420328/>`__.
 
 For all optical illusions check this documentation:
 `altunenes.github.io/sorceress/ <https://altunenes.github.io/sorceress/>`__
 
 Getting started🚀️
-~~~~~~~~~~~~~~~~~
+-----------------
 
 The package can be found on PyPI hence you can install it via pip.
 
@@ -81,7 +81,7 @@ The package can be found on PyPI hence you can install it via pip.
    from sorceress import sorceress
 
 Features
-~~~~~~~~
+--------
 
 `For the API, click
 here <https://altunenes.github.io/sorceress/api_reference/>`__
@@ -111,6 +111,7 @@ here <https://altunenes.github.io/sorceress/api_reference/>`__
    -  pareidolia
    -  spirals
    -  color negative
+   -  footsteps
 
 **Illusions in JavaScript**
 
@@ -126,6 +127,8 @@ here <https://altunenes.github.io/sorceress/api_reference/>`__
 -  Length Illusion
 -  Crazy Sine Waves
 -  Crazy EEG-Fourier
+-  phimotion
+-  colour adaptation
 
 Examples
 --------
@@ -153,13 +156,12 @@ not need to import them, the package will do it for you.
    pip install imageio
    pip install Pillow
    pip install colour-science
+   pip install pygame
 
 Contribution
 ------------
 
-Any contribution, bug report, or suggestion is always welcome.
-
-##Author
+Any contribution, bug report, or suggestion is always welcome <3
 
 -  Main Maintainer: Enes Altun
 
@@ -169,3 +171,5 @@ Any contribution, bug report, or suggestion is always welcome.
    :target: https://github.com/altunenes/sorceress/actions/workflows/jekyll.yml
 .. |Downloads| image:: https://pepy.tech/badge/sorceress
    :target: https://pepy.tech/project/sorceress
+.. |Build status| image:: https://ci.appveyor.com/api/projects/status/71rohei2h9q6ru0s?svg=true
+   :target: https://ci.appveyor.com/project/altunenes/sorceress

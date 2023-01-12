@@ -10,7 +10,7 @@ classifiers = [
 
 setup(
     name='sorceress',
-    version='1.8.2',
+    version='1.8.8',
     description='Optical Illusions with Python',
     long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
     url='https://github.com/emportent/sorceress',
@@ -21,7 +21,7 @@ setup(
     classifiers=classifiers,
     keywords='Optical-Illusion,illusions,optical',
     packages=['sorceress'],
-    install_requires=['opencv-python',"numpy","colour-science","imageio","matplotlib","Pillow",],
+    install_requires=['opencv-python',"numpy","colour-science","imageio","matplotlib","Pillow","pygame",],
 extras_require = {
     'dev': [
         'imageio',
