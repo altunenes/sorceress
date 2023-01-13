@@ -477,6 +477,7 @@ The superposition principle is a rule that helps us understand how different wav
 
 The above animation is working similiar with [sorceress/EyeMovements:](https://altunenes.github.io/sorceress/EyeMovements). You can try the demo [here](https://altunenes.github.io/sorceress/crazyeeg.html). I didn't add any sliders or buttons to the page. You can change the colors by changing the values in the code. I hope you enjoy it. Maybe I will add some sliders in the future.
 
+update: I added some sliders, color pickers, and a button to the page (open for a surprise)
 
 ## 36-Negative color illusion
 
