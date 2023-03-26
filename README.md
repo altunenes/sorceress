@@ -5,7 +5,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/71rohei2h9q6ru0s?svg=true)](https://ci.appveyor.com/project/altunenes/sorceress)
 
 
-![bannner](./docs//assets/banner.PNG)
+![banner](https://user-images.githubusercontent.com/54986652/227795451-aa41dcb1-3a87-4142-91ff-69a275bed8f8.png)
 
 
 ### Purpose of package
