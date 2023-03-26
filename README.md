@@ -5,6 +5,9 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/71rohei2h9q6ru0s?svg=true)](https://ci.appveyor.com/project/altunenes/sorceress)
 
 
+![bannner](./docs//assets/banner.PNG)
+
+
 ### Purpose of package
 
 This package's purpose is to create optical illusions in a simple way. The package is written in Python. however, the repo also includes JavaScript.  In [explanations](https://altunenes.github.io/sorceress/explanations%20of%20illusions/) section, you can find the explanations of the illusions.
