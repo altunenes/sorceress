@@ -20,6 +20,24 @@ document.addEventListener("DOMContentLoaded", function() {
       speedFactor *= 2;
     });
 
+    var hideLines = false;
+    var hideLinesButton = document.createElement('button');
+    hideLinesButton.innerHTML = 'Hide Lines';
+    
+    hideLinesButton.style.position = 'absolute';
+    hideLinesButton.style.bottom = '20%';
+    hideLinesButton.style.left = '25%';
+    hideLinesButton.style.backgroundColor = '#4CAF50';
+    hideLinesButton.style.padding = '10px';
+    hideLinesButton.style.boxShadow = '0px 0px 10px red';
+
+    hideLinesButton.addEventListener('click', function(e) {
+      hideLines = !hideLines;
+      hideLinesButton.innerHTML = hideLines ? 'Show Lines' : 'Hide Lines';
+    });
+
+    document.body.appendChild(hideLinesButton);
+
     document.body.appendChild(increaseButton);
 
     var decreaseButton = document.createElement('button');
@@ -87,12 +105,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   circles.stroke();
   var a= 0;
-  for (var i=0; i< num*2; i++){
-      circles.moveTo(width2,width2);
-      circles.lineTo(width2+Math.cos(a)*width2, width2+Math.sin(a)*width2);
-      a+= ratio/2;
-  }
-  circles.stroke();
+  if (!hideLines) {
+    for (var i=0; i< num*2; i++){
+        circles.moveTo(width2,width2);
+        circles.lineTo(width2+Math.cos(a)*width2, width2+Math.sin(a)*width2);
+        a+= ratio/2;
+    }
+    circles.stroke();
+}
+
 
   a= 0;
   for (var i=0; i< num; i++){
