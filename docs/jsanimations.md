@@ -1,6 +1,4 @@
-Both JavaScript and Python are popular programming languages that are widely used for a variety of tasks, including creating animations. However, the two languages are very different. JavaScript is a scripting language that is used to create interactive web pages. For most user, accessing JavaScript code is as simple as opening a web browser and visiting a demo.
-
-Currently, there are 9 illusions that can be seen on the page. But as you can notice, the repository has also some other js files.
+Currently, there are 10 illusions that can be seen on the page. But as you can notice, the repository has also some other js files.
 These are currently in the development stage. You can open them in the browser and see the code and feel free to contribute to finishing them.
 
 Note: The animations are not optimized for mobile devices. They are only optimized for desktops.
@@ -34,3 +32,5 @@ Finished animations :
 [phimotion](https://altunenes.github.io/sorceress/phi.html)
 
 [colour adaptation](https://altunenes.github.io/sorceress/cafter.html)
+
+[ashai GLSL/shader code](https://altunenes.github.io/sorceress/ashai.html)
