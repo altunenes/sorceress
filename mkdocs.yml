@@ -21,6 +21,7 @@ nav:
     - eeg: crazyeeg.html
     - phi: phi.html
     - coloradapt: cafter.html
+    - asahi : asahi.html
 theme:
   logo: assets/sitelogo.png
   name: material

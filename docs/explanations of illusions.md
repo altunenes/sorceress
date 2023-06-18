@@ -514,6 +514,15 @@ The animation is inspired by a tweet by [twitter/Gavin Buckingham:](https://twit
 Additionally, The code uses the p5.js library to create the animation and allows the user to customize their viewing experience by adjusting various parameters. The code generates squares on the canvas and uses a loop to update the positions of the squares, creating the illusion of rotation.
 You can adjust the speed of the animation with a built-in frame rate, choose colors for the rotation square and background. 
 
+## 39-Asahi Illusion
+
+[try live demo!](https://altunenes.github.io/sorceress/asahi.html)
+
+I actually coded this illusion by accident, while coding a fractal in shadertoy. It's actually an illusion made with the GLSL language. You can reach here [shadertoy](https://www.shadertoy.com/view/DsfyRX)
+
+It’s a cool optical illusion that makes a white center look brighter than it really is by surrounding it with yellow and black petals. The petals change their size and orientation over time, creating different levels of contrast and illumination. Watch how the central white area seems to change its brightness as the petals move. This illusion tricks our eyes and brains into perceiving more light than there is. Even rats fall for it [Vasilev et al., 2023](https://academic.oup.com/cercor/article/33/12/7952/7084649?login=false)
+
+See more about the illusion [Suzuki et al., 2019](https://www.sciencedirect.com/science/article/pii/S0001691819300083); [Laeng et al., 2012](https://www.pnas.org/doi/abs/10.1073/pnas.1118298109)
 
 
 ### REFERENCES
@@ -539,6 +548,9 @@ Cohen R.A. (2011) Lateral Inhibition. In: Kreutzer J.S., DeLuca J., Caplan B. (e
 Culham, J.C., Danckert, S.L., Souza, J.F.X.D. *et al.* Visually guided grasping produces fMRI activation in dorsal but not ventral stream brain areas. *Exp Brain Res* **153, **180–189 (2003). https://doi.org/10.1007/s00221-003-1591-5
 
 Dakin S. C. and Bex P. J. 2003 Natural image statistics mediate brightness ‘filling in’**Proc. R. Soc. Lond. B.**270**2341–2348 http://doi.org/10.1098/rspb.2003.2528
+
+Dmitrii Vasilev and others, Brightness illusions evoke pupil constriction preceded by a primary visual cortex response in rats, Cerebral Cortex, Volume 33, Issue 12, 15 June 2023, Pages 7952–7959, https://doi.org/10.1093/cercor/bhad090
+
 
 Gregory RL, Heard P (1979) Border locking and the café wall illusion. Perception 8(4):365–380
 
@@ -567,5 +579,8 @@ Torsten Betz, Robert Shapley, Felix A. Wichmann, Marianne Maertens; Testing the 
 White M (1979) A new effect of pattern on perceived lightness. Perception 8:413–416
 
 Von Bekesy G. (1968) Mach- and Hering-type inhibition invision. Vision Res. 8, 1483-1499.
+
+Y. Suzuki, T. Minami, B. Laeng, and S. Nakauchi, "Colorful glares: Effects of colors on brightness illusions measured with pupillometry," Acta Psychologica, vol. 198, p. 102882, Jul. 2019.
+
 
 Zeki S, Watson JD, Frackowiak RS. Going beyond the information given: the relation of illusory visual motion to brain activity. Proc Biol Sci. 1993 Jun 22;252(1335):215-22. doi: 10.1098/rspb.1993.0068. PMID: 8394582.

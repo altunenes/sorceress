@@ -33,4 +33,4 @@ Finished animations :
 
 [colour adaptation](https://altunenes.github.io/sorceress/cafter.html)
 
-[ashai GLSL/shader code](https://altunenes.github.io/sorceress/ashai.html)
+[ashai GLSL/shader code](https://altunenes.github.io/sorceress/asahi.html)
