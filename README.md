@@ -73,6 +73,7 @@ from sorceress import sorceress
   - spirals
   - color negative
   - footsteps
+  
 
  **Illusions in JavaScript**
 
@@ -90,6 +91,10 @@ from sorceress import sorceress
   - Crazy EEG-Fourier
   - phimotion
   - colour adaptation
+    
+   **Illusions in GLSL/Shader**
+   - Asahi illusion
+
   
 ## Examples
 
